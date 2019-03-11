@@ -10,11 +10,7 @@ WORKDIR /code
 # Install requirements
 RUN pip install -r requirements.txt
 
-# Initialize environment variables
-ENV FLASK_APP web
-ENV FLASK_ENV development
-ENV FLASK_RUN_PORT 8008
-
+# Use port 8008 to communicate with outside world
 EXPOSE 8008
 
 # Set defualt command

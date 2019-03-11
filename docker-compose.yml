@@ -7,14 +7,20 @@ services:
     restart: always
     ports:
      - "8008:8008"
+
+    # Note: 'volumes' binds container directory /code to
+    # host files at ., allowing flask reload
     volumes:
      - .:/code
+
+
     depends_on:
     - mongo
+    env_file:
+    - development.env
 
   mongo:
     image: mongo
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+    env_file:
+      - development.env

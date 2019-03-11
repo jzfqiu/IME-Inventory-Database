@@ -1,6 +1,7 @@
 .DS_Store
 .idea/
-instance/
+production.yml
+production.env
 
 
 # Byte-compiled / optimized / DLL files

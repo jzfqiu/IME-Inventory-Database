@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+production.yml
+production.env
+*/__pycache__/
+*.yml
+*.env
+.git
+Dockerfile
+*/*.pyc
+.dockerignore
+.gitignore
+requirement.txt
