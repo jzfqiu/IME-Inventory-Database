@@ -7,17 +7,43 @@ import pymongo
 from bson import BSON
 
 
-def init_db(db_name):
+# class MongoInstance():
+#
+#     def __init__(self, dbname='db'):
+#         if not 'db' in g:
+#             # connect to mongo db
+#             mongo_host = current_app.config['MONGO_HOST']
+#             mongo_port = int(current_app.config['MONGO_PORT'])
+#             mongo_username = current_app.config['MONGO_INITDB_ROOT_USERNAME']
+#             mongo_password = current_app.config['MONGO_INITDB_ROOT_PASSWORD']
+#             client = pymongo.MongoClient(mongo_host, mongo_port,
+#                                          username=mongo_username,
+#                                          password=mongo_password,
+#                                          authSource=db_name,
+#                                          authMechanism='SCRAM-SHA-256',
+#                                          serverSelectionTimeoutMS=1000)
+#             g.db = client[db_name]
+
+
+def get_db(db_name='db'):
     """
     Initialize MongoDB database into request's global instance
 
     :param db_name: string, name of database
     :return: pymongo Database object
     """
-    if 'db' not in g:
+    if not 'db' in g:
         # connect to mongo db
-        client = pymongo.MongoClient(current_app.config['MONGO_HOST'],
-                                     current_app.config['MONGO_PORT'])
+        mongo_host = current_app.config['MONGO_HOST']
+        mongo_port = int(current_app.config['MONGO_PORT'])
+        mongo_username = current_app.config['MONGO_INITDB_ROOT_USERNAME']
+        mongo_password = current_app.config['MONGO_INITDB_ROOT_PASSWORD']
+        client = pymongo.MongoClient(mongo_host, mongo_port,
+                                     username=mongo_username,
+                                     password=mongo_password,
+                                     authSource=db_name,
+                                     authMechanism='SCRAM-SHA-256',
+                                     serverSelectionTimeoutMS=1000)
         g.db = client[db_name]
     return g.db
 
@@ -33,6 +59,9 @@ def insert_one(collection, document):
     return collection.insert_one(document).inserted_id
 
 
+def insert_many(collection, documents):
+    return collection.insert_many(documents).insert_ids
+
 
 def find_all(collection, f=None):
     """
@@ -41,8 +70,7 @@ def find_all(collection, f=None):
     :param f: dict, filter for query, can be nested dict
     :return: pymongo cursor object, index like python dict
     """
-
-    return collection.find(BSON.encode(f))
+    return collection.find(f)
 
 
 
@@ -60,7 +88,3 @@ def update_all(collection, f, update):
     """
     result = collection.update_many(BSON.encode(f), BSON.encode(update))
     return result.matched_count, result.modified_count
-
-
-
-

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Search{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="search_box">Search</label>
+    <input name="keywords" id="search_box" required>
+    <input type="submit" value="Search">
+</form>
+
+<section>
+    <ul>
+        {% for result in results %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+
+
+</section>
+{% endblock %}

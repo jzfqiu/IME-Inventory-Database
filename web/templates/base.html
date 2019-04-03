@@ -2,14 +2,21 @@
 
     <head>
         <meta charset="utf-8">
-        <title>The HTML5 Herald</title>
-        <link rel="stylesheet" href="css/styles.css?v=1.0">
-        <script src=""></script>
+        <title>{% block title %}{% endblock %} - Title</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
     </head>
 
     <body>
 
+        <header>
+            {% block header %}{% endblock %}
+        </header>
 
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
 
     </body>
 

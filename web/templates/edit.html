@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<form>
+    <input type="text" name="key1">:
+    <input type="text" name="value1">
+    <br>
+    <input type="text" name="key2">:
+    <input type="text" name="value2">
+    <br>
+    <input type="text" name="key3">:
+    <input type="text" name="value3">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
