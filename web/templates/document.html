@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ result['name'] }}{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <ul>
+            <li>{{ result['name'] }}</li>
+            {% for key_value in result['data'] %}
+            <li>{{ key_value[0] }} : {{ key_value[1] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

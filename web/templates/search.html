@@ -4,7 +4,7 @@
   <h1>{% block title %}Search{% endblock %}</h1>
 {% endblock %}
 
-<p><a href="{{ url_for('edit.edit') }}"></a></p>
+<p><a href="{{ url_for('edit.new') }}">New</a></p>
 
 {% block content %}
 <form method="post">
@@ -14,13 +14,18 @@
 </form>
 
 <section>
+    {% if results %}
     {% for result in results %}
     <div>
         <ul>
-            <li><a href="#">{{ result['id'] }}</a></li>
-
+            <li><a href="{{ url_for('search.document', obj_id=result['id']) }}">{{ result['name'] }}</a></li>
+            {% for data in result['data'] %}
+            <li>{{ data[0] }} : {{ data[1] }}</li>
+            {% endfor %}
         </ul>
     </div>
+    {% else %}
+    <div>No result found</div>
     {% endfor %}
 
 
