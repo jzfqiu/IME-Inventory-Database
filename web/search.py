@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash
-from web.db import get_db
+from web import db
 
 
 search_bp = Blueprint('search', __name__)
@@ -10,7 +10,7 @@ search_bp = Blueprint('search', __name__)
 def search(page):
     results = []
     batch = None
-    collection = get_db()['inventory']
+    collection = db.get_db()['inventory']
 
     # skip results from previous pages
     ffrom = int(page)*5

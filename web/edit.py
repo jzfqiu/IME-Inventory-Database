@@ -1,5 +1,5 @@
-from flask import Blueprint, g, render_template, request, session, url_for, redirect
-from web.db import get_db
+from flask import Blueprint, render_template, request, url_for, redirect
+from web import db
 
 edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
 
@@ -8,7 +8,7 @@ edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
 def new():
     if request.method == 'POST':
         # add new document
-        collection = get_db()['inventory']
+        collection = db.get_db()['inventory']
         new_doc = {
             'name': request.form['name'],
             request.form['key1']: request.form['value1'],

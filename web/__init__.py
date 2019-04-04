@@ -1,6 +1,5 @@
 from flask import Flask
 from web import config
-import pymongo
 
 
 def create_app():
@@ -19,18 +18,5 @@ def create_app():
     def hello():
         return 'hello'
 
-    @app.route('/test')
-    def test():
-        mongo_host = app.config['MONGO_HOST']
-        mongo_port = int(app.config['MONGO_PORT'])
-        mongo_username = app.config['MONGO_INITDB_ROOT_USERNAME']
-        mongo_password = app.config['MONGO_INITDB_ROOT_PASSWORD']
-        client = pymongo.MongoClient(host=mongo_host,
-                                     port=mongo_port,
-                                     username=mongo_username,
-                                     password=mongo_password,
-                                     serverSelectionTimeoutMS=1000)
-        collection = client['db']['inventory']
-        return 'test'
 
     return app
