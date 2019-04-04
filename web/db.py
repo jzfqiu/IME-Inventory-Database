@@ -26,3 +26,23 @@ def get_db(db_name='db'):
                                      serverSelectionTimeoutMS=1000)
         g.db = client[db_name]
     return g.db
+
+
+def process_item(item, n=None):
+    """
+    Helper function for cleaning searched result
+
+    :param item: a document (dict) returned by find_one() or batch iteration
+    :param n: number of entry needed in detailed ['data']
+    :return: another dict with _id and name seperated from other data
+    """
+    try:
+        object_id = item.pop('_id')
+        name = item.pop('name')
+        if n:
+            data = list(item.items())[:n]
+        else:
+            data = list(item.items())
+    except KeyError:
+        raise
+    return {'id': object_id, 'name': name, 'data': data}

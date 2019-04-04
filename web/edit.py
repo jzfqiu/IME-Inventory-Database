@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, url_for, redirect
 from web import db
+from bson.objectid import ObjectId
 
 edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
 
@@ -24,8 +25,13 @@ def new():
 
 @edit_bp.route('/<obj_id>', methods=['GET', 'POST'])
 def edit(obj_id):
+    collection = db.get_db()['inventory']
+    item = collection.find_one({'_id': ObjectId(obj_id)})
+    result = db.process_item(item)
+
     if request.method == 'POST':
         pass
     else:
         pass
+
 

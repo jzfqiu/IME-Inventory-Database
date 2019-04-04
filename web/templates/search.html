@@ -4,9 +4,9 @@
   <h1>{% block title %}Search{% endblock %}</h1>
 {% endblock %}
 
+{% block content %}
 <p><a href="{{ url_for('edit.new') }}">New</a></p>
 
-{% block content %}
 <form method="post">
     <label for="search_box">Search</label>
     <input name="keywords" id="search_box" required>
@@ -24,9 +24,10 @@
             {% endfor %}
         </ul>
     </div>
+    {% endfor %}
     {% else %}
     <div>No result found</div>
-    {% endfor %}
+    {% endif %}
 
 
 </section>
