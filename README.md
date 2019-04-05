@@ -1,19 +1,19 @@
 # IME-Inventory-Database
 
-### 1. Overview
+## 1. Overview
 TO-DO
-### 2. Testing Instruction
+## 2. Testing Instruction
 Note: "Run ```this```" means ```this``` should be copy-pasted into terminal and press enter. 
-##### Step 1. Download Requirement
-* git
+#### Step 1. Download Requirement
+* [git (come with Xcode)](https://developer.apple.com/xcode/)
 * [docker](https://www.docker.com/products/docker-desktop)
 
 
-##### Step 2. Download repository
+#### Step 2. Download repository
 1. Change working directory to desired download location. (e.g. Mac user downloading into Document folder can run ```cd Documents/```)  
 2. Run ```git clone https://github.com/jeff-zqiu/IME-Inventory-Database.git```. 
 
-##### Step 3. Compose and run
+#### Step 3. Compose and run
 1. Make sure docker is installed and running.  
 2. Change working directory into the IME-Inventory-Database folder (Run ```cd IME-Inventory-Database/```) 
 3. Run ```docker-compose up --build```.  
@@ -31,12 +31,12 @@ web_1    |  * Debugger PIN: 660-294-431
 ```
 You are good to go.
 
-##### Step 4. Testing
+#### Step 4. Testing
 1. Go to http://0.0.0.0:8008/ in your browser
 ....
 
 
-### 3. Progress
+## 3. Progress
 Backend:
 - [x] Add new entries, with any number of fields
 - [x] Display existing entries
