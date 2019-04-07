@@ -24,6 +24,7 @@ def get_db(db_name='db'):
                                      username=mongo_username,
                                      password=mongo_password,
                                      serverSelectionTimeoutMS=1000)
+
         g.db = client[db_name]
     return g.db
 

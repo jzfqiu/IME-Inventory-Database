@@ -1,4 +1,4 @@
-// jQuery
+// edit.js
 
 $(document).ready(function(){
 

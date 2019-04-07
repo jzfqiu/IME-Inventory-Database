@@ -37,3 +37,10 @@ def edit(obj_id):
         return render_template('edit.html', obj_id=obj_id, result=result)
 
 
+@edit_bp.route('/del/<obj_id>')
+def delete(obj_id):
+    collection = db.get_db()['inventory']
+    collection.delete_one({'_id': ObjectId(obj_id)})
+    return redirect(url_for('search.search'))
+
+

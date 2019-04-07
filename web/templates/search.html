@@ -4,13 +4,17 @@
   <h1>{% block title %}Search{% endblock %}</h1>
 {% endblock %}
 
+{% block script %}
+<script src="{{ url_for('static', filename='search.js') }}"></script>
+{% endblock %}
+
 {% block content %}
 <p><a href="{{ url_for('edit.new') }}">New</a></p>
 
 <form method="post">
     <label for="search_box">Search</label>
     <input name="keywords" id="search_box" required>
-    <input type="submit" value="Search">
+    <input type="submit" id="searchSubmit" value="Search">
 </form>
 
 <section>

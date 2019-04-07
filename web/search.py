@@ -6,24 +6,18 @@ from bson.objectid import ObjectId
 search_bp = Blueprint('search', __name__)
 
 
-@search_bp.route('/', defaults={'page': 0})
-@search_bp.route('/<page>', methods=('GET', 'POST'))
-def search(page):
+@search_bp.route('/', methods=('GET', 'POST'))
+def search():
     results = []
-    batch = None
-    collection = db.get_db()['inventory']
+    collection = db.get_db()
 
     # skip results from previous pages
     # ffrom = int(page)*5
 
     if request.method == 'POST':
         keywords = request.form['keywords']
-
-        if not keywords:
-            flash('Keywords cannot be empty', 'error')
-        else:
-            query = {'$text': {'$search': keywords}}
-            batch = list(collection.find(query))
+        query = {"$text": {"$search": keywords}}
+        batch = list(collection.find(query))
     else:
         batch = collection.find(None)
 
