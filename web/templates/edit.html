@@ -9,23 +9,36 @@
 
 
 <form action="/edit/{{ obj_id }}" method="post">
-    <button type="button" id="addField">Add Field</button>
     <div id="editFields">
         Name:
         <input type="text" name="name">
         <br>
-        <input type="text" name="key1">:
-        <input type="text" name="value1">
-        <br>
-        <input type="text" name="key2">:
-        <input type="text" name="value2">
-        <br>
-        <input type="text" name="key3">:
-        <input type="text" name="value3">
-        <br>
+        <div id="editField1">
+            <input type="text" name="key1">:
+            <input type="text" name="value1">
+            <button type="button" class="delFieldButton" id="delField1">x</button>
+            <br>
+        </div>
+        <div id="editField2">
+            <input type="text" name="key2">:
+            <input type="text" name="value2">
+            <button type="button" class="delFieldButton" id="delField2">x</button>
+            <br>
+        </div>
+        <div id="editField3">
+            <input type="text" name="key3">:
+            <input type="text" name="value3">
+            <button type="button" class="delFieldButton" id="delField3">x</button>
+            <br>
+        </div>
     </div>
     <br>
+
+    <button type="button" id="addField">Add Field</button>
+
     <input type="submit" value="submit">
+
+
 
 </form>
 {% endblock %}

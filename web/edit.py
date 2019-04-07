@@ -10,12 +10,11 @@ def new():
     if request.method == 'POST':
         # add new document
         collection = db.get_db()['inventory']
-        new_doc = {
-            'name': request.form['name'],
-            request.form['key1']: request.form['value1'],
-            request.form['key2']: request.form['value2'],
-            request.form['key3']: request.form['value3']
-        }
+        new_doc = {'name': request.form['name']}
+        for key in request.form.keys():
+            if 'key' in key:
+                new_doc[request.form[key]] = request.form['value'+key[-1]]
+
         collection.insert_one(new_doc)
         return redirect(url_for('search.search'))
     else:

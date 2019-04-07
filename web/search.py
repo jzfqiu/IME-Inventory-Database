@@ -14,7 +14,7 @@ def search(page):
     collection = db.get_db()['inventory']
 
     # skip results from previous pages
-    ffrom = int(page)*5
+    # ffrom = int(page)*5
 
     if request.method == 'POST':
         keywords = request.form['keywords']
