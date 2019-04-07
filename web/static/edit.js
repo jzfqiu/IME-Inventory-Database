@@ -1,5 +1,6 @@
-$(document).ready(function(){
+// jQuery
 
+$(document).ready(function(){
 
     var fieldCounts = 3
 
@@ -27,6 +28,7 @@ $(document).ready(function(){
     });
 
 
+    // prevent submitting empty field
     $('#submitField').click(function(e){
         $('.field').each(function(){
             if ($(this).val() == '') {

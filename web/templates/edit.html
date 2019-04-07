@@ -4,6 +4,10 @@
   <h1>{% block title %}Edit{% endblock %}</h1>
 {% endblock %}
 
+{% block script %}
+<script src="{{ url_for('static', filename='edit.js') }}"></script>
+{% endblock %}
+
 
 {% block content %}
 
@@ -36,11 +40,7 @@
 
     <button type="button" id="addField">Add Field</button>
 
-<!--    <button type="button" id="submitField">Submit</button>-->
-
     <input type="submit" id="submitField" value="submit">
-
-
 
 </form>
 {% endblock %}

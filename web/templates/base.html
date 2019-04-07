@@ -2,12 +2,13 @@
 
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}{% endblock %} - Title</title>
+        <title>{% block title %}{% endblock %} - IME Inventory DB</title>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                 crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="{{ url_for('static', filename='base.js') }}"></script>
+        {% block script %}{% endblock %}
     </head>
 
     <body>
