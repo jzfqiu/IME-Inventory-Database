@@ -3,7 +3,7 @@
 ## 1. Overview
 TO-DO
 ## 2. Testing Instruction
-Note: "Run ```this```" means ```this``` should be copy-pasted into terminal and press enter. 
+ 
 #### Step 1. Download Requirement
 * [git (come with Xcode)](https://developer.apple.com/xcode/)
 * [docker](https://www.docker.com/products/docker-desktop)
