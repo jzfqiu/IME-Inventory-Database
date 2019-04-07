@@ -34,7 +34,7 @@ def process_item(item, n=None):
 
     :param item: a document (dict) returned by find_one() or batch iteration
     :param n: number of entry needed in detailed ['data']
-    :return: another dict with _id and name seperated from other data
+    :return: another dict with _id and name separated from other data
     """
     try:
         object_id = item.pop('_id')

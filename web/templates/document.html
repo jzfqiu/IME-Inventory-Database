@@ -6,6 +6,7 @@
 
 
 {% block content %}
+    <p><a href="{{ url_for('edit.edit', obj_id=result['id']) }}">Edit</a></p>
     <div>
         <ul>
             <li>{{ result['name'] }}</li>
