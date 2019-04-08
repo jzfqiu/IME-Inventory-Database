@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request
 from web import db
 from bson.objectid import ObjectId
 
@@ -9,22 +9,25 @@ search_bp = Blueprint('search', __name__)
 @search_bp.route('/', methods=('GET', 'POST'))
 def search():
     results = []
-    collection = db.get_db()
-
-    # skip results from previous pages
-    # ffrom = int(page)*5
+    keywords = ''
+    collection = db.get_db()['inventory']
 
     if request.method == 'POST':
+        # This search method queries everything into server and process using
+        # backend script. It is ok with the amount of data we will need to
+        # handle but will be very resource consume for larger database.
+        # Consider implementing mongodb's text index search if possible.
         keywords = request.form['keywords']
-        query = {"$text": {"$search": keywords}}
-        batch = list(collection.find(query))
+        batch = list(collection.find())
+        for item in batch:
+            if keywords in item.keys() or keywords in item.values():
+                results.append(db.process_item(item, 5))
     else:
         batch = collection.find(None)
+        for item in batch:
+            results.append(db.process_item(item, 5))
 
-    for item in batch:
-        results.append(db.process_item(item, 5))
-
-    return render_template('search.html', results=results)
+    return render_template('search.html', results=results, keywords=keywords)
 
 
 @search_bp.route('/doc/<obj_id>')

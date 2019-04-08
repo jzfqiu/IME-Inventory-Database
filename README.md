@@ -39,9 +39,13 @@ You are good to go.
 ## 3. Progress
 Backend:
 - [x] Add new entries, with any number of fields
-- [x] Display existing entries
-- [x] Display detailed entries
-- [ ] Search for keyword in any field
-- [ ] Edit existing entries
-- [ ] Delete existing entries
+- [x] Display existing documents
+- [x] Display detailed documents
+- [x] Simple, one keyword search
+- [x] Edit existing entries
+- [x] Delete existing entries
+- [ ] Advanced search: partial matching, multiple keywords...
 - [ ] Access management: only user with access code can make changes
+
+Frontend:  
+TO-DO
