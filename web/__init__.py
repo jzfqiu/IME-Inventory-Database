@@ -8,8 +8,6 @@ def create_app():
     app.config.from_object(config.Config)
 
     from . import db, edit, search
-    with app.app_context():
-        db.get_db()
     app.register_blueprint(edit.edit_bp)
     app.register_blueprint(search.search_bp)
 
@@ -17,6 +15,5 @@ def create_app():
     @app.route('/hello')
     def hello():
         return 'hello'
-
 
     return app

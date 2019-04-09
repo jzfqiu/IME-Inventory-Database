@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from web import db
+from web import db, config
 from bson.objectid import ObjectId
 
 
@@ -12,13 +12,13 @@ def search():
     keywords = ''
     collection = db.get_db()['inventory']
 
-    if request.method == 'POST':
+    if request.method == 'POST' and request.form['keywords']:
         # This search method queries everything into server and process using
         # backend script. It is ok with the amount of data we will need to
         # handle but will be very resource consume for larger database.
         # Consider implementing mongodb's text index search if possible.
-        keywords = request.form['keywords']
         batch = list(collection.find())
+        keywords = request.form['keywords']
         for item in batch:
             if keywords in item.keys() or keywords in item.values():
                 results.append(db.process_item(item, 5))
@@ -36,4 +36,9 @@ def document(obj_id):
     item = collection.find_one({'_id': ObjectId(obj_id)})
     result = db.process_item(item)
     return render_template('document.html', result=result)
+
+
+@search_bp.route('/about')
+def about():
+    return render_template('about.html')
 
