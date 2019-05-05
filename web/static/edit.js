@@ -31,7 +31,7 @@ $(document).ready(function(){
     // prevent submitting empty field
     $('#submitField').click(function(e){
         $('.field').each(function(){
-            if ($(this).val() == '') {
+            if ($(this).val() === '') {
                 alert('Field cannot be empty!');
                 e.preventDefault();
                 return false;

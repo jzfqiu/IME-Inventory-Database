@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from web import db, config
+from web import db
 from bson.objectid import ObjectId
 
 
@@ -41,4 +41,3 @@ def document(obj_id):
 @search_bp.route('/about')
 def about():
     return render_template('about.html')
-
