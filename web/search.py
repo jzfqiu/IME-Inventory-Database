@@ -17,25 +17,26 @@ def search():
         # backend script. It is ok with the amount of data we will need to
         # handle but will be very resource consume for larger database.
         # Consider implementing mongodb's text index search if possible.
-        batch = list(collection.find())
+        collection.create_index({"$**": "text"})
+        batch = [None]
         keywords = request.form['keywords']
         for item in batch:
             if keywords in item.keys() or keywords in item.values():
                 results.append(db.process_item(item, 5))
     else:
         batch = collection.find(None)
-        for item in batch:
-            results.append(db.process_item(item, 5))
+        # for item in batch:
+        #     results.append(db.process_item(item, 5))
 
-    return render_template('search.html', results=results, keywords=keywords)
+    return render_template('search.html', results=batch, keywords=keywords)
 
 
 @search_bp.route('/doc/<obj_id>')
 def document(obj_id):
     collection = db.get_db()['inventory']
     item = collection.find_one({'_id': ObjectId(obj_id)})
-    result = db.process_item(item)
-    return render_template('document.html', result=result)
+    # result = db.process_item(item)
+    return render_template('document.html', result=item)
 
 
 @search_bp.route('/about')

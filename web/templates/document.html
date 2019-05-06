@@ -6,13 +6,44 @@
 
 
 {% block content %}
-    <p><a href="{{ url_for('edit.edit', obj_id=result['id']) }}">Edit</a></p>
+    <p><a href="{{ url_for('edit.edit', obj_id=result['_id']) }}">Edit</a></p>
     <div>
         <ul>
             <li>{{ result['name'] }}</li>
-            {% for key_value in result['data'] %}
-            <li>{{ key_value[0] }} : {{ key_value[1] }}</li>
-            {% endfor %}
+
+            {% if result['key_features'] %}
+                <li>
+                    Key Features:
+                    <ul>
+                        {% for feature in result['key_features'] %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+
+            {% if result['key_applications'] %}
+                <li>
+                    Key Applications:
+                    <ul>
+                        {% for feature in result['key_applications'] %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+
+            {% if result['general_documentation'] %}
+                <li>
+                    <a href="{{ result['general_documentation']['href'] }}">
+                        {{ result['general_documentation']['name'] }}
+                    </a>
+                </li>
+            {% endif %}
+
+{#            {% for key_value in result['data'] %}#}
+{#            <li>{{ key_value[0] }} : {{ key_value[1] }}</li>#}
+{#            {% endfor %}#}
         </ul>
     </div>
 {% endblock %}

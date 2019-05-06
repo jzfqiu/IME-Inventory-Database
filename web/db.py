@@ -13,7 +13,7 @@ def get_db(db_name='db'):
     :param db_name: string, name of database
     :return: pymongo Database object
     """
-    if not 'db' in g:
+    if 'db' not in g:
         # connect to mongo db
         mongo_host = current_app.config['MONGO_HOST']
         mongo_port = int(current_app.config['MONGO_PORT'])
