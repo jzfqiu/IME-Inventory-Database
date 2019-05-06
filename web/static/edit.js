@@ -25,7 +25,6 @@ $(document).ready(function(){
             <div id="${newDivID}">
                 <input class="field" type="text" name="${newDivID}">
                 <button class="delFieldButton" type="button" id="${newDelID}">x</button>
-                <br>
             </div>
         `);
 
@@ -39,6 +38,7 @@ $(document).ready(function(){
         const targetId = $(this).attr('id'); // e.g. "delApplication"
         const targetDivID = targetId.substring(3); // e.g. "Application"
         $("#"+targetDivID.toLocaleLowerCase()).remove();
+        console.log("#"+targetDivID.toLocaleLowerCase())
     });
 
 

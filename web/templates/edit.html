@@ -20,19 +20,47 @@
 
         <div id="editFields">
             {% if obj_id == 'new' %}
-                Name:
-                <input type="text" name="name">
-                <br>
-
-                <div id="overview">
-                    Overview:
-                    <input class="field" type="text" name="overview">
-                </div>
-                <br>
+                Name: <input type="text" name="name"><br>
+                Overview: <input class="field" type="text" name="overview">
 
                 <div id="features">
-                    Key Features:
-                    <br>
+                    <p>Key Features: </p>
+                    <div id="feature1">
+                        <input class="field" type="text" name="feature1">
+                        <button class="delFieldButton" type="button" id="delFeature1">x</button>
+                        <br>
+                    </div>
+                </div>
+                <button type="button" class="addField" id="addFeature">+</button>
+
+                <div id="applications">
+                    <p>Key Applications:</p>
+                    <div id="application1">
+                        <input class="field" type="text" name="application1">
+                        <button class="delFieldButton" type="button" id="delApplication1">x</button>
+                    </div>
+                </div>
+                <button type="button" class="addField" id="addApplication">+</button>
+
+                <div id="tags">
+                    <p>Tags:</p>
+                    <div class="tag1">
+                        <input class="field" type="text" name="tag1">
+                        <button class="delFieldButton" type="button" id="delTag1">x</button>
+                    </div>
+                </div>
+                <button type="button" class="addField" id="addTag">+</button>
+
+                <div id="documentation">
+                    <p>Link to Documentation: <input class="field" type="text" name="documentation"></p>
+                </div>
+
+            {% else %}
+                <p>Name: <input type="text" name="name" value="{{ result['name'] }}"></p>
+                <p>Overview: <input class="field" type="text" name="overview" value="{{ result['overview'] }}"></p>
+
+                <div id="features">
+                    <p>Key Features: </p>
                     <div id="feature1">
                         <input class="field" type="text" name="feature1">
                         <button class="delFieldButton" type="button" id="delFeature1">x</button>
@@ -67,10 +95,6 @@
                     <input class="field" type="text" name="documentation"><br>
                 </div>
 
-            {% else %}
-                Name:
-                <input type="text" name="name" value="{{ result['name'] }}">
-{##}
 {#                {% for key_value in result['data'] %}#}
 {#                    <div id="editField{{ loop.index }}">#}
 {#                        <input class="field" type="text" name="key{{ loop.index }}" value="{{ key_value[0] }}">:#}
