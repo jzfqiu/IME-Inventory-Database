@@ -12,10 +12,21 @@ def search():
     collection = db.get_db()['inventory']
 
     if request.method == 'POST' and request.form['keywords']:
-        text_index = [("name", "text"),
-                      ("overview", "text"),
-                      ("key_features", "text")]
-        collection.create_index(text_index)
+
+        indexes = collection.index_information()
+        if "default_index" not in indexes:
+            text_index = [
+                ("tags", "text"),
+                ("name", "text"),
+                ("overview", "text"),
+                ("key_features", "text")
+            ]
+            text_index_weight = {
+                "text": 10,
+                "name": 5
+            }
+            collection.create_index(text_index, weights=text_index_weight, name="default_index")
+
         keywords = request.form['keywords']
         batch = collection.find({"$text": {"$search": keywords}})
 

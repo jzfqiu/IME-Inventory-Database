@@ -5,7 +5,7 @@ $(document).ready(function(){
     var fieldCounts = {
         "featureCounts" : 1,
         "applicationCounts" : 1,
-        "metaTagCounts" : 1
+        "tagCounts" : 1
     };
 
 

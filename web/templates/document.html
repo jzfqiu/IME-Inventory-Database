@@ -43,6 +43,10 @@
                 </li>
             {% endif %}
 
+            {% if result['tags'] %}
+                <li>Tags: {{ result['tags'] }}</li>
+            {% endif %}
+
 {#            {% for key_value in result['data'] %}#}
 {#            <li>{{ key_value[0] }} : {{ key_value[1] }}</li>#}
 {#            {% endfor %}#}
