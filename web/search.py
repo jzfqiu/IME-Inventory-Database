@@ -8,26 +8,19 @@ search_bp = Blueprint('search', __name__)
 
 @search_bp.route('/', methods=('GET', 'POST'))
 def search():
-    results = []
     keywords = ''
     collection = db.get_db()['inventory']
 
     if request.method == 'POST' and request.form['keywords']:
-        # This search method queries everything into server and process using
-        # backend script. It is ok with the amount of data we will need to
-        # handle but will be very resource consume for larger database.
-        # Consider implementing mongodb's text index search if possible.
-        collection.create_index({"$**": "text"})
-        batch = [None]
+        text_index = [("name", "text"),
+                      ("overview", "text"),
+                      ("key_features", "text")]
+        collection.create_index(text_index)
         keywords = request.form['keywords']
-        for item in batch:
-            if keywords in item.keys() or keywords in item.values():
-                results.append(db.process_item(item, 5))
+        batch = collection.find({"$text": {"$search": keywords}})
+
     else:
         batch = collection.find(None)
-        # for item in batch:
-        #     results.append(db.process_item(item, 5))
-
     return render_template('search.html', results=batch, keywords=keywords)
 
 
@@ -35,7 +28,6 @@ def search():
 def document(obj_id):
     collection = db.get_db()['inventory']
     item = collection.find_one({'_id': ObjectId(obj_id)})
-    # result = db.process_item(item)
     return render_template('document.html', result=item)
 
 

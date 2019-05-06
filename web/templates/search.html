@@ -22,10 +22,9 @@
     {% for result in results %}
     <div>
         <ul>
-            <li><a href="{{ url_for('search.document', obj_id=result['id']) }}">{{ result['name'] }}</a></li>
-            {% for data in result['data'] %}
-            <li>{{ data[0] }} : {{ data[1] }}</li>
-            {% endfor %}
+            <li><a href="{{ url_for('search.document', obj_id=result['_id']) }}">
+                {{ result['name'] }}
+            </a></li>
         </ul>
     </div>
     {% endfor %}

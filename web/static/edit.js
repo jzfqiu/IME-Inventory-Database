@@ -2,29 +2,43 @@
 
 $(document).ready(function(){
 
-    var fieldCounts = 3
+    var fieldCounts = {
+        "featureCounts" : 1,
+        "applicationCounts" : 1,
+        "metaTagCounts" : 1
+    };
 
 
     // control addField button behavior in /edit/..
-    $("#addField").click(function(){
-        fieldCounts++;
+    $(".addField").click(function(){
 
-        var new_field = '<div id="editField' + fieldCounts +
-        '"><input class="field" type="text" name="key' + fieldCounts +
-        '">: <input class="field" type="text" name="value'+ fieldCounts +
-        '"> <button class="delFieldButton" type="button" id="delField' + fieldCounts +
-        '">x</button><br></div>'
+        const targetId = $(this).attr('id'); // e.g. "addApplication"
+        const targetType = targetId.substring(3); // e.g. "Application"
 
-        $("#editFields").append(new_field);
+        const newCount = ++fieldCounts[targetType.toLocaleLowerCase()+'Counts'];
+
+        const newDivID = targetType.toLocaleLowerCase() + newCount;
+        const newDelID = 'del' + targetType + newCount;
+
+        // id="application2" name="application2"
+        const new_field = (`
+            <div id="${newDivID}">
+                <input class="field" type="text" name="${newDivID}">
+                <button class="delFieldButton" type="button" id="${newDelID}">x</button>
+                <br>
+            </div>
+        `);
+
+        $("#"+targetType.toLocaleLowerCase()+'s').append(new_field);
     });
 
 
     // 'on' method to make sure event handler is attached to dynamically created elements
-    // method attached to '#editField' because it's the closest static parent element
+    // method attached to '#editFields' because it's the closest static parent element
     $('#editFields').on('click', '.delFieldButton', function(){
-        var del_field_id = 'editField'+$(this).attr('id').charAt(8);
-        $('#'+del_field_id).remove();
-        fieldCounts--;
+        const targetId = $(this).attr('id'); // e.g. "delApplication"
+        const targetDivID = targetId.substring(3); // e.g. "Application"
+        $("#"+targetDivID.toLocaleLowerCase()).remove();
     });
 
 
@@ -35,7 +49,7 @@ $(document).ready(function(){
                 alert('Field cannot be empty!');
                 e.preventDefault();
                 return false;
-            };
+            }
         });
     });
 
