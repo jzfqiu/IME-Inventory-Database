@@ -1,8 +1,9 @@
 // edit.js
+// edit and new page script, controls adding/deleting edit fields
 
 $(document).ready(function(){
 
-    var fieldCounts = {
+    const fieldCounts = {
         "featureCounts" : 1,
         "applicationCounts" : 1,
         "tagCounts" : 1
@@ -44,7 +45,7 @@ $(document).ready(function(){
 
     // prevent submitting empty field
     $('#submitField').click(function(e){
-        $('.field').each(function(){
+        $('.required').each(function(){
             if ($(this).val() === '') {
                 alert('Field cannot be empty!');
                 e.preventDefault();

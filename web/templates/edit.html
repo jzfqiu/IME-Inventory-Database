@@ -20,15 +20,15 @@
 
         <div id="editFields">
             {% if obj_id == 'new' %}
-                Name: <input type="text" name="name"><br>
-                Overview: <input class="field" type="text" name="overview">
+
+                Name: <input class="field required" type="text" name="name"><br>
+                Overview: <input class="field required" type="text" name="overview">
 
                 <div id="features">
                     <p>Key Features: </p>
                     <div id="feature1">
                         <input class="field" type="text" name="feature1">
                         <button class="delFieldButton" type="button" id="delFeature1">x</button>
-                        <br>
                     </div>
                 </div>
                 <button type="button" class="addField" id="addFeature">+</button>
@@ -56,53 +56,72 @@
                 </div>
 
             {% else %}
-                <p>Name: <input type="text" name="name" value="{{ result['name'] }}"></p>
-                <p>Overview: <input class="field" type="text" name="overview" value="{{ result['overview'] }}"></p>
+
+                <p>Name: <input class="field required" type="text" name="name" value="{{ result['name'] }}"></p>
+                <p>Overview: <input class="field required" type="text" name="overview" value="{{ result['overview'] }}"></p>
 
                 <div id="features">
                     <p>Key Features: </p>
-                    <div id="feature1">
-                        <input class="field" type="text" name="feature1">
-                        <button class="delFieldButton" type="button" id="delFeature1">x</button>
-                        <br>
-                    </div>
+                    {% if result['key_applications'] %}
+                        {% for feature in result['key_features'] %}
+                            <div id="feature{{ loop.index }}">
+                                <input class="field" type="text" name="feature{{ loop.index }}" value="{{ feature }}">
+                                <button class="delFieldButton" type="button" id="delFeature{{ loop.index }}">x</button>
+                                <br>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div id="feature1">
+                            <input class="field" type="text" name="feature1">
+                            <button class="delFieldButton" type="button" id="delFeature1">x</button>
+                        </div>
+                    {% endif %}
                 </div>
                 <button type="button" class="addField" id="addFeature">+</button>
 
                 <div id="applications">
-                    Key Applications:
-                    <br>
-                    <div id="application1">
-                        <input class="field" type="text" name="application1">
-                        <button class="delFieldButton" type="button" id="delApplication1">x</button>
-                        <br>
-                    </div>
+                    <p>Key Applications:</p>
+                    {% if result['key_applications'] %}
+                        {% for application in result['key_applications'] %}
+                            <div id="application{{ loop.index }}">
+                                <input class="field" type="text" name="application{{ loop.index }}"
+                                       value="{{ application }}">
+                                <button class="delFieldButton" type="button" id="delApplication{{ loop.index }}">x
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div id="application1">
+                            <input class="field" type="text" name="application1">
+                            <button class="delFieldButton" type="button" id="delApplication1">x</button>
+                        </div>
+                    {% endif %}
                 </div>
                 <button type="button" class="addField" id="addApplication">+</button>
 
+
                 <div id="tags">
-                    Tags:
-                    <div class="tag1">
-                        <input class="field" type="text" name="tag1">
-                        <button class="delFieldButton" type="button" id="delTag1">x</button>
-                        <br>
-                    </div>
+                    <p>Tags:</p>
+                    {% if result['tags'] %}
+                        {% for tag in result['tags'] %}
+                            <div class="tag{{ loop.index }}">
+                                <input class="field" type="text" name="tag{{ loop.index }}" value="{{ tag }}">
+                                <button class="delFieldButton" type="button" id="delTag{{ loop.index }}">x</button>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div id="application1">
+                            <input class="field" type="text" name="application1">
+                            <button class="delFieldButton" type="button" id="delApplication1">x</button>
+                        </div>
+                    {% endif %}
                 </div>
                 <button type="button" class="addField" id="addTag">+</button>
 
                 <div id="documentation">
-                    Link to Documentation:
-                    <input class="field" type="text" name="documentation"><br>
+                    <p>Link to Documentation: <input class="field" type="text" name="documentation" value=""></p>
                 </div>
 
-{#                {% for key_value in result['data'] %}#}
-{#                    <div id="editField{{ loop.index }}">#}
-{#                        <input class="field" type="text" name="key{{ loop.index }}" value="{{ key_value[0] }}">:#}
-{#                        <input class="field" type="text" name="value{{ loop.index }}" value="{{ key_value[1] }}">#}
-{#                        <button class="delFieldButton" type="button" id="delField{{ loop.index }}">x</button>#}
-{#                        <br>#}
-{#                    </div>#}
-{#                {% endfor %}#}
             {% endif %}
         </div>
         <br>
