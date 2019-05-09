@@ -104,15 +104,15 @@
                     <p>Tags:</p>
                     {% if result['tags'] %}
                         {% for tag in result['tags'] %}
-                            <div class="tag{{ loop.index }}">
+                            <div id="tag{{ loop.index }}">
                                 <input class="field" type="text" name="tag{{ loop.index }}" value="{{ tag }}">
                                 <button class="delFieldButton" type="button" id="delTag{{ loop.index }}">x</button>
                             </div>
                         {% endfor %}
                     {% else %}
-                        <div id="application1">
-                            <input class="field" type="text" name="application1">
-                            <button class="delFieldButton" type="button" id="delApplication1">x</button>
+                        <div id="tag1">
+                            <input class="field" type="text" name="tag1">
+                            <button class="delFieldButton" type="button" id="delTag1">x</button>
                         </div>
                     {% endif %}
                 </div>
