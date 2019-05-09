@@ -2,7 +2,6 @@ from flask import Blueprint, render_template, request
 from web import db
 from bson.objectid import ObjectId
 
-
 search_bp = Blueprint('search', __name__)
 
 
@@ -10,29 +9,40 @@ search_bp = Blueprint('search', __name__)
 def search():
     keywords = ''
     collection = db.get_db()['inventory']
+    index_type = 'all'
 
     if request.method == 'POST' and request.form['keywords']:
 
-        indexes = collection.index_information()
-        if "default_index" not in indexes:
-            text_index = [
-                ("tags", "text"),
-                ("name", "text"),
-                ("overview", "text"),
-                ("key_features", "text")
-            ]
-            text_index_weight = {
-                "text": 10,
-                "name": 5
-            }
-            collection.create_index(text_index, weights=text_index_weight, name="default_index")
+        index_type = request.form['type']
+
+        # dropping old index and creating new one for each search
+        collection.drop_index("text_index")
+
+        # all possible options for index and weights
+        text_indexes = dict(
+            all=[("tags", "text"), ("name", "text"), ("overview", "text"), ("key_features", "text")],
+            name=[("name", "text")],
+            features=[("key_features", "text")],
+            applications=[("key_applications", "text")],
+            tags=[("tags", "text")]
+        )
+        text_index_weights = dict(
+            all={"tags": 10, "name": 5},
+            name={"name": 1},
+            features={"features": 1},
+            applications={"applications": 1},
+            tags={"tags": 1},
+        )
+        collection.create_index(text_indexes[index_type],
+                                weights=text_index_weights[index_type],
+                                name="text_index")
 
         keywords = request.form['keywords']
         batch = collection.find({"$text": {"$search": keywords}})
 
     else:
         batch = collection.find(None)
-    return render_template('search.html', results=batch, keywords=keywords)
+    return render_template('search.html', results=batch, keywords=keywords, type=index_type)
 
 
 @search_bp.route('/doc/<obj_id>')

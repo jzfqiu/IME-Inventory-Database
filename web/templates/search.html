@@ -1,37 +1,46 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Search{% endblock %}</h1>
+    <h1>{% block title %}Search{% endblock %}</h1>
 {% endblock %}
 
 {% block script %}
-<script src="{{ url_for('static', filename='search.js') }}"></script>
+    <script src="{{ url_for('static', filename='search.js') }}"></script>
 {% endblock %}
 
 {% block content %}
-<p><a href="{{ url_for('edit.new') }}">New</a></p>
+    <p><a href="{{ url_for('edit.new') }}">New</a></p>
 
-<form method="post">
-    <label for="search_box">Search</label>
-    <input name="keywords" id="search_box" value="{{ keywords }}">
-    <input type="submit" id="searchSubmit" value="Search">
-</form>
+    <!-- preserve selection after re-rendering template:
+            type selected before re-render passed from backend -->
+    <select name="type" form="search_form">
+        <option value="all" {% if type == 'all' %}selected{% endif %} >All</option>
+        <option value="name" {% if type == 'name' %}selected{% endif %} >Name</option>
+        <option value="features" {% if type == 'features' %}selected{% endif %} >Features</option>
+        <option value="applications" {% if type == 'applications' %}selected{% endif %} >Applications</option>
+        <option value="tags" {% if type == 'tags' %}selected{% endif %} >Tags</option>
+    </select>
+    <form method="post" id="search_form">
+        <label for="search_box">Search</label>
+        <input name="keywords" id="search_box" value="{{ keywords }}">
+        <input type="submit" id="searchSubmit" value="Search">
+    </form>
 
-<section>
-    {% if results %}
-    {% for result in results %}
-    <div>
-        <ul>
-            <li><a href="{{ url_for('search.document', obj_id=result['_id']) }}">
-                {{ result['name'] }}
-            </a></li>
-        </ul>
-    </div>
-    {% endfor %}
-    {% else %}
-    <div>No result found</div>
-    {% endif %}
+    <section>
+        {% if results %}
+            {% for result in results %}
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('search.document', obj_id=result['_id']) }}">
+                            {{ result['name'] }}
+                        </a></li>
+                    </ul>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div>No result found</div>
+        {% endif %}
 
 
-</section>
+    </section>
 {% endblock %}
