@@ -3,10 +3,11 @@ from web import db
 from bson.objectid import ObjectId
 import os
 import uuid
+import boto3
 
 edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
 
-UPLOAD_FOLDER = 'user_uploads'
+UPLOAD_FOLDER = 'web/user_uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -19,10 +20,14 @@ def new():
             file = request.files['image']
             if file and allowed_file(file.filename):
                 filename = uuid.uuid4().hex + '.' + file.filename.rsplit('.', 1)[1].lower()
-                new_doc['filename'] = filename
-                full_filepath = os.path.join(UPLOAD_FOLDER, filename)
-                with open(full_filepath, 'w+') as f:
-                    file.save(f)
+                new_doc['image_full'] = filename
+                if current_app.config['USE_AWS_SERVICE']:
+                    s3 = boto3.resource('s3')
+                    data = file.read()
+                    s3.Bucket(current_app.config['AWS_BUCKET_NAME']).put_object(Key=filename, Body=data)
+                else:
+                    full_filepath = os.path.join(UPLOAD_FOLDER, filename)
+                    file.save(full_filepath)
         collection.insert_one(new_doc)
         return redirect(url_for('search.search'))
     else:

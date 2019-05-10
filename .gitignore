@@ -5,6 +5,9 @@ production.yml
 production.env
 development.env
 
+web/user_uploads/*
+!web/user_uploads/.keep
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
