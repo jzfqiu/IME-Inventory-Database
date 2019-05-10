@@ -3,6 +3,7 @@
 db/
 production.yml
 production.env
+development.env
 
 
 # Byte-compiled / optimized / DLL files

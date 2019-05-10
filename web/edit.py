@@ -1,8 +1,13 @@
-from flask import Blueprint, render_template, request, url_for, redirect
+from flask import Blueprint, render_template, request, url_for, redirect, current_app
 from web import db
 from bson.objectid import ObjectId
+import os
+import uuid
 
 edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
+
+UPLOAD_FOLDER = 'user_uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
 @edit_bp.route('/new', methods=['GET', 'POST'])
@@ -10,6 +15,14 @@ def new():
     if request.method == 'POST':
         collection = db.get_db()['inventory']
         new_doc = process_form(request.form)
+        if 'image' in request.files:
+            file = request.files['image']
+            if file and allowed_file(file.filename):
+                filename = uuid.uuid4().hex + '.' + file.filename.rsplit('.', 1)[1].lower()
+                new_doc['filename'] = filename
+                full_filepath = os.path.join(UPLOAD_FOLDER, filename)
+                with open(full_filepath, 'w+') as f:
+                    file.save(f)
         collection.insert_one(new_doc)
         return redirect(url_for('search.search'))
     else:
@@ -35,26 +48,31 @@ def delete(obj_id):
     return redirect(url_for('search.search'))
 
 
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
 def process_form(raw_form):
-    new_doc = {
-        'name': None,
-        'overview': None,
-        'key_applications': [],
-        'key_features': [],
-        'tags': []
-    }
+    new_doc = {}
     for key in raw_form.keys():
         if key == 'name':
             new_doc['name'] = raw_form[key]
         elif key == 'overview':
             new_doc['overview'] = raw_form[key]
         elif 'feature' in key:
-            new_doc['key_features'].append(raw_form[key])
+            create_or_append(new_doc, 'key_features', raw_form[key])
         elif 'application' in key:
-            new_doc['key_applications'].append(raw_form[key])
+            create_or_append(new_doc, 'key_applications', raw_form[key])
         elif 'tag' in key:
-            new_doc['tags'].append(raw_form[key])
+            create_or_append(new_doc, 'tags', raw_form[key])
         elif key is 'documentation':
-            new_doc['documentation'].append(raw_form[key])
+            new_doc['documentation'] = raw_form[key]
 
     return new_doc
+
+
+def create_or_append(d, key, val):
+    try:
+        d[key].append(val)
+    except KeyError:
+        d[key] = [val]

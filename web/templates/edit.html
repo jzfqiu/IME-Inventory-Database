@@ -16,7 +16,7 @@
         <p><a href="{{ url_for('edit.delete', obj_id=obj_id) }}">Delete</a></p>
     {% endif %}
 
-    <form action="/edit/{{ obj_id }}" method="post">
+    <form enctype="multipart/form-data" action="/edit/{{ obj_id }}" method="post">
 
         <div id="editFields">
             {% if obj_id == 'new' %}
@@ -44,7 +44,7 @@
 
                 <div id="tags">
                     <p>Tags:</p>
-                    <div class="tag1">
+                    <div id="tag1">
                         <input class="field" type="text" name="tag1">
                         <button class="delFieldButton" type="button" id="delTag1">x</button>
                     </div>
@@ -53,6 +53,11 @@
 
                 <div id="documentation">
                     <p>Link to Documentation: <input class="field" type="text" name="documentation"></p>
+                </div>
+
+                <div id="image">
+                    <p>Upload image (gif, jpg, png, jpeg)</p>
+                    <input type="file" name="image" accept="image/*">
                 </div>
 
             {% else %}
@@ -122,10 +127,14 @@
                     <p>Link to Documentation: <input class="field" type="text" name="documentation" value=""></p>
                 </div>
 
+                <div id="image">
+                    <input type="file" name="image">
+                </div>
+
             {% endif %}
         </div>
         <br>
 
-        <input type="submit" id="submitField" value="submit">
+        <input type="submit" id="submitField" value="Submit">
     </form>
 {% endblock %}
