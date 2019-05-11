@@ -5,8 +5,10 @@ production.yml
 production.env
 development.env
 
-web/user_uploads/*
-!web/user_uploads/.keep
+web/user_uploads/full_images/*
+!web/user_uploads/full_images/.keep
+web/user_uploads/thumbnails/*
+!web/user_uploads/thumbnails/.keep
 
 
 # Byte-compiled / optimized / DLL files

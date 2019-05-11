@@ -16,6 +16,7 @@ def search():
         index_type = request.form['type']
 
         # dropping old index and creating new one for each search
+        # (mongodb allows only 1 text index per collection)
         collection.drop_index("text_index")
 
         # all possible options for index and weights

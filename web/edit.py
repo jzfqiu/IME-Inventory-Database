@@ -3,11 +3,14 @@ from web import db
 from bson.objectid import ObjectId
 import os
 import uuid
-import boto3
+from PIL import Image
 
 edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
 
-UPLOAD_FOLDER = 'web/user_uploads'
+# TODO: move these global variables to configuration file
+UPLOAD_ROOT = 'web/user_uploads'
+FULL_IMAGE_PATH = os.path.join(UPLOAD_ROOT, 'full_images')
+THUMBNAILS_PATH = os.path.join(UPLOAD_ROOT, 'thumbnails')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -16,18 +19,24 @@ def new():
     if request.method == 'POST':
         collection = db.get_db()['inventory']
         new_doc = process_form(request.form)
+
+        # if upload input is filled:
         if 'image' in request.files:
             file = request.files['image']
+            # if file is real with allowed extension
             if file and allowed_file(file.filename):
                 filename = uuid.uuid4().hex + '.' + file.filename.rsplit('.', 1)[1].lower()
                 new_doc['image_full'] = filename
-                if current_app.config['USE_AWS_SERVICE']:
-                    s3 = boto3.resource('s3')
-                    data = file.read()
-                    s3.Bucket(current_app.config['AWS_BUCKET_NAME']).put_object(Key=filename, Body=data)
-                else:
-                    full_filepath = os.path.join(UPLOAD_FOLDER, filename)
-                    file.save(full_filepath)
+                # store full image
+                full_image_path = os.path.join(FULL_IMAGE_PATH, filename)
+                file.save(full_image_path)
+                # store thumbnails
+                thumbnail_path = os.path.join(THUMBNAILS_PATH, filename)
+                im = Image.open(file)
+                im.thumbnail((128, 128))
+                im.save(thumbnail_path)
+
+
         collection.insert_one(new_doc)
         return redirect(url_for('search.search'))
     else:

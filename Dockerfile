@@ -1,5 +1,5 @@
 #Build an image starting with the Python 3.4 image.
-FROM python:3.7-alpine
+FROM python:3.7-slim
 
 # Add the current directory into the path /code in the image.
 ADD . /code
@@ -8,7 +8,8 @@ ADD . /code
 WORKDIR /code
 
 # Install requirements
-RUN pip install -r requirements.txt
+RUN pip install -U pip
+RUN pip3 install -r requirements.txt
 
 # Use port 8008 to communicate with outside world
 EXPOSE 8008
