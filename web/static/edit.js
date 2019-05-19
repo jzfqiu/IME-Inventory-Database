@@ -43,13 +43,16 @@ $(document).ready(function(){
     });
 
 
-    // clear upload
+    // clear upload by adding a hidden input telling backend to clean up -> process_image()
     $('#resetImage').click(function () {
-        $('#imageField').val('');
+        $('#imagePreview').remove();
+        $('#image').append(`
+            <input name="clearImage" value="1" type="hidden">
+        `)
     });
 
 
-    // prevent submitting empty field
+    // prevent empty submission for required fields
     $('#submitField').click(function(e){
         $('.required').each(function(){
             if ($(this).val() === '') {

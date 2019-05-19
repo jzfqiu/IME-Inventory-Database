@@ -130,9 +130,15 @@
 
                 <div id="image">
                     <p>Upload image (gif, jpg, png, jpeg)</p>
+                    {% if result['image'] %}
+                        <div id="imagePreview">
+                            <p>Uploaded: {{ result['image'] }}</p>
+                            <img src="{{ url_for('static', filename='user_uploads/thumbnails/'+result['image']) }}"
+                                 alt="{{ result['image'] }}">
+                        </div>
+                    {% endif %}
                     <input type="file" id="imageField" name="image" accept="image/*"
-                           {% if result['image'] %} value="{{ result['image'] }}" {% endif %}
-                    >
+                           {% if result['image'] %} value="{{ result['image'] }}" {% endif %}>
                     <button type="button" id="resetImage">Clear Upload</button>
                 </div>
 

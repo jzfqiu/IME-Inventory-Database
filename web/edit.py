@@ -32,6 +32,9 @@ def edit(obj_id):
     item = collection.find_one({'_id': ObjectId(obj_id)})
     if request.method == 'POST':
         new_doc = process_form(request.form)
+        if 'image' in item:
+            new_doc['image'] = item['image']
+        process_image(request, new_doc)
         collection.find_one_and_replace({'_id': ObjectId(obj_id)}, new_doc)
         return redirect(url_for('search.document', obj_id=obj_id))
     else:
@@ -68,6 +71,13 @@ def process_form(raw_form):
 
 
 def process_image(req, new_doc):
+    # if clearImage button is clicked
+    if 'clearImage' in req.form:
+        # modify database file
+        to_be_deleted = new_doc.pop('image')
+        # delete local file
+        os.remove(os.path.join(FULL_IMAGE_PATH, to_be_deleted))
+        os.remove(os.path.join(THUMBNAILS_PATH, to_be_deleted))
     # if upload input is filled:
     if 'image' in req.files:
         file = req.files['image']
@@ -78,7 +88,7 @@ def process_image(req, new_doc):
             # store full image
             full_image_path = os.path.join(FULL_IMAGE_PATH, filename)
             file.save(full_image_path)
-            # store thumbnails
+            # shrink image using PIL and store thumbnails
             thumbnail_path = os.path.join(THUMBNAILS_PATH, filename)
             im = Image.open(file)
             im.thumbnail((128, 128))
