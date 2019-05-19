@@ -57,7 +57,8 @@
 
                 <div id="image">
                     <p>Upload image (gif, jpg, png, jpeg)</p>
-                    <input type="file" name="image" accept="image/*">
+                    <input type="file" id="imageField" name="image" accept="image/*">
+                    <button type="button" id="resetImage">Clear Upload</button>
                 </div>
 
             {% else %}
@@ -128,7 +129,11 @@
                 </div>
 
                 <div id="image">
-                    <input type="file" name="image">
+                    <p>Upload image (gif, jpg, png, jpeg)</p>
+                    <input type="file" id="imageField" name="image" accept="image/*"
+                           {% if result['image'] %} value="{{ result['image'] }}" {% endif %}
+                    >
+                    <button type="button" id="resetImage">Clear Upload</button>
                 </div>
 
             {% endif %}

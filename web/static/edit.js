@@ -43,6 +43,12 @@ $(document).ready(function(){
     });
 
 
+    // clear upload
+    $('#resetImage').click(function () {
+        $('#imageField').val('');
+    });
+
+
     // prevent submitting empty field
     $('#submitField').click(function(e){
         $('.required').each(function(){

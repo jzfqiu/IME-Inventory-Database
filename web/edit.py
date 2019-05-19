@@ -19,24 +19,7 @@ def new():
     if request.method == 'POST':
         collection = db.get_db()['inventory']
         new_doc = process_form(request.form)
-
-        # if upload input is filled:
-        if 'image' in request.files:
-            file = request.files['image']
-            # if file is real with allowed extension
-            if file and allowed_file(file.filename):
-                filename = uuid.uuid4().hex + '.' + file.filename.rsplit('.', 1)[1].lower()
-                new_doc['image_full'] = filename
-                # store full image
-                full_image_path = os.path.join(FULL_IMAGE_PATH, filename)
-                file.save(full_image_path)
-                # store thumbnails
-                thumbnail_path = os.path.join(THUMBNAILS_PATH, filename)
-                im = Image.open(file)
-                im.thumbnail((128, 128))
-                im.save(thumbnail_path)
-
-
+        process_image(request, new_doc)
         collection.insert_one(new_doc)
         return redirect(url_for('search.search'))
     else:
@@ -81,8 +64,25 @@ def process_form(raw_form):
             create_or_append(new_doc, 'tags', raw_form[key])
         elif key is 'documentation':
             new_doc['documentation'] = raw_form[key]
-
     return new_doc
+
+
+def process_image(req, new_doc):
+    # if upload input is filled:
+    if 'image' in req.files:
+        file = req.files['image']
+        # if file is real with allowed extension
+        if file and allowed_file(file.filename):
+            filename = uuid.uuid4().hex + '.' + file.filename.rsplit('.', 1)[1].lower()
+            new_doc['image'] = filename
+            # store full image
+            full_image_path = os.path.join(FULL_IMAGE_PATH, filename)
+            file.save(full_image_path)
+            # store thumbnails
+            thumbnail_path = os.path.join(THUMBNAILS_PATH, filename)
+            im = Image.open(file)
+            im.thumbnail((128, 128))
+            im.save(thumbnail_path)
 
 
 def create_or_append(d, key, val):

@@ -47,6 +47,10 @@
                 <li>Tags: {{ result['tags'] }}</li>
             {% endif %}
 
+            {% if result['image'] %}
+                <img src="{{ url_for('static', filename='user_uploads/full_images/'+result['image']) }}" alt="{{ result['name'] }}">
+            {% endif %}
+
 {#            {% for key_value in result['data'] %}#}
 {#            <li>{{ key_value[0] }} : {{ key_value[1] }}</li>#}
 {#            {% endfor %}#}
