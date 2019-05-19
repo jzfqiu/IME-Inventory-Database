@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, current_app
 from web import db
 from bson.objectid import ObjectId
 
@@ -51,6 +51,12 @@ def document(obj_id):
     collection = db.get_db()['inventory']
     item = collection.find_one({'_id': ObjectId(obj_id)})
     return render_template('document.html', result=item)
+
+
+# mask full image url when serving
+@search_bp.route('/doc/full_images/<image>')
+def full_images(image):
+    return current_app.send_static_file('user_uploads/full_images/'+image)
 
 
 @search_bp.route('/about')

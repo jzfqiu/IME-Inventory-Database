@@ -8,7 +8,7 @@ from PIL import Image
 edit_bp = Blueprint('edit', __name__, url_prefix='/edit')
 
 # TODO: move these global variables to configuration file
-UPLOAD_ROOT = 'web/user_uploads'
+UPLOAD_ROOT = 'web/static/user_uploads'
 FULL_IMAGE_PATH = os.path.join(UPLOAD_ROOT, 'full_images')
 THUMBNAILS_PATH = os.path.join(UPLOAD_ROOT, 'thumbnails')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}

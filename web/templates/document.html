@@ -48,7 +48,10 @@
             {% endif %}
 
             {% if result['image'] %}
-                <img src="{{ url_for('static', filename='user_uploads/full_images/'+result['image']) }}" alt="{{ result['name'] }}">
+                <a href="{{ url_for('search.full_images', image=result['image']) }}">
+                    <img src="{{ url_for('static', filename='user_uploads/thumbnails/'+result['image']) }}"
+                         alt="{{ result['name'] }}">
+                </a>
             {% endif %}
 
 {#            {% for key_value in result['data'] %}#}
