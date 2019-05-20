@@ -13,7 +13,7 @@ def search():
     index_type = 'all'
 
     if request.method == 'POST' and request.form['keywords']:
-        index_type = request.form['searchType']
+        index_type = request.form['search_type']
         keywords = request.form['keywords']
         batch = collection.find({"$text": {"$search": keywords}})
 
@@ -23,11 +23,14 @@ def search():
 
 
 # ajax: suggestions for partial keywords
-@search_bp.route('/ajax/search_bar_suggestion/<keywords>')
-def search_bar_suggestion(keywords):
+@search_bp.route('/ajax/search_bar_suggestion/<index>/<keywords>')
+def search_bar_suggestion(keywords, index):
     collection = db.get_db()['inventory']
-    batch = collection.find({"$text": {"$search": keywords}}, limit=5)
-    return json.dumps({'suggestions': [result['name'] for result in batch]}), 200, {'ContentType': 'application/json'}
+    if index == 'all':
+        index = 'name'
+    batch = collection.find({index: {'$regex': keywords, '$options': 'i'}}, limit=5)
+    return json.dumps([result['name'] for result in batch])
+    # return json.dumps([result['name'] for result in batch]), 200, {'ContentType': 'application/json'}
 
 
 # ajax: change search type
@@ -43,15 +46,15 @@ def change_search_filter(search_type):
     text_indexes = dict(
         all=[("tags", "text"), ("name", "text"), ("overview", "text"), ("key_features", "text")],
         name=[("name", "text")],
-        features=[("key_features", "text")],
-        applications=[("key_applications", "text")],
+        key_features=[("key_features", "text")],
+        key_applications=[("key_applications", "text")],
         tags=[("tags", "text")]
     )
     text_index_weights = dict(
         all={"tags": 10, "name": 5},
         name={"name": 1},
-        features={"features": 1},
-        applications={"applications": 1},
+        key_features={"key_features": 1},
+        key_applications={"key_applications": 1},
         tags={"tags": 1},
     )
     collection.create_index(text_indexes[search_type],

@@ -13,18 +13,21 @@
 
     <!-- preserve selection after re-rendering template:
             type selected before re-render passed from backend -->
-    <select name="searchType" id="searchType" form="search_form">
+    <label for="searchType" hidden>Select search type</label>
+    <select name="search_type" id="searchType" form="searchForm">
         <option value="all" {% if searchType == 'all' %}selected{% endif %} >All</option>
         <option value="name" {% if searchType == 'name' %}selected{% endif %} >Name</option>
-        <option value="features" {% if searchType == 'features' %}selected{% endif %} >Features</option>
-        <option value="applications" {% if searchType == 'applications' %}selected{% endif %} >Applications</option>
+        <option value="key_features" {% if searchType == 'key_features' %}selected{% endif %} >Features</option>
+        <option value="key_applications" {% if searchType == 'key_applications' %}selected{% endif %} >Applications</option>
         <option value="tags" {% if searchType == 'tags' %}selected{% endif %} >Tags</option>
     </select>
-    <form method="post" id="search_form">
-        <label for="search_box">Search</label>
-        <input name="keywords" id="search_box" value="{{ keywords }}">
+    <form method="post" id="searchForm">
+        <label for="searchBox">Search</label>
+        <input name="keywords" id="searchBox" value="{{ keywords }}">
         <input type="submit" id="searchSubmit" value="Search">
     </form>
+    <div id="suggestions">
+    </div>
 
     <section>
         {% if results %}
