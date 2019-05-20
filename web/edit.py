@@ -44,7 +44,12 @@ def edit(obj_id):
 @edit_bp.route('/del/<obj_id>')
 def delete(obj_id):
     collection = db.get_db()['inventory']
-    collection.delete_one({'_id': ObjectId(obj_id)})
+    deleted_doc = collection.find_one_and_delete({'_id': ObjectId(obj_id)})
+    if 'image' in deleted_doc:
+        to_be_deleted = deleted_doc['image']
+        # delete local file
+        os.remove(os.path.join(FULL_IMAGE_PATH, to_be_deleted))
+        os.remove(os.path.join(THUMBNAILS_PATH, to_be_deleted))
     return redirect(url_for('search.search'))
 
 
@@ -96,7 +101,8 @@ def process_image(req, new_doc):
 
 
 def create_or_append(d, key, val):
-    try:
-        d[key].append(val)
-    except KeyError:
-        d[key] = [val]
+    if val:
+        try:
+            d[key].append(val)
+        except KeyError:
+            d[key] = [val]
