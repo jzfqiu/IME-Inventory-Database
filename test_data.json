@@ -1,1 +1,2589 @@
-[{"name": "3C Technical GCA AutoStep 200 5x Reduction Stepper", "overview": "The GCA AutoStep 200 Stepper is an I-line 5x reduction stepper with repeat exposure capabilities. It is capable of submicron resolution and high accuracy alignment.", "key_features": ["21 mm dia exposure field (up to 14.8 X 14.8 mm square)", "Can achieve resolution < 600 nm", "200 mm wafer stage", "Stage precision < 100 nm", "Accommodates wafer sizes from 1 cm pieces to 6\u201d wafers", "Automatic reticle transfer alignment through RMS (reticle management system)", "Exposure wavelength of 365 nm"], "key_applications": ["MEMS", "VLSI"]}, {"name": "AJA ATC 2200 UHV Sputtering System", "overview": "The AJA ATC 2200 Sputtering System is a PVD tool which deposits films on a substrate by a method known as sputtering. Magnetron sputtering uses accelerated, positively charged ions from a plasma source to deposit films with an increased deposition rate and more controlled electron bombardment than evident in other sputtering systems (such as diode sputtering).", "key_features": ["330-XP (UHV) magnetron sputtering sources in con-focal orientation", "Pneumatic source shutters", "Integral gas injection to source head for reactive sputtering and low pressure operation", "In-situ tilt gimbals with locking UHV position indicator. Allows source head angle adjustment without breaking vacuum", "6\u201d CF viewports", "Substrates to 6\u201d", "Radiant heating to 800 C with quartz halogen lamps", "DC and RF generators", "Kaufman KDC 40 4cm Gridded Ion Source", "Phase II-J Computer Control System"], "key_applications": ["Corrosion resistant coatings", "Low friction coatings", "Hard, wear resistant coatings", "Coatings with specific electrical and optical properties"], "general_documentation": {"name": "AJA Flagship Series Sputtering Systems", "href": "http://www.ajaint.com/atc-series-sputtering-systems.html"}}, {"name": "AJA ATC Orion 8 UHV Sputtering System", "overview": "The AJA ATC Orion 8 UVH Sputtering System is a PVD tool which deposits films on a substrate using magnetron sputtering. Magnetron sputtering uses accelerated, positively charged ions from a plasma source to deposit films with an increased deposition rate and more controlled election bombardment than evident in other sputtering systems (such as diode sputtering).\u00a0", "key_features": ["Stiletto (HV) magnetron\u00a0sputtering source", "A330-XP-O (UHV) magnetron sputtering source", "Turbo-pumped vacuum load lock with 6 position cassette", "Substrates to 6\u201d", "Temperatures to 1000 degrees celsius", "DC and RF generators", "Up to 8 2\u201d sputter sources or 5 3\u201d sputter sources", "Phase II-J Computer Control System"], "key_applications": ["Corrosion resistant coatings", "Low friction coatings", "Hard, wear resistant coatings", "Coatings with specific electrical and optical properties"], "general_documentation": {"name": "AJA ATC-Orion Series Sputtering Systems", "href": "http://www.ajaint.com/atc-orion-series-sputtering-systems.html"}}, {"name": "Angstrom EvoVac Electron Beam Evaporator", "overview": "The Angstrom EvoVac Electron Beam Evaporator is a PVD tool which evaporates high melting point materials, such as refractory metals and ceramics, using an electron beam. The EvoVac provides multiple sources of flexibility in its deposition system\u00a0including\u00a0resistive thermal evaporation, ion assisted\u00a0and sputter deposition, as well as principal electron beam\u00a0evaporation.", "key_features": ["6 pocket E-beam source", "12 cc crucibles", "Programmable 2-axis sweep controller", "Wafers to 6\u201d", "Temperatures to 400 \u00b0C", "High deposition rate", "Advanced multi-layer deposition control for precise layer monitoring", "Sensor guided co-deposition to prevent interference from adjacent source material", "Pneumatic airline filter", "Substrate heating, cooling, and biasing", "Long source to substrate distances"], "key_applications": ["Electronic and Optical Semiconductor films", "Wear resistant and thermal barrier coatings", "Hard coatings for tools"], "general_documentation": {"name": "Angstrom EvoVac Electron Beam Evaporator", "href": "http://angstromengineering.com/products/evovac/"}}, {"name": "Angstrom Nexdep Thermal E-Beam Evaporator", "overview": "The Angstrom Nexdep Thermal E-Beam Evaporator is a PVD tool that offers E-Beam and Thermal evaporation for a variety of high melting point substrates. The NexDep can be configured for a variety of PVD processes including resistive thermal evaporation, sputter and ion assisted deposition, and principal E-Beam and Thermal evaporation capacities.\u00a0", "key_features": ["4 x 22 cc multi-pocket E-Beam", "16\" \u00d7 16\" \u00d7 28\" High aluminum high vacuum box chamber", "Additional height for e\u2010beam evaporation", "Glass bead blast finish on chamber surfaces", "One set removable stainless steel debris shields", "Hinged chamber front door for easy internal access", null, "Large viewport offset to reduce material deposition", "3 kW power supply", "Sweep controller", "Single resistive evaporation source", "PC control station with fully automated sequences and software for deposition control", "Combined co-deposition processing", "Multi-layer deposition control", "Configured for AI / AU / CR / NI / Ti / Pt"], "key_applications": ["Electronic and Optical Semiconductor films", "Wear resistant and thermal barrier coatings", "Hard coatings for tools"], "general_documentation": {"name": "Angstrom NexDep Thermal E-Beam Evaporator", "href": "http://angstromengineering.com/products/nexdep/"}}, {"name": "Bachur and Associates UV Flood Exposure System", "overview": "The system\u2019s exposure optics employ a proven, high performance optic train that employs an elliptical reflector, dielectric heat removing primary and secondary mirrors, a multi-element optical integrator system and collimating optics.\u00a0 The optical integrator system produces non-coherent radiation that virtually eliminates the detrimental effects of diffraction.\u00a0 These high intensity systems can resolve fine structures even in thick resist. \u00a0", "key_features": ["High Efficiency, Uniform, Lightsource System", "user-settable Intensity Levels"], "key_applications": ["Photoresist Patterning", "Image Reversal"], "general_documentation": {"name": "Bachur and Associates UV Flood Exposure System", "href": "http://bachur-n-associates.com/Near,%20Mid%20and%20Deep%20UV_Exposure_Systems%20-%20Dec%2016%202013.html"}}, {"name": "Bruker Dimension Icon AFM", "overview": "The Bruker Dimension Icon AFM (Atomic Force Microscope) is a very high resolution scanning microscope used in scanning microscopy (SPM) which produces three dimensional images. It is used for nanoscale surface topography, nano-mechanical, nano-electircal, and nano-scale chemical mapping, and morphology measurement.", "key_features": ["Nanoscope SPM control station and analysis software", "Dimension Fastscan AFM System", "210 mm vacuum sample chuck taking samples of <210 mm diameter <15 mm thick", "Peak Force QNM Software", "Peak Force TUNA Software", "Regular contact mode and tapping mode (f= 300 kHz)", "Multiple AFM modes, including Lateral Force Microscopy, Electric Force Microscopy, Piezoresponse Microscopy, Force Spectroscopy, and Phaselmaging", "Icon Scanner for ultra-low noise, high accuracy scanning as an alternative to the Fastscan system", "30\u201d Monitor", "Acoustic and Vibration Isolation Enclosure"], "key_applications": ["Nanoscale surface topography", "Nano-mechanical, nano-electrical, and nano-scale chemical mapping", "Semiconductors", "Optics", "Polymers"], "general_documentation": {"name": "Bruker Dimension Icon AFM", "href": "https://www.bruker.com/products/surface-and-dimensional-analysis/atomic-force-microscopes/dimension-icon/overview.html"}}, {"name": "Despatch LCC1-15-5 Resist Oven", "overview": "The Despatch LCC1 Resist Oven are used in die-curing and other semiconductor pacing processes. The ovens are configured for 50/60 Hz.", "key_applications": ["260\u00b0C (500\u00b0F) maximum temperature", "Lockable Disconnect Switch on the control panel for easy servicing", "Stainless steel interior with all interior seams protect work chamber from contamination", "Programmable door lock"]}, {"name": "Disco DAD3240 Automatic Dicing Saw", "overview": "The Disco DAD3240 Dicing Saw is a compact, manual, precision dicing saw with an automatic function which is common to the DAD3000 series. Its operating system and LCD touch panel allow for intuitive handling and it can cut through a range of materials, including difficult-to-cut materials essential to the nanofabrication process such as silicon.", "key_features": ["Pieces from 1\u201d to 8\u201d and to widths of 650 mm", "High output, 1.8 kW spindle", "15\u201d LCD touch panel and GUI (Graphical User Interface)", "Automatic Alignment", "Operating System common to the DAD3000 series", "Takes circular and rectangular pieces", "Cut speed from 0.000 to 600 mm/sec"], "key_applications": ["Cutting of semiconductor wafers into individual chips or dies"], "general_documentation": {"name": "Disco DAD3240 Automatic Dicing Saw", "href": "http://www.disco.co.jp/eg/products/dicer/index.html"}}, {"name": "EBARA ESR20N Vacuum Pump", "overview": "The EBARA ESR20N Vacuum Pump is an ESR (Energy Saving Roots) multistage dry vacuum pump. It is engineered for clean to medium processes and has minimum nitrogren purge requirements with no nitrogen purge requirements for clean processes. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.", "key_features": ["Pumping speeds of 35 - 1625 CFM", "Pressures as low as 1 mTorr", "High performance DC motors", "Minimal Nitrogen purging", "Idle Mode"], "general_documentation": {"name": "EBARA ESR20N Vacuum Pump", "href": "https://www.ebara.co.jp/en/products/details/esr.html"}}, {"name": "EBARA EV-A03-1 Vacuum Pump", "overview": "The EBARA EV-A03-1 Vacuum Pump is a small, air cooled dry vacuum pump which offers high pumping speeds (9 cfm) and a no-contact design. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.", "key_features": ["Pumping speeds of 9 cfm", "Weight of 23 kg", "Pressures of 1.0 - 10.0 Pa depending on gas ballast", "High pumping speeds at atmospheric pressure", "High water vapor pumping at 250 g/hr"], "key_applications": ["Load Lock", "Electron Microscopes", "PVD", "Oxygen Plasma Systems", "Analytical Instruments"], "general_documentation": {"name": "EBARA EV-AO3-1 Vacuum Pump", "href": "http://www.pchemlabs.com/product.asp?pid=2786"}}, {"name": "EBARA EV-A06-1 Vacuum Pump", "overview": "The EBARA EV-A06-1 Vacuum Pump is an air cooled dry vacuum pump which offers high pumping speeds (21.6 cfm) and high water vapor pumping (350 g/hr) The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.", "key_features": ["Pumping speeds of 21.6 cfm", "Weight of 54 kg", "Pressures of 1.0 - 10.0 Pa depending on gas ballast", "No-Contact Design", "Highest water vapor pumping, at 350 g/hr, for a dry vacuum pump"], "key_applications": ["Load Lock", "Electron Microscopes", "PVD", "Oxygen Plasma Systems", "Analytical Instruments"], "general_documentation": {"name": "EBARA EV-AO6-1 Vacuum Pump", "href": "http://www.pchemlabs.com/product.asp?pid=2787"}}, {"name": "EMS 1300 Critical Point Dryer", "overview": "The procedure of critical point drying is an efficient method for drying delicate samples for SEM applications.\u00a0The EMS 1300 Critical Point Dryer provides a clear view of the fluid level and visibility of the phase change at the critical point.", "key_features": ["63.5mm internal diameter x 82mm in length", "excellent visibility of the fluid level and drying process", "Simple robust construction", "Large robust valves for draining of fluids"], "general_documentation": {"name": "EMS 3000 and EMS 3100 Critical Point Dryers", "href": "https://www.emsdiasum.com/microscopy/products/equipment/critical_point_drier.aspx"}}, {"name": "FEI Quanta 650 FEG SEM with Nabity Pattern Generator", "overview": "The FEI Quanta 650 FEG SEM (Scanning Electron Microscope) is a variable pressure microscope used for high resolution imaging. It is capable of resolving features on a scale of less than 5 nm. It is equipped with a Field Emission Gun (FEG) which allows for bright-field and dark-field sample imaging. The SEM is equipped with a total of 8 detectors for the purpose of imaging and analysis as well as a Nabity Nanometer Pattern Generation System (NPGS) which allows for advanced electron beam lithography by means of the SEM.", "key_features": ["Variable Pressure mode with pressures of 100 - 200 Pa", null, "Beam Deceleration (BD) mode for high resolution backscatter electron (BSE) imaging", "Samples to 6\u201d", "Electron Backscatter Diffraction (EBSD) for crystallinity research", "Nabity Nanometer Pattern Generation System (NPGS)", "STEM I detector for dry, thin, conductive, electron transmissive samples", "STEM II detector for wet, thin, electron transmissive samples", "Micro-analysis of conductive and non-conductive samples", "Gaseous SE Detector (GSED)", "Everhart-Thornley Detector (E-TD) for dry, conductive samples", "Large Field Detector (LFD) for dry, non-conductive samples in low vacuum conditions (0.08 -1.5 Torr)", "MAPS software for tiling and creating large montage images at high resolution"], "key_applications": ["Microscopy of conductive and non-conductive samples", "NPGS for electron beam lithography", "Imaging of dry and wet samples", "Elemental analysis through mapping, spectrum quantification, line scanning"], "general_documentation": {"name": "FEI Quanta 650 FEG SEM", "href": "http://www.fei.com/products/sem/quanta-sem/"}}, {"name": "Filmetrics F3 Film Thickness Spectral Reflectometer", "overview": "The Filmetrics F3 Film Thickness Spectral Reflectometer is most commonly used to measure thin-film properties by adding thickness and refractive index software modules. The thickness and reactiveness can be measured in less than 3 seconds.", "key_features": ["40-hour light source", "USB Connection", "Thickness range: 15nm-70\u03bcm", "Wave length range:\u00a0100nm-250 \u03bcm"], "general_documentation": {"name": "F3 Model Specifications", "href": "https://www.filmetrics.com/thicknessmeasurement/f3"}}, {"name": "Fisher Scientific Isotemp FMS Refrigerator", "overview": "The\u00a0Fisher Scientific Isotemp FMS Refrigerator is use for safe storage of volatile materials, pharmaceuticals, clinical reagents, and biological samples.", "key_features": ["Adjustable temperatures from 1\u00b0 to 12\u00b0C", "Manual defrost", "Spark proof interiors separate contents from compressor and motor"], "general_documentation": {"name": "Fisher Isotemp Refridgerators", "href": "http://www.fishersci.com/shop/products/fisher-scientific-isotemp-flammable-materials-storage-refrigerators-basic-model-2/p-161759"}}, {"name": "Fisher Scientific Revco FMS Freezer", "overview": "The\u00a0Fisher Scientific Revco FMS Freezer is used for medical and scientific applications such as storage of reagents, pharmaceuticals, biologicals or other commonly used laboratory materials.", "key_features": ["Capacities from 4.9 to 51.1 cu. ft. (139 to 1447L)", "\u00a0-30\u00b0C and -20\u00b0C", "Audible/visual warnings for over-temperature, under-temperature, or power failure", "Controller battery backup system"], "general_documentation": {"name": "Fisher Lab Freezers", "href": "http://www.fishersci.com/shop/products/revco-high-performance-lab-freezers/p-4530621"}}, {"name": "FMS Thin Film Stress Measurement System [future]", "overview": "The\u00a0FMS Thin Film Stress Measurement System is used to test the stress of different films and substrates. It can also test the coefficient of thermal expansion (CTE) of films.", "key_features": ["Dual laser wavelength to avoid destructive interference from dielectric in film", "Wafer range of 2-8in diameter", "3D map capabilities", "Temperature range from room temp to 500 Celsius"], "general_documentation": {"name": "FMS System Overview", "href": "http://www.a-star.edu.sg/Portals/72/fckeditor/uploadfiles/F-100%20SNFC%20Factsheet%20-%20FSM(1).pdf"}}, {"name": "Heidelberg MLA150 Direct Write Lithographer", "overview": null, "key_features": ["Minimum featrue size down to 1 \u00b5m", "Non-contact exposure", "Substrates up to 6\u201d x 6\u201d", "Light source at 405nm and 375nm", null, "Alignment accuracy of 500nm", "Multiple data input formats"], "key_applications": ["Fast patterning of masks and wafers in Life Science, MEMS, Micro-Optics, Semiconductor, Sensors, Actuators, MOEMS, Material Research, Nano-Tubes, Graphene"], "general_documentation": {"name": "Heidelberg MLA150 Direct Write Lithography System", "href": "http://www.himt.de/index.php/MLA150.html"}}, {"name": "Horiba UVISEL 2 Spectroscopic Ellipsometer", "overview": "The UVISEL 2 is an accurate and sensitive ellipsometer and includes a wide range of integrated automated features useful for the investigation of all materials. The UVISEL 2 is simple to operate and has the performance required for characterizing all current materials as well as the next generation of materials and structures.", "key_features": ["The smallest possible achromatic spot size of 35 \u03bc capable of covering a large spectral range from FUV to NIR for measurement of very small sample areas", null, null, "A sample vision coupled with automated spot selection for accurate positioning of the measurement spot and region on the sample"], "key_applications": ["Characterization"], "general_documentation": {"name": "UVISEL 2 Scientific Spectroscopic Ellipsometer", "href": "http://www.horiba.com/scientific/products/ellipsometers/spectroscopic-ellipsometers/uvisel-2/uvisel-2-scientific-spectroscopic-ellipsometer-16101/"}}, {"name": "IoN Wave 10 Plasma Asher", "overview": "The IoN Wave 10 Plasma Asher is a mid-size wafer batch plasma microwave asher used for the removal of photoresists from etched wafers, wafer descum, and\u00a0wafer cleaning prior to wet etching, among other applications. It is capable of high\u00a0photoresist ashing rates with minimal\u00a0exposure to electro static discharge (ESD).", "key_features": ["Quartz chamber taking wafers to 8\u201d", "Quartz boats taking up to 25 6\u201d wafers", "2.45 GHz frequency with power output up to 600 W", "Graphic User Interface (GUI) software compliant with Semi E95 - 1101", "10.4\u201d LCD touch panel", "Recipe editor for fast, versatile parameter control", "Recipe editor simulator software", "Remote process monitoring via Ethernet"], "key_applications": ["Photo-resist stripping", "Wafer descum", "Wafer cleaning", "SU-8 removal", "Etching of passivation layers", "Cleaning of filters and membranes", "Chemical trace analysis", "MEMS", "Photonics"], "general_documentation": {"name": "IoN Wave 10 Plasma Asher", "href": "http://www.pvateplaamerica.com/ion10.php"}}, {"name": "K&S 4129 Wedge Bonder", "overview": "The K&S 4129 Wedge Bonder is an aluminum and gold wire wedge bonder that is used for binding devices.", "key_features": ["Thermosonic and ultrasonic modes", "DC Servo/LVDT closed loop control", "Air-damped bonding head", "Electronic dial control"], "general_documentation": {"name": "K&S Wire Bonder", "href": "http://mfc.engr.arizona.edu/documents/K&S%20Wire%20Bonder%20Model%204123.pdf"}}, {"name": "Keysight B1500A Semiconductor Device Analyzer", "overview": "The Keysight B1500A Semiconductor Device Analyzer provides a wide range of measurement capabilities to cover the electrical characterization and evaluation of devices, materials, semiconductors, active/passive components, or virtually any other type of electronic device with uncompromised measurement reliability and efficiency.", "key_features": ["allows you to add or upgrade measurement modules if measurement needs change over time."], "general_documentation": {"name": "Keysight B1500A Semiconductor Device", "href": "http://www.keysight.com/en/pd-582565-pn-B1500A/semiconductor-device-analyzer?nid=-33019.536905585&cc=US&lc=eng"}}, {"name": "KLA-Tencor P-7 Surface Profilometer", "overview": "The KLA-Tencor P-7 Surface Profilometer is a research grade stylus profiler for surface metrology and measurement. The KLA-Tencor P-7 is software equipped with parameters for a wide range of measurements including depth, step height, roughness, waviness, slop, flatness, distance, bearing ratio, radius of curvature, and more.", "key_features": ["Sample size to 150 mm with 150 mm scan length", "1 mm Z-range", "2 \u03bcm radius stylus", "Apex software for a variety of measurement parameters, customized reports and automatic processing of data", "3D imaging", "2D stress analysis", "Step height repeatability", "Thin and Thick film step heights", "Etched trench depth"], "key_applications": ["Semiconductors", "MEMS", "Data Storage", "Opto-electronics", "Solar technology"], "general_documentation": {"name": "KLA-Tencor P-7 Surface Profilometer", "href": "http://www.kla-tencor.com/Surface-Profiling/p7.html"}}, {"name": "Memsstar Orbis Alpha Oxide Etch System", "overview": "\n\tThe Memsstar Orbis Alpha Oxide Etch System is a small footprint, self-contained oxide etch system which utilizes hydrogen fluoride etchants along with memsstar\u2019s unique patented high volume production process to enable researchers to develop production-capable processes for the next generation of MEMS devices.\u00a0", "key_features": ["Large process window to optimize process for any structure", "Excellent selectivity with silicon nitride and silicon dioxide (< 5% 1 \u03c3)", "High selectivity to underlayer and mechanical materials", "Excellent uniformity (< 5% 1 \u03c3) and\u00a0repeatability (< 5% 1 \u03c3)", "Unique endpoint capability", "Handles materials from sample sizes to 200 mm", "Small footprint (600 x 540 x 900 mm)", "PC controlled", "Resistive touch screen"], "key_applications": ["RF MEMS", "Sensors", "RF switches", "Temperature gauges"], "general_documentation": {"name": "Memsstar Orbis Alpha Oxide Etch System", "href": "http://memsstar.com/products-services/mems/orbis-platforms/platforms-technologies-orbis-alpha/"}}, {"name": "MiniPack Torre MVS-45X Vacuum Sealer", "overview": "The Minipack MVS 45X chamber sealer is an industrial-level vacuum sealer designed to packaging products. The large 18.5\" x 16\" x 4.5\" chamber allows plenty of room for packaging a variety of products. The basin is seamless, making it easy to clean.", "key_features": ["Auto-calibration", "Digital panel with 10 storable programs", "Electronic volumetric sensor", "Security for over-current on sealing bar", "Aluminum sealing bar"], "general_documentation": {"name": "Minipack Specifications", "href": "https://www.minipack.us/mvs45x.php"}}, {"name": "Nikon Eclipse L200 Microscope", "overview": "The Nikon Eclipse L200 Optical Microscope\u00a0is a microscope capable of greater contrast,\u00a0high resolving power and darkfield images\u00a0up to three times brighter than other models.\u00a0It can be used for the precise optical\u00a0inspection of wafers, photo masks, reticles and\u00a0other substrates.", "key_features": ["200 mm wafer and mask inspection", "High intensity\u00a012 V - 100 W Halogen Illuminator (LV-LH50PC)", "Tilting Eyepiece Tube allows for continuous adjustment of tilt angle from 0 \u00b0 through 30\u00a0\u00b0\u00a0", "Eyepiece features ultra-widefield design with an F.O.V. of 25 mm", "CF160 Optical System", "8\" x 8\" stage"], "general_documentation": {"name": "Nikon Eclipse L200 Microscope", "href": "https://www.nikonmetrology.com/en-gb/product/eclipse-l200n-series"}}, {"name": "Pfeiffer HiCube 80 Turbo Pumping Station", "overview": "The HiCube 80 is a versatile, mobile Turbo Pimping Station. It uses a HiPace turbo pump as well as a backing pump that \u00a0are inter-coordinated for a wide range of applications and fast pump downtime.", "key_features": ["Vacuum and sniffing leak detection", "Operating temperature 10\u00b0 - 35\u00b0 celsius", "Noise level 53 dB (A)", "RS-232 Interface", "Maximum power consumption of 1500 W, power consumption of 700 W", "Detects 4He, 3He, H2"], "key_applications": ["Semiconductors", "Electronics", "Solar technology", "Laser technology", "Aeronautics", "Vacuum component"], "general_documentation": {"name": "HiCube 80 Turbo Pump Specifications", "href": "https://www.pfeiffer-vacuum.com/en/products/pumping-stations/turbo-pumping-stations/hicube-eco/?detailPdoId=20020"}}, {"name": "Pfeiffer Vacuum ADIXEN ASM 380 Leak Detector", "overview": "\n\tThe ASM 380 is a high performance, mobile, leak detector. It has an ACP 40 dry backing pump and a high vacuum pump which allows for high testing sensitivity and short pump down times, even for large volumes.", "key_features": ["Vacuum and sniffing leak detection", "Operating temperature 10\u00b0 - 35\u00b0 celsius", "Noise level 53 dB (A)", "RS-232 Interface", "Maximum power consumption of 1500 W, power consumption of 700 W", "Detects 4He, 3He, H2"], "key_applications": ["Semiconductors", "Electronics", "Solar technology", "Laser technology", "Aeronautics", "Vacuum components"], "general_documentation": {"name": "Pfeiffer Vacuum ASM 380 Mobile Leak Detector", "href": "https://www.pfeiffer-vacuum.com/en/products/leak-detectors/high-performance-mobile/"}}, {"name": "Plasma-Therm Apex SLR HDPCVD", "overview": null, "key_features": ["1 kW 2 MHz ICP source", "300 W, 13.56 MHz electrode", "254 mm plate", "Low temperature deposition, typically 80 \u00b0 - 150 \u00b0C", "Liquid-to-liquid heat exchanger", "Compatible with film etching for SiNx, SiO2, a-Si, SiOxNy, SiC, Ta2O5.", "Compatible with film etching for polymers such as photoresist and polyimide", "Endpoint Detection", "ANSI-ISA 88 data logging and recipe management software"], "key_applications": ["Failure/Yield Analysis", "Silicon conductors", "Photonics", "ICP etch processing", "MEMS", "Solid State Lighting", "R & D", "Dielectrics", "Polymers"], "general_documentation": {"name": "Plasma-Therm Apex SLR HDPCVD System", "href": "http://www.plasmatherm.com/Apex_SLR.html"}}, {"name": "Plasma-Therm ICP Chlorine Etch", "overview": null, "key_features": ["1 kW 2 MHz Inductively Coupled Plasma (ICP) source", "Etches metals and compound semiconductors", "Computer Controlled", "RF Power to 500 W", "Mass Flow Controllers (MFC) for control of gas flow"], "key_applications": ["MEMS", "Silicon Etching"]}, {"name": "Plasma-Therm ICP Fluoride Etch", "overview": null, "key_features": ["1 kW 2 MHz Inductively Coupled Plasma (ICP) source", "Etches metals and compound semiconductors", "Computer Controlled", "RF Power to 500 W", "Mass Flow Controller (MFW) for control of gas flow"], "key_applications": ["MEMS", "Silicon Etching"]}, {"name": "Plasma-Therm Versaline Deep Si RIE", "overview": "The Plasma-Therm Versaline DSE (Deep Silicon Etcher) is a deep silicon etcher Plasma RIE that runs the Bosch Si process. It is primarily used for deep etching of MEMS structures in silicon. The Bosch process is used for the creation of deep, almost vertical, high aspect ratio structures and is an alternative to cryogenic chuck adapted ICP RIE systems and allows for deeper SI etches and a higher aspect ratio relative to these systems.", "key_features": ["1 kW 2 MHz ICP source", "Up to 4\u201d wafers", "Computer Controlled", "Handles Silicon, SiO2, Si3N4, SiOxNy, as well as polmyer films such as PMMA, photoresist, and polymide", "500 W, 13.56 MHz plasma generators", "He-back-side cooling"], "key_applications": ["MEMS", "DRAM"], "general_documentation": {"name": "Plasma-Therm Versaline DSE", "href": "http://www.plasmatherm.com/versaline-dse.html"}}, {"name": "Plasma-Therm Vision 310 PECVD", "overview": null, "key_features": ["Patented dual frequency generator with 300 W\u00a0at 13.56 MHz / 500 W at 187 kHz", "305 mm substrate plate", "Temperature control from 30 \u00b0C\u00a0 to 300 \u00b0C", "High temperature electrode up to 380 \u00b0C", "Optimized shower head for uniform\u00a0deposition", "Digital mass flow controllers with bypass and flush capabilities and up and downstream isolation valves"], "key_applications": ["Semiconductor fabrication", "R & D production and application", "Stress controlled silicon nitride and silicon dioxide film deposition", "MEMS"], "general_documentation": {"name": "Plasma-Therm 310 PECVD System", "href": "http://www.plasmatherm.com/vision-series.html"}}, {"name": "Plassys Electron Beam Evaporator", "overview": null, "key_features": ["Eight 15 cc crucibles with Al, Au, Ge, Ni, NiCr, Pd, Pt, Ti", "Thin film (<100 nm) evaporation of metals with electron beam", "10 keV electron beam energy, 10 kW power", "Substrates up to 150 mm", "Ion gun for sample milling or IAD", "Cryo pumped load lock and main chamber", "In-chamber substrate cleaning", "Full computer control"], "key_applications": ["MEMS", "Josephson Circuit", "Thermal Barriers", "HMET, PHMET Transistors", "Magnetic materials for microwave applications"], "general_documentation": {"name": "Plassys Electron Beam Evaporator\u00a0", "href": "http://www.plassys.com/pageuk/machines/evaporation/evaporation.html"}}, {"name": "Questar Q7800 Automatic Wedge Bonder", "overview": "The Questar Q7800 Automatic Wedge Bonder is used for connecting wires in chips, sensors, and such.", "key_features": ["Automatic and semi-automatic modes", "Bonding speed of 600m/s", "Multiple stitch bonding", "0.0007\" to 0.003\" diameter wire capability"], "general_documentation": {"name": "Features and Specifications", "href": "http://www.questarproducts.com/_images/_pdf/Q7800_Specs_120111_frm.pdf"}}, {"name": "Raith EBPG5000 Plus E-Beam Writer", "overview": "The Raith EBPG5200 E-Beam lithography system is a high performance nanolithography system used chiefly for write lithography system used chiefly for write lithography and R&D mask making. It is the latest model in the EBPG series, preceded by the EBPG5150.", "key_features": ["155 mm writing capability", "Accommodates wafer sizes of up to 6\u201d and mask sizes of up to 6\u201d", "Minimum feature size of less than 8 nm", "50 / 100 MHz pattern generator", "Thermal Field Emission gun, for operation at 20, 50, and 100 kV", "Variable field size to 1 mm at all kVs"], "key_applications": ["Compound semiconductor application", "Vertical resonant tunnel transistor", "Circular grating resonator"]}, {"name": "Signatone Checkmate CM21X Probe Station", "overview": "The\u00a0Signatone CheckMate Probe Station\u00a0is an ultra-stable 200mm / 300mm analytical probe station with coarse and fine wafer stage movement to provide fast wafer movement as well as submicron resolution.", "key_features": ["Elimination of moisture or frost build-up when using a cold chuck", "A dark environment for making light sensitive measurements", "EMI Protection"], "general_documentation": {"name": "Checkmate Series Probe Station", "href": "http://www.signatone.com/products/probestations/checkmate.asp"}}, {"name": "SUSS MJB4 Manual Mask Aligner", "overview": "The MJB4 is a high precision manual mask aligner that works with small substrates, wafers, and pieces. It is frequently used for MEMS and optoelectronic applications. It can handle fragile III-V materials.", "key_features": ["High resolution prints down to 0.5 \u03bcm", "Universal Optics option for UV 250, UV 350 and UV 400", "Wafers and Substrates to 100 mm", "Thickness of mask up 9 mm", "Soft, hard, and vacuum contact", "SUSS single field microscope", "Diffraction reducing optics", "Wedge Error Compensation (WEC)", "Top side and infrared alignment"], "key_applications": ["LED Lithography", "MEMS", "UV-NIL"], "general_documentation": {"name": "Suss MJB4 Manual Mask Aligner", "href": "https://www.suss.com/en/products-solutions/products/mask-aligner/mjb4/overview.html"}}, {"name": "Tystar Mini-Tytan 4600 Furnace System", "overview": "\n\tThe Tystar Mini-Tytan 4600 Furnace system is a Low Pressure Chemical Vapor Deposition (LPCVD) system which consists of four vacuum tubes in one furnace stack. Two of these are low pressure tubes and two atmospheric pressure tubes. The Tystar 4600 can perform low temperature oxide processes depositing materials such as silicon nitride and polysilicon. The Tystar 4600 offers high process uniformity and incorporates some of the most advanced concepts in high performance wafer processing all with a low footprint, requiring less space and electric power than furnaces of a similar capacity. \u00a0", "key_features": ["Wafers up to 6\" / I50 mm", "Temperatures up to 850 \u00b0C for silicon nitride and up to 650 \u00b0C for all others", "Silicon nitride and polysilicon deposition", "Maximum deposition thickness of\u00a05 \u03bcm", "LTO (Low Temperature Oxidation) for processes of < 450 \u00b0C \u00a0", "MFS-460 Mass Flow System", "DCS-30 Data Collection System"], "key_applications": ["Suspended membrane fabrication", "Silicon conductors", "Silicon gate devices", "MEMS", "Inter level metal isolation", "Optical waveguides", "Dielectrics", "LTO (Low Temperature Oxidation)", "R & D\u00a0"], "general_documentation": {"name": "Tystar Mini-Tytan 4600 Horizontal Furnace System", "href": "http://tystar.com/catalog/catalog.pdf"}}, {"name": "Ultratech/Cambridge Fiji G2 Plasma-Enhanced ALD", "overview": "The Ultratech Fiji G2 plasma system is a modular high-vacuum ALD (Atomic Layer Deposition) system\u00a0that accommodates a wide range of deposition modes while using a flexible system architecture that permits multiple configurations of precursors\u00a0and plasma gases. The result is a plasma ALD system that reproduces the thermal and plasma enhanced ALD films of the literature as well as providing experimental flexibility for future ALD innovations.", "key_features": ["Substrates up to 200 mm", "Wafers to 8\u201d", "Flow-optimized ALD chamber for thermal or plasma deposition", "Substrate temperatures to 500 \u00b0C", "Multipurpose energy assisted deposition Conflat top flange (plasma, ion source, laser, UV etc)", "Uniform coverage for plasma deposited films (on aspect ratios of 20:1)", "Process Modes: Thermal Continuous Mode for high speed depositions, Thermal Expo Mode with stop valve operation for ultra-high aspect ratio structures (> 450:1), and Plasma Mode for difficult nitrides and metals", "All system parameters can be controlled in recipe (e.g. substrate and precursor temperatures, gas mass flows, pulse times, etc.", "High conformity coatings", "Near monolayer growth conditions", "Deposits with high uniformity and conformity on a nanometer scale Deposition uniformity of Al2O3 is 1.5%"], "key_applications": ["High quality films for heterostructures, nanotubes, and organic semiconductors", "Used in LED and III - V devices", "MEMS", "Optoelectronics", "Renewable energy technology"], "general_documentation": {"name": "Ultratech/Cambridge NanoTech Simply ALD", "href": "http://www.cambridgenanotechald.com/products/Fiji-advanced-ald-system.shtml"}}, {"name": "Ultratech/Cambridge Savannah ALD System", "overview": "Ultratech/Cambridge Savannah ALD System is equipped with high-speed pneumatic pulse valves to enable thin film deposition on Ultra High Aspect Ratio substrates. This proven precision thin film coating methodology can be used to deposit conformal, uniform films on substrates with aspect ratios of greater than > 2000:1.", "key_features": [null, "Capable of handling gas, liquid, or solid precursors", "Equipped with heated precursors lines", "Wafers to 8\u201d (200 mm) diameter x 0.25\u201d (6.4 mm) deep", "Flow-optimized ALD chamber for thermal or plasma deposition", "Substrate temperatures to 350 \u00b0C", "Dual Zone Reactor Heaters: Differential wall and substrate heating", "Venting time: <1 minute (mass flow controller regulated venting to prevent turbulence when using small sample pieces)", "Gas flow during operation: 20 SCCM", "Many common precursors already available in pre-packs from Strem Chemicals and Sigma-Aldrich", "Film Uniformity: <1 %"], "key_applications": ["Thin film deposition"], "general_documentation": {"name": "Ultratech/Cambridge NanoTech Simply ALD", "href": "http://www.cambridgenanotechald.com/products/Savannah-ald-system.shtml"}}, {"name": "Ultron UH104 UV Curing System", "overview": "The\u00a0Ultron UH104 UV Curing System is used to toughen and strengthen polymer materials by cross-linking polymer chains. It accommodates up to 8\" (200mm) wafers on film frames or grip rings and up to 12\" (300mm) wafer capability.", "key_features": ["Compact, desktop profile accommodates up to 300mm frame-mounted wafer\u00a0", "Environmentally safe, ozone-free UV lamp with fast curing time", "Easily programmable microprocessor-based controller\u00a0", "Optional motorized, rotating work stage"], "general_documentation": {"name": "Ultron UV Curing System", "href": "http://www.ultronsystems.com/pdf/UH104.pdf"}}, {"name": "Ultron UH114 Wafer/Frame Film Applicator", "overview": "The\u00a0Ultron UH114 Wafer/Frame Film Applicator is used in the process of slicing/ sawing applications in which lamination is crucial. This device ensures a bubble free lamination with adjustable features.", "key_features": ["Circular cutter (wheel-type) for cutting film on film frame", "Adjustable cutting pressure for different films\u00a0", "Digital temperature controlled platen", "Adjustable work stage height from top of unit", "Accommodates wafer up to 6\" capability\u00a0"], "general_documentation": {"name": "Ultron UH114 Series", "href": "http://www.ultronsystems.com/USI-ProdMounters.html"}}, {"name": "WAFAB Acid/Base Bench", "overview": "The WAFAB Manual Acid/Base Bench is a non-automated front-acces wet bench designed to handle acidic and basic materials without degrading.", "key_features": ["PVDF deck top", "Heated stainless steel ultrasonic process bath, can produce 40, 72, and 104 kHz", "Recessed hot plate, 7\u201d x 7\u201d", "PFA Nitrogen/DI Water retractable spray gun set"]}, {"name": "WAFAB Bottle Washer Bench", "overview": "The WAFAB Manual Bottle Washer is a non-automated wet station designed for washing glassware used in various processes and dispoing of waster water.", "key_features": ["12 polypropylene bottle wash baths with DI water rinse", "Perforated shelving for drying", "PFA Nitrogen/DI Water retractable spray gun set"], "key_applications": ["Bottle wash"], "general_documentation": {"name": "Bottle Washing Station Features", "href": "https://wafabintl.com/wet-processing-equipment/plastic-thermoforming-specialty-products/bottle-wash-stations/"}}, {"name": "WAFAB Cleaning Bench", "overview": "The WAFAB Cleaning Bench is a non-automated front-access wet bench designed for cleaning wafers before further processing.", "key_features": ["Stainless steel work surface", "Stainless steel work surface", "PFA nitrogen gun", "Retractable DI Water spray gun", "Spin processor for substrate sizes 10 mm - 150 mm"], "key_applications": ["RCA Cleaning"]}, {"name": "WAFAB Developer Bench", "overview": "The WAFAB Manual Developer Bench is a non-automated front-access wet bench designed to handle chemicals used for developing photoresist.", "key_features": ["PVDF deck top", "PFA Nitrogen/DI Water spray gun set", "Spin processor for substrate sizes 10 mm-150 mm"], "key_applications": ["Photoresist development"]}, {"name": "WAFAB HF/TMAH Bench", "overview": "The WAFAB Manual Solvent Bench is a non-automated front-access wet bench designed to handle hydrofluoric acid and tetramethylammonium hydroxide used in etching.", "key_features": ["PVDF deck top", "Recessed deck-top hotplate with stirrer, 7\u201d x 7\u201d", "PTFE Nitrogen spray gun", "PFA DI Water retractable spray gun"], "key_applications": ["Bulk etch"]}, {"name": "WAFAB Solvent Bench", "overview": "The WAFAB Manual Solvent Bench is a non-automated front-access wet bench designed to handle solvents used for cleaning substrates.", "key_features": ["Stainless steel work surface", "2 ultrasonic stainless steel process baths, can\u00a0produce 40, 72, and 104 kHz", "1 stainless steel heated H2O bath", "Electro-polished cup sinks for solvent resist waste", "Recessed hotplate, 8\u201d x 8\u201d", "PFA Nitrogen spray gun", "Spin processor for substrate sizes from 10 mm-150 mm"], "key_applications": ["Manual solvent cleaning"]}, {"name": "WAFAB Toxic Corrosives Bench", "overview": "The WAFAB Manual Toxic Corrosives Bench is a non-automated front-access wet bench deigned to handle, contain, and properly dispose of toxic and corrosive materials.", "key_features": ["PVDF deck top", "Heated stainless steel ultrasonic process bath, can produce 40, 72, and 104 kHz", "Recessed hot plate, 7\u201d x 7\u201d", "PFA Nitrogen/DI Water retractable spray gun set"], "key_applications": ["Wet processing"]}, {"name": "YES CV200 RFS Plasma Strip / Descum System", "overview": "The YES CV200 RFS Plasma Strip / Descum System is used for the removal of thick layers of photoresist or polymide in short production times; accomodating the strict requirements of contemporary front-end semiconductor processing equipment. The YES CV200 RFS operates in two main modes, a powerful plasma stripping mode removes tough and / or thick resists while a gentler descum mode can be used to deal with the cleaning of inorganic substrates.\u00a0", "key_features": ["Quick resist removal, up to 7000 angstroms per minute", "Unique `downstream' protective design -\u00a0balance of the charge in the plasma shields your product from damaging UV exposure", "Wafers from 50 mm to 200 mm", "Variable Power Supply from 150 W to 1250 W", "Real-time wafer temperature measurement and flexible temperature control", "Multiple process gas inputs"], "key_applications": ["Photoresist removal", "Polyimide removal", "Organics removal", "Descum processes"], "general_documentation": {"name": "YES CV200 RFS Plasma Strip / Descum System", "href": "http://www.yieldengineering.com/products/plasma-strip-descum-systems/cv200rf-series"}}, {"name": "YES G1000 Plasma Cleaning System", "overview": "The YES G1000 Plasma Cleaning System is a plasma cleaning system used for the cleaning and low temperature descum of substrates, as well the surface modification and gentle cleaning of inorganic substrates. The use of plasma at a low generation frequency (40 kHz) in substrate cleaning allows for flexibility around cleaning processes, including, for example, the cleaning of electronically sensitive devices. The YES G1000 generates plasma between an active and grounded electrode plate, free electrons, created in the plasma field, are drawn down by the grounded plate allowing only active ions to pass through to clean components; the result is uniform and consistent processing which, as highlighted previously, leaves the electronic properties of cleaned components unchanged.\u00a0", "key_features": ["4 powered shelves for greater capacity over the YES 500 model", null, "1/2\" 6061-T6 aluminum chamber", "Large load capacity - 15.13\" W x 15.39\" D process area per tray", "Variable Frequency Matching (VFM)", "Touch Screen Interface", "Unique `downstream' protective design - totally charge-free plasma", "State logic control of output with input monitoring"], "key_applications": ["Substrate cleaning", "Substrate descum", "Surface modification of inorganic substrates", "Gentle cleaning of inorganic substrates", "Cleaning of electronically sensitive devices"], "general_documentation": {"name": "YES G1000 Plasma Cleaning System", "href": "http://www.yieldengineering.com/products/plasma-cleaning-systems/g-series"}}, {"name": "YES-58TA Vacuum Bake/HMDS Vapor Prime and Image Reversal System", "overview": null, "key_features": ["Operation temperature ambient to 180\u00b0 C", "1 load/hour image reversal bake throughput", "2 loads/hour vacuum bake/vapor prime throughput", "Handles wafers up to 300 mm", "Fully programmable process time and temperature"], "key_applications": ["Image reversal bake", "Vapor prime", "Vacuum bake"], "general_documentation": {"name": "YES-58TA Vacuum Bake/HMDS Vapor Prime and Image Reversal System", "href": "http://www.yieldengineering.com/products/hmds-prime-ovens/ta-series"}}]
+[
+    {
+        "name": "3C Technical GCA AutoStep 200 5x Reduction Stepper",
+        "overview": "The GCA AutoStep 200 Stepper is an I-line 5x reduction stepper with repeat exposure capabilities. It is capable of submicron resolution and high accuracy alignment.",
+        "key_features": [
+            "21 mm dia exposure field (up to 14.8 X 14.8 mm square)",
+            "Can achieve resolution < 600 nm",
+            "200 mm wafer stage",
+            "Stage precision < 100 nm",
+            "Accommodates wafer sizes from 1 cm pieces to 6\u201d wafers",
+            "Automatic reticle transfer alignment through RMS (reticle management system)",
+            "Exposure wavelength of 365 nm"
+        ],
+        "key_applications": [
+            "MEMS",
+            "VLSI"
+        ]
+    },
+    {
+        "name": "AJA ATC 2200 UHV Sputtering System",
+        "overview": "The AJA ATC 2200 Sputtering System is a PVD tool which deposits films on a substrate by a method known as sputtering. Magnetron sputtering uses accelerated, positively charged ions from a plasma source to deposit films with an increased deposition rate and more controlled electron bombardment than evident in other sputtering systems (such as diode sputtering).",
+        "key_features": [
+            "330-XP (UHV) magnetron sputtering sources in con-focal orientation",
+            "Pneumatic source shutters",
+            "Integral gas injection to source head for reactive sputtering and low pressure operation",
+            "In-situ tilt gimbals with locking UHV position indicator. Allows source head angle adjustment without breaking vacuum",
+            "6\u201d CF viewports",
+            "Substrates to 6\u201d",
+            "Radiant heating to 800 C with quartz halogen lamps",
+            "DC and RF generators",
+            "Kaufman KDC 40 4cm Gridded Ion Source",
+            "Phase II-J Computer Control System"
+        ],
+        "key_applications": [
+            "Corrosion resistant coatings",
+            "Low friction coatings",
+            "Hard, wear resistant coatings",
+            "Coatings with specific electrical and optical properties"
+        ],
+        "general_documentation": {
+            "name": "AJA Flagship Series Sputtering Systems",
+            "href": "http://www.ajaint.com/atc-series-sputtering-systems.html"
+        }
+    },
+    {
+        "name": "AJA ATC Orion 8 UHV Sputtering System",
+        "overview": "The AJA ATC Orion 8 UVH Sputtering System is a PVD tool which deposits films on a substrate using magnetron sputtering. Magnetron sputtering uses accelerated, positively charged ions from a plasma source to deposit films with an increased deposition rate and more controlled election bombardment than evident in other sputtering systems (such as diode sputtering).\u00a0",
+        "key_features": [
+            "Stiletto (HV) magnetron\u00a0sputtering source",
+            "A330-XP-O (UHV) magnetron sputtering source",
+            "Turbo-pumped vacuum load lock with 6 position cassette",
+            "Substrates to 6\u201d",
+            "Temperatures to 1000 degrees celsius",
+            "DC and RF generators",
+            "Up to 8 2\u201d sputter sources or 5 3\u201d sputter sources",
+            "Phase II-J Computer Control System"
+        ],
+        "key_applications": [
+            "Corrosion resistant coatings",
+            "Low friction coatings",
+            "Hard, wear resistant coatings",
+            "Coatings with specific electrical and optical properties"
+        ],
+        "general_documentation": {
+            "name": "AJA ATC-Orion Series Sputtering Systems",
+            "href": "http://www.ajaint.com/atc-orion-series-sputtering-systems.html"
+        }
+    },
+    {
+        "name": "Angstrom EvoVac Electron Beam Evaporator",
+        "overview": "The Angstrom EvoVac Electron Beam Evaporator is a PVD tool which evaporates high melting point materials, such as refractory metals and ceramics, using an electron beam. The EvoVac provides multiple sources of flexibility in its deposition system\u00a0including\u00a0resistive thermal evaporation, ion assisted\u00a0and sputter deposition, as well as principal electron beam\u00a0evaporation.",
+        "key_features": [
+            "6 pocket E-beam source",
+            "12 cc crucibles",
+            "Programmable 2-axis sweep controller",
+            "Wafers to 6\u201d",
+            "Temperatures to 400 \u00b0C",
+            "High deposition rate",
+            "Advanced multi-layer deposition control for precise layer monitoring",
+            "Sensor guided co-deposition to prevent interference from adjacent source material",
+            "Pneumatic airline filter",
+            "Substrate heating, cooling, and biasing",
+            "Long source to substrate distances"
+        ],
+        "key_applications": [
+            "Electronic and Optical Semiconductor films",
+            "Wear resistant and thermal barrier coatings",
+            "Hard coatings for tools"
+        ],
+        "general_documentation": {
+            "name": "Angstrom EvoVac Electron Beam Evaporator",
+            "href": "http://angstromengineering.com/products/evovac/"
+        }
+    },
+    {
+        "name": "Angstrom Nexdep Thermal E-Beam Evaporator",
+        "overview": "The Angstrom Nexdep Thermal E-Beam Evaporator is a PVD tool that offers E-Beam and Thermal evaporation for a variety of high melting point substrates. The NexDep can be configured for a variety of PVD processes including resistive thermal evaporation, sputter and ion assisted deposition, and principal E-Beam and Thermal evaporation capacities.\u00a0",
+        "key_features": [
+            "4 x 22 cc multi-pocket E-Beam",
+            "16\" \u00d7 16\" \u00d7 28\" High aluminum high vacuum box chamber",
+            "Additional height for e\u2010beam evaporation",
+            "Glass bead blast finish on chamber surfaces",
+            "One set removable stainless steel debris shields",
+            "Hinged chamber front door for easy internal access",
+            null,
+            "Large viewport offset to reduce material deposition",
+            "3 kW power supply",
+            "Sweep controller",
+            "Single resistive evaporation source",
+            "PC control station with fully automated sequences and software for deposition control",
+            "Combined co-deposition processing",
+            "Multi-layer deposition control",
+            "Configured for AI / AU / CR / NI / Ti / Pt"
+        ],
+        "key_applications": [
+            "Electronic and Optical Semiconductor films",
+            "Wear resistant and thermal barrier coatings",
+            "Hard coatings for tools"
+        ],
+        "general_documentation": {
+            "name": "Angstrom NexDep Thermal E-Beam Evaporator",
+            "href": "http://angstromengineering.com/products/nexdep/"
+        }
+    },
+    {
+        "name": "Bachur and Associates UV Flood Exposure System",
+        "overview": "The system\u2019s exposure optics employ a proven, high performance optic train that employs an elliptical reflector, dielectric heat removing primary and secondary mirrors, a multi-element optical integrator system and collimating optics.\u00a0 The optical integrator system produces non-coherent radiation that virtually eliminates the detrimental effects of diffraction.\u00a0 These high intensity systems can resolve fine structures even in thick resist. \u00a0",
+        "key_features": [
+            "High Efficiency, Uniform, Lightsource System",
+            "user-settable Intensity Levels"
+        ],
+        "key_applications": [
+            "Photoresist Patterning",
+            "Image Reversal"
+        ],
+        "general_documentation": {
+            "name": "Bachur and Associates UV Flood Exposure System",
+            "href": "http://bachur-n-associates.com/Near,%20Mid%20and%20Deep%20UV_Exposure_Systems%20-%20Dec%2016%202013.html"
+        }
+    },
+    {
+        "name": "Bruker Dimension Icon AFM",
+        "overview": "The Bruker Dimension Icon AFM (Atomic Force Microscope) is a very high resolution scanning microscope used in scanning microscopy (SPM) which produces three dimensional images. It is used for nanoscale surface topography, nano-mechanical, nano-electircal, and nano-scale chemical mapping, and morphology measurement.",
+        "key_features": [
+            "Nanoscope SPM control station and analysis software",
+            "Dimension Fastscan AFM System",
+            "210 mm vacuum sample chuck taking samples of <210 mm diameter <15 mm thick",
+            "Peak Force QNM Software",
+            "Peak Force TUNA Software",
+            "Regular contact mode and tapping mode (f= 300 kHz)",
+            "Multiple AFM modes, including Lateral Force Microscopy, Electric Force Microscopy, Piezoresponse Microscopy, Force Spectroscopy, and Phaselmaging",
+            "Icon Scanner for ultra-low noise, high accuracy scanning as an alternative to the Fastscan system",
+            "30\u201d Monitor",
+            "Acoustic and Vibration Isolation Enclosure"
+        ],
+        "key_applications": [
+            "Nanoscale surface topography",
+            "Nano-mechanical, nano-electrical, and nano-scale chemical mapping",
+            "Semiconductors",
+            "Optics",
+            "Polymers"
+        ],
+        "general_documentation": {
+            "name": "Bruker Dimension Icon AFM",
+            "href": "https://www.bruker.com/products/surface-and-dimensional-analysis/atomic-force-microscopes/dimension-icon/overview.html"
+        }
+    },
+    {
+        "name": "Despatch LCC1-15-5 Resist Oven",
+        "overview": "The Despatch LCC1 Resist Oven are used in die-curing and other semiconductor pacing processes. The ovens are configured for 50/60 Hz.",
+        "key_applications": [
+            "260\u00b0C (500\u00b0F) maximum temperature",
+            "Lockable Disconnect Switch on the control panel for easy servicing",
+            "Stainless steel interior with all interior seams protect work chamber from contamination",
+            "Programmable door lock"
+        ]
+    },
+    {
+        "name": "Disco DAD3240 Automatic Dicing Saw",
+        "overview": "The Disco DAD3240 Dicing Saw is a compact, manual, precision dicing saw with an automatic function which is common to the DAD3000 series. Its operating system and LCD touch panel allow for intuitive handling and it can cut through a range of materials, including difficult-to-cut materials essential to the nanofabrication process such as silicon.",
+        "key_features": [
+            "Pieces from 1\u201d to 8\u201d and to widths of 650 mm",
+            "High output, 1.8 kW spindle",
+            "15\u201d LCD touch panel and GUI (Graphical User Interface)",
+            "Automatic Alignment",
+            "Operating System common to the DAD3000 series",
+            "Takes circular and rectangular pieces",
+            "Cut speed from 0.000 to 600 mm/sec"
+        ],
+        "key_applications": [
+            "Cutting of semiconductor wafers into individual chips or dies"
+        ],
+        "general_documentation": {
+            "name": "Disco DAD3240 Automatic Dicing Saw",
+            "href": "http://www.disco.co.jp/eg/products/dicer/index.html"
+        }
+    },
+    {
+        "name": "EBARA ESR20N Vacuum Pump",
+        "overview": "The EBARA ESR20N Vacuum Pump is an ESR (Energy Saving Roots) multistage dry vacuum pump. It is engineered for clean to medium processes and has minimum nitrogren purge requirements with no nitrogen purge requirements for clean processes. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features": [
+            "Pumping speeds of 35 - 1625 CFM",
+            "Pressures as low as 1 mTorr",
+            "High performance DC motors",
+            "Minimal Nitrogen purging",
+            "Idle Mode"
+        ],
+        "general_documentation": {
+            "name": "EBARA ESR20N Vacuum Pump",
+            "href": "https://www.ebara.co.jp/en/products/details/esr.html"
+        }
+    },
+    {
+        "name": "EBARA EV-A03-1 Vacuum Pump",
+        "overview": "The EBARA EV-A03-1 Vacuum Pump is a small, air cooled dry vacuum pump which offers high pumping speeds (9 cfm) and a no-contact design. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features": [
+            "Pumping speeds of 9 cfm",
+            "Weight of 23 kg",
+            "Pressures of 1.0 - 10.0 Pa depending on gas ballast",
+            "High pumping speeds at atmospheric pressure",
+            "High water vapor pumping at 250 g/hr"
+        ],
+        "key_applications": [
+            "Load Lock",
+            "Electron Microscopes",
+            "PVD",
+            "Oxygen Plasma Systems",
+            "Analytical Instruments"
+        ],
+        "general_documentation": {
+            "name": "EBARA EV-AO3-1 Vacuum Pump",
+            "href": "http://www.pchemlabs.com/product.asp?pid=2786"
+        }
+    },
+    {
+        "name": "EBARA EV-A06-1 Vacuum Pump",
+        "overview": "The EBARA EV-A06-1 Vacuum Pump is an air cooled dry vacuum pump which offers high pumping speeds (21.6 cfm) and high water vapor pumping (350 g/hr) The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features": [
+            "Pumping speeds of 21.6 cfm",
+            "Weight of 54 kg",
+            "Pressures of 1.0 - 10.0 Pa depending on gas ballast",
+            "No-Contact Design",
+            "Highest water vapor pumping, at 350 g/hr, for a dry vacuum pump"
+        ],
+        "key_applications": [
+            "Load Lock",
+            "Electron Microscopes",
+            "PVD",
+            "Oxygen Plasma Systems",
+            "Analytical Instruments"
+        ],
+        "general_documentation": {
+            "name": "EBARA EV-AO6-1 Vacuum Pump",
+            "href": "http://www.pchemlabs.com/product.asp?pid=2787"
+        }
+    },
+    {
+        "name": "EMS 1300 Critical Point Dryer",
+        "overview": "The procedure of critical point drying is an efficient method for drying delicate samples for SEM applications.\u00a0The EMS 1300 Critical Point Dryer provides a clear view of the fluid level and visibility of the phase change at the critical point.",
+        "key_features": [
+            "63.5mm internal diameter x 82mm in length",
+            "excellent visibility of the fluid level and drying process",
+            "Simple robust construction",
+            "Large robust valves for draining of fluids"
+        ],
+        "general_documentation": {
+            "name": "EMS 3000 and EMS 3100 Critical Point Dryers",
+            "href": "https://www.emsdiasum.com/microscopy/products/equipment/critical_point_drier.aspx"
+        }
+    },
+    {
+        "name": "FEI Quanta 650 FEG SEM with Nabity Pattern Generator",
+        "overview": "The FEI Quanta 650 FEG SEM (Scanning Electron Microscope) is a variable pressure microscope used for high resolution imaging. It is capable of resolving features on a scale of less than 5 nm. It is equipped with a Field Emission Gun (FEG) which allows for bright-field and dark-field sample imaging. The SEM is equipped with a total of 8 detectors for the purpose of imaging and analysis as well as a Nabity Nanometer Pattern Generation System (NPGS) which allows for advanced electron beam lithography by means of the SEM.",
+        "key_features": [
+            "Variable Pressure mode with pressures of 100 - 200 Pa",
+            null,
+            "Beam Deceleration (BD) mode for high resolution backscatter electron (BSE) imaging",
+            "Samples to 6\u201d",
+            "Electron Backscatter Diffraction (EBSD) for crystallinity research",
+            "Nabity Nanometer Pattern Generation System (NPGS)",
+            "STEM I detector for dry, thin, conductive, electron transmissive samples",
+            "STEM II detector for wet, thin, electron transmissive samples",
+            "Micro-analysis of conductive and non-conductive samples",
+            "Gaseous SE Detector (GSED)",
+            "Everhart-Thornley Detector (E-TD) for dry, conductive samples",
+            "Large Field Detector (LFD) for dry, non-conductive samples in low vacuum conditions (0.08 -1.5 Torr)",
+            "MAPS software for tiling and creating large montage images at high resolution"
+        ],
+        "key_applications": [
+            "Microscopy of conductive and non-conductive samples",
+            "NPGS for electron beam lithography",
+            "Imaging of dry and wet samples",
+            "Elemental analysis through mapping, spectrum quantification, line scanning"
+        ],
+        "general_documentation": {
+            "name": "FEI Quanta 650 FEG SEM",
+            "href": "http://www.fei.com/products/sem/quanta-sem/"
+        }
+    },
+    {
+        "name": "Filmetrics F3 Film Thickness Spectral Reflectometer",
+        "overview": "The Filmetrics F3 Film Thickness Spectral Reflectometer is most commonly used to measure thin-film properties by adding thickness and refractive index software modules. The thickness and reactiveness can be measured in less than 3 seconds.",
+        "key_features": [
+            "40-hour light source",
+            "USB Connection",
+            "Thickness range: 15nm-70\u03bcm",
+            "Wave length range:\u00a0100nm-250 \u03bcm"
+        ],
+        "general_documentation": {
+            "name": "F3 Model Specifications",
+            "href": "https://www.filmetrics.com/thicknessmeasurement/f3"
+        }
+    },
+    {
+        "name": "Fisher Scientific Isotemp FMS Refrigerator",
+        "overview": "The\u00a0Fisher Scientific Isotemp FMS Refrigerator is use for safe storage of volatile materials, pharmaceuticals, clinical reagents, and biological samples.",
+        "key_features": [
+            "Adjustable temperatures from 1\u00b0 to 12\u00b0C",
+            "Manual defrost",
+            "Spark proof interiors separate contents from compressor and motor"
+        ],
+        "general_documentation": {
+            "name": "Fisher Isotemp Refridgerators",
+            "href": "http://www.fishersci.com/shop/products/fisher-scientific-isotemp-flammable-materials-storage-refrigerators-basic-model-2/p-161759"
+        }
+    },
+    {
+        "name": "Fisher Scientific Revco FMS Freezer",
+        "overview": "The\u00a0Fisher Scientific Revco FMS Freezer is used for medical and scientific applications such as storage of reagents, pharmaceuticals, biologicals or other commonly used laboratory materials.",
+        "key_features": [
+            "Capacities from 4.9 to 51.1 cu. ft. (139 to 1447L)",
+            "\u00a0-30\u00b0C and -20\u00b0C",
+            "Audible/visual warnings for over-temperature, under-temperature, or power failure",
+            "Controller battery backup system"
+        ],
+        "general_documentation": {
+            "name": "Fisher Lab Freezers",
+            "href": "http://www.fishersci.com/shop/products/revco-high-performance-lab-freezers/p-4530621"
+        }
+    },
+    {
+        "name": "FMS Thin Film Stress Measurement System [future]",
+        "overview": "The\u00a0FMS Thin Film Stress Measurement System is used to test the stress of different films and substrates. It can also test the coefficient of thermal expansion (CTE) of films.",
+        "key_features": [
+            "Dual laser wavelength to avoid destructive interference from dielectric in film",
+            "Wafer range of 2-8in diameter",
+            "3D map capabilities",
+            "Temperature range from room temp to 500 Celsius"
+        ],
+        "general_documentation": {
+            "name": "FMS System Overview",
+            "href": "http://www.a-star.edu.sg/Portals/72/fckeditor/uploadfiles/F-100%20SNFC%20Factsheet%20-%20FSM(1).pdf"
+        }
+    },
+    {
+        "name": "Heidelberg MLA150 Direct Write Lithographer",
+        "overview": null,
+        "key_features": [
+            "Minimum featrue size down to 1 \u00b5m",
+            "Non-contact exposure",
+            "Substrates up to 6\u201d x 6\u201d",
+            "Light source at 405nm and 375nm",
+            null,
+            "Alignment accuracy of 500nm",
+            "Multiple data input formats"
+        ],
+        "key_applications": [
+            "Fast patterning of masks and wafers in Life Science, MEMS, Micro-Optics, Semiconductor, Sensors, Actuators, MOEMS, Material Research, Nano-Tubes, Graphene"
+        ],
+        "general_documentation": {
+            "name": "Heidelberg MLA150 Direct Write Lithography System",
+            "href": "http://www.himt.de/index.php/MLA150.html"
+        }
+    },
+    {
+        "name": "Horiba UVISEL 2 Spectroscopic Ellipsometer",
+        "overview": "The UVISEL 2 is an accurate and sensitive ellipsometer and includes a wide range of integrated automated features useful for the investigation of all materials. The UVISEL 2 is simple to operate and has the performance required for characterizing all current materials as well as the next generation of materials and structures.",
+        "key_features": [
+            "The smallest possible achromatic spot size of 35 \u03bc capable of covering a large spectral range from FUV to NIR for measurement of very small sample areas",
+            null,
+            null,
+            "A sample vision coupled with automated spot selection for accurate positioning of the measurement spot and region on the sample"
+        ],
+        "key_applications": [
+            "Characterization"
+        ],
+        "general_documentation": {
+            "name": "UVISEL 2 Scientific Spectroscopic Ellipsometer",
+            "href": "http://www.horiba.com/scientific/products/ellipsometers/spectroscopic-ellipsometers/uvisel-2/uvisel-2-scientific-spectroscopic-ellipsometer-16101/"
+        }
+    },
+    {
+        "name": "IoN Wave 10 Plasma Asher",
+        "overview": "The IoN Wave 10 Plasma Asher is a mid-size wafer batch plasma microwave asher used for the removal of photoresists from etched wafers, wafer descum, and\u00a0wafer cleaning prior to wet etching, among other applications. It is capable of high\u00a0photoresist ashing rates with minimal\u00a0exposure to electro static discharge (ESD).",
+        "key_features": [
+            "Quartz chamber taking wafers to 8\u201d",
+            "Quartz boats taking up to 25 6\u201d wafers",
+            "2.45 GHz frequency with power output up to 600 W",
+            "Graphic User Interface (GUI) software compliant with Semi E95 - 1101",
+            "10.4\u201d LCD touch panel",
+            "Recipe editor for fast, versatile parameter control",
+            "Recipe editor simulator software",
+            "Remote process monitoring via Ethernet"
+        ],
+        "key_applications": [
+            "Photo-resist stripping",
+            "Wafer descum",
+            "Wafer cleaning",
+            "SU-8 removal",
+            "Etching of passivation layers",
+            "Cleaning of filters and membranes",
+            "Chemical trace analysis",
+            "MEMS",
+            "Photonics"
+        ],
+        "general_documentation": {
+            "name": "IoN Wave 10 Plasma Asher",
+            "href": "http://www.pvateplaamerica.com/ion10.php"
+        }
+    },
+    {
+        "name": "K&S 4129 Wedge Bonder",
+        "overview": "The K&S 4129 Wedge Bonder is an aluminum and gold wire wedge bonder that is used for binding devices.",
+        "key_features": [
+            "Thermosonic and ultrasonic modes",
+            "DC Servo/LVDT closed loop control",
+            "Air-damped bonding head",
+            "Electronic dial control"
+        ],
+        "general_documentation": {
+            "name": "K&S Wire Bonder",
+            "href": "http://mfc.engr.arizona.edu/documents/K&S%20Wire%20Bonder%20Model%204123.pdf"
+        }
+    },
+    {
+        "name": "Keysight B1500A Semiconductor Device Analyzer",
+        "overview": "The Keysight B1500A Semiconductor Device Analyzer provides a wide range of measurement capabilities to cover the electrical characterization and evaluation of devices, materials, semiconductors, active/passive components, or virtually any other type of electronic device with uncompromised measurement reliability and efficiency.",
+        "key_features": [
+            "allows you to add or upgrade measurement modules if measurement needs change over time."
+        ],
+        "general_documentation": {
+            "name": "Keysight B1500A Semiconductor Device",
+            "href": "http://www.keysight.com/en/pd-582565-pn-B1500A/semiconductor-device-analyzer?nid=-33019.536905585&cc=US&lc=eng"
+        }
+    },
+    {
+        "name": "KLA-Tencor P-7 Surface Profilometer",
+        "overview": "The KLA-Tencor P-7 Surface Profilometer is a research grade stylus profiler for surface metrology and measurement. The KLA-Tencor P-7 is software equipped with parameters for a wide range of measurements including depth, step height, roughness, waviness, slop, flatness, distance, bearing ratio, radius of curvature, and more.",
+        "key_features": [
+            "Sample size to 150 mm with 150 mm scan length",
+            "1 mm Z-range",
+            "2 \u03bcm radius stylus",
+            "Apex software for a variety of measurement parameters, customized reports and automatic processing of data",
+            "3D imaging",
+            "2D stress analysis",
+            "Step height repeatability",
+            "Thin and Thick film step heights",
+            "Etched trench depth"
+        ],
+        "key_applications": [
+            "Semiconductors",
+            "MEMS",
+            "Data Storage",
+            "Opto-electronics",
+            "Solar technology"
+        ],
+        "general_documentation": {
+            "name": "KLA-Tencor P-7 Surface Profilometer",
+            "href": "http://www.kla-tencor.com/Surface-Profiling/p7.html"
+        }
+    },
+    {
+        "name": "Memsstar Orbis Alpha Oxide Etch System",
+        "overview": "\n\tThe Memsstar Orbis Alpha Oxide Etch System is a small footprint, self-contained oxide etch system which utilizes hydrogen fluoride etchants along with memsstar\u2019s unique patented high volume production process to enable researchers to develop production-capable processes for the next generation of MEMS devices.\u00a0",
+        "key_features": [
+            "Large process window to optimize process for any structure",
+            "Excellent selectivity with silicon nitride and silicon dioxide (< 5% 1 \u03c3)",
+            "High selectivity to underlayer and mechanical materials",
+            "Excellent uniformity (< 5% 1 \u03c3) and\u00a0repeatability (< 5% 1 \u03c3)",
+            "Unique endpoint capability",
+            "Handles materials from sample sizes to 200 mm",
+            "Small footprint (600 x 540 x 900 mm)",
+            "PC controlled",
+            "Resistive touch screen"
+        ],
+        "key_applications": [
+            "RF MEMS",
+            "Sensors",
+            "RF switches",
+            "Temperature gauges"
+        ],
+        "general_documentation": {
+            "name": "Memsstar Orbis Alpha Oxide Etch System",
+            "href": "http://memsstar.com/products-services/mems/orbis-platforms/platforms-technologies-orbis-alpha/"
+        }
+    },
+    {
+        "name": "MiniPack Torre MVS-45X Vacuum Sealer",
+        "overview": "The Minipack MVS 45X chamber sealer is an industrial-level vacuum sealer designed to packaging products. The large 18.5\" x 16\" x 4.5\" chamber allows plenty of room for packaging a variety of products. The basin is seamless, making it easy to clean.",
+        "key_features": [
+            "Auto-calibration",
+            "Digital panel with 10 storable programs",
+            "Electronic volumetric sensor",
+            "Security for over-current on sealing bar",
+            "Aluminum sealing bar"
+        ],
+        "general_documentation": {
+            "name": "Minipack Specifications",
+            "href": "https://www.minipack.us/mvs45x.php"
+        }
+    },
+    {
+        "name": "Nikon Eclipse L200 Microscope",
+        "overview": "The Nikon Eclipse L200 Optical Microscope\u00a0is a microscope capable of greater contrast,\u00a0high resolving power and darkfield images\u00a0up to three times brighter than other models.\u00a0It can be used for the precise optical\u00a0inspection of wafers, photo masks, reticles and\u00a0other substrates.",
+        "key_features": [
+            "200 mm wafer and mask inspection",
+            "High intensity\u00a012 V - 100 W Halogen Illuminator (LV-LH50PC)",
+            "Tilting Eyepiece Tube allows for continuous adjustment of tilt angle from 0 \u00b0 through 30\u00a0\u00b0\u00a0",
+            "Eyepiece features ultra-widefield design with an F.O.V. of 25 mm",
+            "CF160 Optical System",
+            "8\" x 8\" stage"
+        ],
+        "general_documentation": {
+            "name": "Nikon Eclipse L200 Microscope",
+            "href": "https://www.nikonmetrology.com/en-gb/product/eclipse-l200n-series"
+        }
+    },
+    {
+        "name": "Pfeiffer HiCube 80 Turbo Pumping Station",
+        "overview": "The HiCube 80 is a versatile, mobile Turbo Pimping Station. It uses a HiPace turbo pump as well as a backing pump that \u00a0are inter-coordinated for a wide range of applications and fast pump downtime.",
+        "key_features": [
+            "Vacuum and sniffing leak detection",
+            "Operating temperature 10\u00b0 - 35\u00b0 celsius",
+            "Noise level 53 dB (A)",
+            "RS-232 Interface",
+            "Maximum power consumption of 1500 W, power consumption of 700 W",
+            "Detects 4He, 3He, H2"
+        ],
+        "key_applications": [
+            "Semiconductors",
+            "Electronics",
+            "Solar technology",
+            "Laser technology",
+            "Aeronautics",
+            "Vacuum component"
+        ],
+        "general_documentation": {
+            "name": "HiCube 80 Turbo Pump Specifications",
+            "href": "https://www.pfeiffer-vacuum.com/en/products/pumping-stations/turbo-pumping-stations/hicube-eco/?detailPdoId=20020"
+        }
+    },
+    {
+        "name": "Pfeiffer Vacuum ADIXEN ASM 380 Leak Detector",
+        "overview": "\n\tThe ASM 380 is a high performance, mobile, leak detector. It has an ACP 40 dry backing pump and a high vacuum pump which allows for high testing sensitivity and short pump down times, even for large volumes.",
+        "key_features": [
+            "Vacuum and sniffing leak detection",
+            "Operating temperature 10\u00b0 - 35\u00b0 celsius",
+            "Noise level 53 dB (A)",
+            "RS-232 Interface",
+            "Maximum power consumption of 1500 W, power consumption of 700 W",
+            "Detects 4He, 3He, H2"
+        ],
+        "key_applications": [
+            "Semiconductors",
+            "Electronics",
+            "Solar technology",
+            "Laser technology",
+            "Aeronautics",
+            "Vacuum components"
+        ],
+        "general_documentation": {
+            "name": "Pfeiffer Vacuum ASM 380 Mobile Leak Detector",
+            "href": "https://www.pfeiffer-vacuum.com/en/products/leak-detectors/high-performance-mobile/"
+        }
+    },
+    {
+        "name": "Plasma-Therm Apex SLR HDPCVD",
+        "overview": null,
+        "key_features": [
+            "1 kW 2 MHz ICP source",
+            "300 W, 13.56 MHz electrode",
+            "254 mm plate",
+            "Low temperature deposition, typically 80 \u00b0 - 150 \u00b0C",
+            "Liquid-to-liquid heat exchanger",
+            "Compatible with film etching for SiNx, SiO2, a-Si, SiOxNy, SiC, Ta2O5.",
+            "Compatible with film etching for polymers such as photoresist and polyimide",
+            "Endpoint Detection",
+            "ANSI-ISA 88 data logging and recipe management software"
+        ],
+        "key_applications": [
+            "Failure/Yield Analysis",
+            "Silicon conductors",
+            "Photonics",
+            "ICP etch processing",
+            "MEMS",
+            "Solid State Lighting",
+            "R & D",
+            "Dielectrics",
+            "Polymers"
+        ],
+        "general_documentation": {
+            "name": "Plasma-Therm Apex SLR HDPCVD System",
+            "href": "http://www.plasmatherm.com/Apex_SLR.html"
+        }
+    },
+    {
+        "name": "Plasma-Therm ICP Chlorine Etch",
+        "overview": null,
+        "key_features": [
+            "1 kW 2 MHz Inductively Coupled Plasma (ICP) source",
+            "Etches metals and compound semiconductors",
+            "Computer Controlled",
+            "RF Power to 500 W",
+            "Mass Flow Controllers (MFC) for control of gas flow"
+        ],
+        "key_applications": [
+            "MEMS",
+            "Silicon Etching"
+        ]
+    },
+    {
+        "name": "Plasma-Therm ICP Fluoride Etch",
+        "overview": null,
+        "key_features": [
+            "1 kW 2 MHz Inductively Coupled Plasma (ICP) source",
+            "Etches metals and compound semiconductors",
+            "Computer Controlled",
+            "RF Power to 500 W",
+            "Mass Flow Controller (MFW) for control of gas flow"
+        ],
+        "key_applications": [
+            "MEMS",
+            "Silicon Etching"
+        ]
+    },
+    {
+        "name": "Plasma-Therm Versaline Deep Si RIE",
+        "overview": "The Plasma-Therm Versaline DSE (Deep Silicon Etcher) is a deep silicon etcher Plasma RIE that runs the Bosch Si process. It is primarily used for deep etching of MEMS structures in silicon. The Bosch process is used for the creation of deep, almost vertical, high aspect ratio structures and is an alternative to cryogenic chuck adapted ICP RIE systems and allows for deeper SI etches and a higher aspect ratio relative to these systems.",
+        "key_features": [
+            "1 kW 2 MHz ICP source",
+            "Up to 4\u201d wafers",
+            "Computer Controlled",
+            "Handles Silicon, SiO2, Si3N4, SiOxNy, as well as polmyer films such as PMMA, photoresist, and polymide",
+            "500 W, 13.56 MHz plasma generators",
+            "He-back-side cooling"
+        ],
+        "key_applications": [
+            "MEMS",
+            "DRAM"
+        ],
+        "general_documentation": {
+            "name": "Plasma-Therm Versaline DSE",
+            "href": "http://www.plasmatherm.com/versaline-dse.html"
+        }
+    },
+    {
+        "name": "Plasma-Therm Vision 310 PECVD",
+        "overview": null,
+        "key_features": [
+            "Patented dual frequency generator with 300 W\u00a0at 13.56 MHz / 500 W at 187 kHz",
+            "305 mm substrate plate",
+            "Temperature control from 30 \u00b0C\u00a0 to 300 \u00b0C",
+            "High temperature electrode up to 380 \u00b0C",
+            "Optimized shower head for uniform\u00a0deposition",
+            "Digital mass flow controllers with bypass and flush capabilities and up and downstream isolation valves"
+        ],
+        "key_applications": [
+            "Semiconductor fabrication",
+            "R & D production and application",
+            "Stress controlled silicon nitride and silicon dioxide film deposition",
+            "MEMS"
+        ],
+        "general_documentation": {
+            "name": "Plasma-Therm 310 PECVD System",
+            "href": "http://www.plasmatherm.com/vision-series.html"
+        }
+    },
+    {
+        "name": "Plassys Electron Beam Evaporator",
+        "overview": null,
+        "key_features": [
+            "Eight 15 cc crucibles with Al, Au, Ge, Ni, NiCr, Pd, Pt, Ti",
+            "Thin film (<100 nm) evaporation of metals with electron beam",
+            "10 keV electron beam energy, 10 kW power",
+            "Substrates up to 150 mm",
+            "Ion gun for sample milling or IAD",
+            "Cryo pumped load lock and main chamber",
+            "In-chamber substrate cleaning",
+            "Full computer control"
+        ],
+        "key_applications": [
+            "MEMS",
+            "Josephson Circuit",
+            "Thermal Barriers",
+            "HMET, PHMET Transistors",
+            "Magnetic materials for microwave applications"
+        ],
+        "general_documentation": {
+            "name": "Plassys Electron Beam Evaporator\u00a0",
+            "href": "http://www.plassys.com/pageuk/machines/evaporation/evaporation.html"
+        }
+    },
+    {
+        "name": "Questar Q7800 Automatic Wedge Bonder",
+        "overview": "The Questar Q7800 Automatic Wedge Bonder is used for connecting wires in chips, sensors, and such.",
+        "key_features": [
+            "Automatic and semi-automatic modes",
+            "Bonding speed of 600m/s",
+            "Multiple stitch bonding",
+            "0.0007\" to 0.003\" diameter wire capability"
+        ],
+        "general_documentation": {
+            "name": "Features and Specifications",
+            "href": "http://www.questarproducts.com/_images/_pdf/Q7800_Specs_120111_frm.pdf"
+        }
+    },
+    {
+        "name": "Raith EBPG5000 Plus E-Beam Writer",
+        "overview": "The Raith EBPG5200 E-Beam lithography system is a high performance nanolithography system used chiefly for write lithography system used chiefly for write lithography and R&D mask making. It is the latest model in the EBPG series, preceded by the EBPG5150.",
+        "key_features": [
+            "155 mm writing capability",
+            "Accommodates wafer sizes of up to 6\u201d and mask sizes of up to 6\u201d",
+            "Minimum feature size of less than 8 nm",
+            "50 / 100 MHz pattern generator",
+            "Thermal Field Emission gun, for operation at 20, 50, and 100 kV",
+            "Variable field size to 1 mm at all kVs"
+        ],
+        "key_applications": [
+            "Compound semiconductor application",
+            "Vertical resonant tunnel transistor",
+            "Circular grating resonator"
+        ]
+    },
+    {
+        "name": "Signatone Checkmate CM21X Probe Station",
+        "overview": "The\u00a0Signatone CheckMate Probe Station\u00a0is an ultra-stable 200mm / 300mm analytical probe station with coarse and fine wafer stage movement to provide fast wafer movement as well as submicron resolution.",
+        "key_features": [
+            "Elimination of moisture or frost build-up when using a cold chuck",
+            "A dark environment for making light sensitive measurements",
+            "EMI Protection"
+        ],
+        "general_documentation": {
+            "name": "Checkmate Series Probe Station",
+            "href": "http://www.signatone.com/products/probestations/checkmate.asp"
+        }
+    },
+    {
+        "name": "SUSS MJB4 Manual Mask Aligner",
+        "overview": "The MJB4 is a high precision manual mask aligner that works with small substrates, wafers, and pieces. It is frequently used for MEMS and optoelectronic applications. It can handle fragile III-V materials.",
+        "key_features": [
+            "High resolution prints down to 0.5 \u03bcm",
+            "Universal Optics option for UV 250, UV 350 and UV 400",
+            "Wafers and Substrates to 100 mm",
+            "Thickness of mask up 9 mm",
+            "Soft, hard, and vacuum contact",
+            "SUSS single field microscope",
+            "Diffraction reducing optics",
+            "Wedge Error Compensation (WEC)",
+            "Top side and infrared alignment"
+        ],
+        "key_applications": [
+            "LED Lithography",
+            "MEMS",
+            "UV-NIL"
+        ],
+        "general_documentation": {
+            "name": "Suss MJB4 Manual Mask Aligner",
+            "href": "https://www.suss.com/en/products-solutions/products/mask-aligner/mjb4/overview.html"
+        }
+    },
+    {
+        "name": "Tystar Mini-Tytan 4600 Furnace System",
+        "overview": "\n\tThe Tystar Mini-Tytan 4600 Furnace system is a Low Pressure Chemical Vapor Deposition (LPCVD) system which consists of four vacuum tubes in one furnace stack. Two of these are low pressure tubes and two atmospheric pressure tubes. The Tystar 4600 can perform low temperature oxide processes depositing materials such as silicon nitride and polysilicon. The Tystar 4600 offers high process uniformity and incorporates some of the most advanced concepts in high performance wafer processing all with a low footprint, requiring less space and electric power than furnaces of a similar capacity. \u00a0",
+        "key_features": [
+            "Wafers up to 6\" / I50 mm",
+            "Temperatures up to 850 \u00b0C for silicon nitride and up to 650 \u00b0C for all others",
+            "Silicon nitride and polysilicon deposition",
+            "Maximum deposition thickness of\u00a05 \u03bcm",
+            "LTO (Low Temperature Oxidation) for processes of < 450 \u00b0C \u00a0",
+            "MFS-460 Mass Flow System",
+            "DCS-30 Data Collection System"
+        ],
+        "key_applications": [
+            "Suspended membrane fabrication",
+            "Silicon conductors",
+            "Silicon gate devices",
+            "MEMS",
+            "Inter level metal isolation",
+            "Optical waveguides",
+            "Dielectrics",
+            "LTO (Low Temperature Oxidation)",
+            "R & D\u00a0"
+        ],
+        "general_documentation": {
+            "name": "Tystar Mini-Tytan 4600 Horizontal Furnace System",
+            "href": "http://tystar.com/catalog/catalog.pdf"
+        }
+    },
+    {
+        "name": "Ultratech/Cambridge Fiji G2 Plasma-Enhanced ALD",
+        "overview": "The Ultratech Fiji G2 plasma system is a modular high-vacuum ALD (Atomic Layer Deposition) system\u00a0that accommodates a wide range of deposition modes while using a flexible system architecture that permits multiple configurations of precursors\u00a0and plasma gases. The result is a plasma ALD system that reproduces the thermal and plasma enhanced ALD films of the literature as well as providing experimental flexibility for future ALD innovations.",
+        "key_features": [
+            "Substrates up to 200 mm",
+            "Wafers to 8\u201d",
+            "Flow-optimized ALD chamber for thermal or plasma deposition",
+            "Substrate temperatures to 500 \u00b0C",
+            "Multipurpose energy assisted deposition Conflat top flange (plasma, ion source, laser, UV etc)",
+            "Uniform coverage for plasma deposited films (on aspect ratios of 20:1)",
+            "Process Modes: Thermal Continuous Mode for high speed depositions, Thermal Expo Mode with stop valve operation for ultra-high aspect ratio structures (> 450:1), and Plasma Mode for difficult nitrides and metals",
+            "All system parameters can be controlled in recipe (e.g. substrate and precursor temperatures, gas mass flows, pulse times, etc.",
+            "High conformity coatings",
+            "Near monolayer growth conditions",
+            "Deposits with high uniformity and conformity on a nanometer scale Deposition uniformity of Al2O3 is 1.5%"
+        ],
+        "key_applications": [
+            "High quality films for heterostructures, nanotubes, and organic semiconductors",
+            "Used in LED and III - V devices",
+            "MEMS",
+            "Optoelectronics",
+            "Renewable energy technology"
+        ],
+        "general_documentation": {
+            "name": "Ultratech/Cambridge NanoTech Simply ALD",
+            "href": "http://www.cambridgenanotechald.com/products/Fiji-advanced-ald-system.shtml"
+        }
+    },
+    {
+        "name": "Ultratech/Cambridge Savannah ALD System",
+        "overview": "Ultratech/Cambridge Savannah ALD System is equipped with high-speed pneumatic pulse valves to enable thin film deposition on Ultra High Aspect Ratio substrates. This proven precision thin film coating methodology can be used to deposit conformal, uniform films on substrates with aspect ratios of greater than > 2000:1.",
+        "key_features": [
+            null,
+            "Capable of handling gas, liquid, or solid precursors",
+            "Equipped with heated precursors lines",
+            "Wafers to 8\u201d (200 mm) diameter x 0.25\u201d (6.4 mm) deep",
+            "Flow-optimized ALD chamber for thermal or plasma deposition",
+            "Substrate temperatures to 350 \u00b0C",
+            "Dual Zone Reactor Heaters: Differential wall and substrate heating",
+            "Venting time: <1 minute (mass flow controller regulated venting to prevent turbulence when using small sample pieces)",
+            "Gas flow during operation: 20 SCCM",
+            "Many common precursors already available in pre-packs from Strem Chemicals and Sigma-Aldrich",
+            "Film Uniformity: <1 %"
+        ],
+        "key_applications": [
+            "Thin film deposition"
+        ],
+        "general_documentation": {
+            "name": "Ultratech/Cambridge NanoTech Simply ALD",
+            "href": "http://www.cambridgenanotechald.com/products/Savannah-ald-system.shtml"
+        }
+    },
+    {
+        "name": "Ultron UH104 UV Curing System",
+        "overview": "The\u00a0Ultron UH104 UV Curing System is used to toughen and strengthen polymer materials by cross-linking polymer chains. It accommodates up to 8\" (200mm) wafers on film frames or grip rings and up to 12\" (300mm) wafer capability.",
+        "key_features": [
+            "Compact, desktop profile accommodates up to 300mm frame-mounted wafer\u00a0",
+            "Environmentally safe, ozone-free UV lamp with fast curing time",
+            "Easily programmable microprocessor-based controller\u00a0",
+            "Optional motorized, rotating work stage"
+        ],
+        "general_documentation": {
+            "name": "Ultron UV Curing System",
+            "href": "http://www.ultronsystems.com/pdf/UH104.pdf"
+        }
+    },
+    {
+        "name": "Ultron UH114 Wafer/Frame Film Applicator",
+        "overview": "The\u00a0Ultron UH114 Wafer/Frame Film Applicator is used in the process of slicing/ sawing applications in which lamination is crucial. This device ensures a bubble free lamination with adjustable features.",
+        "key_features": [
+            "Circular cutter (wheel-type) for cutting film on film frame",
+            "Adjustable cutting pressure for different films\u00a0",
+            "Digital temperature controlled platen",
+            "Adjustable work stage height from top of unit",
+            "Accommodates wafer up to 6\" capability\u00a0"
+        ],
+        "general_documentation": {
+            "name": "Ultron UH114 Series",
+            "href": "http://www.ultronsystems.com/USI-ProdMounters.html"
+        }
+    },
+    {
+        "name": "WAFAB Acid/Base Bench",
+        "overview": "The WAFAB Manual Acid/Base Bench is a non-automated front-acces wet bench designed to handle acidic and basic materials without degrading.",
+        "key_features": [
+            "PVDF deck top",
+            "Heated stainless steel ultrasonic process bath, can produce 40, 72, and 104 kHz",
+            "Recessed hot plate, 7\u201d x 7\u201d",
+            "PFA Nitrogen/DI Water retractable spray gun set"
+        ]
+    },
+    {
+        "name": "WAFAB Bottle Washer Bench",
+        "overview": "The WAFAB Manual Bottle Washer is a non-automated wet station designed for washing glassware used in various processes and dispoing of waster water.",
+        "key_features": [
+            "12 polypropylene bottle wash baths with DI water rinse",
+            "Perforated shelving for drying",
+            "PFA Nitrogen/DI Water retractable spray gun set"
+        ],
+        "key_applications": [
+            "Bottle wash"
+        ],
+        "general_documentation": {
+            "name": "Bottle Washing Station Features",
+            "href": "https://wafabintl.com/wet-processing-equipment/plastic-thermoforming-specialty-products/bottle-wash-stations/"
+        }
+    },
+    {
+        "name": "WAFAB Cleaning Bench",
+        "overview": "The WAFAB Cleaning Bench is a non-automated front-access wet bench designed for cleaning wafers before further processing.",
+        "key_features": [
+            "Stainless steel work surface",
+            "Stainless steel work surface",
+            "PFA nitrogen gun",
+            "Retractable DI Water spray gun",
+            "Spin processor for substrate sizes 10 mm - 150 mm"
+        ],
+        "key_applications": [
+            "RCA Cleaning"
+        ]
+    },
+    {
+        "name": "WAFAB Developer Bench",
+        "overview": "The WAFAB Manual Developer Bench is a non-automated front-access wet bench designed to handle chemicals used for developing photoresist.",
+        "key_features": [
+            "PVDF deck top",
+            "PFA Nitrogen/DI Water spray gun set",
+            "Spin processor for substrate sizes 10 mm-150 mm"
+        ],
+        "key_applications": [
+            "Photoresist development"
+        ]
+    },
+    {
+        "name": "WAFAB HF/TMAH Bench",
+        "overview": "The WAFAB Manual Solvent Bench is a non-automated front-access wet bench designed to handle hydrofluoric acid and tetramethylammonium hydroxide used in etching.",
+        "key_features": [
+            "PVDF deck top",
+            "Recessed deck-top hotplate with stirrer, 7\u201d x 7\u201d",
+            "PTFE Nitrogen spray gun",
+            "PFA DI Water retractable spray gun"
+        ],
+        "key_applications": [
+            "Bulk etch"
+        ]
+    },
+    {
+        "name": "WAFAB Solvent Bench",
+        "overview": "The WAFAB Manual Solvent Bench is a non-automated front-access wet bench designed to handle solvents used for cleaning substrates.",
+        "key_features": [
+            "Stainless steel work surface",
+            "2 ultrasonic stainless steel process baths, can\u00a0produce 40, 72, and 104 kHz",
+            "1 stainless steel heated H2O bath",
+            "Electro-polished cup sinks for solvent resist waste",
+            "Recessed hotplate, 8\u201d x 8\u201d",
+            "PFA Nitrogen spray gun",
+            "Spin processor for substrate sizes from 10 mm-150 mm"
+        ],
+        "key_applications": [
+            "Manual solvent cleaning"
+        ]
+    },
+    {
+        "name": "WAFAB Toxic Corrosives Bench",
+        "overview": "The WAFAB Manual Toxic Corrosives Bench is a non-automated front-access wet bench deigned to handle, contain, and properly dispose of toxic and corrosive materials.",
+        "key_features": [
+            "PVDF deck top",
+            "Heated stainless steel ultrasonic process bath, can produce 40, 72, and 104 kHz",
+            "Recessed hot plate, 7\u201d x 7\u201d",
+            "PFA Nitrogen/DI Water retractable spray gun set"
+        ],
+        "key_applications": [
+            "Wet processing"
+        ]
+    },
+    {
+        "name": "YES CV200 RFS Plasma Strip / Descum System",
+        "overview": "The YES CV200 RFS Plasma Strip / Descum System is used for the removal of thick layers of photoresist or polymide in short production times; accomodating the strict requirements of contemporary front-end semiconductor processing equipment. The YES CV200 RFS operates in two main modes, a powerful plasma stripping mode removes tough and / or thick resists while a gentler descum mode can be used to deal with the cleaning of inorganic substrates.\u00a0",
+        "key_features": [
+            "Quick resist removal, up to 7000 angstroms per minute",
+            "Unique `downstream' protective design -\u00a0balance of the charge in the plasma shields your product from damaging UV exposure",
+            "Wafers from 50 mm to 200 mm",
+            "Variable Power Supply from 150 W to 1250 W",
+            "Real-time wafer temperature measurement and flexible temperature control",
+            "Multiple process gas inputs"
+        ],
+        "key_applications": [
+            "Photoresist removal",
+            "Polyimide removal",
+            "Organics removal",
+            "Descum processes"
+        ],
+        "general_documentation": {
+            "name": "YES CV200 RFS Plasma Strip / Descum System",
+            "href": "http://www.yieldengineering.com/products/plasma-strip-descum-systems/cv200rf-series"
+        }
+    },
+    {
+        "name": "YES G1000 Plasma Cleaning System",
+        "overview": "The YES G1000 Plasma Cleaning System is a plasma cleaning system used for the cleaning and low temperature descum of substrates, as well the surface modification and gentle cleaning of inorganic substrates. The use of plasma at a low generation frequency (40 kHz) in substrate cleaning allows for flexibility around cleaning processes, including, for example, the cleaning of electronically sensitive devices. The YES G1000 generates plasma between an active and grounded electrode plate, free electrons, created in the plasma field, are drawn down by the grounded plate allowing only active ions to pass through to clean components; the result is uniform and consistent processing which, as highlighted previously, leaves the electronic properties of cleaned components unchanged.\u00a0",
+        "key_features": [
+            "4 powered shelves for greater capacity over the YES 500 model",
+            null,
+            "1/2\" 6061-T6 aluminum chamber",
+            "Large load capacity - 15.13\" W x 15.39\" D process area per tray",
+            "Variable Frequency Matching (VFM)",
+            "Touch Screen Interface",
+            "Unique `downstream' protective design - totally charge-free plasma",
+            "State logic control of output with input monitoring"
+        ],
+        "key_applications": [
+            "Substrate cleaning",
+            "Substrate descum",
+            "Surface modification of inorganic substrates",
+            "Gentle cleaning of inorganic substrates",
+            "Cleaning of electronically sensitive devices"
+        ],
+        "general_documentation": {
+            "name": "YES G1000 Plasma Cleaning System",
+            "href": "http://www.yieldengineering.com/products/plasma-cleaning-systems/g-series"
+        }
+    },
+    {
+        "name": "YES-58TA Vacuum Bake/HMDS Vapor Prime and Image Reversal System",
+        "overview": null,
+        "key_features": [
+            "Operation temperature ambient to 180\u00b0 C",
+            "1 load/hour image reversal bake throughput",
+            "2 loads/hour vacuum bake/vapor prime throughput",
+            "Handles wafers up to 300 mm",
+            "Fully programmable process time and temperature"
+        ],
+        "key_applications": [
+            "Image reversal bake",
+            "Vapor prime",
+            "Vacuum bake"
+        ],
+        "general_documentation": {
+            "name": "YES-58TA Vacuum Bake/HMDS Vapor Prime and Image Reversal System",
+            "href": "http://www.yieldengineering.com/products/hmds-prime-ovens/ta-series"
+        }
+    },
+    [
+    {
+        "name":"3C Technical GCA AutoStep 200 5x Reduction Stepper",
+        "overview":"The GCA AutoStep 200 Stepper is an I-line 5x reduction stepper with repeat exposure capabilities. It is capable of submicron resolution and high accuracy alignment.",
+        "key_features":[
+            "21 mm dia exposure field (up to 14.8 X 14.8 mm square)",
+            "Can achieve resolution < 600 nm",
+            "200 mm wafer stage",
+            "Stage precision < 100 nm",
+            "Accommodates wafer sizes from 1 cm pieces to 6\u201d wafers",
+            "Automatic reticle transfer alignment through RMS (reticle management system)",
+            "Exposure wavelength of 365 nm"
+        ],
+        "key_applications":[
+            "MEMS",
+            "VLSI"
+        ]
+    },
+    {
+        "name":"AJA ATC 2200 UHV Sputtering System",
+        "overview":"The AJA ATC 2200 Sputtering System is a PVD tool which deposits films on a substrate by a method known as sputtering. Magnetron sputtering uses accelerated, positively charged ions from a plasma source to deposit films with an increased deposition rate and more controlled electron bombardment than evident in other sputtering systems (such as diode sputtering).",
+        "key_features":[
+            "330-XP (UHV) magnetron sputtering sources in con-focal orientation",
+            "Pneumatic source shutters",
+            "Integral gas injection to source head for reactive sputtering and low pressure operation",
+            "In-situ tilt gimbals with locking UHV position indicator. Allows source head angle adjustment without breaking vacuum",
+            "6\u201d CF viewports",
+            "Substrates to 6\u201d",
+            "Radiant heating to 800 C with quartz halogen lamps",
+            "DC and RF generators",
+            "Kaufman KDC 40 4cm Gridded Ion Source",
+            "Phase II-J Computer Control System"
+        ],
+        "key_applications":[
+            "Corrosion resistant coatings",
+            "Low friction coatings",
+            "Hard, wear resistant coatings",
+            "Coatings with specific electrical and optical properties"
+        ],
+        "general_documentation":{
+            "name":"AJA Flagship Series Sputtering Systems",
+            "href":"http://www.ajaint.com/atc-series-sputtering-systems.html"
+        }
+    },
+    {
+        "name":"AJA ATC Orion 8 UHV Sputtering System",
+        "overview":"The AJA ATC Orion 8 UVH Sputtering System is a PVD tool which deposits films on a substrate using magnetron sputtering. Magnetron sputtering uses accelerated, positively charged ions from a plasma source to deposit films with an increased deposition rate and more controlled election bombardment than evident in other sputtering systems (such as diode sputtering).\u00a0",
+        "key_features":[
+            "Stiletto (HV) magnetron\u00a0sputtering source",
+            "A330-XP-O (UHV) magnetron sputtering source",
+            "Turbo-pumped vacuum load lock with 6 position cassette",
+            "Substrates to 6\u201d",
+            "Temperatures to 1000 degrees celsius",
+            "DC and RF generators",
+            "Up to 8 2\u201d sputter sources or 5 3\u201d sputter sources",
+            "Phase II-J Computer Control System"
+        ],
+        "key_applications":[
+            "Corrosion resistant coatings",
+            "Low friction coatings",
+            "Hard, wear resistant coatings",
+            "Coatings with specific electrical and optical properties"
+        ],
+        "general_documentation":{
+            "name":"AJA ATC-Orion Series Sputtering Systems",
+            "href":"http://www.ajaint.com/atc-orion-series-sputtering-systems.html"
+        }
+    },
+    {
+        "name":"Angstrom EvoVac Electron Beam Evaporator",
+        "overview":"The Angstrom EvoVac Electron Beam Evaporator is a PVD tool which evaporates high melting point materials, such as refractory metals and ceramics, using an electron beam. The EvoVac provides multiple sources of flexibility in its deposition system\u00a0including\u00a0resistive thermal evaporation, ion assisted\u00a0and sputter deposition, as well as principal electron beam\u00a0evaporation.",
+        "key_features":[
+            "6 pocket E-beam source",
+            "12 cc crucibles",
+            "Programmable 2-axis sweep controller",
+            "Wafers to 6\u201d",
+            "Temperatures to 400 \u00b0C",
+            "High deposition rate",
+            "Advanced multi-layer deposition control for precise layer monitoring",
+            "Sensor guided co-deposition to prevent interference from adjacent source material",
+            "Pneumatic airline filter",
+            "Substrate heating, cooling, and biasing",
+            "Long source to substrate distances"
+        ],
+        "key_applications":[
+            "Electronic and Optical Semiconductor films",
+            "Wear resistant and thermal barrier coatings",
+            "Hard coatings for tools"
+        ],
+        "general_documentation":{
+            "name":"Angstrom EvoVac Electron Beam Evaporator",
+            "href":"http://angstromengineering.com/products/evovac/"
+        }
+    },
+    {
+        "name":"Angstrom Nexdep Thermal E-Beam Evaporator",
+        "overview":"The Angstrom Nexdep Thermal E-Beam Evaporator is a PVD tool that offers E-Beam and Thermal evaporation for a variety of high melting point substrates. The NexDep can be configured for a variety of PVD processes including resistive thermal evaporation, sputter and ion assisted deposition, and principal E-Beam and Thermal evaporation capacities.\u00a0",
+        "key_features":[
+            "4 x 22 cc multi-pocket E-Beam",
+            "16\" \u00d7 16\" \u00d7 28\" High aluminum high vacuum box chamber",
+            "Additional height for e\u2010beam evaporation",
+            "Glass bead blast finish on chamber surfaces",
+            "One set removable stainless steel debris shields",
+            "Hinged chamber front door for easy internal access",
+            null,
+            "Large viewport offset to reduce material deposition",
+            "3 kW power supply",
+            "Sweep controller",
+            "Single resistive evaporation source",
+            "PC control station with fully automated sequences and software for deposition control",
+            "Combined co-deposition processing",
+            "Multi-layer deposition control",
+            "Configured for AI / AU / CR / NI / Ti / Pt"
+        ],
+        "key_applications":[
+            "Electronic and Optical Semiconductor films",
+            "Wear resistant and thermal barrier coatings",
+            "Hard coatings for tools"
+        ],
+        "general_documentation":{
+            "name":"Angstrom NexDep Thermal E-Beam Evaporator",
+            "href":"http://angstromengineering.com/products/nexdep/"
+        }
+    },
+    {
+        "name":"Bachur and Associates UV Flood Exposure System",
+        "overview":"The system\u2019s exposure optics employ a proven, high performance optic train that employs an elliptical reflector, dielectric heat removing primary and secondary mirrors, a multi-element optical integrator system and collimating optics.\u00a0 The optical integrator system produces non-coherent radiation that virtually eliminates the detrimental effects of diffraction.\u00a0 These high intensity systems can resolve fine structures even in thick resist. \u00a0",
+        "key_features":[
+            "High Efficiency, Uniform, Lightsource System",
+            "user-settable Intensity Levels"
+        ],
+        "key_applications":[
+            "Photoresist Patterning",
+            "Image Reversal"
+        ],
+        "general_documentation":{
+            "name":"Bachur and Associates UV Flood Exposure System",
+            "href":"http://bachur-n-associates.com/Near,%20Mid%20and%20Deep%20UV_Exposure_Systems%20-%20Dec%2016%202013.html"
+        }
+    },
+    {
+        "name":"Bruker Dimension Icon AFM",
+        "overview":"The Bruker Dimension Icon AFM (Atomic Force Microscope) is a very high resolution scanning microscope used in scanning microscopy (SPM) which produces three dimensional images. It is used for nanoscale surface topography, nano-mechanical, nano-electircal, and nano-scale chemical mapping, and morphology measurement.",
+        "key_features":[
+            "Nanoscope SPM control station and analysis software",
+            "Dimension Fastscan AFM System",
+            "210 mm vacuum sample chuck taking samples of <210 mm diameter <15 mm thick",
+            "Peak Force QNM Software",
+            "Peak Force TUNA Software",
+            "Regular contact mode and tapping mode (f= 300 kHz)",
+            "Multiple AFM modes, including Lateral Force Microscopy, Electric Force Microscopy, Piezoresponse Microscopy, Force Spectroscopy, and Phaselmaging",
+            "Icon Scanner for ultra-low noise, high accuracy scanning as an alternative to the Fastscan system",
+            "30\u201d Monitor",
+            "Acoustic and Vibration Isolation Enclosure"
+        ],
+        "key_applications":[
+            "Nanoscale surface topography",
+            "Nano-mechanical, nano-electrical, and nano-scale chemical mapping",
+            "Semiconductors",
+            "Optics",
+            "Polymers"
+        ],
+        "general_documentation":{
+            "name":"Bruker Dimension Icon AFM",
+            "href":"https://www.bruker.com/products/surface-and-dimensional-analysis/atomic-force-microscopes/dimension-icon/overview.html"
+        }
+    },
+    {
+        "name":"Despatch LCC1-15-5 Resist Oven",
+        "overview":"The Despatch LCC1 Resist Oven are used in die-curing and other semiconductor pacing processes. The ovens are configured for 50/60 Hz.",
+        "key_applications":[
+            "260\u00b0C (500\u00b0F) maximum temperature",
+            "Lockable Disconnect Switch on the control panel for easy servicing",
+            "Stainless steel interior with all interior seams protect work chamber from contamination",
+            "Programmable door lock"
+        ]
+    },
+    {
+        "name":"Disco DAD3240 Automatic Dicing Saw",
+        "overview":"The Disco DAD3240 Dicing Saw is a compact, manual, precision dicing saw with an automatic function which is common to the DAD3000 series. Its operating system and LCD touch panel allow for intuitive handling and it can cut through a range of materials, including difficult-to-cut materials essential to the nanofabrication process such as silicon.",
+        "key_features":[
+            "Pieces from 1\u201d to 8\u201d and to widths of 650 mm",
+            "High output, 1.8 kW spindle",
+            "15\u201d LCD touch panel and GUI (Graphical User Interface)",
+            "Automatic Alignment",
+            "Operating System common to the DAD3000 series",
+            "Takes circular and rectangular pieces",
+            "Cut speed from 0.000 to 600 mm/sec"
+        ],
+        "key_applications":[
+            "Cutting of semiconductor wafers into individual chips or dies"
+        ],
+        "general_documentation":{
+            "name":"Disco DAD3240 Automatic Dicing Saw",
+            "href":"http://www.disco.co.jp/eg/products/dicer/index.html"
+        }
+    },
+    {
+        "name":"EBARA ESR20N Vacuum Pump",
+        "overview":"The EBARA ESR20N Vacuum Pump is an ESR (Energy Saving Roots) multistage dry vacuum pump. It is engineered for clean to medium processes and has minimum nitrogren purge requirements with no nitrogen purge requirements for clean processes. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features":[
+            "Pumping speeds of 35 - 1625 CFM",
+            "Pressures as low as 1 mTorr",
+            "High performance DC motors",
+            "Minimal Nitrogen purging",
+            "Idle Mode"
+        ],
+        "general_documentation":{
+            "name":"EBARA ESR20N Vacuum Pump",
+            "href":"https://www.ebara.co.jp/en/products/details/esr.html"
+        }
+    },
+    {
+        "name":"EBARA EV-A03-1 Vacuum Pump",
+        "overview":"The EBARA EV-A03-1 Vacuum Pump is a small, air cooled dry vacuum pump which offers high pumping speeds (9 cfm) and a no-contact design. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features":[
+            "Pumping speeds of 9 cfm",
+            "Weight of 23 kg",
+            "Pressures of 1.0 - 10.0 Pa depending on gas ballast",
+            "High pumping speeds at atmospheric pressure",
+            "High water vapor pumping at 250 g/hr"
+        ],
+        "key_applications":[
+            "Load Lock",
+            "Electron Microscopes",
+            "PVD",
+            "Oxygen Plasma Systems",
+            "Analytical Instruments"
+        ],
+        "general_documentation":{
+            "name":"EBARA EV-AO3-1 Vacuum Pump",
+            "href":"http://www.pchemlabs.com/product.asp?pid=2786"
+        }
+    },
+    {
+        "name":"EBARA EV-A06-1 Vacuum Pump",
+        "overview":"The EBARA EV-A06-1 Vacuum Pump is an air cooled dry vacuum pump which offers high pumping speeds (21.6 cfm) and high water vapor pumping (350 g/hr) The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features":[
+            "Pumping speeds of 21.6 cfm",
+            "Weight of 54 kg",
+            "Pressures of 1.0 - 10.0 Pa depending on gas ballast",
+            "No-Contact Design",
+            "Highest water vapor pumping, at 350 g/hr, for a dry vacuum pump"
+        ],
+        "key_applications":[
+            "Load Lock",
+            "Electron Microscopes",
+            "PVD",
+            "Oxygen Plasma Systems",
+            "Analytical Instruments"
+        ],
+        "general_documentation":{
+            "name":"EBARA EV-AO6-1 Vacuum Pump",
+            "href":"http://www.pchemlabs.com/product.asp?pid=2787"
+        }
+    },
+    {
+        "name":"EMS 1300 Critical Point Dryer",
+        "overview":"The procedure of critical point drying is an efficient method for drying delicate samples for SEM applications.\u00a0The EMS 1300 Critical Point Dryer provides a clear view of the fluid level and visibility of the phase change at the critical point.",
+        "key_features":[
+            "63.5mm internal diameter x 82mm in length",
+            "excellent visibility of the fluid level and drying process",
+            "Simple robust construction",
+            "Large robust valves for draining of fluids"
+        ],
+        "general_documentation":{
+            "name":"EMS 3000 and EMS 3100 Critical Point Dryers",
+            "href":"https://www.emsdiasum.com/microscopy/products/equipment/critical_point_drier.aspx"
+        }
+    },
+    {
+        "name":"FEI Quanta 650 FEG SEM with Nabity Pattern Generator",
+        "overview":"The FEI Quanta 650 FEG SEM (Scanning Electron Microscope) is a variable pressure microscope used for high resolution imaging. It is capable of resolving features on a scale of less than 5 nm. It is equipped with a Field Emission Gun (FEG) which allows for bright-field and dark-field sample imaging. The SEM is equipped with a total of 8 detectors for the purpose of imaging and analysis as well as a Nabity Nanometer Pattern Generation System (NPGS) which allows for advanced electron beam lithography by means of the SEM.",
+        "key_features":[
+            "Variable Pressure mode with pressures of 100 - 200 Pa",
+            null,
+            "Beam Deceleration (BD) mode for high resolution backscatter electron (BSE) imaging",
+            "Samples to 6\u201d",
+            "Electron Backscatter Diffraction (EBSD) for crystallinity research",
+            "Nabity Nanometer Pattern Generation System (NPGS)",
+            "STEM I detector for dry, thin, conductive, electron transmissive samples",
+            "STEM II detector for wet, thin, electron transmissive samples",
+            "Micro-analysis of conductive and non-conductive samples",
+            "Gaseous SE Detector (GSED)",
+            "Everhart-Thornley Detector (E-TD) for dry, conductive samples",
+            "Large Field Detector (LFD) for dry, non-conductive samples in low vacuum conditions (0.08 -1.5 Torr)",
+            "MAPS software for tiling and creating large montage images at high resolution"
+        ],
+        "key_applications":[
+            "Microscopy of conductive and non-conductive samples",
+            "NPGS for electron beam lithography",
+            "Imaging of dry and wet samples",
+            "Elemental analysis through mapping, spectrum quantification, line scanning"
+        ],
+        "general_documentation":{
+            "name":"FEI Quanta 650 FEG SEM",
+            "href":"http://www.fei.com/products/sem/quanta-sem/"
+        }
+    },
+    {
+        "name":"Filmetrics F3 Film Thickness Spectral Reflectometer",
+        "overview":"The Filmetrics F3 Film Thickness Spectral Reflectometer is most commonly used to measure thin-film properties by adding thickness and refractive index software modules. The thickness and reactiveness can be measured in less than 3 seconds.",
+        "key_features":[
+            "40-hour light source",
+            "USB Connection",
+            "Thickness range: 15nm-70\u03bcm",
+            "Wave length range:\u00a0100nm-250 \u03bcm"
+        ],
+        "general_documentation":{
+            "name":"F3 Model Specifications",
+            "href":"https://www.filmetrics.com/thicknessmeasurement/f3"
+        }
+    },
+    {
+        "name":"Fisher Scientific Isotemp FMS Refrigerator",
+        "overview":"The\u00a0Fisher Scientific Isotemp FMS Refrigerator is use for safe storage of volatile materials, pharmaceuticals, clinical reagents, and biological samples.",
+        "key_features":[
+            "Adjustable temperatures from 1\u00b0 to 12\u00b0C",
+            "Manual defrost",
+            "Spark proof interiors separate contents from compressor and motor"
+        ],
+        "general_documentation":{
+            "name":"Fisher Isotemp Refridgerators",
+            "href":"http://www.fishersci.com/shop/products/fisher-scientific-isotemp-flammable-materials-storage-refrigerators-basic-model-2/p-161759"
+        }
+    },
+    {
+        "name":"Fisher Scientific Revco FMS Freezer",
+        "overview":"The\u00a0Fisher Scientific Revco FMS Freezer is used for medical and scientific applications such as storage of reagents, pharmaceuticals, biologicals or other commonly used laboratory materials.",
+        "key_features":[
+            "Capacities from 4.9 to 51.1 cu. ft. (139 to 1447L)",
+            "\u00a0-30\u00b0C and -20\u00b0C",
+            "Audible/visual warnings for over-temperature, under-temperature, or power failure",
+            "Controller battery backup system"
+        ],
+        "general_documentation":{
+            "name":"Fisher Lab Freezers",
+            "href":"http://www.fishersci.com/shop/products/revco-high-performance-lab-freezers/p-4530621"
+        }
+    },
+    {
+        "name":"FMS Thin Film Stress Measurement System [future]",
+        "overview":"The\u00a0FMS Thin Film Stress Measurement System is used to test the stress of different films and substrates. It can also test the coefficient of thermal expansion (CTE) of films.",
+        "key_features":[
+            "Dual laser wavelength to avoid destructive interference from dielectric in film",
+            "Wafer range of 2-8in diameter",
+            "3D map capabilities",
+            "Temperature range from room temp to 500 Celsius"
+        ],
+        "general_documentation":{
+            "name":"FMS System Overview",
+            "href":"http://www.a-star.edu.sg/Portals/72/fckeditor/uploadfiles/F-100%20SNFC%20Factsheet%20-%20FSM(1).pdf"
+        }
+    },
+    {
+        "name":"Heidelberg MLA150 Direct Write Lithographer",
+        "overview":null,
+        "key_features":[
+            "Minimum featrue size down to 1 \u00b5m",
+            "Non-contact exposure",
+            "Substrates up to 6\u201d x 6\u201d",
+            "Light source at 405nm and 375nm",
+            null,
+            "Alignment accuracy of 500nm",
+            "Multiple data input formats"
+        ],
+        "key_applications":[
+            "Fast patterning of masks and wafers in Life Science, MEMS, Micro-Optics, Semiconductor, Sensors, Actuators, MOEMS, Material Research, Nano-Tubes, Graphene"
+        ],
+        "general_documentation":{
+            "name":"Heidelberg MLA150 Direct Write Lithography System",
+            "href":"http://www.himt.de/index.php/MLA150.html"
+        }
+    },
+    {
+        "name":"Horiba UVISEL 2 Spectroscopic Ellipsometer",
+        "overview":"The UVISEL 2 is an accurate and sensitive ellipsometer and includes a wide range of integrated automated features useful for the investigation of all materials. The UVISEL 2 is simple to operate and has the performance required for characterizing all current materials as well as the next generation of materials and structures.",
+        "key_features":[
+            "The smallest possible achromatic spot size of 35 \u03bc capable of covering a large spectral range from FUV to NIR for measurement of very small sample areas",
+            null,
+            null,
+            "A sample vision coupled with automated spot selection for accurate positioning of the measurement spot and region on the sample"
+        ],
+        "key_applications":[
+            "Characterization"
+        ],
+        "general_documentation":{
+            "name":"UVISEL 2 Scientific Spectroscopic Ellipsometer",
+            "href":"http://www.horiba.com/scientific/products/ellipsometers/spectroscopic-ellipsometers/uvisel-2/uvisel-2-scientific-spectroscopic-ellipsometer-16101/"
+        }
+    },
+    {
+        "name":"IoN Wave 10 Plasma Asher",
+        "overview":"The IoN Wave 10 Plasma Asher is a mid-size wafer batch plasma microwave asher used for the removal of photoresists from etched wafers, wafer descum, and\u00a0wafer cleaning prior to wet etching, among other applications. It is capable of high\u00a0photoresist ashing rates with minimal\u00a0exposure to electro static discharge (ESD).",
+        "key_features":[
+            "Quartz chamber taking wafers to 8\u201d",
+            "Quartz boats taking up to 25 6\u201d wafers",
+            "2.45 GHz frequency with power output up to 600 W",
+            "Graphic User Interface (GUI) software compliant with Semi E95 - 1101",
+            "10.4\u201d LCD touch panel",
+            "Recipe editor for fast, versatile parameter control",
+            "Recipe editor simulator software",
+            "Remote process monitoring via Ethernet"
+        ],
+        "key_applications":[
+            "Photo-resist stripping",
+            "Wafer descum",
+            "Wafer cleaning",
+            "SU-8 removal",
+            "Etching of passivation layers",
+            "Cleaning of filters and membranes",
+            "Chemical trace analysis",
+            "MEMS",
+            "Photonics"
+        ],
+        "general_documentation":{
+            "name":"IoN Wave 10 Plasma Asher",
+            "href":"http://www.pvateplaamerica.com/ion10.php"
+        }
+    },
+    {
+        "name":"K&S 4129 Wedge Bonder",
+        "overview":"The K&S 4129 Wedge Bonder is an aluminum and gold wire wedge bonder that is used for binding devices.",
+        "key_features":[
+            "Thermosonic and ultrasonic modes",
+            "DC Servo/LVDT closed loop control",
+            "Air-damped bonding head",
+            "Electronic dial control"
+        ],
+        "general_documentation":{
+            "name":"K&S Wire Bonder",
+            "href":"http://mfc.engr.arizona.edu/documents/K&S%20Wire%20Bonder%20Model%204123.pdf"
+        }
+    },
+    {
+        "name":"Keysight B1500A Semiconductor Device Analyzer",
+        "overview":"The Keysight B1500A Semiconductor Device Analyzer provides a wide range of measurement capabilities to cover the electrical characterization and evaluation of devices, materials, semiconductors, active/passive components, or virtually any other type of electronic device with uncompromised measurement reliability and efficiency.",
+        "key_features":[
+            "allows you to add or upgrade measurement modules if measurement needs change over time."
+        ],
+        "general_documentation":{
+            "name":"Keysight B1500A Semiconductor Device",
+            "href":"http://www.keysight.com/en/pd-582565-pn-B1500A/semiconductor-device-analyzer?nid=-33019.536905585&cc=US&lc=eng"
+        }
+    },
+    {
+        "name":"KLA-Tencor P-7 Surface Profilometer",
+        "overview":"The KLA-Tencor P-7 Surface Profilometer is a research grade stylus profiler for surface metrology and measurement. The KLA-Tencor P-7 is software equipped with parameters for a wide range of measurements including depth, step height, roughness, waviness, slop, flatness, distance, bearing ratio, radius of curvature, and more.",
+        "key_features":[
+            "Sample size to 150 mm with 150 mm scan length",
+            "1 mm Z-range",
+            "2 \u03bcm radius stylus",
+            "Apex software for a variety of measurement parameters, customized reports and automatic processing of data",
+            "3D imaging",
+            "2D stress analysis",
+            "Step height repeatability",
+            "Thin and Thick film step heights",
+            "Etched trench depth"
+        ],
+        "key_applications":[
+            "Semiconductors",
+            "MEMS",
+            "Data Storage",
+            "Opto-electronics",
+            "Solar technology"
+        ],
+        "general_documentation":{
+            "name":"KLA-Tencor P-7 Surface Profilometer",
+            "href":"http://www.kla-tencor.com/Surface-Profiling/p7.html"
+        }
+    },
+    {
+        "name":"Memsstar Orbis Alpha Oxide Etch System",
+        "overview":"\n\tThe Memsstar Orbis Alpha Oxide Etch System is a small footprint, self-contained oxide etch system which utilizes hydrogen fluoride etchants along with memsstar\u2019s unique patented high volume production process to enable researchers to develop production-capable processes for the next generation of MEMS devices.\u00a0",
+        "key_features":[
+            "Large process window to optimize process for any structure",
+            "Excellent selectivity with silicon nitride and silicon dioxide (< 5% 1 \u03c3)",
+            "High selectivity to underlayer and mechanical materials",
+            "Excellent uniformity (< 5% 1 \u03c3) and\u00a0repeatability (< 5% 1 \u03c3)",
+            "Unique endpoint capability",
+            "Handles materials from sample sizes to 200 mm",
+            "Small footprint (600 x 540 x 900 mm)",
+            "PC controlled",
+            "Resistive touch screen"
+        ],
+        "key_applications":[
+            "RF MEMS",
+            "Sensors",
+            "RF switches",
+            "Temperature gauges"
+        ],
+        "general_documentation":{
+            "name":"Memsstar Orbis Alpha Oxide Etch System",
+            "href":"http://memsstar.com/products-services/mems/orbis-platforms/platforms-technologies-orbis-alpha/"
+        }
+    },
+    {
+        "name":"MiniPack Torre MVS-45X Vacuum Sealer",
+        "overview":"The Minipack MVS 45X chamber sealer is an industrial-level vacuum sealer designed to packaging products. The large 18.5\" x 16\" x 4.5\" chamber allows plenty of room for packaging a variety of products. The basin is seamless, making it easy to clean.",
+        "key_features":[
+            "Auto-calibration",
+            "Digital panel with 10 storable programs",
+            "Electronic volumetric sensor",
+            "Security for over-current on sealing bar",
+            "Aluminum sealing bar"
+        ],
+        "general_documentation":{
+            "name":"Minipack Specifications",
+            "href":"https://www.minipack.us/mvs45x.php"
+        }
+    },
+    {
+        "name":"Nikon Eclipse L200 Microscope",
+        "overview":"The Nikon Eclipse L200 Optical Microscope\u00a0is a microscope capable of greater contrast,\u00a0high resolving power and darkfield images\u00a0up to three times brighter than other models.\u00a0It can be used for the precise optical\u00a0inspection of wafers, photo masks, reticles and\u00a0other substrates.",
+        "key_features":[
+            "200 mm wafer and mask inspection",
+            "High intensity\u00a012 V - 100 W Halogen Illuminator (LV-LH50PC)",
+            "Tilting Eyepiece Tube allows for continuous adjustment of tilt angle from 0 \u00b0 through 30\u00a0\u00b0\u00a0",
+            "Eyepiece features ultra-widefield design with an F.O.V. of 25 mm",
+            "CF160 Optical System",
+            "8\" x 8\" stage"
+        ],
+        "general_documentation":{
+            "name":"Nikon Eclipse L200 Microscope",
+            "href":"https://www.nikonmetrology.com/en-gb/product/eclipse-l200n-series"
+        }
+    },
+    {
+        "name":"Pfeiffer HiCube 80 Turbo Pumping Station",
+        "overview":"The HiCube 80 is a versatile, mobile Turbo Pimping Station. It uses a HiPace turbo pump as well as a backing pump that \u00a0are inter-coordinated for a wide range of applications and fast pump downtime.",
+        "key_features":[
+            "Vacuum and sniffing leak detection",
+            "Operating temperature 10\u00b0 - 35\u00b0 celsius",
+            "Noise level 53 dB (A)",
+            "RS-232 Interface",
+            "Maximum power consumption of 1500 W, power consumption of 700 W",
+            "Detects 4He, 3He, H2"
+        ],
+        "key_applications":[
+            "Semiconductors",
+            "Electronics",
+            "Solar technology",
+            "Laser technology",
+            "Aeronautics",
+            "Vacuum component"
+        ],
+        "general_documentation":{
+            "name":"HiCube 80 Turbo Pump Specifications",
+            "href":"https://www.pfeiffer-vacuum.com/en/products/pumping-stations/turbo-pumping-stations/hicube-eco/?detailPdoId=20020"
+        }
+    },
+    {
+        "name":"Pfeiffer Vacuum ADIXEN ASM 380 Leak Detector",
+        "overview":"\n\tThe ASM 380 is a high performance, mobile, leak detector. It has an ACP 40 dry backing pump and a high vacuum pump which allows for high testing sensitivity and short pump down times, even for large volumes.",
+        "key_features":[
+            "Vacuum and sniffing leak detection",
+            "Operating temperature 10\u00b0 - 35\u00b0 celsius",
+            "Noise level 53 dB (A)",
+            "RS-232 Interface",
+            "Maximum power consumption of 1500 W, power consumption of 700 W",
+            "Detects 4He, 3He, H2"
+        ],
+        "key_applications":[
+            "Semiconductors",
+            "Electronics",
+            "Solar technology",
+            "Laser technology",
+            "Aeronautics",
+            "Vacuum components"
+        ],
+        "general_documentation":{
+            "name":"Pfeiffer Vacuum ASM 380 Mobile Leak Detector",
+            "href":"https://www.pfeiffer-vacuum.com/en/products/leak-detectors/high-performance-mobile/"
+        }
+    },
+    {
+        "name":"Plasma-Therm Apex SLR HDPCVD",
+        "overview":null,
+        "key_features":[
+            "1 kW 2 MHz ICP source",
+            "300 W, 13.56 MHz electrode",
+            "254 mm plate",
+            "Low temperature deposition, typically 80 \u00b0 - 150 \u00b0C",
+            "Liquid-to-liquid heat exchanger",
+            "Compatible with film etching for SiNx, SiO2, a-Si, SiOxNy, SiC, Ta2O5.",
+            "Compatible with film etching for polymers such as photoresist and polyimide",
+            "Endpoint Detection",
+            "ANSI-ISA 88 data logging and recipe management software"
+        ],
+        "key_applications":[
+            "Failure/Yield Analysis",
+            "Silicon conductors",
+            "Photonics",
+            "ICP etch processing",
+            "MEMS",
+            "Solid State Lighting",
+            "R & D",
+            "Dielectrics",
+            "Polymers"
+        ],
+        "general_documentation":{
+            "name":"Plasma-Therm Apex SLR HDPCVD System",
+            "href":"http://www.plasmatherm.com/Apex_SLR.html"
+        }
+    },
+    {
+        "name":"Plasma-Therm ICP Chlorine Etch",
+        "overview":null,
+        "key_features":[
+            "1 kW 2 MHz Inductively Coupled Plasma (ICP) source",
+            "Etches metals and compound semiconductors",
+            "Computer Controlled",
+            "RF Power to 500 W",
+            "Mass Flow Controllers (MFC) for control of gas flow"
+        ],
+        "key_applications":[
+            "MEMS",
+            "Silicon Etching"
+        ]
+    },
+    {
+        "name":"Plasma-Therm ICP Fluoride Etch",
+        "overview":null,
+        "key_features":[
+            "1 kW 2 MHz Inductively Coupled Plasma (ICP) source",
+            "Etches metals and compound semiconductors",
+            "Computer Controlled",
+            "RF Power to 500 W",
+            "Mass Flow Controller (MFW) for control of gas flow"
+        ],
+        "key_applications":[
+            "MEMS",
+            "Silicon Etching"
+        ]
+    },
+    {
+        "name":"Plasma-Therm Versaline Deep Si RIE",
+        "overview":"The Plasma-Therm Versaline DSE (Deep Silicon Etcher) is a deep silicon etcher Plasma RIE that runs the Bosch Si process. It is primarily used for deep etching of MEMS structures in silicon. The Bosch process is used for the creation of deep, almost vertical, high aspect ratio structures and is an alternative to cryogenic chuck adapted ICP RIE systems and allows for deeper SI etches and a higher aspect ratio relative to these systems.",
+        "key_features":[
+            "1 kW 2 MHz ICP source",
+            "Up to 4\u201d wafers",
+            "Computer Controlled",
+            "Handles Silicon, SiO2, Si3N4, SiOxNy, as well as polmyer films such as PMMA, photoresist, and polymide",
+            "500 W, 13.56 MHz plasma generators",
+            "He-back-side cooling"
+        ],
+        "key_applications":[
+            "MEMS",
+            "DRAM"
+        ],
+        "general_documentation":{
+            "name":"Plasma-Therm Versaline DSE",
+            "href":"http://www.plasmatherm.com/versaline-dse.html"
+        }
+    },
+    {
+        "name":"Plasma-Therm Vision 310 PECVD",
+        "overview":null,
+        "key_features":[
+            "Patented dual frequency generator with 300 W\u00a0at 13.56 MHz / 500 W at 187 kHz",
+            "305 mm substrate plate",
+            "Temperature control from 30 \u00b0C\u00a0 to 300 \u00b0C",
+            "High temperature electrode up to 380 \u00b0C",
+            "Optimized shower head for uniform\u00a0deposition",
+            "Digital mass flow controllers with bypass and flush capabilities and up and downstream isolation valves"
+        ],
+        "key_applications":[
+            "Semiconductor fabrication",
+            "R & D production and application",
+            "Stress controlled silicon nitride and silicon dioxide film deposition",
+            "MEMS"
+        ],
+        "general_documentation":{
+            "name":"Plasma-Therm 310 PECVD System",
+            "href":"http://www.plasmatherm.com/vision-series.html"
+        }
+    },
+    {
+        "name":"Plassys Electron Beam Evaporator",
+        "overview":null,
+        "key_features":[
+            "Eight 15 cc crucibles with Al, Au, Ge, Ni, NiCr, Pd, Pt, Ti",
+            "Thin film (<100 nm) evaporation of metals with electron beam",
+            "10 keV electron beam energy, 10 kW power",
+            "Substrates up to 150 mm",
+            "Ion gun for sample milling or IAD",
+            "Cryo pumped load lock and main chamber",
+            "In-chamber substrate cleaning",
+            "Full computer control"
+        ],
+        "key_applications":[
+            "MEMS",
+            "Josephson Circuit",
+            "Thermal Barriers",
+            "HMET, PHMET Transistors",
+            "Magnetic materials for microwave applications"
+        ],
+        "general_documentation":{
+            "name":"Plassys Electron Beam Evaporator\u00a0",
+            "href":"http://www.plassys.com/pageuk/machines/evaporation/evaporation.html"
+        }
+    },
+    {
+        "name":"Questar Q7800 Automatic Wedge Bonder",
+        "overview":"The Questar Q7800 Automatic Wedge Bonder is used for connecting wires in chips, sensors, and such.",
+        "key_features":[
+            "Automatic and semi-automatic modes",
+            "Bonding speed of 600m/s",
+            "Multiple stitch bonding",
+            "0.0007\" to 0.003\" diameter wire capability"
+        ],
+        "general_documentation":{
+            "name":"Features and Specifications",
+            "href":"http://www.questarproducts.com/_images/_pdf/Q7800_Specs_120111_frm.pdf"
+        }
+    },
+    {
+        "name":"Raith EBPG5000 Plus E-Beam Writer",
+        "overview":"The Raith EBPG5200 E-Beam lithography system is a high performance nanolithography system used chiefly for write lithography system used chiefly for write lithography and R&D mask making. It is the latest model in the EBPG series, preceded by the EBPG5150.",
+        "key_features":[
+            "155 mm writing capability",
+            "Accommodates wafer sizes of up to 6\u201d and mask sizes of up to 6\u201d",
+            "Minimum feature size of less than 8 nm",
+            "50 / 100 MHz pattern generator",
+            "Thermal Field Emission gun, for operation at 20, 50, and 100 kV",
+            "Variable field size to 1 mm at all kVs"
+        ],
+        "key_applications":[
+            "Compound semiconductor application",
+            "Vertical resonant tunnel transistor",
+            "Circular grating resonator"
+        ]
+    },
+    {
+        "name":"Signatone Checkmate CM21X Probe Station",
+        "overview":"The\u00a0Signatone CheckMate Probe Station\u00a0is an ultra-stable 200mm / 300mm analytical probe station with coarse and fine wafer stage movement to provide fast wafer movement as well as submicron resolution.",
+        "key_features":[
+            "Elimination of moisture or frost build-up when using a cold chuck",
+            "A dark environment for making light sensitive measurements",
+            "EMI Protection"
+        ],
+        "general_documentation":{
+            "name":"Checkmate Series Probe Station",
+            "href":"http://www.signatone.com/products/probestations/checkmate.asp"
+        }
+    },
+    {
+        "name":"SUSS MJB4 Manual Mask Aligner",
+        "overview":"The MJB4 is a high precision manual mask aligner that works with small substrates, wafers, and pieces. It is frequently used for MEMS and optoelectronic applications. It can handle fragile III-V materials.",
+        "key_features":[
+            "High resolution prints down to 0.5 \u03bcm",
+            "Universal Optics option for UV 250, UV 350 and UV 400",
+            "Wafers and Substrates to 100 mm",
+            "Thickness of mask up 9 mm",
+            "Soft, hard, and vacuum contact",
+            "SUSS single field microscope",
+            "Diffraction reducing optics",
+            "Wedge Error Compensation (WEC)",
+            "Top side and infrared alignment"
+        ],
+        "key_applications":[
+            "LED Lithography",
+            "MEMS",
+            "UV-NIL"
+        ],
+        "general_documentation":{
+            "name":"Suss MJB4 Manual Mask Aligner",
+            "href":"https://www.suss.com/en/products-solutions/products/mask-aligner/mjb4/overview.html"
+        }
+    },
+    {
+        "name":"Tystar Mini-Tytan 4600 Furnace System",
+        "overview":"\n\tThe Tystar Mini-Tytan 4600 Furnace system is a Low Pressure Chemical Vapor Deposition (LPCVD) system which consists of four vacuum tubes in one furnace stack. Two of these are low pressure tubes and two atmospheric pressure tubes. The Tystar 4600 can perform low temperature oxide processes depositing materials such as silicon nitride and polysilicon. The Tystar 4600 offers high process uniformity and incorporates some of the most advanced concepts in high performance wafer processing all with a low footprint, requiring less space and electric power than furnaces of a similar capacity. \u00a0",
+        "key_features":[
+            "Wafers up to 6\" / I50 mm",
+            "Temperatures up to 850 \u00b0C for silicon nitride and up to 650 \u00b0C for all others",
+            "Silicon nitride and polysilicon deposition",
+            "Maximum deposition thickness of\u00a05 \u03bcm",
+            "LTO (Low Temperature Oxidation) for processes of < 450 \u00b0C \u00a0",
+            "MFS-460 Mass Flow System",
+            "DCS-30 Data Collection System"
+        ],
+        "key_applications":[
+            "Suspended membrane fabrication",
+            "Silicon conductors",
+            "Silicon gate devices",
+            "MEMS",
+            "Inter level metal isolation",
+            "Optical waveguides",
+            "Dielectrics",
+            "LTO (Low Temperature Oxidation)",
+            "R & D\u00a0"
+        ],
+        "general_documentation":{
+            "name":"Tystar Mini-Tytan 4600 Horizontal Furnace System",
+            "href":"http://tystar.com/catalog/catalog.pdf"
+        }
+    },
+    {
+        "name":"Ultratech/Cambridge Fiji G2 Plasma-Enhanced ALD",
+        "overview":"The Ultratech Fiji G2 plasma system is a modular high-vacuum ALD (Atomic Layer Deposition) system\u00a0that accommodates a wide range of deposition modes while using a flexible system architecture that permits multiple configurations of precursors\u00a0and plasma gases. The result is a plasma ALD system that reproduces the thermal and plasma enhanced ALD films of the literature as well as providing experimental flexibility for future ALD innovations.",
+        "key_features":[
+            "Substrates up to 200 mm",
+            "Wafers to 8\u201d",
+            "Flow-optimized ALD chamber for thermal or plasma deposition",
+            "Substrate temperatures to 500 \u00b0C",
+            "Multipurpose energy assisted deposition Conflat top flange (plasma, ion source, laser, UV etc)",
+            "Uniform coverage for plasma deposited films (on aspect ratios of 20:1)",
+            "Process Modes: Thermal Continuous Mode for high speed depositions, Thermal Expo Mode with stop valve operation for ultra-high aspect ratio structures (> 450:1), and Plasma Mode for difficult nitrides and metals",
+            "All system parameters can be controlled in recipe (e.g. substrate and precursor temperatures, gas mass flows, pulse times, etc.",
+            "High conformity coatings",
+            "Near monolayer growth conditions",
+            "Deposits with high uniformity and conformity on a nanometer scale Deposition uniformity of Al2O3 is 1.5%"
+        ],
+        "key_applications":[
+            "High quality films for heterostructures, nanotubes, and organic semiconductors",
+            "Used in LED and III - V devices",
+            "MEMS",
+            "Optoelectronics",
+            "Renewable energy technology"
+        ],
+        "general_documentation":{
+            "name":"Ultratech/Cambridge NanoTech Simply ALD",
+            "href":"http://www.cambridgenanotechald.com/products/Fiji-advanced-ald-system.shtml"
+        }
+    },
+    {
+        "name":"Ultratech/Cambridge Savannah ALD System",
+        "overview":"Ultratech/Cambridge Savannah ALD System is equipped with high-speed pneumatic pulse valves to enable thin film deposition on Ultra High Aspect Ratio substrates. This proven precision thin film coating methodology can be used to deposit conformal, uniform films on substrates with aspect ratios of greater than > 2000:1.",
+        "key_features":[
+            null,
+            "Capable of handling gas, liquid, or solid precursors",
+            "Equipped with heated precursors lines",
+            "Wafers to 8\u201d (200 mm) diameter x 0.25\u201d (6.4 mm) deep",
+            "Flow-optimized ALD chamber for thermal or plasma deposition",
+            "Substrate temperatures to 350 \u00b0C",
+            "Dual Zone Reactor Heaters: Differential wall and substrate heating",
+            "Venting time: <1 minute (mass flow controller regulated venting to prevent turbulence when using small sample pieces)",
+            "Gas flow during operation: 20 SCCM",
+            "Many common precursors already available in pre-packs from Strem Chemicals and Sigma-Aldrich",
+            "Film Uniformity: <1 %"
+        ],
+        "key_applications":[
+            "Thin film deposition"
+        ],
+        "general_documentation":{
+            "name":"Ultratech/Cambridge NanoTech Simply ALD",
+            "href":"http://www.cambridgenanotechald.com/products/Savannah-ald-system.shtml"
+        }
+    },
+    {
+        "name":"Ultron UH104 UV Curing System",
+        "overview":"The\u00a0Ultron UH104 UV Curing System is used to toughen and strengthen polymer materials by cross-linking polymer chains. It accommodates up to 8\" (200mm) wafers on film frames or grip rings and up to 12\" (300mm) wafer capability.",
+        "key_features":[
+            "Compact, desktop profile accommodates up to 300mm frame-mounted wafer\u00a0",
+            "Environmentally safe, ozone-free UV lamp with fast curing time",
+            "Easily programmable microprocessor-based controller\u00a0",
+            "Optional motorized, rotating work stage"
+        ],
+        "general_documentation":{
+            "name":"Ultron UV Curing System",
+            "href":"http://www.ultronsystems.com/pdf/UH104.pdf"
+        }
+    },
+    {
+        "name":"Ultron UH114 Wafer/Frame Film Applicator",
+        "overview":"The Ultron UH114 Wafer/Frame Film Applicator is used in the process of slicing/ sawing applications in which lamination is crucial. This device ensures a bubble free lamination with adjustable features.",
+        "key_features":[
+            "Circular cutter (wheel-type) for cutting film on film frame",
+            "Adjustable cutting pressure for different films",
+            "Digital temperature controlled platen",
+            "Adjustable work stage height from top of unit",
+            "Accommodates wafer up to 6 capability"
+        ],
+        "general_documentation":{
+            "name":"Ultron UH114 Series",
+            "href":"http://www.ultronsystems.com/USI-ProdMounters.html"
+        }
+    },
+    {
+        "name":"WAFAB Acid/Base Bench",
+        "overview":"The WAFAB Manual Acid/Base Bench is a non-automated front-acces wet bench designed to handle acidic and basic materials without degrading.",
+        "key_features":[
+            "PVDF deck top",
+            "Heated stainless steel ultrasonic process bath, can produce 40, 72, and 104 kHz",
+            "Recessed hot plate, 7 x 7",
+            "PFA Nitrogen/DI Water retractable spray gun set"
+        ]
+    },
+    {
+        "name":"WAFAB Bottle Washer Bench",
+        "overview":"The WAFAB Manual Bottle Washer is a non-automated wet station designed for washing glassware used in various processes and dispoing of waster water.",
+        "key_features":[
+            "12 polypropylene bottle wash baths with DI water rinse",
+            "Perforated shelving for drying",
+            "PFA Nitrogen/DI Water retractable spray gun set"
+        ],
+        "key_applications":[
+            "Bottle wash"
+        ],
+        "general_documentation":{
+            "name":"Bottle Washing Station Features",
+            "href":"https://wafabintl.com/wet-processing-equipment/plastic-thermoforming-specialty-products/bottle-wash-stations/"
+        }
+    },
+    {
+        "name":"WAFAB Cleaning Bench",
+        "overview":"The WAFAB Cleaning Bench is a non-automated front-access wet bench designed for cleaning wafers before further processing.",
+        "key_features":[
+            "Stainless steel work surface",
+            "Stainless steel work surface",
+            "PFA nitrogen gun",
+            "Retractable DI Water spray gun",
+            "Spin processor for substrate sizes 10 mm - 150 mm"
+        ],
+        "key_applications":[
+            "RCA Cleaning"
+        ]
+    },
+    {
+        "name":"WAFAB Developer Bench",
+        "overview":"The WAFAB Manual Developer Bench is a non-automated front-access wet bench designed to handle chemicals used for developing photoresist.",
+        "key_features":[
+            "PVDF deck top",
+            "PFA Nitrogen/DI Water spray gun set",
+            "Spin processor for substrate sizes 10 mm-150 mm"
+        ],
+        "key_applications":[
+            "Photoresist development"
+        ]
+    },
+    {
+        "name":"WAFAB HF/TMAH Bench",
+        "overview":"The WAFAB Manual Solvent Bench is a non-automated front-access wet bench designed to handle hydrofluoric acid and tetramethylammonium hydroxide used in etching.",
+        "key_features":[
+            "PVDF deck top",
+            "Recessed deck-top hotplate with stirrer, 7 x 7",
+            "PTFE Nitrogen spray gun",
+            "PFA DI Water retractable spray gun"
+        ],
+        "key_applications":[
+            "Bulk etch"
+        ]
+    },
+    {
+        "name":"WAFAB Solvent Bench",
+        "overview":"The WAFAB Manual Solvent Bench is a non-automated front-access wet bench designed to handle solvents used for cleaning substrates.",
+        "key_features":[
+            "Stainless steel work surface",
+            "2 ultrasonic stainless steel process baths, can produce 40, 72, and 104 kHz",
+            "1 stainless steel heated H2O bath",
+            "Electro-polished cup sinks for solvent resist waste",
+            "Recessed hotplate, 8 x 8",
+            "PFA Nitrogen spray gun",
+            "Spin processor for substrate sizes from 10 mm-150 mm"
+        ],
+        "key_applications":[
+            "Manual solvent cleaning"
+        ]
+    },
+    {
+        "name":"WAFAB Toxic Corrosives Bench",
+        "overview":"The WAFAB Manual Toxic Corrosives Bench is a non-automated front-access wet bench deigned to handle, contain, and properly dispose of toxic and corrosive materials.",
+        "key_features":[
+            "PVDF deck top",
+            "Heated stainless steel ultrasonic process bath, can produce 40, 72, and 104 kHz",
+            "Recessed hot plate, 7 x 7",
+            "PFA Nitrogen/DI Water retractable spray gun set"
+        ],
+        "key_applications":[
+            "Wet processing"
+        ]
+    },
+    {
+        "name":"YES CV200 RFS Plasma Strip / Descum System",
+        "overview":"The YES CV200 RFS Plasma Strip / Descum System is used for the removal of thick layers of photoresist or polymide in short production times; accomodating the strict requirements of contemporary front-end semiconductor processing equipment. The YES CV200 RFS operates in two main modes, a powerful plasma stripping mode removes tough and / or thick resists while a gentler descum mode can be used to deal with the cleaning of inorganic substrates.\u00a0",
+        "key_features":[
+            "Quick resist removal, up to 7000 angstroms per minute",
+            "Unique `downstream' protective design - balance of the charge in the plasma shields your product from damaging UV exposure",
+            "Wafers from 50 mm to 200 mm",
+            "Variable Power Supply from 150 W to 1250 W",
+            "Real-time wafer temperature measurement and flexible temperature control",
+            "Multiple process gas inputs"
+        ],
+        "key_applications":[
+            "Photoresist removal",
+            "Polyimide removal",
+            "Organics removal",
+            "Descum processes"
+        ],
+        "general_documentation":{
+            "name":"YES CV200 RFS Plasma Strip / Descum System",
+            "href":"http://www.yieldengineering.com/products/plasma-strip-descum-systems/cv200rf-series"
+        }
+    },
+    {
+        "name":"YES G1000 Plasma Cleaning System",
+        "overview":"The YES G1000 Plasma Cleaning System is a plasma cleaning system used for the cleaning and low temperature descum of substrates, as well the surface modification and gentle cleaning of inorganic substrates. The use of plasma at a low generation frequency (40 kHz) in substrate cleaning allows for flexibility around cleaning processes, including, for example, the cleaning of electronically sensitive devices. The YES G1000 generates plasma between an active and grounded electrode plate, free electrons, created in the plasma field, are drawn down by the grounded plate allowing only active ions to pass through to clean components; the result is uniform and consistent processing which, as highlighted previously, leaves the electronic properties of cleaned components unchanged.\u00a0",
+        "key_features":[
+            "4 powered shelves for greater capacity over the YES 500 model",
+            "1/2\" 6061-T6 aluminum chamber",
+            "Large load capacity - 15.13\" W x 15.39\" D process area per tray",
+            "Variable Frequency Matching (VFM)",
+            "Touch Screen Interface",
+            "Unique `downstream' protective design - totally charge-free plasma",
+            "State logic control of output with input monitoring"
+        ],
+        "key_applications":[
+            "Substrate cleaning",
+            "Substrate descum",
+            "Surface modification of inorganic substrates",
+            "Gentle cleaning of inorganic substrates",
+            "Cleaning of electronically sensitive devices"
+        ],
+        "general_documentation":{
+            "name":"YES G1000 Plasma Cleaning System",
+            "href":"http://www.yieldengineering.com/products/plasma-cleaning-systems/g-series"
+        }
+    },
+    {
+        "name":"YES-58TA Vacuum Bake/HMDS Vapor Prime and Image Reversal System",
+        "overview":null,
+        "key_features":[
+            "Operation temperature ambient to 180\u00b0 C",
+            "1 load/hour image reversal bake throughput",
+            "2 loads/hour vacuum bake/vapor prime throughput",
+            "Handles wafers up to 300 mm",
+            "Fully programmable process time and temperature"
+        ],
+        "key_applications":[
+            "Image reversal bake",
+            "Vapor prime",
+            "Vacuum bake"
+        ],
+        "general_documentation":{
+            "name":"YES-58TA Vacuum Bake/HMDS Vapor Prime and Image Reversal System",
+            "href":"http://www.yieldengineering.com/products/hmds-prime-ovens/ta-series"
+        }
+    },
+    {
+        "name":"EBARA ESR20N Vacuum Pump",
+        "overview":"The EBARA ESR20N Vacuum Pump is an ESR (Energy Saving Roots) multistage dry vacuum pump. It is engineered for clean to medium processes and has minimum nitrogren purge requirements with no nitrogen purge requirements for clean processes. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features":[
+            "pumping speeds of 35-1625 CFM",
+            "Pressures as low as 1 mTorr"
+        ],
+        "key_applications":[
+            "dry (oil free) rouching or backing pump"
+        ],
+        "documentation":"https://www.ebara.co.jp/en/products/details/esr.html",
+        "tag":"minimum nitrogen purge",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"EBARA EV-A03-1 Vacuum Pump",
+        "overview":"The EBARA EV-A03-1 Vacuum Pump is a small, air cooled dry vacuum pump which offers high pumping speeds (9 cfm) and a no-contact design. The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features":[
+            "pumping speeds of 9 CFM",
+            "Weight of 23 kg",
+            "pressures of 1-10 Pa",
+            "high water vapor pumping at 250 g/hr"
+        ],
+        "key_applications":[
+            "Load lock pumping",
+            "electron microscopes",
+            "PVD",
+            "Oxygen plasma systems",
+            "analytical instruments"
+        ],
+        "documentation":"EBARA EV-AO3-1 Vacuum Pump",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"EBARA EV-A06-1 Vacuum Pump",
+        "overview":"The EBARA EV-A06-1 Vacuum Pump is an air cooled dry vacuum pump which offers high pumping speeds (21.6 cfm) and high water vapor pumping (350 g/hr) The PNF uses a standardized set of EBARA pumps throughout the facility to reduce equipment downtime.",
+        "key_features":[
+            "pump speed of 21.6 CFM",
+            "weight of 54 kg",
+            "pressures of 1-10 Pa",
+            "no-contact design",
+            "highest water vapor pumping at 350 g/hr for a dry pump"
+        ],
+        "key_applications":[
+            "Load lock pumping",
+            "electron microscopes",
+            "PVD",
+            "Oxygen plasma systems",
+            "analytical instruments"
+        ],
+        "documentation":"https://www.idealvac.com/Ebara-EV-A06-1-Air-Cooled-Dry-Vacuum-Pump-115VAC/pp/P102787",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"EMS 1300 Critical Point Dryer",
+        "overview":"The procedure of critical point drying is an efficient method for drying delicate samples for SEM applications. The EMS 1300 Critical Point Dryer provides a clear view of the fluid level and visibility of the phase change at the critical point.",
+        "key_features":[
+            "63.5 mm internal diameter x 82 mm in length",
+            "excellentvisibility of fluid level and drying process"
+        ],
+        "key_applications":[
+            "MEMS"
+        ],
+        "documentation":"EMS 3000 and EMS 3100 Critical Point Dryers",
+        "tag":"CO2",
+        "contact":"Sam Kaehler, 773-834-4143"
+    },
+    {
+        "name":"Pfeiffer HiCube 80 Turbo Pumping Station",
+        "overview":"The HiCube 80 is a versatile, mobile Turbo Pimping Station. It uses a HiPace turbo pump as well as a backing pump that are inter-coordinated for a wide range of applications and fast pump downtime.",
+        "key_features":[
+            "mobile vacuum pump with sniffing leak detection",
+            "RS-232 interface",
+            "Detects 4He",
+            "3He",
+            "H2"
+        ],
+        "key_applications":[
+            "vacuum systems"
+        ],
+        "documentation":"HiCube 80 Turbo Pump Specifications",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"Pfeiffer Vacuum ADIXEN ASM 380 Leak Detector",
+        "overview":"The ASM 380 is a high performance, mobile, leak detector. It has an ACP 40 dry backing pump and a high vacuum pump which allows for high testing sensitivity and short pump down times, even for large volumes.",
+        "key_features":[
+            "vacuum and sniffing leak detection",
+            "RS-232 interface",
+            "detects 4He",
+            "3He",
+            "H2"
+        ],
+        "key_applications":[
+            "vacuum systems"
+        ],
+        "documentation":"Pfeiffer Vacuum ASM 380 Mobile Leak Detector",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"Bruker Dimension Icon AFM",
+        "overview":"The Bruker Dimension Icon AFM (Atomic Force Microscope) is a very high resolution scanning microscope used in scanning microscopy (SPM) which produces three dimensional images. It is used for nanoscale surface topography, nano-mechanical, nano-electircal, and nano-scale chemical mapping, and morphology measurement.",
+        "key_features":[
+            "210 mm vacuum chuck",
+            "contact",
+            "tapping mode",
+            "lateral force microscopy",
+            "electric force ",
+            "piezoresponse",
+            "force",
+            "phase imaging"
+        ],
+        "key_applications":[
+            "surface roughness & topography",
+            "nano-mechanical",
+            "eletrical",
+            "chemical mapping"
+        ],
+        "documentation":"Bruker Dimension Icon AFM",
+        "tag":"imaging",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"Despatch LCC1-15-5 Resist Oven",
+        "overview":"The Despatch LCC1 Resist Oven are used in die-curing and other semiconductor pacing processes. The ovens are configured for 50/60 Hz.",
+        "key_features":[
+            "260 C max temperature",
+            "programmable door lock"
+        ],
+        "key_applications":[
+            "die curing",
+            "soft bake",
+            "hard bake",
+            "resist hardening"
+        ],
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"Disco DAD3240 Automatic Dicing Saw",
+        "overview":"The Disco DAD3240 Dicing Saw is a compact, manual, precision dicing saw with an automatic function which is common to the DAD3000 series. Its operating system and LCD touch panel allow for intuitive handling and it can cut through a range of materials, including difficult-to-cut materials essential to the nanofabrication process such as silicon.",
+        "key_features":[
+            "1 to 8 pieces",
+            "and widths of 650 mm",
+            "cut speed up to 600 mm/s"
+        ],
+        "key_applications":[
+            "cutting",
+            "dicing semiconductor wafers"
+        ],
+        "documentation":"Disco DAD3240 Automatic Dicing Saw",
+        "contact":"Mike Medina, 773-702-4741"
+    },
+    {
+        "name":"Filmetrics F3 Film Thickness Spectral Reflectometer",
+        "overview":"The Filmetrics F3 Film Thickness Spectral Reflectometer is most commonly used to measure thin-film properties by adding thickness and refractive index software modules. The thickness and reactiveness can be measured in less than 3 seconds.",
+        "key_features":[
+            "thin film stack thickness and index/absorption measurement"
+        ],
+        "key_applications":[
+            "density",
+            "porosity",
+            "index measurements; film thickness"
+        ],
+        "documentation":"F3 Model Specifications",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"Fisher Scientific Isotemp FMS Refrigerator",
+        "overview":"The Fisher Scientific Isotemp FMS Refrigerator is use for safe storage of volatile materials, pharmaceuticals, clinical reagents, and biological samples.",
+        "key_features":[
+            "Adustable from 1-12 C",
+            "manual defrost"
+        ],
+        "key_applications":[
+            "chemical storage"
+        ],
+        "documentation":"Fisher Isotemp Refridgerators",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"Fisher Scientific Revco FMS Freezer",
+        "overview":"The Fisher Scientific Revco FMS Freezer is used for medical and scientific applications such as storage of reagents, pharmaceuticals, biologicals or other commonly used laboratory materials.",
+        "key_features":[
+            "-30 C and -20 C",
+            "battery backup"
+        ],
+        "key_applications":[
+            "chemical storage"
+        ],
+        "documentation":"Fisher Lab Freezers",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"FMS Thin Film Stress Measurement System [future]",
+        "overview":"The FMS Thin Film Stress Measurement System is used to test the stress of different films and substrates. It can also test the coefficient of thermal expansion (CTE) of films.",
+        "key_features":[
+            "dual wavelengths to avoid destructive interference",
+            "2-8 wafers ok",
+            "3D mapping",
+            "sample stage from RT - 500C"
+        ],
+        "key_applications":[
+            "thin film stress measurement"
+        ],
+        "documentation":"FMS System Overview",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"Horiba UVISEL 2 Spectroscopic Ellipsometer",
+        "overview":"The UVISEL 2 is an accurate and sensitive ellipsometer and includes a wide range of integrated automated features useful for the investigation of all materials. The UVISEL 2 is simple to operate and has the performance required for characterizing all current materials as well as the next generation of materials and structures.",
+        "key_features":[
+            "35 um spotsize",
+            "FUV - NIR",
+            "8 different spot sizes",
+            "35 - 0 degree angle goniometer",
+            "variable angle SE"
+        ],
+        "key_applications":[
+            "optical characterization of thin film stack"
+        ],
+        "documentation":"UVISEL 2 Scientific Spectroscopic Ellipsometer",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"K&S 4129 Wedge Bonder",
+        "overview":"The K&S 4129 Wedge Bonder is an aluminum and gold wire wedge bonder that is used for binding devices.",
+        "key_features":[
+            "thermosonic & ultrasonic modes"
+        ],
+        "key_applications":[
+            "electronic packaging"
+        ],
+        "documentation":"K&S Wire Bonder",
+        "contact":"Sam Kaehler, 773-834-4143"
+    },
+    {
+        "name":"Keysight B1500A Semiconductor Device Analyzer",
+        "overview":"The Keysight B1500A Semiconductor Device Analyzer provides a wide range of measurement capabilities to cover the electrical characterization and evaluation of devices, materials, semiconductors, active/passive components, or virtually any other type of electronic device with uncompromised measurement reliability and efficiency.",
+        "key_features":[
+            "modular measurement units via upgrades"
+        ],
+        "key_applications":[
+            "electronic device testing"
+        ],
+        "documentation":"Keysight B1500A Semiconductor Device",
+        "tag":"low noise measurements",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"KLA-Tencor P-7 Surface Profilometer",
+        "overview":"The KLA-Tencor P-7 Surface Profilometer is a research grade stylus profiler for surface metrology and measurement. The KLA-Tencor P-7 is software equipped with parameters for a wide range of measurements including depth, step height, roughness, waviness, slop, flatness, distance, bearing ratio, radius of curvature, and more.",
+        "key_features":[
+            "150 mm sample size with 150 mm scan length",
+            "1 mm Z-range",
+            "2 um stylus tip",
+            "2D stress analysis"
+        ],
+        "key_applications":[
+            "topography mapping",
+            "step height characterization"
+        ],
+        "documentation":"KLA-Tencor P-7 Surface Profilometer",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"MiniPack Torre MVS-45X Vacuum Sealer",
+        "overview":"The Minipack MVS 45X chamber sealer is an industrial-level vacuum sealer designed to packaging products. The large 18.5x16x4.5 chamber allows plenty of room for packaging a variety of products. The basin is seamless, making it easy to clean.",
+        "key_features":[
+            "Auto calibration",
+            "storable programs",
+            "volumetric sensor",
+            "over0current protection",
+            "Aluminum sealing bar"
+        ],
+        "key_applications":[
+            "vacuum sealing of projects"
+        ],
+        "documentation":"Minipack Specifications",
+        "contact":"Sam Kaehler, 773-834-4143"
+    },
+    {
+        "name":"Nikon Eclipse L200 Microscope",
+        "overview":"The Nikon Eclipse L200 Optical Microscope is a microscope capable of greater contrast, high resolving power and darkfield images up to three times brighter than other models. It can be used for the precise optical inspection of wafers, photo masks, reticles and other substrates.",
+        "key_features":[
+            "100 W Halogen light source"
+        ],
+        "key_applications":[
+            "inspection"
+        ],
+        "documentation":"Nikon Eclipse L200 Microscope",
+        "contact":"Anna Mukhortova, 773-834-7564"
+    },
+    {
+        "name":"Questar Q7800 Automatic Wedge Bonder",
+        "overview":"The Questar Q7800 Automatic Wedge Bonder is used for connecting wires in chips, sensors, and such.",
+        "key_features":[
+            "Automatic and semi-automatic modes",
+            "bonding speed of 600 m/s",
+            "multiple stitch bonding",
+            "0.7 mil to 3 mil diameter wire capability"
+        ],
+        "key_applications":[
+            "electronic packaging",
+            "wire bonding"
+        ],
+        "documentation":"Features and Specifications",
+        "contact":"Sam Kaehler, 773-834-4143"
+    },
+    {
+        "name":"Signatone Checkmate CM21X Probe Station",
+        "overview":"The Signatone CheckMate Probe Station is an ultra-stable 200mm / 300mm analytical probe station with coarse and fine wafer stage movement to provide fast wafer movement as well as submicron resolution.",
+        "key_features":[
+            "dry chamber which eliminates moisture or frost building when using cold chuck",
+            "dark environment",
+            "EMI protection"
+        ],
+        "key_applications":[
+            "I-V characterization",
+            "low noise measurements"
+        ],
+        "documentation":"Checkmate Series Probe Station",
+        "contact":"Sam Kaehler, 773-834-4143"
+    },
+    {
+        "name":"Ultron UH104 UV Curing System",
+        "overview":"The Ultron UH104 UV Curing System is used to toughen and strengthen polymer materials by cross-linking polymer chains. It accommodates up to 8\\"        (200mm) wafers on film frames or grip rings and up to 12\\" (300mm) wafer capability.",
+        "key_features":[
+            "accommodates 300 mm frame mounted wafer",
+            "ozone free",
+            "programmable"
+        ],
+        "key_applications":[
+            "cross linking polymer chains"
+        ],
+        "documentation":"Ultron UV Curing System",
+        "contact":"Mike Medina, 773-702-4741"
+    },
+    {
+        "name":"Ultron UH114 Wafer/Frame Film Applicator",
+        "overview":"The Ultron UH114 Wafer/Frame Film Applicator is used in the process of slicing/ sawing applications in which lamination is crucial. This device ensures a bubble free lamination with adjustable features.",
+        "key_features":[
+            "adjustable cutting pressure",
+            "telerature controlled platen",
+            "up to 6 wafers"
+        ],
+        "key_applications":[
+            "application of blue film for dicing"
+        ],
+        "documentation":"Ultron UH114 Series",
+        "contact":"Mike Medina, 773-702-4741"
+    },
+    {
+        "name":"Plasma-Therm Apex SLR HDPCVD",
+        "overview":"The Plasma-Therm Apex SLR is a High Density Plasma Chemical Vapor Deposition (HDPCVD) system. It uses an Inductively Coupled Plasma (ICP) source to generate higher density plasma than a PECVD system providing deposition at lower temperatures for higher quality, low temperature films.",
+        "key_features":[
+            "300 W @13.56 MHz",
+            "low temperature deposition (80-150 C)",
+            "compatible with silicon oxynitrides",
+            "SiC",
+            "and Ta2O5",
+            "photoreists and polyimide"
+        ],
+        "key_applications":[
+            "failure yield analysis",
+            "silicon conductors",
+            "photonics",
+            "ICP etching processing",
+            "MEMS",
+            "lighting",
+            "dielectrics",
+            "pollymers"
+        ],
+        "documentation":"Plasma-Therm Apex SLR HDPCVD System",
+        "tag":"etch resist",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"Plasma-Therm Vision 310 PECVD",
+        "overview":"The Plasma-Therm Vision 310 PECVD (Plasma Enhanced Chemical Vapor Deposition) system is a CVD system which utilizes plasma to significantly lower the temperatures at which a given film is deposited on a substrate. The Vision 310 can be used for the controlled deposition of SiNx, SiC, a-Si, and SiOxNy films, among others.",
+        "key_features":[
+            "33 W @ 13.6 MHz",
+            "500 W @ 187 kHz",
+            "30-300 C",
+            "high temperature electrode to 380 C"
+        ],
+        "key_applications":[
+            "MEMS",
+            "stress controlled Silicon oxynitride deposition"
+        ],
+        "documentation":"Plasma-Therm 310 PECVD System",
+        "tag":"etch resist",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"Tystar Mini-Tytan 4600 Furnace System",
+        "overview":"The Tystar Mini-Tytan 4600 Furnace system is a Low Pressure Chemical Vapor Deposition (LPCVD) system which consists of four vacuum tubes in one furnace stack. Two of these are low pressure tubes and two atmospheric pressure tubes. The Tystar 4600 can perform low temperature oxide processes depositing materials such as silicon nitride and polysilicon. The Tystar 4600 offers high process uniformity and incorporates some of the most advanced concepts in high performance wafer processing all with a low footprint, requiring less space and electric power than furnaces of a similar capacity.",
+        "key_features":[
+            "6 wafers (150 mm)",
+            "850 C for SiN",
+            "up to 650 C for all others",
+            "SiN and polySi dep",
+            "5 um max thickness deposition",
+            "LTO for T < 450 C"
+        ],
+        "key_applications":[
+            "suspended membrane fab",
+            "gate oxide",
+            "MEMS< inter level metal isolation",
+            "waveguides",
+            "dielectrics"
+        ],
+        "documentation":"Tystar Mini-Tytan 4600 Horizontal Furnace System",
+        "tag":"LTO",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"Ultratech/Cambridge Fiji G2 Plasma-Enhanced ALD",
+        "overview":"The Ultratech Fiji G2 plasma system is a modular high-vacuum ALD (Atomic Layer Deposition) system that accommodates a wide range of deposition modes while using a flexible system architecture that permits multiple configurations of precursors and plasma gases. The result is a plasma ALD system that reproduces the thermal and plasma enhanced ALD films of the literature as well as providing experimental flexibility for future ALD innovations.",
+        "key_features":[
+            "9 wafers",
+            "500 C substrate; plasma ion source",
+            "laser",
+            "UW assisted deposition",
+            "uniform coverage on aspect rations of 20:1,"
+        ],
+        "key_applications":[
+            "abrupt interfaces for heterstructures; nanotubes",
+            "organic semiconductor",
+            "LEDs",
+            "MEMS",
+            "optoelectronics",
+            "renewable energy"
+        ],
+        "documentation":"Ultratech/Cambridge NanoTech Simply ALD",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"Ultratech/Cambridge Savannah ALD System",
+        "overview":"Ultratech/Cambridge Savannah ALD System is equipped with high-speed pneumatic pulse valves to enable thin film deposition on Ultra High Aspect Ratio substrates. This proven precision thin film coating methodology can be used to deposit conformal, uniform films on substrates with aspect ratios of greater than > 2000:1.",
+        "key_features":[
+            "high speed peration and ultra high aspect ratio coverage; gas liquid and solid precursors",
+            "with heated precursor lines",
+            "8 wafers",
+            "substrate up to 350 C",
+            "differential wall and substrate heating,"
+        ],
+        "key_applications":[
+            "thin film deposition"
+        ],
+        "documentation":"Ultratech/Cambridge NanoTech Simply ALD",
+        "contact":"Peter Duda, 773-702-8903"
+    },
+    {
+        "name":"IoN Wave 10 Plasma Asher",
+        "overview":"The IoN Wave 10 Plasma Asher is a mid-size wafer batch plasma microwave asher used for the removal of photoresists from etched wafers, wafer descum, and wafer cleaning prior to wet etching, among other applications. It is capable of high photoresist ashing rates with minimal exposure to electro static discharge (ESD)."
+    },
+    {
+        "name":"Memsstar Orbis Alpha Oxide Etch System",
+        "overview":"The Memsstar Orbis Alpha Oxide Etch System is a small footprint, self-contained oxide etch system which utilizes hydrogen fluoride etchants along with memsstar\\u2019s unique patented high volume production process to enable researchers to develop production-capable processes for the next generation of MEMS devices."
+    },
+    {
+        "name":"Plasma-Therm ICP Chlorine Etch",
+        "overview":"The Plasma-Therm ICP (Inductively Coupled Plasma) Chlorine Etch is an etching system which uses chlorine based chemistries to etch metal films and compound semiconductors. Chlorine plasma etching differs from Fluoride etching (see Plasma-Therm ICP Fluoride Etch) in respect of the chemistries, Chlorine and Fluoride based, used in each."
+    },
+    {
+        "name":"Plasma-Therm ICP Fluoride Etch",
+        "overview":"The Plasma-Therm ICP (Inductively Coulped Plasma) Fluoride Etch is an etching system which uses fluoride solutions to etch metal films and compound semiconductors. Fluoride plasma etching differs from Chlorine etching (see Plasma-Therm ICP Chlorine Etch) in respect of the chemistries, Chlorine and Fluoride based, used in each."
+    },
+    {
+        "name":"Plasma-Therm Versaline Deep Si RIE",
+        "overview":"The Plasma-Therm Versaline DSE (Deep Silicon Etcher) is a deep silicon etcher Plasma RIE that runs the Bosch Si process. It is primarily used for deep etching of MEMS structures in silicon. The Bosch process is used for the creation of deep, almost vertical, high aspect ratio structures and is an alternative to cryogenic chuck adapted ICP RIE systems and allows for deeper SI etches and a higher aspect ratio relative to these systems."
+    },
+    {
+        "name":"YES CV200 RFS Plasma Strip / Descum System",
+        "overview":"The YES CV200 RFS Plasma Strip / Descum System is used for the removal of thick layers of photoresist or polymide in short production times; accomodating the strict requirements of contemporary front-end semiconductor processing equipment. The YES CV200 RFS operates in two main modes, a powerful plasma stripping mode removes tough and / or thick resists while a gentler descum mode can be used to deal with the cleaning of inorganic substrates."
+    },
+    {
+        "name":"YES G1000 Plasma Cleaning System",
+        "overview":"The YES G1000 Plasma Cleaning System is a plasma cleaning system used for the cleaning and low temperature descum of substrates, as well the surface modification and gentle cleaning of inorganic substrates. The use of plasma at a low generation frequency (40 kHz) in substrate cleaning allows for flexibility around cleaning processes, including, for example, the cleaning of electronically sensitive devices. The YES G1000 generates plasma between an active and grounded electrode plate, free electrons, created in the plasma field, are drawn down by the grounded plate allowing only active ions to pass through to clean components; the result is uniform and consistent processing which, as highlighted previously, leaves the electronic properties of cleaned components unchanged."
+    },
+    {
+        "name":"IoN Wave 10 Plasma Asher",
+        "overview":"The IoN Wave 10 Plasma Asher is a mid-size wafer batch plasma microwave asher used for the removal of photoresists from etched wafers, wafer descum, and wafer cleaning prior to wet etching, among other applications. It is capable of high photoresist ashing rates with minimal exposure to electro static discharge (ESD)."
+    },
+    {
+        "name":"Memsstar Orbis Alpha Oxide Etch System",
+        "overview":"The Memsstar Orbis Alpha Oxide Etch System is a small footprint, self-contained oxide etch system which utilizes hydrogen fluoride etchants along with memsstar\\u2019s unique patented high volume production process to enable researchers to develop production-capable processes for the next generation of MEMS devices."
+    },
+    {
+        "name":"Plasma-Therm ICP Chlorine Etch",
+        "overview":"The Plasma-Therm ICP (Inductively Coupled Plasma) Chlorine Etch is an etching system which uses chlorine based chemistries to etch metal films and compound semiconductors. Chlorine plasma etching differs from Fluoride etching (see Plasma-Therm ICP Fluoride Etch) in respect of the chemistries, Chlorine and Fluoride based, used in each."
+    },
+    {
+        "name":"Plasma-Therm ICP Fluoride Etch",
+        "overview":"The Plasma-Therm ICP (Inductively Coulped Plasma) Fluoride Etch is an etching system which uses fluoride solutions to etch metal films and compound semiconductors. Fluoride plasma etching differs from Chlorine etching (see Plasma-Therm ICP Chlorine Etch) in respect of the chemistries, Chlorine and Fluoride based, used in each."
+    },
+    {
+        "name":"Plasma-Therm Versaline Deep Si RIE",
+        "overview":"The Plasma-Therm Versaline DSE (Deep Silicon Etcher) is a deep silicon etcher Plasma RIE that runs the Bosch Si process. It is primarily used for deep etching of MEMS structures in silicon. The Bosch process is used for the creation of deep, almost vertical, high aspect ratio structures and is an alternative to cryogenic chuck adapted ICP RIE systems and allows for deeper SI etches and a higher aspect ratio relative to these systems."
+    },
+    {
+        "name":"YES CV200 RFS Plasma Strip / Descum System",
+        "overview":"The YES CV200 RFS Plasma Strip / Descum System is used for the removal of thick layers of photoresist or polymide in short production times; accomodating the strict requirements of contemporary front-end semiconductor processing equipment. The YES CV200 RFS operates in two main modes, a powerful plasma stripping mode removes tough and / or thick resists while a gentler descum mode can be used to deal with the cleaning of inorganic substrates."
+    },
+    {
+        "name":"YES G1000 Plasma Cleaning System",
+        "overview":"The YES G1000 Plasma Cleaning System is a plasma cleaning system used for the cleaning and low temperature descum of substrates, as well the surface modification and gentle cleaning of inorganic substrates. The use of plasma at a low generation frequency (40 kHz) in substrate cleaning allows for flexibility around cleaning processes, including, for example, the cleaning of electronically sensitive devices. The YES G1000 generates plasma between an active and grounded electrode plate, free electrons, created in the plasma field, are drawn down by the grounded plate allowing only active ions to pass through to clean components; the result is uniform and consistent processing which, as highlighted previously, leaves the electronic properties of cleaned components unchanged."
+    }
+]
+]

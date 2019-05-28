@@ -1,7 +1,8 @@
 # IME-Inventory-Database
 
 ## 0. Developer Notes:
-Use Robo 3T to do shell operations. 27017 port in container mapped to 27017 in host, use authentication in env file. 
+* Use Robo 3T to do shell operations. 27017 port in container mapped to 27017 in host, use authentication in env file.   
+* Deployed on EC2 linux instance using the same docker-compose setup. Run as usual but use production.env in production
 
 
 
