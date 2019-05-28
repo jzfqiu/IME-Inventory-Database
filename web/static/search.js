@@ -17,12 +17,12 @@ $(document).ready(function(){
                 .done(function (data) {
                     const suggestions = JSON.parse(data);
                     const suggestionsList = document.createElement('ul');
-                    for (name of suggestions){
+                    for (item of suggestions){
                         const listItem = document.createElement('li');
-                        listItem.innerHTML = `<a>${name}</a>`;
+                        listItem.innerHTML = `<a href="${item.link}">${item.name}</a>`;
                         suggestionsList.appendChild(listItem)
                     }
-                    console.log(suggestionsList);
+                    // console.log(suggestionsList);
                     $('#suggestions').empty().append(suggestionsList);
                 })
         } else {

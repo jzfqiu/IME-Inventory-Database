@@ -33,7 +33,9 @@ def search_bar_suggestion(keywords, index):
     if index == 'all':
         index = 'name'
     batch = collection.find({index: {'$regex': keywords, '$options': 'i'}}, limit=5)
-    return json.dumps([result['name'] for result in batch])
+    return json.dumps([{'name': result['name'],
+                        'link': url_for('search.document', obj_id=result['_id'])}
+                       for result in batch])
 
 
 # ajax: change search type

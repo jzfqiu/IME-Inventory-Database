@@ -32,12 +32,33 @@ nav {
 }
 
 .search-bar {
-    display: inline-block;
+    max-width: 600px;
+    min-width: 500px;
+    margin: auto;
+    display: flex;
 }
 
+#search-type {
+    width: 100px;
+}
+
+#search-form {
+    width: calc(100% - 100px);
+}
+
+#search-box {
+    width: calc(100% - 60px);
+}
+
+#search-submit {
+    width: 50px;
+}
 
 #suggestions {
-
+    position: relative;
+    width: 500px;
+    margin: auto;
+    background: white;
 }
 
 
