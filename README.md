@@ -2,7 +2,17 @@
 
 ## 0. Developer Notes:
 * Use Robo 3T to do shell operations. 27017 port in container mapped to 27017 in host, use authentication in env file.   
-* Deployed on EC2 linux instance using the same docker-compose setup. Run as usual but use production.env in production
+* Deployed on EC2 linux instance using the same docker-compose setup. Run as usual but use production.env in production.
+* ssh into instance:
+```bash
+$ ssh -i "ssh.pem" ec2-user@ec2-18-188-179-58.us-east-2.compute.amazonaws.com
+```
+* Add test data to database:
+```bash
+$ docker container ls
+$ docker cp test_data.json <container_id>:test_data.json
+$ docker exec -it <container_id> mongoimport -v --jsonArray --db db --collection inventory --authenticationDatabase admin --username <username> --password <password> --file test_data.json
+```
 
 
 
@@ -20,7 +30,7 @@ TO-DO
 2. Run ```git clone https://github.com/jeff-zqiu/IME-Inventory-Database.git```. 
 
 #### Step 3. Compose and run
-1. Make sure docker is installed and running.  
+1. Make sure docker is installed and running. 
 2. Change working directory into the IME-Inventory-Database folder (Run ```cd IME-Inventory-Database/```) 
 3. Run ```docker-compose up --build```.  
 4. If you see something like this:  
@@ -31,7 +41,7 @@ web_1    |  * Debug mode: on
 web_1    |  * Running on http://0.0.0.0:8008/ (Press CTRL+C to quit)
 web_1    |  * Restarting with stat
 mongo_1  | 2019-04-05T21:45:50.362+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:43702 #150 (1 connection now open)
-mongo_1  | 2019-04-05T21:45:50.363+0000 I NETWORK  [conn150] end connection 172.18.0.3:43702 (0 connections now open)
+mongo_1  | 2019-04-05T21:45:50.363+0000 I NET   WORK  [conn150] end connection 172.18.0.3:43702 (0 connections now open)
 web_1    |  * Debugger is active!
 web_1    |  * Debugger PIN: 660-294-431
 ```
