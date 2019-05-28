@@ -6,7 +6,9 @@
 
 
 {% block content %}
+    {% if logged_in %}
     <p><a href="{{ url_for('edit.edit', obj_id=result['_id']) }}">Edit</a></p>
+    {% endif %}
     <div>
         <ul>
             <li>{{ result['name'] }}</li>
@@ -54,9 +56,6 @@
                 </a>
             {% endif %}
 
-{#            {% for key_value in result['data'] %}#}
-{#            <li>{{ key_value[0] }} : {{ key_value[1] }}</li>#}
-{#            {% endfor %}#}
         </ul>
     </div>
 {% endblock %}

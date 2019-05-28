@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Search{% endblock %}</h1>
+    <h1 class="header-h1">{% block title %}Search{% endblock %}</h1>
 {% endblock %}
 
 {% block script %}
@@ -9,24 +9,32 @@
 {% endblock %}
 
 {% block content %}
-    <p><a href="{{ url_for('edit.new') }}">New</a></p>
 
-    <!-- preserve selection after re-rendering template:
+    <section class="search">
+        <div class="search-bar">
+                <!-- preserve selection after re-rendering template:
             type selected before re-render passed from backend -->
-    <label for="searchType" hidden>Select search type</label>
-    <select name="search_type" id="searchType" form="searchForm">
-        <option value="all" {% if searchType == 'all' %}selected{% endif %} >All</option>
-        <option value="name" {% if searchType == 'name' %}selected{% endif %} >Name</option>
-        <option value="key_features" {% if searchType == 'key_features' %}selected{% endif %} >Features</option>
-        <option value="key_applications" {% if searchType == 'key_applications' %}selected{% endif %} >Applications</option>
-        <option value="tags" {% if searchType == 'tags' %}selected{% endif %} >Tags</option>
-    </select>
-    <form method="post" id="searchForm">
-        <label for="searchBox">Search</label>
-        <input name="keywords" id="searchBox" value="{{ keywords }}">
-        <input type="submit" id="searchSubmit" value="Search">
-    </form>
-    <div id="suggestions"></div>
+            <label for="search-type" hidden>Select search type</label>
+            <select name="search_type" id="search-type" form="search-form">
+                <option value="all" {% if searchType == 'all' %}selected{% endif %}>All</option>
+                <option value="name" {% if searchType == 'name' %}selected{% endif %}>Name</option>
+                <option value="key_features" {% if searchType == 'key_features' %}selected{% endif %}>Features</option>
+                <option value="key_applications" {% if searchType == 'key_applications' %}selected{% endif %}>
+                    Applications
+                </option>
+                <option value="tags" {% if searchType == 'tags' %}selected{% endif %}>Tags</option>
+            </select>
+            <form method="post" id="search-form">
+                <label for="search-box" hidden>Search</label>
+                <input name="keywords" id="search-box" value="{{ keywords }}">
+                <input type="submit" id="searchSubmit" value="Search">
+            </form>
+        </div>
+
+        <div id="suggestions"></div>
+    </section>
+
+
 
     <section>
         {% if results %}

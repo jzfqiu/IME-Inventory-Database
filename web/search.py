@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, current_app
+from flask import Blueprint, render_template, request, current_app, session, redirect, url_for
 from web import db
 from bson.objectid import ObjectId
 import json
@@ -19,7 +19,11 @@ def search():
 
     else:
         batch = collection.find(None)
-    return render_template('search.html', results=batch, keywords=keywords, searchType=index_type)
+    return render_template('search.html',
+                           results=batch,
+                           keywords=keywords,
+                           searchType=index_type,
+                           logged_in='logged_in' in session)
 
 
 # ajax: suggestions for partial keywords
@@ -30,7 +34,6 @@ def search_bar_suggestion(keywords, index):
         index = 'name'
     batch = collection.find({index: {'$regex': keywords, '$options': 'i'}}, limit=5)
     return json.dumps([result['name'] for result in batch])
-    # return json.dumps([result['name'] for result in batch]), 200, {'ContentType': 'application/json'}
 
 
 # ajax: change search type
@@ -38,7 +41,7 @@ def search_bar_suggestion(keywords, index):
 def change_search_filter(search_type):
     collection = db.get_db()['inventory']
 
-    # dropping old index and creating new one for each search
+    # dropping old index (if there are more than 1) and creating new one for each search
     # (mongodb allows only 1 text index per collection)
     if len(list(collection.list_indexes())) != 1:
         collection.drop_index("text_index")
@@ -70,7 +73,7 @@ def change_search_filter(search_type):
 def document(obj_id):
     collection = db.get_db()['inventory']
     item = collection.find_one({'_id': ObjectId(obj_id)})
-    return render_template('document.html', result=item)
+    return render_template('document.html', result=item, logged_in='logged_in' in session)
 
 
 # mask full image url when serving
@@ -83,3 +86,26 @@ def full_images(image):
 @search_bp.route('/about')
 def about():
     return render_template('about.html')
+
+
+# login
+@search_bp.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        if request.form['login_key'] == current_app.config['SECRET_KEY']:
+            session['logged_in'] = True
+        return redirect(url_for('search.search'))
+    return '''
+   <form method = "post">
+      <input type=text name=login_key >
+      <input type=submit value=Login >
+   </form>
+   '''
+
+
+# logout
+@search_bp.route('/logout')
+def logout():
+    # remove the username from the session if it is there
+    session.pop('logged_in', None)
+    return redirect(url_for('search.search'))

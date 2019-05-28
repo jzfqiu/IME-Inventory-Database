@@ -3,15 +3,15 @@
 
 $(document).ready(function(){
 
-    $('#searchType').change(function () {
+    $('#search-type').change(function () {
         const newFilter = $(this).val();
         $.ajax("/ajax/change_search_filter/" +  newFilter);
         console.log(`[AJAX] Search type changed to ${newFilter}`)
     });
 
-    $('#searchBox').keyup(function () {
+    $('#search-box').keyup(function () {
         const keywords = $(this).val();
-        const search_type = $('#searchType').val();
+        const search_type = $('#search-type').val();
         if (keywords) {
             $.ajax(`/ajax/search_bar_suggestion/${search_type}/${keywords}`)
                 .done(function (data) {

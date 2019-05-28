@@ -1,13 +1,12 @@
 # IME-Inventory-Database
 
-## 0. Developer Notes:
-* Use Robo 3T to do shell operations. 27017 port in container mapped to 27017 in host, use authentication in env file.   
+## 0. Developer Notes:   
 * Deployed on EC2 linux instance using the same docker-compose setup. Run as usual but use production.env in production.
 * ssh into instance:
 ```bash
 $ ssh -i "ssh.pem" ec2-user@ec2-18-188-179-58.us-east-2.compute.amazonaws.com
 ```
-* Add test data to database:
+* Add test data to database (TODO: turn this into a shell script):
 ```bash
 $ docker container ls
 $ docker cp test_data.json <container_id>:test_data.json

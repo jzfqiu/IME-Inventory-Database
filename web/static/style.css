@@ -1,4 +1,43 @@
-#suggestions {
-    border-style: solid;
-    border-width: 2px;
+body {
+    font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
+    width: 70%;
+    max-width: 1000px;
+    min-width: 500px;
+    margin: auto;
 }
+
+
+ul {
+    list-style-type: none;
+}
+
+
+nav {
+    height: 20px;
+}
+
+.nav-li {
+    float: right;
+}
+
+.nav-li-a {
+    display: block;
+    width: 60px;
+    padding: auto;
+}
+
+
+.search {
+    height: 30px;
+}
+
+.search-bar {
+    display: inline-block;
+}
+
+
+#suggestions {
+
+}
+
+
