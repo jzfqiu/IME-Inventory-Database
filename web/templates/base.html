@@ -23,18 +23,19 @@
                 <li class="nav-li"><a class="nav-li-a" href="{{ url_for('search.about') }}">About</a></li>
                 {% if logged_in %}
                     <li class="nav-li">
-                        <a class="nav-li-a" href="{{ url_for('search.logout') }}">Logout</a>
+                        <a class="nav-li-a" id="nav-logout" href="{{ url_for('search.logout') }}">Logout</a>
                     </li>
                     <li class="nav-li">
                         <a class="nav-li-a" href="{{ url_for('edit.new') }}">New</a>
                     </li>
                 {% else %}
                     <li class="nav-li">
-                        <a class="nav-li-a" href="{{ url_for('search.login') }}">Login</a>
+                        <a class="nav-li-a" id="nav-login" href="{{ url_for('search.login') }}">Login</a>
                     </li>
                 {% endif %}
 
             </ul>
+            <div id="nav-login-overlay"></div>
         </nav>
 
 

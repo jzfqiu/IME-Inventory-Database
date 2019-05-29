@@ -16,11 +16,13 @@ def search():
         index_type = request.form['search_type']
         keywords = request.form['keywords']
         batch = collection.find({"$text": {"$search": keywords}})
-
     else:
         batch = collection.find(None)
+
+    results = batch
+
     return render_template('search.html',
-                           results=batch,
+                           results=results,
                            keywords=keywords,
                            searchType=index_type,
                            logged_in='logged_in' in session)
@@ -91,18 +93,13 @@ def about():
 
 
 # login
-@search_bp.route('/login', methods=['GET', 'POST'])
+@search_bp.route('/ajax/login', methods=['POST'])
 def login():
-    if request.method == 'POST':
-        if request.form['login_key'] == current_app.config['SECRET_KEY']:
-            session['logged_in'] = True
-        return redirect(url_for('search.search'))
-    return '''
-   <form method = "post">
-      <input type=text name=login_key >
-      <input type=submit value=Login >
-   </form>
-   '''
+    if request.form['login_key'] == current_app.config['SECRET_KEY']:
+        session['logged_in'] = True
+        return json.dumps({'success': True})
+    else:
+        return json.dumps({'success': False})
 
 
 # logout

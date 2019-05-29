@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, url_for, redirect, current_app
+from flask import Blueprint, render_template, request, url_for, redirect, current_app, session
 from web import db
 from bson.objectid import ObjectId
 import os
@@ -23,7 +23,7 @@ def new():
         collection.insert_one(new_doc)
         return redirect(url_for('search.search'))
     else:
-        return render_template('edit.html', obj_id='new', result=None)
+        return render_template('edit.html', obj_id='new', result=None, logged_in='logged_in' in session)
 
 
 @edit_bp.route('/<obj_id>', methods=['GET', 'POST'])
@@ -38,7 +38,7 @@ def edit(obj_id):
         collection.find_one_and_replace({'_id': ObjectId(obj_id)}, new_doc)
         return redirect(url_for('search.document', obj_id=obj_id))
     else:
-        return render_template('edit.html', obj_id=obj_id, result=item)
+        return render_template('edit.html', obj_id=obj_id, result=item, logged_in='logged_in' in session)
 
 
 @edit_bp.route('/del/<obj_id>')

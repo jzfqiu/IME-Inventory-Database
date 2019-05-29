@@ -37,20 +37,31 @@
 
 
     <section>
-        {% if results %}
+        {% if results.count()>0 %}
             {% for result in results %}
-                <div>
-                    <ul>
-                        <li><a href="{{ url_for('search.document', obj_id=result['_id']) }}">
+                <div class="result-container">
+                    <ul class="result">
+                        <li class="result-name"><a href="{{ url_for('search.document', obj_id=result['_id']) }}">
                             {{ result['name'] }}
                         </a></li>
+                        <li class="result-overview">
+                            {% if result['overview'] %}
+                                {% if result['overview'][250] %}
+                                    {{ result['overview'][:250] }}...
+                                {% else %}
+                                    {{ result['overview'] }}
+                                {% endif %}
+                            {% else %}
+                                No Overview
+                            {% endif %}
+                        </li>
                     </ul>
                 </div>
             {% endfor %}
         {% else %}
             <div>No result found</div>
         {% endif %}
-
-
     </section>
+
+
 {% endblock %}
