@@ -1,49 +1,54 @@
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>{% block title %}{% endblock %} - IME Inventory DB</title>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <script src="{{ url_for('static', filename='base.js') }}"></script>
-        {% block script %}{% endblock %}
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} - IME Inventory DB</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='base.js') }}"></script>
+    {% block script %}{% endblock %}
+</head>
 
-    <body>
+<body>
 
-        <header>
-            {% block header %}{% endblock %}
-        </header>
+<section class="topBar">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
 
-        <nav>
-            <ul class="nav-ul">
-                <li class="nav-li"><a class="nav-li-a" href="{{ url_for('search.about') }}">About</a></li>
-                {% if logged_in %}
-                    <li class="nav-li">
-                        <a class="nav-li-a" id="nav-logout" href="{{ url_for('search.logout') }}">Logout</a>
-                    </li>
-                    <li class="nav-li">
-                        <a class="nav-li-a" href="{{ url_for('edit.new') }}">New</a>
-                    </li>
-                {% else %}
-                    <li class="nav-li">
-                        <a class="nav-li-a" id="nav-login" href="{{ url_for('search.login') }}">Login</a>
-                    </li>
-                {% endif %}
+    <nav>
+        <ul class="nav-ul">
+            <li class="nav-li"><a class="nav-li-a" href="{{ url_for('search.about') }}">About</a></li>
+            {% if logged_in %}
+                <li class="nav-li">
+                    <a class="nav-li-a" id="nav-logout" href="{{ url_for('search.logout') }}">Logout</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-li-a" href="{{ url_for('edit.new') }}">New</a>
+                </li>
+            {% else %}
+                <li class="nav-li">
+                    <a class="nav-li-a" id="nav-login" href="{{ url_for('search.login') }}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+        <div id="nav-login-overlay"></div>
+    </nav>
+</section>
 
-            </ul>
-            <div id="nav-login-overlay"></div>
-        </nav>
 
+<section class="sideBar">
 
-        <section>
-            {% block content %}
-            {% endblock %}
-        </section>
+</section>
 
-    </body>
+<section class="content">
+    {% block content %}
+    {% endblock %}
+</section>
+
+</body>
 
 </html>

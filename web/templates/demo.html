@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} - IME Inventory DB</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='demo.css') }}">
+    <script src="{{ url_for('static', filename='demo.js') }}"></script>
+    {% block script %}{% endblock %}
+</head>
+<body>
+
+<section class="top">
+    <div class="top-logo">
+
+    </div>
+
+    <label for="top-searchBox">Search Box</label>
+    <input class="top-searchBox" id="top-searchBox">
+
+    <button class="top-searchButton">Search</button>
+
+    <button class="search-loginButton">Login</button>
+</section>
+
+
+<section class="catNav">
+    <div class="catNav-cat">Category</div>
+    <div class="catNav-cat">Category</div>
+    <div class="catNav-cat">Category</div>
+    <div class="catNav-cat">Category</div>
+    <div class="catNav-cat">Category</div>
+</section>
+
+<section class="catDropdown"></section>
+
+<section class="sidebar">
+
+</section>
+
+<section class="result">
+
+</section>
+
+</body>
+</html>
