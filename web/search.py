@@ -5,6 +5,11 @@ import json
 
 search_bp = Blueprint('search', __name__)
 
+
+@search_bp.route('/demo', methods=('GET', 'POST'))
+def demo():
+    return render_template('demo.html')
+
 # main search function
 @search_bp.route('/', methods=('GET', 'POST'))
 def search():

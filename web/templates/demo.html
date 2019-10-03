@@ -14,35 +14,69 @@
 <body>
 
 <section class="top">
-    <div class="top-logo">
-
+    <div class=" top top-logo__wrapper">
+        <p class="top-logo__placeholder">Logo</p>
     </div>
 
-    <label for="top-searchBox">Search Box</label>
-    <input class="top-searchBox" id="top-searchBox">
+    <div class="top top-search__wrapper">
+        <label for="top-searchBox" hidden>Search Box</label>
+    <input type="text" class="reset top-searchBox" id="top-searchBox" />
+    <button class="reset top-searchButton">Search</button>
+    </div>
 
-    <button class="top-searchButton">Search</button>
+    <div class="top top-login_wrapper">
+        <button class="top-loginButton">Login</button>
+    </div>
 
-    <button class="search-loginButton">Login</button>
 </section>
 
 
 <section class="catNav">
-    <div class="catNav-cat">Category</div>
-    <div class="catNav-cat">Category</div>
-    <div class="catNav-cat">Category</div>
-    <div class="catNav-cat">Category</div>
-    <div class="catNav-cat">Category</div>
+    <div class="catNav catNav__wrapper">
+        <div class="catNav__cat">Category</div>
+        <div class="catNav__cat">Category</div>
+        <div class="catNav__cat">Category</div>
+        <div class="catNav__cat">Category</div>
+        <div class="catNav__cat">Category</div>
+    </div>
 </section>
 
 <section class="catDropdown"></section>
 
-<section class="sidebar">
 
+<section class="sidebar">
+    <div class="sidebar-divisions__wrapper">
+        <p class="sidebar-divisions__division">All Divisions</p>
+        <p class="sidebar-divisions__division">Division 1</p>
+        <p class="sidebar-divisions__division">Division 2</p>
+        <p class="sidebar-divisions__division">Division 3</p>
+        <p class="sidebar-divisions__division">Division 4</p>
+    </div>
+
+    <div class="sidebar-refine__wrapper">
+        <p class="sidebar-refine__cat">Tags</p>
+        <ul class="sidebar-refine__list">
+            <li class="sidebar-refine__item">tag1</li>
+            <li class="sidebar-refine__item">tag2</li>
+            <li class="sidebar-refine__item">tag3</li>
+            <li class="sidebar-refine__item">tag4</li>
+            <li class="sidebar-refine__item">tag5</li>
+            <li class="sidebar-refine__item">tag6</li>
+            <li class="sidebar-refine__item">tag7</li>
+        </ul>
+
+    </div>
 </section>
 
 <section class="result">
+    <div class="result-block">Result</div>
+    <div class="result-block">Result</div>
+    <div class="result-block">Result</div>
+    <div class="result-block">Result</div>
+</section>
 
+<section class="footer">
+    <div class="footer-placeholder">Footer</div>
 </section>
 
 </body>

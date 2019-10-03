@@ -1,17 +1,21 @@
 search.css
     .top
         .top-logo
-            .top-logo-bigText
-            .top-logo-smallText
+            .top-logo__bigText
+            .top-logo__smallText
         .top-searchBox
         .top-searchButton
         .top-loginButton
     .catNav
-        .catNav-cat
+        .catNav__cat
     .catDropdown
-        .catDropdown-bucket
-        .catDropdown-bucket-item
-            .catDropdown-bucket-item_selected
+        .catDropdown__bucket
+        .catDropdown__bucketItem
+            .catDropdown__bucketItem_selected
     .sidebar
-        .sidebar-division
+        .sidebar-divisions
         .sidebar-refine
+    .result
+        .result-block
+        .result-list
+        .result-full

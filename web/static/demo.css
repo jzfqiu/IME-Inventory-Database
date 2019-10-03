@@ -1,0 +1,98 @@
+/* CSS Reset */
+#element { margin:0; padding:0; font-size:100%; line-height:1; }
+
+.reset {
+    border-width: 1px;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
+    width: 70%;
+    max-width: 1000px;
+    min-width: 500px;
+    margin: auto;
+}
+
+
+/* ================ Top ================ */
+
+.top {
+    height: 130px;
+    display: flex;
+}
+
+.top-logo__wrapper {
+    width: 200px;
+}
+
+.top-logo__placeholder {
+    font-size: 3em;
+    margin: auto;
+}
+
+.top-search__wrapper {
+    width: 600px;
+    flex-wrap: wrap;
+    min-width: 400px;
+}
+
+.top-searchBox {
+    height: 48px;
+    max-width: 500px;
+    min-width: 300px;
+    margin: auto 0 auto auto;
+    border: 1px solid gray;
+    border-radius: 7px 0 0 7px;
+    flex-grow: 1;
+    font-size: 1em;
+}
+
+.top-searchButton {
+    height: 50px;
+    width: 90px;
+    margin: auto auto auto 0;
+    border: 1px solid gray;
+    border-left-width: 0;
+    border-radius: 0 7px 7px 0;
+    font-size: 1em;
+}
+
+.top-login_wrapper {
+    width: 200px;
+}
+
+.top-loginButton {
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    font-size: 1em;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
+
+
+/* =====meow======= Cat =======meow===== */
+
+.catNav {
+    height: 50px;
+    display: flex
+}
+
+.catNav__wrapper {
+    width: 1000px;
+    border: 1px solid gray;
+    border-left: 0;
+    border-right: 0;
+    justify-content: center;
+}
+
+.catNav__cat {
+    width: 150px;
+    text-align: center;
+    margin: auto 10px;
+}
+
+/* ================ Cat ================ */
