@@ -13,6 +13,8 @@ body {
     max-width: 1000px;
     min-width: 500px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -21,6 +23,7 @@ body {
 .top {
     height: 130px;
     display: flex;
+    background: whitesmoke;
 }
 
 .top-logo__wrapper {
@@ -78,7 +81,12 @@ body {
 
 .catNav {
     height: 50px;
-    display: flex
+    display: flex;
+    background: aliceblue;
+}
+
+.catNav__borderAdjust {
+    height: 52px;
 }
 
 .catNav__wrapper {
@@ -91,8 +99,81 @@ body {
 
 .catNav__cat {
     width: 150px;
-    text-align: center;
     margin: auto 10px;
 }
 
-/* ================ Cat ================ */
+.catNav__cat:hover {
+    background: lightgray;
+    width: 148px;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.catNav__text {
+    margin: auto;
+}
+
+
+
+/* ============== sidebar ============== */
+
+.sidebar {
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background: whitesmoke;
+}
+
+.sidebar-divisions__wrapper {
+    min-width: 180px;
+    margin: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar-divisions__division {
+    width: 88px;
+    height: 60px;
+    display: flex;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.sidebar-divisions__text {
+    margin: auto;
+}
+
+.division--top {
+    width: 177px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 7px 7px 0 0;
+}
+
+.border--right {border-right: 1px solid gray}
+
+
+/* =============== result =============== */
+
+.result {
+    width: calc(100% - 220px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.result-description__wrapper {
+    width: 100%;
+}
+
+.result-description__text {
+    margin: 20px 0 0 20px;
+}
+
+.result-block {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
