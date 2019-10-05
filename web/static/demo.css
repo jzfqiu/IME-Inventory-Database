@@ -7,6 +7,24 @@
     margin: 0;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
 body {
     font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
     width: 70%;
@@ -15,6 +33,10 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+}
+
+p {
+    margin: 0;
 }
 
 
@@ -82,7 +104,7 @@ body {
 .catNav {
     height: 50px;
     display: flex;
-    background: aliceblue;
+    background: #E8E8E8;
 }
 
 .catNav__borderAdjust {
@@ -153,13 +175,32 @@ body {
 
 .border--right {border-right: 1px solid gray}
 
+.border--radius__left {border-radius: 0 0 0 7px;}
+.border--radius__right {border-radius: 0 0 7px 0;}
+
+.sidebar-refine__wrapper {
+    min-width: 180px;
+    margin: 10px 20px;
+}
+
+.sidebar-refine__list {
+    margin: 10px 0 0 20px;
+}
+
+.sidebar-refine__item {
+    list-style-type: none;
+    line-height: 1.5em;
+}
+
 
 /* =============== result =============== */
 
 .result {
-    width: calc(100% - 220px);
+    width: calc(100% - 260px);
+    margin: 0 10px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .result-description__wrapper {
@@ -176,4 +217,24 @@ body {
     margin: 20px;
     border: 1px solid gray;
     border-radius: 7px;
+}
+
+.result-pages__list {
+    display: flex;
+    margin: 10px auto;
+}
+
+.result-pages__item {
+    display: inline;
+    min-width: 25px;
+}
+
+
+/* =============== Footer =============== */
+
+.footer {
+    height: 100px;
+    width: 1000px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
