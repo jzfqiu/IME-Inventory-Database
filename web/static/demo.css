@@ -124,7 +124,7 @@ p {
     margin: auto 10px;
 }
 
-.catNav__cat:hover {
+.catNav__cat--hover {
     background: lightgray;
     width: 148px;
     border-left: 1px solid gray;
@@ -198,17 +198,21 @@ p {
     position: absolute;
     top: 181px;
     width: 70%;
-    max-width: 960px;
-    min-width: 460px;
-    margin: auto 20px;
+    max-width: 940px;
+    min-width: 440px;
+    margin: auto 30px;
     display: none;
     border: 1px solid gray;
-    border-top: 0;
+    border-top: 1px solid transparent;
     background: lightgray;
 }
 
 .catDropdown__bucket {
     margin: 20px auto;
+}
+
+.catDropdown__text {
+    margin-bottom: 20px;
 }
 
 
