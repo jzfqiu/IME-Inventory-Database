@@ -40,18 +40,22 @@
 
 {% for cat in cats %}
 <section class="catDropdown" id="cat{{loop.index}}Dropdown">
-    <p>{{ cat.description }}</p>
+    {% if cat.description %}
+    <p class="catDropdown__description">{{ cat.description }}</p>
+    {% endif %}
+    <div class="catDropdown__bwrapper">
+        {% for k, bucket in cat.buckets.items() %}
+        <div class="catDropdown__bucket">
 
-    {% for k, bucket in cat.buckets.items() %}
-    <div class="catDropdown__bucket">
+            <p class="catDropdown__text">{{ bucket.name }}</p>
+            {% for choice in bucket.choices %}
+            <input type="radio" class="catDropdown__item">{{ choice }}<br>
+            {% endfor %}
 
-        <p class="catDropdown__text">{{ bucket.name }}</p>
-        {% for choice in bucket.choices %}
-        <input type="radio" class="catDropdown__item">{{ choice }}<br>
+        </div>
         {% endfor %}
-
     </div>
-    {% endfor %}
+
 
 </section>
 {% endfor %}

@@ -4,7 +4,7 @@
     "description": "List of participating campus members.",
     "buckets": {
       "b1": {
-        "name": null,
+        "name": "",
         "choices": [
           "UChicago",
           "UIC",
@@ -112,8 +112,8 @@
         "name": "Semiconductors",
         "choices": [
           "Chromatography",
-          "Mass / Charge Selection",
-          "Optical / Fluorescence",
+          "Mass/Charge Selection",
+          "Optical/Fluorescence",
           "X-Ray"
         ]
       }
@@ -130,7 +130,8 @@
           "Composites Tools",
           "Metals Tools",
           "Polymers Tools",
-          "Semiconductor/Sensors/MEMS"
+          "Semiconductor",
+          "Sensors/MEMS"
         ]
       },
       "b2": {
@@ -140,7 +141,8 @@
           "Composite Materials",
           "Metals",
           "Polymers",
-          "Semiconductor/Sensors/MEMs",
+          "Semiconductor",
+          "Sensors/MEMs",
           "Sustainable Resources"
         ]
       },

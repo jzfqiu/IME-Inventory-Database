@@ -151,8 +151,22 @@ p {
     background: lightgray;
 }
 
+.catDropdown__bwrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 75%;
+}
+
+.catDropdown__description {
+    width: 25%;
+    height: 100%;
+    margin: 20px;
+}
+
 .catDropdown__bucket {
-    margin: 20px auto;
+    margin: 20px;
+    min-width: 25%;
 }
 
 .catDropdown__text {
