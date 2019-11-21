@@ -8,7 +8,6 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='demo.css') }}">
-    <script src="{{ url_for('static', filename='demo.js') }}"></script>
     {% block script %}{% endblock %}
 </head>
 <body>
@@ -287,6 +286,7 @@
 <section class="footer">
     <div class="footer-placeholder">Footer</div>
 </section>
+<script src="{{ url_for('static', filename='demo.js') }}"></script>
 
 </body>
 </html>

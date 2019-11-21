@@ -1,62 +1,60 @@
 
 
-$(document).ready(function(){
+function toggleDropdown() {
+    // global variable of ID of dropdown currently on display
+    let displayedID = null;
 
-    let hover_nav = -1;
+    // functions displaying/hiding dropdown given id
+    function displayDropdown() {
+        let dropdown = document.getElementById(displayedID);
+        dropdown.style.display = 'flex';
+    }
 
-    $('.catNav__cat, .catDropdown').hover(
-        function () {
-            hover_nav = $(this).attr('id').charAt(3);
-            $('#cat'+hover_nav).addClass('catNav__cat--hover');
-            $('#cat'+hover_nav+'Dropdown').css('display', 'flex');
-            $('#test-block').text('Select category choices in dropdown menu. ' +
-                'There can be at most 3 layers of choices (e.g. Material-Ceramics-Glasses) ' +
-                'and at least 2 layers (e.g. Campus-Chicago). ' +
-                'Users will be able to select an entire bucket as well.')
-        },
-        function () {
-            $('#cat'+hover_nav).removeClass('catNav__cat--hover');
-            $('#cat'+hover_nav+'Dropdown').css('display', 'none');
-            $('#test-block').text('')
-        });
-
-    let selected_division = 'all';
-    $('.sidebar-divisions__division').click(function () {
-        let div_id = $(this).attr('id');
-        if (div_id !== selected_division) {
-            $('#'+selected_division).removeClass('sidebar-divisions__division--selected');
-            $('#'+div_id).addClass('sidebar-divisions__division--selected');
-            selected_division = div_id;
+    function hideDropdown() {
+        if (displayedID) {
+            let dropdown = document.getElementById(displayedID);
+            dropdown.style.display = 'none';
         }
-    });
+    }
 
-    $('.sidebar-refine__wrapper').hover(
-        function () {
-            $('#test-block').text('This section will dynamically display selected choices in categories above.' +
-                'Individual choices can also be deselected here.')
+    // object with setters to respond to status change
+    let dropdownStatus = {
+        onDp : false,
+        onNv : false,
+        set onDropdown(bool) {
+            this.onDp = bool;
+            if (this.onDp || this.onNv) {displayDropdown()}
+            else {hideDropdown()}
         },
-        function () {
-            $('#test-block').text('')
+        set onNav(bool) {
+            this.onNv = bool;
+            if (this.onDp || this.onNv) {displayDropdown()}
+            else {hideDropdown()}
         }
-    );
+    };
 
-    $('.sidebar-divisions__wrapper').hover(
-        function () {
-            $('#test-block').text('Select a division to search in.')
-        },
-        function () {
-            $('#test-block').text('')
-        }
-    );
+    // if we hover class catNav__cat, get its id and toggle property in the status object
+    let navArr = Array.from(document.getElementsByClassName('catNav__cat'));
+    navArr.forEach(e => e.addEventListener('mouseenter', event => {
+        displayedID = event.target.id + 'Dropdown';
+        dropdownStatus.onNav = true;
+    }));
+    navArr.forEach(e => e.addEventListener('mouseleave', () => {
+        dropdownStatus.onNav = false;
+    }));
 
-    $('.result-block').hover(
-        function () {
-            $('#test-block').text('Results will be listed here. ' +
-                'When no category is selected, display the most viewed equipments.')
-        },
-        function () {
-            $('#test-block').text('')
-        }
-    )
+    // if we hover dropdown, toggle status object property to mark mouse location
+    let dpArr = Array.from(document.getElementsByClassName('catDropdown'));
+    dpArr.forEach(e => e.addEventListener('mouseenter', () => {
+        dropdownStatus.onDropdown = true;
+    }));
+    dpArr.forEach(e => e.addEventListener('mouseleave', () => {
+        dropdownStatus.onDropdown = false;
+    }));
 
-});
+}
+
+toggleDropdown();
+
+// also set active to id
+// if we exit dropdown AND catNav with active id, set active to null and
