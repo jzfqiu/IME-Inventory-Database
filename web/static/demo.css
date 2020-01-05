@@ -129,8 +129,7 @@ p {
 .catDropdown {
     position: absolute;
     top: 130px;
-    width: 70%;
-    max-width: 780px;
+    max-width: 782px;
     min-width: 440px;
     margin: auto 0 auto 218px;
     display: none;
@@ -173,15 +172,14 @@ p {
 }
 
 .sidebar-catNav__wrapper {
-    min-width: 180px;
-    margin: 20px 20px;
     height: 200px;
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .sidebar-catNav__cat {
-    width: 180px;
+    width: 220px;
 }
 
 .sidebar-catNav__cat--hover {
