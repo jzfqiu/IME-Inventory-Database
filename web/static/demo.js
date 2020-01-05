@@ -2,7 +2,7 @@
 
 // dropdown DOMs
 let doms = {
-    navArr: Array.from(document.getElementsByClassName('catNav__cat')),
+    navArr: Array.from(document.getElementsByClassName('sidebar-catNav__cat')),
     dpArr: Array.from(document.getElementsByClassName('catDropdown'))
 };
 
@@ -14,14 +14,18 @@ function toggleDropdown() {
 
     // functions displaying/hiding dropdown given id
     function displayDropdown() {
-        let dropdown = document.getElementById(displayedID);
+        let dropdown = document.getElementById(displayedID + 'Dropdown');
+        let nav = document.getElementById(displayedID);
         dropdown.style.display = 'flex';
+        nav.classList.add('sidebar-catNav__cat--hover')
     }
 
     function hideDropdown() {
         if (displayedID) {
-            let dropdown = document.getElementById(displayedID);
+            let dropdown = document.getElementById(displayedID+ 'Dropdown');
+            let nav = document.getElementById(displayedID);
             dropdown.style.display = 'none';
+            nav.classList.remove('sidebar-catNav__cat--hover')
         }
     }
 
@@ -43,7 +47,7 @@ function toggleDropdown() {
 
     // if we hover class catNav__cat, get its id and toggle property in the status object
     doms.navArr.forEach(e => e.addEventListener('mouseenter', event => {
-        displayedID = event.target.id + 'Dropdown';
+        displayedID = event.target.id;
         dropdownStatus.onNav = true;
     }));
     doms.navArr.forEach(e => e.addEventListener('mouseleave', () => {
