@@ -46,54 +46,37 @@
     <div class="catDropdown__bwrapper">
         {% for k, bucket in cat.buckets.items() %}
         <div class="catDropdown__bucket">
-
             <p class="catDropdown__text">{{ bucket.name }}</p>
             {% for choice in bucket.choices %}
             <input type="radio" class="catDropdown__item">{{ choice }}<br>
             {% endfor %}
-
         </div>
         {% endfor %}
     </div>
-
-
 </section>
 {% endfor %}
 
-{#
-<section class="catDropdown" id="cat1Dropdown">
-    <div class="catDropdown__bucket">
-        <input type="radio" class="catDropdown__item">Choice 1<br>
-        <input type="radio" class="catDropdown__item">Choice 2<br>
-        <input type="radio" class="catDropdown__item">Choice 3<br>
-        <input type="radio" class="catDropdown__item">Choice 4<br>
-        <input type="radio" class="catDropdown__item">Choice 5<br>
-        <input type="radio" class="catDropdown__item">Choice 6<br>
-        <input type="radio" id="cat1-c7" class="catDropdown__item"><label>Choice 7</label>
-    </div>
-</section>
 
-#}
 
 
 <section class="sidebar">
-    <div class="sidebar-divisions__wrapper">
-        <div class="sidebar-divisions__division division--top sidebar-divisions__division--selected" id="all">
-            <a class="sidebar-divisions__text" href="#">Search All Divisions</a>
-        </div>
-        <div class="sidebar-divisions__division" id="division1">
-            <a class="sidebar-divisions__text" href="#">SMCF</a></div>
-        <div class="sidebar-divisions__division border--right" id="division2">
-            <a class="sidebar-divisions__text" href="#">BSD</a></div>
-        <div class="sidebar-divisions__division" id="division3">
-            <a class="sidebar-divisions__text" href="#">Geosci</a></div>
-        <div class="sidebar-divisions__division border--right" id="division4">
-            <a class="sidebar-divisions__text" href="#">MRSEC</a></div>
-        <div class="sidebar-divisions__division border--radius__left" id="division5">
-            <a class="sidebar-divisions__text" href="#">PNF</a></div>
-        <div class="sidebar-divisions__division border--right border--radius__right" id="division6">
-            <a class="sidebar-divisions__text" href="#">Other</a></div>
-    </div>
+<!--    <div class="sidebar-divisions__wrapper">-->
+<!--        <div class="sidebar-divisions__division division&#45;&#45;top sidebar-divisions__division&#45;&#45;selected" id="all">-->
+<!--            <a class="sidebar-divisions__text" href="#">Search All Divisions</a>-->
+<!--        </div>-->
+<!--        <div class="sidebar-divisions__division" id="division1">-->
+<!--            <a class="sidebar-divisions__text" href="#">SMCF</a></div>-->
+<!--        <div class="sidebar-divisions__division border&#45;&#45;right" id="division2">-->
+<!--            <a class="sidebar-divisions__text" href="#">BSD</a></div>-->
+<!--        <div class="sidebar-divisions__division" id="division3">-->
+<!--            <a class="sidebar-divisions__text" href="#">Geosci</a></div>-->
+<!--        <div class="sidebar-divisions__division border&#45;&#45;right" id="division4">-->
+<!--            <a class="sidebar-divisions__text" href="#">MRSEC</a></div>-->
+<!--        <div class="sidebar-divisions__division border&#45;&#45;radius__left" id="division5">-->
+<!--            <a class="sidebar-divisions__text" href="#">PNF</a></div>-->
+<!--        <div class="sidebar-divisions__division border&#45;&#45;right border&#45;&#45;radius__right" id="division6">-->
+<!--            <a class="sidebar-divisions__text" href="#">Other</a></div>-->
+<!--    </div>-->
 
     <div class="sidebar-refine__wrapper">
         <p class="sidebar-refine__cat">Searching in: SMCF</p>

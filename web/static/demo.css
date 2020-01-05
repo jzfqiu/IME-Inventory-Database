@@ -142,12 +142,11 @@ p {
     position: absolute;
     top: 181px;
     width: 70%;
-    max-width: 940px;
+    max-width: 780px;
     min-width: 440px;
-    margin: auto 30px;
+    margin: auto 0 auto 218px;
     display: none;
     border: 1px solid gray;
-    border-top: 1px solid transparent;
     background: lightgray;
 }
 
