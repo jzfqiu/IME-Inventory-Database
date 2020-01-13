@@ -1,9 +1,11 @@
 // search page js
 
 // dropdown DOMs
-let doms = {
+let DOMs = {
     navArr: Array.from(document.getElementsByClassName('sidebar-catNav__cat')),
-    dpArr: Array.from(document.getElementsByClassName('catDropdown'))
+    dpArr: Array.from(document.getElementsByClassName('catDropdown')),
+    choiceArr: Array.from(document.getElementsByClassName('catDropdown__item')),
+    catRefineWrapper: document.getElementsByClassName('sidebar-refine__wrapper')
 };
 
 
@@ -46,19 +48,19 @@ function toggleDropdown() {
     };
 
     // if we hover class catNav__cat, get its id and toggle property in the status object
-    doms.navArr.forEach(e => e.addEventListener('mouseenter', event => {
+    DOMs.navArr.forEach(e => e.addEventListener('mouseenter', event => {
         displayedID = event.target.id;
         dropdownStatus.onNav = true;
     }));
-    doms.navArr.forEach(e => e.addEventListener('mouseleave', () => {
+    DOMs.navArr.forEach(e => e.addEventListener('mouseleave', () => {
         dropdownStatus.onNav = false;
     }));
 
     // if we hover dropdown, toggle status object property to mark mouse location
-    doms.dpArr.forEach(e => e.addEventListener('mouseenter', () => {
+    DOMs.dpArr.forEach(e => e.addEventListener('mouseenter', () => {
         dropdownStatus.onDropdown = true;
     }));
-    doms.dpArr.forEach(e => e.addEventListener('mouseleave', () => {
+    DOMs.dpArr.forEach(e => e.addEventListener('mouseleave', () => {
         dropdownStatus.onDropdown = false;
     }));
 }
@@ -66,27 +68,75 @@ function toggleDropdown() {
 toggleDropdown();
 
 
+// class controlling dropdown selection and async requests
 let catSelection = {
 
-    selected: {
-      main: null,
-      cat1: [],
-      cat2: [],
-      cat3: [],
-      cat4: [],
-      cat5: []
-    },
+    selected: {},
 
-    toJSON: function (){
-        return JSON.stringify(this.selected)
+    toJSON: function (obj){
+        return JSON.stringify(obj)
     },
 
     monitor: function(){
-        doms.dpArr.forEach(e => e.addEventListener('click', event => {
-            console.log(event.target)
-        }))
-    }
+        DOMs.choiceArr.forEach(e => e.addEventListener('click', event => {
+            let choiceStr = event.target.id.split(":");
+            let choiceCat = choiceStr[0];
 
+            let choiceItemStr = choiceStr[1];
+            let choiceSubCat = choiceItemStr.split("-")[0];
+            let choiceItem = choiceItemStr.split("-")[1];
+
+            // push change to class variable and DOM
+            this.pushChange(choiceCat, choiceSubCat, choiceItem);
+        }))
+    },
+
+    // objToDOM: function() {
+    //     let cat, subCat, item;
+    //     let res = [];
+    //     for (cat in this.selected) {
+    //         let refineCat = document.createElement("p");
+    //         let refineCatText = document.createTextNode(this.selected[cat]);
+    //         res.push(refineCat.appendChild(refineCatText))
+    //         for (subCat in cat) {
+    //
+    //         }
+    //     }
+    // },
+
+    pushChange: function (cat, subCat, item) {
+        if (cat in this.selected) {
+            let curCat = this.selected[cat];
+            if (subCat in curCat) {
+                let curSubCat = curCat[subCat];
+                let idx = curSubCat.indexOf(item);
+                if (idx !== -1) {
+                    // deselect radio button on dropdown
+                    document.getElementById(cat+':'+subCat+'-'+item).checked = false;
+                    // delete item from selected
+                    curSubCat.splice(idx, 1);
+                    // check if subCat and cat is empty, if so execute nested delete
+                    if (curSubCat.length === 0) {
+                        delete curCat[subCat];
+                        if (Object.entries(curCat).length === 0) {
+                            delete this.selected[cat];
+                        }
+                    }
+                } else {
+                    // add item to selected
+                    curSubCat.push(item)
+                }
+            } else {
+                // add subCat and item to selected
+                curCat[subCat] = [item];
+            }
+        } else {
+            this.selected[cat] = {[subCat]: [item]};
+        }
+        console.log(this.toJSON(this.selected))
+        // node = this
+        // DOMs.catRefineWrapper.replaceChild()
+    },
 
 
 };

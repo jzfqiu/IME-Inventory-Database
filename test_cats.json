@@ -52,11 +52,11 @@
       },
       "b5": {
         "name": "Polymers",
-        "choices": []
+        "choices": ["Polymers"]
       },
       "b6": {
         "name": "Semiconductors",
-        "choices": []
+        "choices": ["Semiconductors"]
       }
     }
   },
@@ -148,7 +148,9 @@
       },
       "b3": {
         "name": "University/Industry Partnerships",
-        "choices": []
+        "choices": [
+          "University/Industry Partnerships"
+        ]
       }
     }
   }

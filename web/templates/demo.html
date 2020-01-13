@@ -39,7 +39,8 @@
         <div class="catDropdown__bucket">
             <p class="catDropdown__text">{{ bucket.name }}</p>
             {% for choice in bucket.choices %}
-            <input type="radio" class="catDropdown__item">{{ choice }}<br>
+            <input type="radio" class="catDropdown__item"
+                   id="{{ cat.name }}:{{ bucket.name }}-{{ choice }}">{{ choice }}<br>
             {% endfor %}
         </div>
         {% endfor %}
@@ -60,7 +61,7 @@
         {% endfor %}
     </div>
 
-    <div class="sidebar-refine__wrapper">
+    <div class="sidebar-refine__wrapper ">
         <p class="sidebar-refine__cat">Searching Criteria</p>
 
         <p class="sidebar-refine__cat">Campus</p>
