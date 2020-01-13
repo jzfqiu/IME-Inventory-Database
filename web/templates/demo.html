@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<section class="overlay">
+    <div class="overlay-detail">
+        Details
+    </div>
+</section>
+
 <section class="top">
     <div class=" top top-logo__wrapper">
         <p class="top-logo__placeholder">Logo</p>
@@ -39,7 +45,7 @@
         <div class="catDropdown__bucket">
             <p class="catDropdown__text">{{ bucket.name }}</p>
             {% for choice in bucket.choices %}
-            <input type="radio" class="catDropdown__item"
+            <input type="radio" class="catDropdown__item js__catSelectionItem"
                    id="{{ cat.name }}:{{ bucket.name }}-{{ choice }}">{{ choice }}<br>
             {% endfor %}
         </div>
@@ -47,8 +53,6 @@
     </div>
 </section>
 {% endfor %}
-
-
 
 
 <section class="sidebar">
@@ -62,38 +66,45 @@
     </div>
 
     <div class="sidebar-refine__wrapper ">
-        <p class="sidebar-refine__cat">Searching Criteria</p>
-
-        <p class="sidebar-refine__cat">Campus</p>
-        <ul class="sidebar-refine__list">
-            <li class="sidebar-refine__item">Choice 4</li>
-            <li class="sidebar-refine__item">Choice 5</li>
-        </ul>
-
-        <p class="sidebar-refine__cat">Material</p>
-        <ul class="sidebar-refine__list">
-            <li class="sidebar-refine__item">Bucket 1: Choice 4</li>
-            <li class="sidebar-refine__item">Bucket 3: Choice 5</li>
-            <li class="sidebar-refine__item">Bucket 3: Choice 4</li>
-            <li class="sidebar-refine__item">Bucket 5: Choice 1</li>
-        </ul>
 
     </div>
+
 </section>
 
 <section class="result">
     <div class="result-description__wrapper">
-        <p class="result-description__text">Search results for</p>
+        <p class="result-description__text">9 results found.</p>
     </div>
-    <div class="result-block"></div>
-    <div class="result-block"></div>
-    <div class="result-block"></div>
-    <div class="result-block"></div>
-    <div class="result-block"><p  id="test-block"></p></div>
-    <div class="result-block"></div>
-    <div class="result-block"></div>
-    <div class="result-block"></div>
-    <div class="result-block"></div>
+
+    {% for equipment in demos %}
+    <div class="result-block">
+        <div class="result-block-thumbnail__wrapper">
+            {% if 'link_image' in equipment %}
+            <img src="{{ equipment.link_image }}"
+                 alt="{{ equipment.name }}"
+                 class="result-block-thumbnail__img">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/image_placeholder.jpg') }}"
+                 alt="Placeholder Image"
+                 class="result-block-thumbnail__img">
+            {% endif %}
+        </div>
+        <div class="result-block-name__wrapper">
+            <a href="#" class="result-block-name__link">{{ equipment.name }}</a>
+        </div>
+    </div>
+    {% endfor %}
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"><p  id="test-block"></p></div>-->
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"></div>-->
+<!--    <div class="result-block"></div>-->
+
+
 
     <div class="result-pages__wrapper">
         <ul class="result-pages__list">

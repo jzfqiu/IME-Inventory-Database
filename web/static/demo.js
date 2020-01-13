@@ -5,7 +5,22 @@ let DOMs = {
     navArr: Array.from(document.getElementsByClassName('sidebar-catNav__cat')),
     dpArr: Array.from(document.getElementsByClassName('catDropdown')),
     choiceArr: Array.from(document.getElementsByClassName('catDropdown__item')),
-    catRefineWrapper: document.getElementsByClassName('sidebar-refine__wrapper')
+    catRefineWrapper: document.getElementsByClassName('sidebar-refine__wrapper').item(0),
+    linkArr: Array.from(document.getElementsByClassName('result-block-name__link')),
+    overlayWrapper: document.getElementsByClassName('overlay').item(0),
+};
+
+let helpers = {
+
+    makeUL: function(array) {
+        let list = document.createElement('ul');
+        for (let i = 0; i < array.length; i++) {
+            let item = document.createElement('li');
+            item.appendChild(document.createTextNode(array[i]));
+            list.appendChild(item);
+        }
+        return list;
+    }
 };
 
 
@@ -91,18 +106,25 @@ let catSelection = {
         }))
     },
 
-    // objToDOM: function() {
-    //     let cat, subCat, item;
-    //     let res = [];
-    //     for (cat in this.selected) {
-    //         let refineCat = document.createElement("p");
-    //         let refineCatText = document.createTextNode(this.selected[cat]);
-    //         res.push(refineCat.appendChild(refineCatText))
-    //         for (subCat in cat) {
-    //
-    //         }
-    //     }
-    // },
+    objToDOM: function(obj) {
+        let refCat__wrapper = document.createElement("ul");
+        for (let cat in obj) {
+            let refCat = document.createElement("li");
+            refCat.appendChild(document.createTextNode(cat));
+
+            let refSubCat__wrapper = document.createElement("ul");
+            for (let subCat in obj[cat]) {
+                let refSubCat = document.createElement("li");
+                refSubCat.appendChild(document.createTextNode(subCat));
+                refSubCat.appendChild(helpers.makeUL(obj[cat][subCat]));
+                refSubCat__wrapper.appendChild(refSubCat);
+            }
+            refCat.appendChild(refSubCat__wrapper);
+            refCat__wrapper.appendChild(refCat)
+        }
+
+        return refCat__wrapper;
+    },
 
     pushChange: function (cat, subCat, item) {
         if (cat in this.selected) {
@@ -133,13 +155,31 @@ let catSelection = {
         } else {
             this.selected[cat] = {[subCat]: [item]};
         }
-        console.log(this.toJSON(this.selected))
-        // node = this
-        // DOMs.catRefineWrapper.replaceChild()
+        console.log(this.toJSON(this.selected));
+        let node = this.objToDOM(this.selected);
+        DOMs.catRefineWrapper.innerHTML = '';
+        DOMs.catRefineWrapper.appendChild(node);
     },
 
 
 };
 
 catSelection.monitor();
+
+let toggleOverlay = {
+
+    attachListener: function(){
+        DOMs.linkArr.forEach(e => e.addEventListener('click', e => {
+            DOMs.overlayWrapper.style.display = 'block';
+        }));
+        DOMs.overlayWrapper.addEventListener('click', e => {
+            DOMs.overlayWrapper.style.display = 'none';
+        })
+    }
+
+};
+
+toggleOverlay.attachListener();
+
+
 

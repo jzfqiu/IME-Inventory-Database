@@ -9,8 +9,10 @@ search_bp = Blueprint('search', __name__)
 @search_bp.route('/demo', methods=('GET', 'POST'))
 def demo():
     with open('test_cats.json') as cats:
-        data = list(json.load(cats).values())
-    return render_template('demo.html', cats=data)
+        cats_data = list(json.load(cats).values())
+    with open('test_data_v2.json') as demos:
+        demo_data = list(json.load(demos).values())[0]
+    return render_template('demo.html', cats=cats_data, demos=demo_data)
 
 # main search function
 @search_bp.route('/', methods=('GET', 'POST'))
