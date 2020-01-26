@@ -1,67 +1,120 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Demo - IME Inventory DB</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+    {% block script %}{% endblock %}
+</head>
+<body>
 
-{% block header %}
-    <h1 class="header-h1">{% block title %}Search{% endblock %}</h1>
-{% endblock %}
+<section class="navbar">
+    <div class="navbar-link__wrapper"><a href="#">About</a></div>
+    <div class="navbar-link__wrapper"><a href="#">Contact</a></div>
+</section>
 
-{% block script %}
-    <script src="{{ url_for('static', filename='search.js') }}"></script>
-{% endblock %}
+<section class="overlay">
+    <div class="overlay-detail">
+        <p class="overlay-detail-title">Equipment Name</p>
+        <ul>
+            <li>Division:</li>
+            <li>Campus:</li>
+            <li>Material:</li>
+            <li>Characterization:</li>
+            <li>Overview:</li>
+            <li>Contact: </li>
+            <li>Link to Manual: </li>
+        </ul>
+    </div>
+</section>
 
-{% block content %}
+<section class="top">
+    <div class=" top top-logo__wrapper">
+        <p class="top-logo__placeholder">Logo</p>
+    </div>
 
-    <section class="search">
-        <div class="search-bar">
-                <!-- preserve selection after re-rendering template:
-            type selected before re-render passed from backend -->
-            <label for="search-type" hidden>Select search type</label>
-            <select name="search_type" id="search-type" form="search-form">
-                <option value="all" {% if searchType == 'all' %}selected{% endif %}>All</option>
-                <option value="name" {% if searchType == 'name' %}selected{% endif %}>Name</option>
-                <option value="key_features" {% if searchType == 'key_features' %}selected{% endif %}>Features</option>
-                <option value="key_applications" {% if searchType == 'key_applications' %}selected{% endif %}>
-                    Applications
-                </option>
-                <option value="tags" {% if searchType == 'tags' %}selected{% endif %}>Tags</option>
-            </select>
-            <form method="post" id="search-form">
-                <label for="search-box" hidden>Search</label>
-                <input name="keywords" id="search-box" value="{{ keywords }}">
-                <input type="submit" id="search-submit" value="Search">
-            </form>
-        </div>
+    <div class="top top-search__wrapper">
+        <label for="top-searchBox" hidden>Search Box</label>
+    <input type="text" class="reset top-searchBox" id="top-searchBox" />
+    <button class="reset top-searchButton">Search</button>
+    </div>
 
-        <div id="suggestions"></div>
-    </section>
+    <div class="top top-login_wrapper">
+        <button class="top-loginButton">Login</button>
+    </div>
+
+</section>
 
 
+<!--------------- dropdown --------------->
 
-    <section>
-        {% if results.count()>0 %}
-            {% for result in results %}
-                <div class="result-container">
-                    <ul class="result">
-                        <li class="result-name"><a href="{{ url_for('search.document', obj_id=result['_id']) }}">
-                            {{ result['name'] }}
-                        </a></li>
-                        <li class="result-overview">
-                            {% if result['overview'] %}
-                                {% if result['overview'][250] %}
-                                    {{ result['overview'][:250] }}...
-                                {% else %}
-                                    {{ result['overview'] }}
-                                {% endif %}
-                            {% else %}
-                                No Overview
-                            {% endif %}
-                        </li>
-                    </ul>
-                </div>
+{% for cat in cats %}
+<section class="catDropdown" id="cat{{loop.index}}Dropdown">
+    {% if cat.description %}
+    <p class="catDropdown__description">{{ cat.description }}</p>
+    {% endif %}
+    <div class="catDropdown__bwrapper">
+        {% for k, bucket in cat.buckets.items() %}
+        <div class="catDropdown__bucket">
+            <p class="catDropdown__text">{{ bucket.name }}</p>
+            {% for choice in bucket.choices %}
+            <input type="radio" class="catDropdown__item js__catSelectionItem"
+                   id="{{ cat.name }}:{{ bucket.name }}-{{ choice }}">{{ choice }}<br>
             {% endfor %}
-        {% else %}
-            <div>No result found</div>
-        {% endif %}
-    </section>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endfor %}
 
 
-{% endblock %}
+<section class="sidebar">
+
+    <div class="catNav sidebar-catNav__wrapper">
+        {% for cat in cats %}
+        <div class="catNav sidebar-catNav__cat" id="cat{{loop.index}}">
+            <p class="sidebar-catNav__text">{{ cat.name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="sidebar-refine__wrapper ">
+
+    </div>
+
+</section>
+
+<section class="result">
+    <div class="result-description__wrapper">
+        <p class="result-description__text">9 results found.</p>
+    </div>
+
+    {% for equipment in demos %}
+    <div class="result-block">
+        <div class="result-block-thumbnail__wrapper">
+            {% if 'link_image' in equipment %}
+            <img src="{{ equipment.link_image }}"
+                 alt="{{ equipment.name }}"
+                 class="result-block-thumbnail__img">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/image_placeholder.jpg') }}"
+                 alt="Placeholder Image"
+                 class="result-block-thumbnail__img">
+            {% endif %}
+        </div>
+        <div class="result-block-name__wrapper">
+            <a href="#" class="result-block-name__link">{{ equipment.name }}</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+
+<section class="footer">
+    <div class="footer-placeholder">Footer</div>
+</section>
+<script src="{{ url_for('static', filename='search.js') }}"></script>
+
+</body>
+</html>

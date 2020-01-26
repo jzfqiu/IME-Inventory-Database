@@ -1,0 +1,160 @@
+{
+  "cat1": {
+    "name": "Campus",
+    "description": "List of participating campus members.",
+    "buckets": {
+      "b1": {
+        "name": "",
+        "choices": [
+          "UChicago",
+          "UIC",
+          "Northwestern",
+          "UIUC"
+        ]
+      }
+    }
+  },
+  "cat2": {
+    "name": "Material",
+    "description": "Equipment and methods related to specific categories of materials. Organized by class of materials.",
+    "buckets": {
+      "b1": {
+        "name": "Ceramics",
+        "choices": [
+          "Crystalline Ceramics",
+          "Glasses",
+          "Superconductors"
+        ]
+      },
+      "b2": {
+        "name": "Composites",
+        "choices": [
+          "Concrete",
+          "Wood/Paper"
+        ]
+      },
+      "b3": {
+        "name": "Material Processing",
+        "choices": [
+          "Chemicals",
+          "Cleaning",
+          "Coating/Thin Films",
+          "Etching/Patterning",
+          "Polishing",
+          "Thermal"
+        ]
+      },
+      "b4": {
+        "name": "Metals",
+        "choices": [
+          "Alloy"
+        ]
+      },
+      "b5": {
+        "name": "Polymers",
+        "choices": ["Polymers"]
+      },
+      "b6": {
+        "name": "Semiconductors",
+        "choices": ["Semiconductors"]
+      }
+    }
+  },
+  "cat3": {
+    "name": "Characterization",
+    "description": "Analytical methods and equipment used to determine properties of materials and finished products. Organized by type of equipment.",
+    "buckets": {
+      "b1": {
+        "name": "Analysis",
+        "choices": [
+          "Biomaterials",
+          "Elemental",
+          "Failure",
+          "Molecular",
+          "Surface",
+          "Thermal"
+        ]
+      },
+      "b2": {
+        "name": "Metrology",
+        "choices": [
+          "Ellipsometry",
+          "Nanoindentors",
+          "Profilometers",
+          "Tribometers"
+        ]
+      },
+      "b3": {
+        "name": "Microscopy",
+        "choices": [
+          "Atom Probe",
+          "Atomic Force",
+          "Electron",
+          "Optical"
+        ]
+      },
+      "b4": {
+        "name": "Metals",
+        "choices": [
+          "Alloy"
+        ]
+      },
+      "b5": {
+        "name": "Physical Properties",
+        "choices": [
+          "Adhesion & Wettability",
+          "Corrosion",
+          "Hardness and Wear",
+          "Surface energy"
+        ]
+      },
+      "b6": {
+        "name": "Semiconductors",
+        "choices": [
+          "Chromatography",
+          "Mass/Charge Selection",
+          "Optical/Fluorescence",
+          "X-Ray"
+        ]
+      }
+    }
+  },
+  "cat4": {
+    "name": "Manufacturing",
+    "description": "Tools used in fabrication processes for products. Organized by industry.",
+    "buckets": {
+      "b1": {
+        "name": "Fabrication Equipment",
+        "choices": [
+          "Additive Manufactring Tools",
+          "Composites Tools",
+          "Metals Tools",
+          "Polymers Tools",
+          "Semiconductor",
+          "Sensors/MEMS"
+        ]
+      },
+      "b2": {
+        "name": "Manufacturing Resources/User Facilities",
+        "choices": [
+          "Biomaterials",
+          "Composite Materials",
+          "Metals",
+          "Polymers",
+          "Semiconductor",
+          "Sensors/MEMs",
+          "Sustainable Resources"
+        ]
+      },
+      "b3": {
+        "name": "University/Industry Partnerships",
+        "choices": [
+          "University/Industry Partnerships"
+        ]
+      }
+    }
+  }
+}
+
+
+

@@ -7,8 +7,7 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(config.Config)
 
-    from . import db, edit, search
-    app.register_blueprint(edit.edit_bp)
+    from . import search
     app.register_blueprint(search.search_bp)
 
     # a simple page that says hello
