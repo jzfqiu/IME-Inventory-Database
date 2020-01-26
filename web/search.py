@@ -14,6 +14,9 @@ def demo():
         demo_data = list(json.load(demos).values())[0]
     return render_template('demo.html', cats=cats_data, demos=demo_data)
 
+# Add location inforamtion
+# color coding by campus
+
 # main search function
 @search_bp.route('/', methods=('GET', 'POST'))
 def search():

@@ -12,14 +12,16 @@ let DOMs = {
 
 let helpers = {
 
-    makeUL: function(array) {
-        let list = document.createElement('ul');
-        for (let i = 0; i < array.length; i++) {
-            let item = document.createElement('li');
-            item.appendChild(document.createTextNode(array[i]));
-            list.appendChild(item);
-        }
-        return list;
+    makeUL: function(array, className) {
+
+        // return list;
+    },
+
+    buildDOM: function (tag, className=null, text=null) {
+        let resDOM = document.createElement(tag);
+        if (className) resDOM.classList.add(className);
+        if (text) resDOM.appendChild(document.createTextNode(text));
+        return resDOM;
     }
 };
 
@@ -98,71 +100,82 @@ let catSelection = {
             let choiceCat = choiceStr[0];
 
             let choiceItemStr = choiceStr[1];
-            let choiceSubCat = choiceItemStr.split("-")[0];
+            let choiceBucket = choiceItemStr.split("-")[0];
             let choiceItem = choiceItemStr.split("-")[1];
 
             // push change to class variable and DOM
-            this.pushChange(choiceCat, choiceSubCat, choiceItem);
+            this.pushChange(choiceCat, choiceBucket, choiceItem);
         }))
     },
 
     objToDOM: function(obj) {
         let refCat__wrapper = document.createElement("ul");
         for (let cat in obj) {
-            let refCat = document.createElement("li");
-            refCat.appendChild(document.createTextNode(cat));
+            let refCat = helpers.buildDOM("li", "sidebar-refine-cat", "");
 
-            let refSubCat__wrapper = document.createElement("ul");
-            for (let subCat in obj[cat]) {
-                let refSubCat = document.createElement("li");
-                refSubCat.appendChild(document.createTextNode(subCat));
-                refSubCat.appendChild(helpers.makeUL(obj[cat][subCat]));
-                refSubCat__wrapper.appendChild(refSubCat);
+            refCat.appendChild(helpers.buildDOM("div", "sidebar-refine-cat__text", cat));
+
+            let refBucket__wrapper = document.createElement("ul");
+            for (let bucket in obj[cat]) {
+                let refBucket = helpers.buildDOM("li", "sidebar-refine-bucket", bucket);
+
+                let refItem__wrapper = document.createElement('ul');
+                for (let i = 0; i < obj[cat][bucket].length; i++) {
+                    let item = helpers.buildDOM('li', "sidebar-refine-item");
+                    item.appendChild(helpers.buildDOM('div', "sidebar-refine-item__text", obj[cat][bucket][i]));
+                    item.appendChild(helpers.buildDOM('div', "sidebar-refine-item__x", "x"));
+                    item.addEventListener('click', () => {this.pushChange(cat, bucket, obj[cat][bucket][i])});
+                    refItem__wrapper.appendChild(item);
+                }
+                refBucket.appendChild(refItem__wrapper);
+                refBucket__wrapper.appendChild(refBucket);
             }
-            refCat.appendChild(refSubCat__wrapper);
+            refCat.appendChild(refBucket__wrapper);
             refCat__wrapper.appendChild(refCat)
         }
 
         return refCat__wrapper;
     },
 
-    pushChange: function (cat, subCat, item) {
+    pushChange: function (cat, Bucket, item) {
         if (cat in this.selected) {
             let curCat = this.selected[cat];
-            if (subCat in curCat) {
-                let curSubCat = curCat[subCat];
-                let idx = curSubCat.indexOf(item);
+            if (Bucket in curCat) {
+                let curBucket = curCat[Bucket];
+                let idx = curBucket.indexOf(item);
                 if (idx !== -1) {
                     // deselect radio button on dropdown
-                    document.getElementById(cat+':'+subCat+'-'+item).checked = false;
+                    document.getElementById(cat+':'+Bucket+'-'+item).checked = false;
                     // delete item from selected
-                    curSubCat.splice(idx, 1);
-                    // check if subCat and cat is empty, if so execute nested delete
-                    if (curSubCat.length === 0) {
-                        delete curCat[subCat];
+                    curBucket.splice(idx, 1);
+                    // check if Bucket and cat is empty, if so execute nested delete
+                    if (curBucket.length === 0) {
+                        delete curCat[Bucket];
                         if (Object.entries(curCat).length === 0) {
                             delete this.selected[cat];
                         }
                     }
                 } else {
                     // add item to selected
-                    curSubCat.push(item)
+                    curBucket.push(item)
                 }
             } else {
-                // add subCat and item to selected
-                curCat[subCat] = [item];
+                // add Bucket and item to selected
+                curCat[Bucket] = [item];
             }
         } else {
-            this.selected[cat] = {[subCat]: [item]};
+            this.selected[cat] = {[Bucket]: [item]};
         }
-        console.log(this.toJSON(this.selected));
+        // console.log(this.toJSON(this.selected));
         let node = this.objToDOM(this.selected);
         DOMs.catRefineWrapper.innerHTML = '';
         DOMs.catRefineWrapper.appendChild(node);
     },
-
-
 };
+
+
+// TODO: color code blocks by campus, user defined sorting
+
 
 catSelection.monitor();
 

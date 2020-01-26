@@ -10,7 +10,7 @@
 ul {
     list-style: none;
     margin: 0;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 a {
@@ -27,9 +27,9 @@ a:hover {
 
 body {
     font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
-    width: 70%;
-    max-width: 1000px;
-    min-width: 500px;
+    width: 90%;
+    /*max-width: 1000px;*/
+    /*min-width: 500px;*/
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -62,9 +62,29 @@ p {
 }
 
 
+
+
+/* ============== NavBar ============== */
+.navbar {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.navbar-link__wrapper {
+    width: 100px;
+    text-align: right;
+}
+
+
+
+
 /* ================ Top ================ */
 
 .top {
+    width: 100%;
     height: 130px;
     display: flex;
     background: whitesmoke;
@@ -72,7 +92,7 @@ p {
 }
 
 .top-logo__wrapper {
-    width: 200px;
+    max-width: 400px;
 }
 
 .top-logo__placeholder {
@@ -81,14 +101,13 @@ p {
 }
 
 .top-search__wrapper {
-    width: 600px;
     flex-wrap: wrap;
     min-width: 400px;
 }
 
 .top-searchBox {
     height: 48px;
-    max-width: 500px;
+    max-width: 800px;
     min-width: 300px;
     margin: auto 0 auto auto;
     border: 1px solid gray;
@@ -108,7 +127,7 @@ p {
 }
 
 .top-login_wrapper {
-    width: 200px;
+    max-width: 400px;
 }
 
 .top-loginButton {
@@ -150,10 +169,9 @@ p {
 /* ============== dropdown ============== */
 .catDropdown {
     position: absolute;
-    top: 130px;
-    max-width: 782px;
-    min-width: 440px;
-    margin: auto 0 auto 218px;
+    margin-top: 160px;
+    margin-left: 250px;
+    max-width: 800px;
     display: none;
     border-top: 1px solid gray;
     background: lightgray;
@@ -186,7 +204,7 @@ p {
 /* ============== sidebar ============== */
 
 .sidebar {
-    width: 220px;
+    width: 250px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -201,7 +219,7 @@ p {
 }
 
 .sidebar-catNav__cat {
-    width: 220px;
+    width: 100%;
 }
 
 .sidebar-catNav__cat--hover {
@@ -218,37 +236,50 @@ p {
     margin: 10px 20px;
 }
 
-.sidebar-refine__list {
-    margin: 10px 0 0 20px;
+
+.sidebar-refine-cat {
+    margin: 15px 0;
 }
 
-.sidebar-refine__item {
-    list-style-type: none;
-    line-height: 1.5em;
+.sidebar-refine-cat__text {
+    font-weight: 600;
 }
 
-.sidebar-divisions__division--selected {
+.sidebar-refine-bucket {
+    margin: 5px 0;
+}
+
+.sidebar-refine-item {
+    width: 150px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: small;
+    display: flex;
+}
+
+.sidebar-refine-item:hover {
     background: lightgray;
 }
 
-
-/* =============== refine =============== */
-
-.sidebar-refine__cat {
-    margin: 20px auto 5px;
+.sidebar-refine-item__text {
+    width: 140px;
 }
 
-
+.sidebar-refine-item__x {
+    margin: auto;
+}
 
 
 /* =============== result =============== */
 
 .result {
-    width: calc(100% - 260px);
-    margin: 0 10px;
+    width: calc(100% - 270px);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 10px;
+    align-items: flex-start;
 }
 
 .result-description__wrapper {
@@ -307,7 +338,7 @@ p {
 
 .footer {
     height: 100px;
-    width: 1000px;
+    width: 100%;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
