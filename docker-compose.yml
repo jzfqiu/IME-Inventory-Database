@@ -12,16 +12,5 @@ services:
     # host files at ., allowing flask reload
     volumes:
      - .:/code
-
-    depends_on:
-    - mongo
     env_file:
     - development.env
-
-  mongo:
-    image: mongo
-    restart: always
-    ports:
-      - '27017:27017'
-    env_file:
-      - development.env
