@@ -1,0 +1,32 @@
+/* ============== dropdown ============== */
+.catDropdown {
+    position: absolute;
+    margin-top: 160px;
+    margin-left: 250px;
+    max-width: 800px;
+    display: none;
+    border-top: 1px solid gray;
+    background: lightgray;
+}
+
+.catDropdown__bwrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 75%;
+}
+
+.catDropdown__description {
+    width: 25%;
+    height: 100%;
+    margin: 20px;
+}
+
+.catDropdown__bucket {
+    margin: 20px;
+    min-width: 25%;
+}
+
+.catDropdown__text {
+    margin-bottom: 20px;
+}

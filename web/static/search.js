@@ -12,11 +12,6 @@ let DOMs = {
 
 let helpers = {
 
-    makeUL: function(array, className) {
-
-        // return list;
-    },
-
     buildDOM: function (tag, className=null, text=null) {
         let resDOM = document.createElement(tag);
         if (className) resDOM.classList.add(className);
@@ -90,9 +85,14 @@ let catSelection = {
 
     selected: {},
 
+    clearButton: helpers.buildDOM('button', "sidebar-refine-clearButton", "Clear"),
+    submitButton: helpers.buildDOM('button', "sidebar-refine-submitButton", "Submit"),
+
+
     toJSON: function (obj){
         return JSON.stringify(obj)
     },
+
 
     monitor: function(){
         DOMs.choiceArr.forEach(e => e.addEventListener('click', event => {
@@ -133,7 +133,10 @@ let catSelection = {
             refCat.appendChild(refBucket__wrapper);
             refCat__wrapper.appendChild(refCat)
         }
-
+        this.clearButton.addEventListener('click', ()=>{this.clearSelection()});
+        this.submitButton.addEventListener('click', ()=>{this.submitSelection()});
+        refCat__wrapper.appendChild(this.clearButton);
+        refCat__wrapper.appendChild(this.submitButton);
         return refCat__wrapper;
     },
 
@@ -151,9 +154,7 @@ let catSelection = {
                     // check if Bucket and cat is empty, if so execute nested delete
                     if (curBucket.length === 0) {
                         delete curCat[Bucket];
-                        if (Object.entries(curCat).length === 0) {
-                            delete this.selected[cat];
-                        }
+                        if (Object.entries(curCat).length === 0) delete this.selected[cat];
                     }
                 } else {
                     // add item to selected
@@ -166,12 +167,24 @@ let catSelection = {
         } else {
             this.selected[cat] = {[Bucket]: [item]};
         }
-        // console.log(this.toJSON(this.selected));
+
         let node = this.objToDOM(this.selected);
         DOMs.catRefineWrapper.innerHTML = '';
         DOMs.catRefineWrapper.appendChild(node);
     },
+
+    clearSelection: function(){
+        DOMs.catRefineWrapper.innerHTML = '';
+        this.selected = {};
+    },
+
+    submitSelection: function(){
+        console.log(this.toJSON(this.selected));
+    }
+
 };
+
+
 
 
 // TODO: color code blocks by campus, user defined sorting

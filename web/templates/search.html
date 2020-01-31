@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Demo - IME Inventory DB</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     {% block script %}{% endblock %}
 </head>
 <body>
@@ -36,8 +36,8 @@
 
     <div class="top top-search__wrapper">
         <label for="top-searchBox" hidden>Search Box</label>
-    <input type="text" class="reset top-searchBox" id="top-searchBox" />
-    <button class="reset top-searchButton">Search</button>
+    <input type="text" class="top-searchBox" id="top-searchBox" />
+    <button class="top-searchButton">Search</button>
     </div>
 
     <div class="top top-login_wrapper">
@@ -71,9 +71,9 @@
 
 <section class="sidebar">
 
-    <div class="catNav sidebar-catNav__wrapper">
+    <div class="sidebar-catNav__wrapper">
         {% for cat in cats %}
-        <div class="catNav sidebar-catNav__cat" id="cat{{loop.index}}">
+        <div class="sidebar-catNav__cat" id="cat{{loop.index}}">
             <p class="sidebar-catNav__text">{{ cat.name }}</p>
         </div>
         {% endfor %}

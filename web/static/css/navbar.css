@@ -1,0 +1,21 @@
+/* ============== NavBar ============== */
+.navbar {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: gray;
+}
+
+.navbar-link__wrapper {
+    width: 100px;
+}
+
+.navbar-link__wrapper a {
+    color: white;
+}
+
+.navbar-link__wrapper a:hover {
+    color: #E8E8E8;
+}

@@ -1,0 +1,59 @@
+/* ================ Top ================ */
+
+.top {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    background: whitesmoke;
+    border-bottom: 1px solid gray;
+}
+
+.top-logo__wrapper {
+    max-width: 400px;
+}
+
+.top-logo__placeholder {
+    font-size: 3em;
+    margin: auto;
+}
+
+.top-search__wrapper {
+    flex-wrap: wrap;
+    min-width: 400px;
+}
+
+.top-searchBox {
+    height: 48px;
+    max-width: 800px;
+    min-width: 300px;
+    margin: auto 0 auto auto;
+    border: 1px solid gray;
+    border-radius: 7px 0 0 7px;
+    flex-grow: 1;
+    font-size: 1em;
+    padding: 0;
+}
+
+.top-searchButton {
+    height: 50px;
+    width: 90px;
+    margin: auto auto auto 0;
+    border: 1px solid gray;
+    border-left-width: 0;
+    border-radius: 0 7px 7px 0;
+    font-size: 1em;
+}
+
+.top-login_wrapper {
+    max-width: 400px;
+}
+
+.top-loginButton {
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    font-size: 1em;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
