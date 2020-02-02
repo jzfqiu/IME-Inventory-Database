@@ -18,7 +18,8 @@
 }
 
 .result-block {
-    width: 200px;
+    width: calc(20% - 45px);
+    min-width: 200px;
     height: 250px;
     margin: 20px;
     border: 1px solid gray;
@@ -46,8 +47,10 @@
 }
 
 .result-pages__list {
+    width: 100%;
     display: flex;
-    margin: 10px auto;
+    margin: 10px;
+    justify-content: center;
 }
 
 .result-pages__item {

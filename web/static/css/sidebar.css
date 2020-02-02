@@ -2,7 +2,6 @@
 
 .sidebar {
     width: 250px;
-    max-height: 1200px;
     overflow: scroll;
     display: flex;
     flex-wrap: wrap;
@@ -33,6 +32,7 @@
 
 
 .sidebar-refine__wrapper {
+    max-height: 1200px;
     min-width: 180px;
     margin: 10px 20px;
 }
