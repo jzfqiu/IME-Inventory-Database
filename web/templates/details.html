@@ -1,3 +1,5 @@
+{#
+
 {% extends 'base.html' %}
 
 {% block header %}
@@ -59,3 +61,51 @@
 
     </div>
 {% endblock %}
+
+#}
+
+<div class="document">
+
+        <div class="document-block document-name">{{ result['name'] }}</div>
+
+        <div class="document-block document-overview">Overview: {{ result['overview'] }}</div>
+
+        {% if result['features'] %}
+            <div class="document-block">
+                Key Features:
+                <ul class="document-keyFeatures">
+                    {% for feature in result['features'] %}
+                        <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if result['applications'] %}
+            <div class="document-block">
+                Key Applications:
+                <ul class="document-keyApplications">
+                    {% for application in result['applications'] %}
+                        <li>{{ application }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if result['documentation'] %}
+            <div class="document-block document-documentation">
+            Documentation:
+                <a href="{{ result['documentation']['href'] }}">
+                    {{ result['documentation']['name'] }}
+                </a>
+            </div>
+        {% endif %}
+
+        {% if result['image'] %}
+        {% endif %}
+
+    </div>
+
+
+
+

@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, session, current_app
 import json
 import math
 from web import db
+from bson.objectid import ObjectId
 
 RESULT_PER_PAGE = 15
 search_bp = Blueprint('search', __name__)
@@ -28,13 +29,18 @@ def fetch(page_number):
     collection = db.get_db()['inventory']
     batch = collection.find(None).limit(RESULT_PER_PAGE).skip(
         (int(page_number)-1)*RESULT_PER_PAGE)
-    batch_cnt = collection.count(None)
+    batch_cnt = collection.count_documents(filter={})
     return render_template('results.html',
                            data=batch,
                            page_cnt=batch_cnt,
                            pages=range(math.ceil(batch_cnt / RESULT_PER_PAGE)))
 
 
+@search_bp.route('/details/<_id>')
+def details(_id):
+    collection = db.get_db()['inventory']
+    res = collection.find_one({'_id': ObjectId(_id)})
+    return render_template('details.html', result=res)
 
 
 
