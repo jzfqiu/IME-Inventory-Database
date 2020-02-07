@@ -26,7 +26,14 @@
             <li>Contact: </li>
             <li>Link to Manual: </li>
         </ul>
+        <iframe
+            width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
+        </iframe>
     </div>
+
 </section>
 
 <section class="top">
@@ -86,37 +93,6 @@
 </section>
 
 <section class="result">
-    <div class="result-description__wrapper">
-        <p class="result-description__text">{{ page_cnt }} results found.</p>
-    </div>
-
-    {% for equipment in data %}
-    <div class="result-block">
-        <div class="result-block-thumbnail__wrapper">
-            {% if 'images' in equipment %}
-            <img src="{{ equipment.images[0].link }}"
-                 alt="{{ equipment.name }}"
-                 class="result-block-thumbnail__img">
-            {% else %}
-            <img src="{{ url_for('static', filename='assets/image_placeholder.jpg') }}"
-                 alt="Placeholder Image"
-                 class="result-block-thumbnail__img">
-            {% endif %}
-        </div>
-        <div class="result-block-name__wrapper">
-            <a href="#" class="result-block-name__link">{{ equipment.name }}</a>
-        </div>
-    </div>
-    {% endfor %}
-
-    <ul class="result-pages__list">
-        {% for n in pages %}
-        <li class="result-pages__item">
-            <a href="/page/{{ loop.index }}">{{ loop.index }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-
 </section>
 
 <section class="footer">

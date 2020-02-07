@@ -7,11 +7,11 @@ let DOMs = {
     choiceArr: Array.from(document.getElementsByClassName('catDropdown__item')),
     catRefineWrapper: document.getElementsByClassName('sidebar-refine__wrapper').item(0),
     linkArr: Array.from(document.getElementsByClassName('result-block-name__link')),
-    overlayWrapper: document.getElementsByClassName('overlay').item(0),
+    overlayWrapper: document.querySelector('.overlay'),
+    resultWrapper: document.querySelector('.result'),
 };
 
 let helpers = {
-
     buildDOM: function (tag, className=null, text=null) {
         let resDOM = document.createElement(tag);
         if (className) resDOM.classList.add(className);
@@ -22,79 +22,78 @@ let helpers = {
 
 
 // dropdown behavior
-function toggleDropdown() {
-    // global variable of ID of dropdown currently on display
-    let displayedID = null;
+class ToggleDropdown {
+    constructor(){
+        // global variable of ID of dropdown currently on display
+        this.displayedID = null;
+        this.onDp = false;
+        this.onNv = false;
+    }
 
     // functions displaying/hiding dropdown given id
-    function displayDropdown() {
-        let dropdown = document.getElementById(displayedID + 'Dropdown');
-        let nav = document.getElementById(displayedID);
+    displayDropdown() {
+        let dropdown = document.getElementById(this.displayedID + 'Dropdown');
+        let nav = document.getElementById(this.displayedID);
         dropdown.style.display = 'flex';
         nav.classList.add('sidebar-catNav__cat--hover')
     }
 
-    function hideDropdown() {
-        if (displayedID) {
-            let dropdown = document.getElementById(displayedID+ 'Dropdown');
-            let nav = document.getElementById(displayedID);
+    hideDropdown() {
+        if (this.displayedID) {
+            let dropdown = document.getElementById(this.displayedID + 'Dropdown');
+            let nav = document.getElementById(this.displayedID);
             dropdown.style.display = 'none';
             nav.classList.remove('sidebar-catNav__cat--hover')
         }
     }
 
-    // object with setters to respond to status change
-    let dropdownStatus = {
-        onDp : false,
-        onNv : false,
-        set onDropdown(bool) {
-            this.onDp = bool;
-            if (this.onDp || this.onNv) {displayDropdown();}
-            else {hideDropdown();}
-        },
-        set onNav(bool) {
-            this.onNv = bool;
-            if (this.onDp || this.onNv) {displayDropdown();}
-            else {hideDropdown();}
-        }
-    };
+    // setters to respond to status change
+    set onDropdown(bool) {
+        this.onDp = bool;
+        if (this.onDp || this.onNv) {this.displayDropdown();}
+        else {this.hideDropdown();}
+    }
 
-    // if we hover class catNav__cat, get its id and toggle property in the status object
-    DOMs.navArr.forEach(e => e.addEventListener('mouseenter', event => {
-        displayedID = event.target.id;
-        dropdownStatus.onNav = true;
-    }));
-    DOMs.navArr.forEach(e => e.addEventListener('mouseleave', () => {
-        dropdownStatus.onNav = false;
-    }));
+    set onNav(bool) {
+        this.onNv = bool;
+        if (this.onDp || this.onNv) {this.displayDropdown();}
+        else {this.hideDropdown();}
+    }
 
-    // if we hover dropdown, toggle status object property to mark mouse location
-    DOMs.dpArr.forEach(e => e.addEventListener('mouseenter', () => {
-        dropdownStatus.onDropdown = true;
-    }));
-    DOMs.dpArr.forEach(e => e.addEventListener('mouseleave', () => {
-        dropdownStatus.onDropdown = false;
-    }));
+    attachListener() {
+        // if we hover class catNav__cat, get its id and toggle property in the status object
+        DOMs.navArr.forEach(e => e.addEventListener('mouseenter', event => {
+            this.displayedID = event.target.id;
+            this.onNav = true}));
+        DOMs.navArr.forEach(e => e.addEventListener('mouseleave', () => {
+            this.onNav = false}));
+
+        // if we hover dropdown, toggle status object property to mark mouse location
+        DOMs.dpArr.forEach(e => e.addEventListener('mouseenter', () => {
+            this.onDropdown = true}));
+        DOMs.dpArr.forEach(e => e.addEventListener('mouseleave', () => {
+            this.onDropdown = false}));
+    }
 }
 
-toggleDropdown();
+let td = new ToggleDropdown();
+td.attachListener();
 
 
 // class controlling dropdown selection and async requests
-let catSelection = {
+class CatSelection {
+    constructor(){
+        this.selected = {};
+        this.clearButton = helpers.buildDOM('button', "sidebar-refine-clearButton", "Clear");
+        this.submitButton = helpers.buildDOM('button', "sidebar-refine-submitButton", "Submit");
+        this.clearButton.addEventListener('click', ()=>{this.clearSelection()});
+        this.submitButton.addEventListener('click', (e)=>{
+            e.preventDefault();
+            this.submitSelection(1);
+        });
+    }
 
-    selected: {},
-
-    clearButton: helpers.buildDOM('button', "sidebar-refine-clearButton", "Clear"),
-    submitButton: helpers.buildDOM('button', "sidebar-refine-submitButton", "Submit"),
-
-
-    toJSON: function (obj){
-        return JSON.stringify(obj)
-    },
-
-
-    monitor: function(){
+    monitor(){
         DOMs.choiceArr.forEach(e => e.addEventListener('click', event => {
             let choiceStr = event.target.id.split(":");
             let choiceCat = choiceStr[0];
@@ -106,11 +105,12 @@ let catSelection = {
             // push change to class variable and DOM
             this.pushChange(choiceCat, choiceBucket, choiceItem);
         }))
-    },
+    }
 
-    objToDOM: function(obj) {
+    objToDOM(obj) {
         let refCat__wrapper = document.createElement("ul");
         for (let cat in obj) {
+            if (cat==='page_number') continue;
             let refCat = helpers.buildDOM("li", "sidebar-refine-cat", "");
 
             refCat.appendChild(helpers.buildDOM("div", "sidebar-refine-cat__text", cat));
@@ -133,14 +133,12 @@ let catSelection = {
             refCat.appendChild(refBucket__wrapper);
             refCat__wrapper.appendChild(refCat)
         }
-        this.clearButton.addEventListener('click', ()=>{this.clearSelection()});
-        this.submitButton.addEventListener('click', ()=>{this.submitSelection()});
         refCat__wrapper.appendChild(this.clearButton);
         refCat__wrapper.appendChild(this.submitButton);
         return refCat__wrapper;
-    },
+    }
 
-    pushChange: function (cat, Bucket, item) {
+    pushChange(cat, Bucket, item) {
         if (cat in this.selected) {
             let curCat = this.selected[cat];
             if (Bucket in curCat) {
@@ -168,44 +166,47 @@ let catSelection = {
             this.selected[cat] = {[Bucket]: [item]};
         }
 
-        let node = this.objToDOM(this.selected);
         DOMs.catRefineWrapper.innerHTML = '';
-        DOMs.catRefineWrapper.appendChild(node);
-    },
-
-    clearSelection: function(){
-        DOMs.catRefineWrapper.innerHTML = '';
-        this.selected = {};
-    },
-
-    submitSelection: function(){
-        console.log(this.toJSON(this.selected));
+        // check if object is empty, and if not, dont append the buttons
+        if (Object.entries(this.selected).length !== 0){
+            let node = this.objToDOM(this.selected);
+            DOMs.catRefineWrapper.appendChild(node);
+        }
     }
 
-};
+    clearSelection(){
+        DOMs.catRefineWrapper.innerHTML = '';
+        this.selected = {};
+    }
 
-
-
-
-// TODO: color code blocks by campus, user defined sorting
-
-
-catSelection.monitor();
-
-let toggleOverlay = {
-
-    attachListener: function(){
-        DOMs.linkArr.forEach(e => e.addEventListener('click', e => {
-            DOMs.overlayWrapper.style.display = 'block';
-        }));
-        DOMs.overlayWrapper.addEventListener('click', e => {
-            DOMs.overlayWrapper.style.display = 'none';
+    submitSelection(page='1'){
+        console.log('submit!');
+        let hdr = new Headers();
+        hdr.append('Content-Type', 'application/json');
+        let req = new Request('/fetch/'+page, {
+            method: 'POST',
+            body: JSON.stringify(this.selected),
+            headers: hdr
+        });
+        fetch(req).then((response)=>{
+            if (response.ok) {
+                response.text().then((dom)=>{
+                    DOMs.resultWrapper.innerHTML = dom;
+                    Array.from(document.getElementsByClassName("result-pages__link")).forEach(
+                        (e) =>  e.addEventListener('click', (e)=>{
+                            this.submitSelection(e.target.id)}))
+                })
+            }
         })
     }
 
-};
+}
+let cat = new CatSelection();
+cat.monitor();
+cat.submitSelection();
 
-toggleOverlay.attachListener();
+
+// TODO: color code blocks by campus, user defined sorting
 
 
 
