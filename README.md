@@ -49,18 +49,3 @@ You are good to go.
 #### Step 4. Testing
 1. Go to http://0.0.0.0:8008/ in your browser
 ....
-
-
-## 3. Progress
-Backend:
-- [x] Add new entries, with any number of fields
-- [x] Display existing documents
-- [x] Display detailed documents
-- [x] Simple, one keyword search
-- [x] Edit existing entries
-- [x] Delete existing entries
-- [ ] Advanced search: partial matching, multiple keywords...
-- [ ] Access management: only user with access code can make changes
-
-Frontend:  
-TO-DO
