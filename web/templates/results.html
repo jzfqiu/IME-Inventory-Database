@@ -25,7 +25,14 @@
 <ul class="result-pages__list">
     {% for n in pages %}
     <li class="result-pages__item">
-        <a class="result-pages__link" id="{{ loop.index }}">{{ loop.index }}</a>
+        <a class="result-pages__link" id="{{ loop.index }}">
+            {% if loop.index == cur_page %}
+            <strong>{{ loop.index }}</strong>
+            {% else %}
+            {{ loop.index }}
+            {% endif %}
+
+        </a>
     </li>
     {% endfor %}
 </ul>

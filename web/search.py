@@ -32,7 +32,8 @@ def fetch(page_number):
     return render_template('results.html',
                            data=batch,
                            page_cnt=batch_cnt,
-                           pages=range(math.ceil(batch_cnt / RESULT_PER_PAGE)))
+                           pages=range(math.ceil(batch_cnt / RESULT_PER_PAGE)),
+                           cur_page=int(page_number))
 
 
 @search_bp.route('/details/<_id>')

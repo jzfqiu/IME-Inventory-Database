@@ -8,13 +8,13 @@
 <div class="details">
     <h1 class="details-name">{{ result['name'] }}</h1>
 
-    <div class="details-overview">Overview: {{ result['overview'] }}</div>
+    <div class="details-overview">{{ result['overview'] }}</div>
 
     <div class="details-lrow">
         {% if result['features'] %}
             <div class="details-block">
-                Key Features:
-                <ul class="details-features">
+                <strong>Key Features:</strong>
+                <ul class="details-ul">
                     {% for feature in result['features'] %}
                         <li>{{ feature }}</li>
                     {% endfor %}
@@ -24,8 +24,8 @@
 
         {% if result['applications'] %}
             <div class="details-block">
-                Key Applications:
-                <ul class="details-applications">
+                <strong>Key Applications:</strong>
+                <ul class="details-ul">
                     {% for application in result['applications'] %}
                         <li>{{ application }}</li>
                     {% endfor %}
@@ -35,33 +35,15 @@
 
         {% if result['documentation'] %}
             <div class="details-block">
-            Documentation:
-                <a href="{{ result['documentation']['href'] }}">
-                    {{ result['documentation']['name'] }}
+            <strong>Documentation:</strong>
+                <a href="{{ result['documentation'] }}">
+                    {{ result['name'] }}
                 </a>
             </div>
         {% endif %}
-    </div>
-
-    <div class="details-rrow">
-        {% if result['images'] %}
-        <div class="details-block">
-            <img src="{{ result['images'][0]['link'] }}"
-                  alt="{{ result['images'][0]['description'] }}">
-        </div>
-        {% endif %}
 
         <div class="details-block">
-            <iframe
-                width="600"
-                height="450"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
-            </iframe>
-        </div>
-
-        <div class="details-block">
-            Contact:
+            <strong>Contact:</strong>
                 <ul>
                     <li><a href="{{ result['contact']['email_link'] }}">{{ result['contact']['name'] }}</a></li>
                     <li>{{ result['contact']['title'] }}</li>
@@ -72,7 +54,26 @@
         {% if result['fee'] %}
             <div class="details-block">Fee: {{ result['fee'] }}</div>
         {% endif %}
+    </div>
 
+    <div class="details-rrow">
+
+        {% if result['images'] %}
+        <div class="details-block details-img__wrapper">
+            <img class="details-img__img"
+                 src="{{ result['images'][0]['link'] }}"
+                 alt="{{ result['images'][0]['description'] }}">
+        </div>
+        {% endif %}
+
+        <div class="details-block">
+            <iframe
+                width="400"
+                height="300"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
+            </iframe>
+        </div>
 
     </div>
 

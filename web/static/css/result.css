@@ -20,7 +20,7 @@
 .result-block {
     width: calc(20% - 45px);
     min-width: 200px;
-    height: 250px;
+    height: 255px;
     margin: 20px;
     border: 1px solid gray;
     border-radius: 7px;
@@ -56,9 +56,5 @@
 .result-pages__item {
     display: inline;
     min-width: 25px;
-}
-
-#test-block {
-    color: maroon;
-    margin: 10px;
+    cursor: pointer;
 }

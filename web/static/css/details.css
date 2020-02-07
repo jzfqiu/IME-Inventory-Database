@@ -9,6 +9,10 @@
     flex-wrap: wrap;
 }
 
+.details-ul {
+    list-style-type: circle;
+}
+
 .details-name {
     width: 100%;
 }
@@ -28,4 +32,15 @@
 .details-block {
     margin: 20px;
 }
+
+.details-img__wrapper {
+    text-align: center;
+    height: 350px;
+}
+
+.details-img__img {
+    width: 350px;
+    max-height: 350px;
+}
+
 

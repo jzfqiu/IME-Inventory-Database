@@ -1,5 +1,5 @@
 /* CSS Reset */
-#element { margin:0; padding:0; font-size:100%; line-height:1; }
+
 
 .reset {
     border-width: 1px;
@@ -28,11 +28,10 @@ a:hover {
 body {
     font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
     width: 100%;
-    /*max-width: 1000px;*/
-    /*min-width: 500px;*/
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    font-size: 110%;
 }
 
 p {
