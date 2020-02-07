@@ -1,0 +1,31 @@
+/* details.css */
+
+.details {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.details-name {
+    width: 100%;
+}
+
+.details-overview {
+    width: 100%;
+}
+
+.details-lrow {
+    width: 60%;
+}
+
+.details-rrow {
+    width: 40%;
+}
+
+.details-block {
+    margin: 20px;
+}
+

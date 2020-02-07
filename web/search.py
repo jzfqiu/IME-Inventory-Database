@@ -19,8 +19,7 @@ def search():
     with open('test_data/test_cats.json') as cats:
         cats_data = list(json.load(cats).values())
     return render_template('search.html',
-                           cats=cats_data,
-                           GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'])
+                           cats=cats_data)
 
 
 @search_bp.route('/fetch/<page_number>', methods=['POST'])
@@ -40,7 +39,14 @@ def fetch(page_number):
 def details(_id):
     collection = db.get_db()['inventory']
     res = collection.find_one({'_id': ObjectId(_id)})
-    return render_template('details.html', result=res)
+    return render_template('details.html',
+                           result=res,
+                           GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'])
+
+@search_bp.route('/about')
+def about():
+    return render_template('about.html')
+
 
 
 

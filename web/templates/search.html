@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Demo - IME Inventory DB</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-    {% block script %}{% endblock %}
-</head>
-<body>
+{% extends 'base.html' %}
 
-<section class="navbar">
-    <div class="navbar-link__wrapper"><a href="#">About</a></div>
-    <div class="navbar-link__wrapper"><a href="#">Contact</a></div>
-</section>
+{% block header %}Search{% endblock %}
 
-<section class="overlay">
-    <div class="overlay-detail">
-        <p class="overlay-detail-title">Equipment Name</p>
-        <ul>
-            <li>Division:</li>
-            <li>Campus:</li>
-            <li>Material:</li>
-            <li>Characterization:</li>
-            <li>Overview:</li>
-            <li>Contact: </li>
-            <li>Link to Manual: </li>
-        </ul>
-        <iframe
-            width="600"
-            height="450"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
-        </iframe>
-    </div>
-
-</section>
+{% block content %}
 
 <section class="top">
     <div class=" top top-logo__wrapper">
@@ -100,5 +68,4 @@
 </section>
 <script src="{{ url_for('static', filename='search.js') }}"></script>
 
-</body>
-</html>
+{% endblock %}

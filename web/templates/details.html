@@ -1,79 +1,20 @@
-{#
-
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}{{ result['name'] }}{% endblock %}</h1>
+    {% block title %}{{ result['name'] }}{% endblock %}
 {% endblock %}
-
 
 {% block content %}
-    {% if logged_in %}
-        <p><a href="{{ url_for('edit.edit', obj_id=result['_id']) }}">Edit</a></p>
-    {% endif %}
-    <div class="document">
+<div class="details">
+    <h1 class="details-name">{{ result['name'] }}</h1>
 
-        <div class="document-block document-name">{{ result['name'] }}</div>
+    <div class="details-overview">Overview: {{ result['overview'] }}</div>
 
-        <div class="document-block document-overview">Overview: {{ result['overview'] }}</div>
-
-        {% if result['key_features'] %}
-            <div class="document-block">
-                Key Features:
-                <ul class="document-keyFeatures">
-                    {% for feature in result['key_features'] %}
-                        <li>{{ feature }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-        {% if result['key_applications'] %}
-            <div class="document-block">
-                Key Applications:
-                <ul class="document-keyApplications">
-                    {% for feature in result['key_applications'] %}
-                        <li>{{ feature }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-        {% if result['general_documentation'] %}
-            <div class="document-block document-documentation">
-            Documentation:
-                <a href="{{ result['general_documentation']['href'] }}">
-                    {{ result['general_documentation']['name'] }}
-                </a>
-            </div>
-        {% endif %}
-
-        {% if result['tags'] %}
-            <div>Tags: {{ result['tags'] }}</div>
-        {% endif %}
-
-        {% if result['image'] %}
-            <a href="{{ url_for('search.full_images', image=result['image']) }}">
-                <img src="{{ url_for('static', filename='user_uploads/thumbnails/'+result['image']) }}"
-                     alt="{{ result['name'] }}">
-            </a>
-        {% endif %}
-
-    </div>
-{% endblock %}
-
-#}
-
-<div class="document">
-
-        <div class="document-block document-name">{{ result['name'] }}</div>
-
-        <div class="document-block document-overview">Overview: {{ result['overview'] }}</div>
-
+    <div class="details-lrow">
         {% if result['features'] %}
-            <div class="document-block">
+            <div class="details-block">
                 Key Features:
-                <ul class="document-keyFeatures">
+                <ul class="details-features">
                     {% for feature in result['features'] %}
                         <li>{{ feature }}</li>
                     {% endfor %}
@@ -82,9 +23,9 @@
         {% endif %}
 
         {% if result['applications'] %}
-            <div class="document-block">
+            <div class="details-block">
                 Key Applications:
-                <ul class="document-keyApplications">
+                <ul class="details-applications">
                     {% for application in result['applications'] %}
                         <li>{{ application }}</li>
                     {% endfor %}
@@ -93,18 +34,56 @@
         {% endif %}
 
         {% if result['documentation'] %}
-            <div class="document-block document-documentation">
+            <div class="details-block">
             Documentation:
                 <a href="{{ result['documentation']['href'] }}">
                     {{ result['documentation']['name'] }}
                 </a>
             </div>
         {% endif %}
+    </div>
 
-        {% if result['image'] %}
+    <div class="details-rrow">
+        {% if result['images'] %}
+        <div class="details-block">
+            <img src="{{ result['images'][0]['link'] }}"
+                  alt="{{ result['images'][0]['description'] }}">
+        </div>
         {% endif %}
 
+        <div class="details-block">
+            <iframe
+                width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
+            </iframe>
+        </div>
+
+        <div class="details-block">
+            Contact:
+                <ul>
+                    <li><a href="{{ result['contact']['email_link'] }}">{{ result['contact']['name'] }}</a></li>
+                    <li>{{ result['contact']['title'] }}</li>
+                    {% if result['contact']['tel'] %}<li>{{ result['contact']['tel']    }}</li>{% endif %}
+                </ul>
+        </div>
+
+        {% if result['fee'] %}
+            <div class="details-block">Fee: {{ result['fee'] }}</div>
+        {% endif %}
+
+
     </div>
+
+
+
+
+
+
+
+</div>
+{% endblock %}
 
 
 
