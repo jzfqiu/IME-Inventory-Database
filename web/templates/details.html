@@ -51,10 +51,19 @@
                 </ul>
         </div>
 
+        <div class="details-block">
+            <strong>Category: </strong>
+            {{ cat }}
+        </div>
+
         {% if result['fee'] %}
             <div class="details-block">Fee: {{ result['fee'] }}</div>
         {% endif %}
+
+
     </div>
+
+
 
     <div class="details-rrow">
 
@@ -70,7 +79,7 @@
             <iframe
                 width="400"
                 height="300"
-                frameborder="0" style="border:0"
+                style="border:0"
                 src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
             </iframe>
         </div>

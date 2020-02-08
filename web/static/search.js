@@ -180,6 +180,7 @@ class CatSelection {
     }
 
     submitSelection(page='1'){
+        console.log(this.selected);
         let hdr = new Headers();
         hdr.append('Content-Type', 'application/json');
         let req = new Request('/fetch/'+page, {

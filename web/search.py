@@ -8,6 +8,34 @@ RESULT_PER_PAGE = 15
 search_bp = Blueprint('search', __name__)
 
 
+# helpers
+def unroll_cat(d, output_str=False):
+    res, s, campus = [], '', []
+    for cat in d.keys():
+        for bucket in d[cat].keys():
+            for choice in d[cat][bucket]:
+                if cat != 'Campus':
+                    res.append({cat: {bucket: choice}})
+                else:
+                    campus.append({bucket: choice})
+                if output_str:
+                    s = cat + ' - ' + bucket + ' - ' + d[cat][bucket]
+    return res, s, campus
+
+
+def build_query(raw_json):
+    criteria, _, campus = unroll_cat(raw_json)
+    query = {}
+    if criteria and campus:
+        query = {'$and': [{"category": {'$in': criteria}},
+                          {'campus': {'$in': campus}}]}
+    elif criteria:
+        query = {"category": {'$in': criteria}}
+    elif campus:
+        query = {'campus': {'$in': campus}}
+    return query
+
+
 # search: return search page skeleton
 # search.js: send request for result with empty criteria
 # fetch: fetch results from db, return a populated html page
@@ -24,11 +52,11 @@ def search():
 
 @search_bp.route('/fetch/<page_number>', methods=['POST'])
 def fetch(page_number):
-    criteria = request.get_json()
     collection = db.get_db()['inventory']
-    batch = collection.find(None).limit(RESULT_PER_PAGE).skip(
-        (int(page_number)-1)*RESULT_PER_PAGE)
-    batch_cnt = collection.count_documents(filter={})
+    query = build_query(request.get_json())
+    batch = collection.find(query).limit(
+        RESULT_PER_PAGE).skip((int(page_number)-1)*RESULT_PER_PAGE)
+    batch_cnt = collection.count_documents(query)
     return render_template('results.html',
                            data=batch,
                            page_cnt=batch_cnt,
@@ -40,13 +68,26 @@ def fetch(page_number):
 def details(_id):
     collection = db.get_db()['inventory']
     res = collection.find_one({'_id': ObjectId(_id)})
+    _, cat, _ = unroll_cat(res['category'], True)
     return render_template('details.html',
                            result=res,
+                           cat=cat,
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'])
+
 
 @search_bp.route('/about')
 def about():
     return render_template('about.html')
+
+
+@search_bp.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@search_bp.route('/policy')
+def policy():
+    return render_template('policy.html')
 
 
 
