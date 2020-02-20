@@ -83,7 +83,7 @@ td.attachListener();
 // class controlling dropdown selection and async requests
 class CatSelection {
     constructor(){
-        this.selected = {};
+        this.selected = JSON.parse(sessionStorage.getItem('selectedCats'));
         this.clearButton = helpers.buildDOM('button', "sidebar-refine-clearButton", "Clear");
         this.submitButton = helpers.buildDOM('button', "sidebar-refine-submitButton", "Submit");
         this.clearButton.addEventListener('click', ()=>{this.clearSelection()});
@@ -138,6 +138,15 @@ class CatSelection {
         return refCat__wrapper;
     }
 
+    refreshSelectionDOM(){
+        DOMs.catRefineWrapper.innerHTML = '';
+        // check if object is empty, and if not, dont append the buttons
+        if (Object.entries(this.selected).length !== 0){
+            let node = this.objToDOM(this.selected);
+            DOMs.catRefineWrapper.appendChild(node);
+        }
+    }
+
     pushChange(cat, Bucket, item) {
         if (cat in this.selected) {
             let curCat = this.selected[cat];
@@ -165,22 +174,17 @@ class CatSelection {
         } else {
             this.selected[cat] = {[Bucket]: [item]};
         }
-
-        DOMs.catRefineWrapper.innerHTML = '';
-        // check if object is empty, and if not, dont append the buttons
-        if (Object.entries(this.selected).length !== 0){
-            let node = this.objToDOM(this.selected);
-            DOMs.catRefineWrapper.appendChild(node);
-        }
+        sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
+        this.refreshSelectionDOM();
     }
 
     clearSelection(){
         DOMs.catRefineWrapper.innerHTML = '';
         this.selected = {};
+        this.submitSelection(page='1');
     }
 
     submitSelection(page='1'){
-        console.log(this.selected);
         let hdr = new Headers();
         hdr.append('Content-Type', 'application/json');
         let req = new Request('/fetch/'+page, {
@@ -195,6 +199,7 @@ class CatSelection {
                     Array.from(document.getElementsByClassName("result-pages__link")).forEach(
                         (e) =>  e.addEventListener('click', (e)=>{
                             this.submitSelection(e.target.id)}))
+                    this.refreshSelectionDOM();
                 })
             }
         })
@@ -205,8 +210,6 @@ let cat = new CatSelection();
 cat.monitor();
 cat.submitSelection();
 
-
-// TODO: color code blocks by campus, user defined sorting
 
 
 

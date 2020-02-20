@@ -13,6 +13,13 @@
     list-style-type: circle;
 }
 
+.details-backButton {
+    position: relative;
+    left: -80px;
+    top: 25px;
+    height: 0;
+}
+
 .details-name {
     width: 100%;
 }

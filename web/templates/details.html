@@ -6,6 +6,15 @@
 
 {% block content %}
 <div class="details">
+
+    <div class="details-backButton">
+        <a href="/">
+            <img src="{{ url_for('static', filename='assets/back_icon.png') }}"
+             style="width: 40px"
+             alt="Back Button">
+        </a>
+    </div>
+
     <h1 class="details-name">{{ result['name'] }}</h1>
 
     <div class="details-overview">{{ result['overview'] }}</div>
