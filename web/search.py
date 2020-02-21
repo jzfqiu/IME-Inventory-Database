@@ -8,7 +8,7 @@ RESULT_PER_PAGE = 15
 search_bp = Blueprint('search', __name__)
 
 
-# helpers
+# helper
 def unroll_cat(d, output_str=False):
     res, s, campus = [], '', []
     for cat in d.keys():
@@ -24,15 +24,21 @@ def unroll_cat(d, output_str=False):
 
 
 def build_query(raw_json):
+    keywords = raw_json.pop('keywords', None)
     criteria, _, campus = unroll_cat(raw_json)
-    query = {}
-    if criteria and campus:
-        query = {'$and': [{"category": {'$in': criteria}},
-                          {'campus': {'$in': campus}}]}
-    elif criteria:
-        query = {"category": {'$in': criteria}}
-    elif campus:
-        query = {'campus': {'$in': campus}}
+    query_list = []
+    if keywords:
+        query_list.append({"$text": {"$search": keywords}})
+    if criteria: 
+        query_list.append({"category": {'$in': criteria}})
+    if campus: 
+        query_list.append({'campus': {'$in': campus}})
+
+    if len(query_list)>1: query= {'$and': query_list}
+    elif len(query_list)==1: query = query_list[0]
+    else: query = {}
+
+    print(query, flush=True)
     return query
 
 

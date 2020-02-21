@@ -12,7 +12,7 @@ let DOMs = {
 };
 
 let helpers = {
-    buildDOM: function (tag, className=null, text=null) {
+    buildDOM: function (tag, className = null, text = null) {
         let resDOM = document.createElement(tag);
         if (className) resDOM.classList.add(className);
         if (text) resDOM.appendChild(document.createTextNode(text));
@@ -20,10 +20,18 @@ let helpers = {
     }
 };
 
+var input = document.getElementById("top-searchBox");
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("top-searchButton").click();
+    }
+});
+
 
 // dropdown behavior
 class ToggleDropdown {
-    constructor(){
+    constructor() {
         // global variable of ID of dropdown currently on display
         this.displayedID = null;
         this.onDp = false;
@@ -50,29 +58,33 @@ class ToggleDropdown {
     // setters to respond to status change
     set onDropdown(bool) {
         this.onDp = bool;
-        if (this.onDp || this.onNv) {this.displayDropdown();}
-        else {this.hideDropdown();}
+        if (this.onDp || this.onNv) { this.displayDropdown(); }
+        else { this.hideDropdown(); }
     }
 
     set onNav(bool) {
         this.onNv = bool;
-        if (this.onDp || this.onNv) {this.displayDropdown();}
-        else {this.hideDropdown();}
+        if (this.onDp || this.onNv) { this.displayDropdown(); }
+        else { this.hideDropdown(); }
     }
 
     attachListener() {
         // if we hover class catNav__cat, get its id and toggle property in the status object
         DOMs.navArr.forEach(e => e.addEventListener('mouseenter', event => {
             this.displayedID = event.target.id;
-            this.onNav = true}));
+            this.onNav = true
+        }));
         DOMs.navArr.forEach(e => e.addEventListener('mouseleave', () => {
-            this.onNav = false}));
+            this.onNav = false
+        }));
 
         // if we hover dropdown, toggle status object property to mark mouse location
         DOMs.dpArr.forEach(e => e.addEventListener('mouseenter', () => {
-            this.onDropdown = true}));
+            this.onDropdown = true
+        }));
         DOMs.dpArr.forEach(e => e.addEventListener('mouseleave', () => {
-            this.onDropdown = false}));
+            this.onDropdown = false
+        }));
     }
 }
 
@@ -82,18 +94,22 @@ td.attachListener();
 
 // class controlling dropdown selection and async requests
 class CatSelection {
-    constructor(){
-        this.selected = JSON.parse(sessionStorage.getItem('selectedCats'));
+    constructor() {
+        let previouslySelected = JSON.parse(sessionStorage.getItem('selectedCats'));
+        this.selected = previouslySelected == null ? {} : previouslySelected;
         this.clearButton = helpers.buildDOM('button', "sidebar-refine-clearButton", "Clear");
         this.submitButton = helpers.buildDOM('button', "sidebar-refine-submitButton", "Submit");
-        this.clearButton.addEventListener('click', ()=>{this.clearSelection()});
-        this.submitButton.addEventListener('click', (e)=>{
+        this.clearButton.addEventListener('click', () => { this.clearSelection() });
+        this.submitButton.addEventListener('click', (e) => {
             e.preventDefault();
-            this.submitSelection(1);
+            this.submitSelection('1');
         });
+        let keywords = sessionStorage.getItem('keywords');
+        document.getElementById('top-searchBox').value = keywords;
     }
 
-    monitor(){
+
+    monitor() {
         DOMs.choiceArr.forEach(e => e.addEventListener('click', event => {
             let choiceStr = event.target.id.split(":");
             let choiceCat = choiceStr[0];
@@ -104,13 +120,15 @@ class CatSelection {
 
             // push change to class variable and DOM
             this.pushChange(choiceCat, choiceBucket, choiceItem);
-        }))
+        }));
+        document.getElementById("top-searchButton").addEventListener('click', ()=>{
+            this.submitSelection(1);
+        })
     }
 
     objToDOM(obj) {
         let refCat__wrapper = document.createElement("ul");
         for (let cat in obj) {
-            if (cat==='page_number') continue;
             let refCat = helpers.buildDOM("li", "sidebar-refine-cat", "");
 
             refCat.appendChild(helpers.buildDOM("div", "sidebar-refine-cat__text", cat));
@@ -124,7 +142,7 @@ class CatSelection {
                     let item = helpers.buildDOM('li', "sidebar-refine-item");
                     item.appendChild(helpers.buildDOM('div', "sidebar-refine-item__text", obj[cat][bucket][i]));
                     item.appendChild(helpers.buildDOM('div', "sidebar-refine-item__x", "x"));
-                    item.addEventListener('click', () => {this.pushChange(cat, bucket, obj[cat][bucket][i])});
+                    item.addEventListener('click', () => { this.pushChange(cat, bucket, obj[cat][bucket][i]) });
                     refItem__wrapper.appendChild(item);
                 }
                 refBucket.appendChild(refItem__wrapper);
@@ -138,10 +156,10 @@ class CatSelection {
         return refCat__wrapper;
     }
 
-    refreshSelectionDOM(){
+    refreshSelectionDOM() {
         DOMs.catRefineWrapper.innerHTML = '';
         // check if object is empty, and if not, dont append the buttons
-        if (Object.entries(this.selected).length !== 0){
+        if (Object.entries(this.selected).length !== 0) {
             let node = this.objToDOM(this.selected);
             DOMs.catRefineWrapper.appendChild(node);
         }
@@ -155,7 +173,7 @@ class CatSelection {
                 let idx = curBucket.indexOf(item);
                 if (idx !== -1) {
                     // deselect radio button on dropdown
-                    document.getElementById(cat+':'+Bucket+'-'+item).checked = false;
+                    document.getElementById(cat + ':' + Bucket + '-' + item).checked = false;
                     // delete item from selected
                     curBucket.splice(idx, 1);
                     // check if Bucket and cat is empty, if so execute nested delete
@@ -172,33 +190,38 @@ class CatSelection {
                 curCat[Bucket] = [item];
             }
         } else {
-            this.selected[cat] = {[Bucket]: [item]};
+            this.selected[cat] = { [Bucket]: [item] };
         }
         sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
         this.refreshSelectionDOM();
     }
 
-    clearSelection(){
-        DOMs.catRefineWrapper.innerHTML = '';
+    clearSelection() {
         this.selected = {};
-        this.submitSelection(page='1');
+        sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
+        this.refreshSelectionDOM();
+        this.submitSelection('1');
     }
 
-    submitSelection(page='1'){
+    submitSelection(page = '1') {
+        let keywords = document.getElementById('top-searchBox').value;
+        sessionStorage.setItem('keywords', keywords);
+        let reqBody = { ...this.selected, ...{ 'keywords':  keywords} }
         let hdr = new Headers();
         hdr.append('Content-Type', 'application/json');
-        let req = new Request('/fetch/'+page, {
+        let req = new Request('/fetch/' + page, {
             method: 'POST',
-            body: JSON.stringify(this.selected),
+            body: JSON.stringify(reqBody),
             headers: hdr
         });
-        fetch(req).then((response)=>{
+        fetch(req).then((response) => {
             if (response.ok) {
-                response.text().then((dom)=>{
+                response.text().then((dom) => {
                     DOMs.resultWrapper.innerHTML = dom;
                     Array.from(document.getElementsByClassName("result-pages__link")).forEach(
-                        (e) =>  e.addEventListener('click', (e)=>{
-                            this.submitSelection(e.target.id)}))
+                        (e) => e.addEventListener('click', (e) => {
+                            this.submitSelection(e.target.id)
+                        }))
                     this.refreshSelectionDOM();
                 })
             }
