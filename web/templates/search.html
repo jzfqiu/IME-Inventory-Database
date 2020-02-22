@@ -6,17 +6,13 @@
 
 <section class="top">
     <div class=" top top-logo__wrapper">
-        <p class="top-logo__placeholder">Logo</p>
+        <img class="top-logo" src="{{ url_for('static', filename='assets/logo_full.png') }}" alt="Logo">
     </div>
 
     <div class="top top-search__wrapper">
         <label for="top-searchBox" hidden>Search Box</label>
     <input type="text" class="top-searchBox" id="top-searchBox" />
-    <button class="top-searchButton" id="top-searchButton">Search</button>
-    </div>
-
-    <div class="top top-login_wrapper">
-        <button class="top-loginButton">Login</button>
+    <button class="top-searchButton top-button" id="top-searchButton">Search</button>
     </div>
 
 </section>

@@ -28,20 +28,46 @@ def get_db(db_name='db'):
     return g.db
 
 
-def process_item(item, n=None):
+def unroll_cat(d, output_str=False):    
+    """ helper function: unroll category information passed from js request
+    
+    Arguments:
+        d {dict} -- json straight from request
+        output_str {bool} -- [description] (default: {False})
+    
+    Returns:
+        res {list of dict} -- list of flattened category information to be fed into query builder
+        s {str} -- string of last flattened category, used for the detail page
+        campus {list of dict} -- list of flattened campus information to be fed into query builder
     """
-    Helper function for cleaning searched result
-    :param item: a document (dict) returned by find_one() or batch iteration
-    :param n: number of entry needed in detailed ['data']
-    :return: another dict with _id and name separated from other data
-    """
-    try:
-        object_id = item.pop('_id')
-        name = item.pop('name')
-        if n:
-            data = list(item.items())[:n]
-        else:
-            data = list(item.items())
-    except KeyError:
-        raise
-    return {'id': object_id, 'name': name, 'data': data}
+    res, s, campus = [], '', []
+    for cat in d.keys():
+        for bucket in d[cat].keys():
+            for choice in d[cat][bucket]:
+                if cat != 'Campus':
+                    res.append({cat: {bucket: choice}})
+                else:
+                    campus.append({bucket: choice})
+                if output_str:
+                    s = cat + ' - ' + bucket + ' - ' + d[cat][bucket]
+    return res, s, campus
+
+
+def build_query(raw_json):
+    keywords = raw_json.pop('keywords', None)
+    criteria, _, campus = unroll_cat(raw_json)
+
+    query_list = []
+    if keywords:
+        query_list.append({"$text": {"$search": keywords}})
+    if criteria: 
+        query_list.append({"category": {'$in': criteria}})
+    if campus: 
+        query_list.append({'campus': {'$in': campus}})
+
+    # use $and operator if more than 1 criteria
+    if len(query_list)>1: query= {'$and': query_list}
+    elif len(query_list)==1: query = query_list[0]
+    else: query = {}
+
+    return query

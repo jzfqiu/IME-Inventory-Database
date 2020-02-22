@@ -17,6 +17,12 @@
     margin: auto;
 }
 
+.top-logo {
+    max-width: 400px;
+    max-height: 120px;
+    margin: auto;
+}
+
 .top-search__wrapper {
     flex-wrap: wrap;
     min-width: 400px;
@@ -44,16 +50,10 @@
     font-size: 1em;
 }
 
-.top-login_wrapper {
-    max-width: 400px;
+
+
+.top-button:active {
+    background-color: lightgray;
 }
 
-.top-loginButton {
-    height: 50px;
-    width: 100px;
-    margin: auto;
-    font-size: 1em;
-    border: 1px solid gray;
-    border-radius: 7px;
-}
-
+.top-button:focus {outline: 0;}
