@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+MONGO_CONTAINER_ID=$(docker ps -aqf "name=mongo")
+docker cp $1 $MONGO_CONTAINER_ID:home/
+docker exec -it $MONGO_CONTAINER_ID mongoimport --db db --collection inventory --authenticationDatabase admin \
+    --username $2 \
+    --password $3 \
+    --drop --jsonArray \
+    --file home/$1
+docker exec -it $MONGO_CONTAINER_I mongo db.inventory.createIndex( { "name": "text" } )
+
