@@ -10,10 +10,42 @@
 <body>
 
 <section class="navbar">
-    <div class="navbar-link__wrapper"><a href="/">Search</a></div>
-    <div class="navbar-link__wrapper"><a href="/about">About</a></div>
-    <div class="navbar-link__wrapper"><a href="/contact">Contact</a></div>
-    <div class="navbar-link__wrapper"><a href="/policy">Policy</a></div>
+    <div ><a href="/">Search</a></div>
+    <div ><a href="/about">About</a></div>
+    <div id="login-trigger"><a>Login</a></div>
+</section>
+
+<section class="overlay" >
+    <div class="overlay-detail">
+        <form id="login-form">
+            <div>
+                <h3>Welcome Back</h3>
+                <button type="button" id="cancel-btn">&times</button>
+            </div>
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="password" required>    
+            </div>
+
+            <div>
+                <!-- <label class="remember" for="remember">Remember me</label>
+                <input class="remember" type="checkbox" name="remember"> -->
+                <p id="login-fail">Login failed. Please try again.</p>
+                <p><a>Forget password?</a></p>
+                <p><a>Register account</a></p>
+            </div>
+          
+            <div>
+                <button type="submit" id="login-btn">Login</button>
+            </div>
+          </form>
+    </div>
 </section>
 
 {% block content %}

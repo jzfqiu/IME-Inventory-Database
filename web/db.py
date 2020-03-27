@@ -53,6 +53,7 @@ def unroll_cat(d, output_str=False):
     return res, s, campus
 
 
+# build search query from json sent by front end
 def build_query(raw_json):
     keywords = raw_json.pop('keywords', None)
     criteria, _, campus = unroll_cat(raw_json)

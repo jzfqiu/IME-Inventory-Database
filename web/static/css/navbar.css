@@ -8,14 +8,15 @@
     background: gray;
 }
 
-.navbar-link__wrapper {
+.navbar div {
     width: 100px;
+    cursor: pointer;
 }
 
-.navbar-link__wrapper a {
+.navbar a {
     color: white;
 }
 
-.navbar-link__wrapper a:hover {
+.navbar a:hover {
     color: #E8E8E8;
 }

@@ -22,8 +22,8 @@ def search():
                            cats=cats_data)
 
 
-@search_bp.route('/fetch/<page_number>', methods=['POST'])
-def fetch(page_number):
+@search_bp.route('/fetch/page/<page_number>', methods=['POST'])
+def fetch_page(page_number):
     collection = db.get_db()['inventory']
     query = db.build_query(request.get_json())
     batch = collection.find(query).limit(
@@ -34,6 +34,14 @@ def fetch(page_number):
                            page_cnt=batch_cnt,
                            pages=range(math.ceil(batch_cnt / RESULT_PER_PAGE)),
                            cur_page=int(page_number))
+
+
+@search_bp.route('/fetch/login', methods=['POST'])
+def fetch_login():
+    if request.form['email'] == "a@b" and request.form['password'] == "c":
+        session['username'] = 'dev'
+        return json.dumps({'success': True})
+    return json.dumps({'success': False})
 
 
 @search_bp.route('/details/<_id>')

@@ -209,7 +209,7 @@ class CatSelection {
         let reqBody = { ...this.selected, ...{ 'keywords':  keywords} }
         let hdr = new Headers();
         hdr.append('Content-Type', 'application/json');
-        let req = new Request('/fetch/' + page, {
+        let req = new Request('/fetch/page/' + page, {
             method: 'POST',
             body: JSON.stringify(reqBody),
             headers: hdr
@@ -234,5 +234,33 @@ cat.monitor();
 cat.submitSelection();
 
 
+// Toggle login overlay
+document.querySelector('#login-trigger').addEventListener('click', ()=>{
+    DOMs.overlayWrapper.style.display = 'block';
+})
+document.querySelector('.overlay').addEventListener('click', (e)=>{
+    if (e.target.id=="overlay-background")
+        DOMs.overlayWrapper.style.display = 'none';
+})
+document.getElementById('cancel-btn').addEventListener('click', (e)=>{
+    DOMs.overlayWrapper.style.display = 'none';
+})
 
 
+var loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', (e)=>{    
+    e.preventDefault();
+    var formData = new FormData(loginForm);
+    fetch('/fetch/login', {
+        method: 'POST',
+        body: formData,
+    })
+    .then((response) => response.json())
+    .then(result => {
+        if (result['success']) {
+            location.reload()
+        } else {
+            document.getElementById('login-fail').style.display = 'block';
+        }
+    })
+})
