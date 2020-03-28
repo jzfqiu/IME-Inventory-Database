@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+
+
+{% block header %}{{ user['name'] }}{% endblock %}
+
+{% block content %}
+<div class="user">
+    <h1>{{ user['name'] }}</h1>
+    <p><strong>Email: </strong> <a href="mailto: {{ user['email']}}">{{ user['email']}}</a></p>
+    <p><strong>Title: </strong> {{ user['title']}}</p>
+    <p><strong>Affiliation: </strong> {{ user['affiliation']}}</p>
+
+    <p><strong>Managed Equipments: </strong></p>
+    <ul>
+        {% for equipment in equipments %}
+        <li>
+            <a href="/details/{{ equipment['id'] }}">{{ equipment['name'] }}</a>
+            {% if is_manager %}
+            <button>Edit</button>
+            <button>Delete</button>
+            {% endif %}
+        </li>
+        {% endfor %}
+        <li>+</li>
+    </ul>
+</div>
+
+
+{% endblock %}

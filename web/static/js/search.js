@@ -7,7 +7,6 @@ let DOMs = {
     choiceArr: Array.from(document.getElementsByClassName('catDropdown__item')),
     catRefineWrapper: document.getElementsByClassName('sidebar-refine__wrapper').item(0),
     linkArr: Array.from(document.getElementsByClassName('result-block-name__link')),
-    overlayWrapper: document.querySelector('.overlay'),
     resultWrapper: document.querySelector('.result'),
 };
 
@@ -30,6 +29,7 @@ input.addEventListener("keyup", function (event) {
 
 
 // dropdown behavior
+// TODO: refractor to object
 class ToggleDropdown {
     constructor() {
         // global variable of ID of dropdown currently on display
@@ -92,7 +92,8 @@ let td = new ToggleDropdown();
 td.attachListener();
 
 
-// class controlling dropdown selection and async requests
+// controlling dropdown selection and async requests
+// TODO: refractor to object 
 class CatSelection {
     constructor() {
         let previouslySelected = JSON.parse(sessionStorage.getItem('selectedCats'));
@@ -233,34 +234,3 @@ let cat = new CatSelection();
 cat.monitor();
 cat.submitSelection();
 
-
-// Toggle login overlay
-document.querySelector('#login-trigger').addEventListener('click', ()=>{
-    DOMs.overlayWrapper.style.display = 'block';
-})
-document.querySelector('.overlay').addEventListener('click', (e)=>{
-    if (e.target.id=="overlay-background")
-        DOMs.overlayWrapper.style.display = 'none';
-})
-document.getElementById('cancel-btn').addEventListener('click', (e)=>{
-    DOMs.overlayWrapper.style.display = 'none';
-})
-
-
-var loginForm = document.getElementById('login-form');
-loginForm.addEventListener('submit', (e)=>{    
-    e.preventDefault();
-    var formData = new FormData(loginForm);
-    fetch('/fetch/login', {
-        method: 'POST',
-        body: formData,
-    })
-    .then((response) => response.json())
-    .then(result => {
-        if (result['success']) {
-            location.reload()
-        } else {
-            document.getElementById('login-fail').style.display = 'block';
-        }
-    })
-})

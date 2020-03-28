@@ -6,5 +6,5 @@ docker exec -it $MONGO_CONTAINER_ID mongoimport --db db --collection inventory -
     --password $3 \
     --drop --jsonArray \
     --file home/$1
-docker exec -it $MONGO_CONTAINER_I mongo db.inventory.createIndex( { "name": "text" } )
+docker exec -it $MONGO_CONTAINER_ID mongo db.inventory.createIndex( { "name": "text" } )
 

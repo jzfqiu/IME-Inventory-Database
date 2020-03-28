@@ -1,0 +1,10 @@
+.user {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.user p {
+    margin: 10px 0;
+}

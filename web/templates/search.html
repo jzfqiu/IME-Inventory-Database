@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dropdown.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/top.css') }}">
+{% endblock %}
+
+{% block script %}
+<script defer src="{{ url_for('static', filename='js/search.js') }}"></script></script>
+{% endblock %}
+
+
+
 {% block header %}Search{% endblock %}
 
 {% block content %}
@@ -62,6 +75,5 @@
 <section class="footer">
     <div class="footer-placeholder">Footer</div>
 </section>
-<script src="{{ url_for('static', filename='search.js') }}"></script>
 
 {% endblock %}

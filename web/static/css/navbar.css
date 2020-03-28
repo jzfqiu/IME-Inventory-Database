@@ -9,7 +9,8 @@
 }
 
 .navbar div {
-    width: 100px;
+    width: fit-content;
+    margin: 0 20px;
     cursor: pointer;
 }
 

@@ -67,8 +67,10 @@ def build_query(raw_json):
         query_list.append({'campus': {'$in': campus}})
 
     # use $and operator if more than 1 criteria
-    if len(query_list)>1: query= {'$and': query_list}
-    elif len(query_list)==1: query = query_list[0]
+    if len(query_list)>1: 
+        query = {'$and': query_list}
+    elif len(query_list)==1: 
+        query = query_list[0]
     else: query = {}
 
     return query
