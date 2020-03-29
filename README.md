@@ -1,20 +1,5 @@
 # IME-Inventory-Database
 
-## 0. Developer Notes:   
-* Deployed on EC2 linux instance using the same docker-compose setup. Run as usual but use production.env in production.
-* ssh into instance:
-```bash
-$ ssh -i "ssh.pem" ec2-user@ec2-18-188-179-58.us-east-2.compute.amazonaws.com
-```
-* Add test data to database (TODO: turn this into a shell script):
-```bash
-$ docker container ls
-$ docker cp test_data.json <container_id>:test_data.json
-$ docker exec -it <container_id> mongoimport -v --jsonArray --db db --collection inventory --authenticationDatabase admin --username <username> --password <password> --file test_data.json
-```
-
-
-
 ## 1. Overview
 TO-DO
 ## 2. Testing Instruction
@@ -49,3 +34,4 @@ You are good to go.
 #### Step 4. Testing
 1. Go to http://0.0.0.0:8008/ in your browser
 ....
+
