@@ -85,12 +85,12 @@ def user(username):
         
 
 
-@search_bp.route('/details/<_id>')
-def details(_id):
+@search_bp.route('/equipment/<_id>')
+def equipment(_id):
     collection = db.get_db()['inventory']
     res = collection.find_one({'_id': ObjectId(_id)})
     _, cat, _ = db.unroll_cat(res['category'], True)
-    return render_template('details.html',
+    return render_template('equipment.html',
                            result=res,
                            cat=cat,
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],

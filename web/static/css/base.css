@@ -31,9 +31,16 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    font-size: 110%;
+    /* font-size: 100%; */
 }
 
 p {
     margin: 0;
+}
+
+button {
+    border: 1px solid gray;
+    border-radius: 7px;
+    font-size: 0.8em;
+    background-color: whitesmoke;
 }

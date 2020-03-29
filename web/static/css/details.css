@@ -1,51 +1,47 @@
-/* details.css */
+/* details.css: for equipment.html and user.html */
 
 .details {
     display: flex;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
     flex-wrap: wrap;
 }
 
-.details-ul {
+.details ul {
     list-style-type: circle;
 }
 
-.details-backButton {
+#backButton {
     position: relative;
     left: -80px;
     top: 25px;
     height: 0;
 }
 
-.details-name {
-    width: 100%;
-}
-
-.details-overview {
+.details-full {
     width: 100%;
 }
 
 .details-lrow {
-    width: 60%;
+    width: calc(60% - 40px);
 }
 
 .details-rrow {
-    width: 40%;
+    width: calc(40% - 40px);
 }
 
-.details-block {
+.details-container div {
     margin: 20px;
 }
 
-.details-img__wrapper {
+.details-img {
     text-align: center;
     height: 350px;
 }
 
-.details-img__img {
+.details-img img {
     width: 350px;
     max-height: 350px;
 }

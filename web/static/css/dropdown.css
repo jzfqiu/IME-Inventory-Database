@@ -1,8 +1,8 @@
 /* ============== dropdown ============== */
 .catDropdown {
     position: absolute;
-    margin-top: 160px;
-    margin-left: 250px;
+    top: 150px;
+    left: 250px;
     max-width: 800px;
     display: none;
     border-top: 1px solid gray;
