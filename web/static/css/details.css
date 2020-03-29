@@ -1,0 +1,49 @@
+/* details.css: for equipment.html and user.html */
+
+.details {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.details ul {
+    list-style-type: circle;
+}
+
+#backButton {
+    position: relative;
+    left: -80px;
+    top: 25px;
+    height: 0;
+}
+
+.details-full {
+    width: 100%;
+}
+
+.details-lrow {
+    width: calc(60% - 40px);
+}
+
+.details-rrow {
+    width: calc(40% - 40px);
+}
+
+.details-container div {
+    margin: 20px;
+}
+
+.details-img {
+    text-align: center;
+    height: 350px;
+}
+
+.details-img img {
+    width: 350px;
+    max-height: 350px;
+}
+
+

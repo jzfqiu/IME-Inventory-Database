@@ -1,0 +1,23 @@
+/* ============== NavBar ============== */
+.navbar {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: gray;
+}
+
+.navbar div {
+    width: fit-content;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar a:hover {
+    color: #E8E8E8;
+}

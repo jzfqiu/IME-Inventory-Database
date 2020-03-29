@@ -4,12 +4,32 @@
     "description": "List of participating campus members.",
     "buckets": {
       "b1": {
-        "name": "",
+        "name": "UChicago",
         "choices": [
-          "UChicago",
-          "UIC",
-          "Northwestern",
+          "PNF",
+          "SMCF",
+          "BSD",
+          "Geosci",
+          "MRSEC",
+          "Other"
+        ]
+      },
+      "b2": {
+        "name": "UIC",
+        "choices": [
+          "UIC"
+        ]
+      },
+      "b3": {
+        "name": "UIUC",
+        "choices": [
           "UIUC"
+        ]
+      },
+      "b4": {
+        "name": "Northwestern",
+        "choices": [
+          "Northwestern"
         ]
       }
     }

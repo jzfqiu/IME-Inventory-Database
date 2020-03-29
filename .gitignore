@@ -1,6 +1,7 @@
 .DS_Store
 .idea/
 db/
+test_data/
 production.yml
 production.env
 development.env

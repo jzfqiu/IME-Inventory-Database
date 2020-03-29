@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/equipment.css') }}">
+{% endblock %}
+
+{% block header %}
+    {% block title %}{{ result['name'] }}{% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="details">
+
+    <div id="backButton">
+        <a href="javascript:history.back()">
+            <img src="{{ url_for('static', filename='assets/back_icon.png') }}"
+             style="width: 40px"
+             alt="Back Button">
+        </a>
+    </div>
+
+    <h1 class="details-full">{{ result['name'] }}</h1>
+
+    <div class="details-full">{{ result['overview'] }}</div>
+
+    <div class="details-lrow details-container">
+        {% if result['features'] %}
+        <div>
+            <strong>Key Features:</strong>
+            <ul>
+                {% for feature in result['features'] %}
+                    <li>{{ feature }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if result['applications'] %}
+        <div>
+            <strong>Key Applications:</strong>
+            <ul>
+                {% for application in result['applications'] %}
+                    <li>{{ application }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if result['documentation'] %}
+        <div>
+        <strong>Documentation:</strong>
+            <a href="{{ result['documentation'] }}">
+                {{ result['name'] }}
+            </a>
+        </div>
+        {% endif %}
+
+        <div>
+            <strong>Contact:</strong>
+            <ul style="list-style-type: none;">
+                <li><a href="{{ result['contact']['email_link'] }}">{{ result['contact']['name'] }}</a></li>
+                <li>{{ result['contact']['title'] }}</li>
+                {% if result['contact']['tel'] %}
+                    <li>{{ result['contact']['tel']}}</li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div>
+            <strong>Category: </strong>
+            {{ cat }}
+        </div>
+
+        {% if result['fee'] %}
+            <div>Fee: {{ result['fee'] }}</div>
+        {% endif %}
+
+
+    </div>
+
+
+
+    <div class="details-rrow details-container">
+
+        {% if result['images'] %}
+        <div class="details-img">
+            <img src="{{ result['images'][0]['link'] }}"
+                 alt="{{ result['images'][0]['description'] }}">
+        </div>
+        {% endif %}
+
+        <div>
+            <iframe
+                width="400"
+                height="300"
+                style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
+            </iframe>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,74 @@
+/* ============== sidebar ============== */
+
+.sidebar {
+    width: 250px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background: whitesmoke;
+}
+
+.sidebar-catNav__wrapper {
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar-catNav__cat {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background: #E8E8E8;
+}
+
+.sidebar-catNav__cat--hover {
+    background: lightgray;
+}
+
+.sidebar-catNav__text {
+    margin: auto;
+}
+
+
+.sidebar-refine__wrapper {
+    max-height: 1200px;
+    min-width: 180px;
+    margin: 10px 20px;
+}
+
+
+.sidebar-refine-cat {
+    margin: 15px 0;
+}
+
+.sidebar-refine-cat__text {
+    font-weight: 600;
+}
+
+.sidebar-refine-bucket {
+    margin: 5px 0;
+}
+
+.sidebar-refine-item {
+    width: 150px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: small;
+    display: flex;
+}
+
+.sidebar-refine-item:hover {
+    background: lightgray;
+}
+
+.sidebar-refine-item__text {
+    width: 140px;
+}
+
+.sidebar-refine-item__x {
+    margin: auto;
+}
+

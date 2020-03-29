@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+
+
+{% block header %}{{ user['name'] }}{% endblock %}
+
+{% block content %}
+
+
+<div class="details">
+
+    <div id="backButton">
+        <a href="javascript:history.back()">
+            <img src="{{ url_for('static', filename='assets/back_icon.png') }}"
+             style="width: 40px"
+             alt="Back Button">
+        </a>
+    </div>
+
+    <div class="details-lrow details-container">
+        <div><h1>{{ user['name'] }}</h1></div>
+        <div><strong>Email: </strong> <a href="mailto: {{ user['email']}}">{{ user['email']}}</a></div>
+        <div><strong>Title: </strong> {{ user['title']}}</div>
+        <div><strong>Affiliation: </strong> {{ user['affiliation']}}</div>
+    </div>
+
+    <div class="details-rrow details-container">
+        <img src="{{ url_for('static', filename='assets/user_default.png') }}" width="250px">
+    </div>
+
+
+    <div class="details-full details-container">
+        <p><strong>Managed Equipments: </strong></p>
+        <ul class="user-equipment">
+            {% for equipment in equipments %}
+            <li>
+                <a href="/equipment/{{ equipment['id'] }}">{{ equipment['name'] }}</a>
+                {% if is_manager %}
+                <div>
+                    <button onclick="location.href='/edit/{{ equipment.id }}';">Edit</button>
+                    <button onclick="location.href='/edit/delete/{{ equipment.id }}';">Delete</button>
+                </div>
+                {% endif %}
+            </li>
+            {% endfor %}
+            
+            {% if is_manager %}
+            <li><button onclick="location.href='/edit/new';">New</button></li>
+            {% endif %}
+        </ul>
+    </div>
+
+</div>
+
+
+{% endblock %}

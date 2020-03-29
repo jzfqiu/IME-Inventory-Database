@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block header %}{% endblock %} - IME Inventory DB</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/overlay.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <script defer src="{{ url_for('static', filename='js/base.js') }}"></script>
+    {% block stylesheet %}{% endblock %}
+    {% block script %}{% endblock %}
+    
+
+</head>
+<body>
+
+<section class="navbar">
+    <div><a href="/">Search</a></div>
+    <div><a href="/about">About</a></div>
+    {% if logged_in_user %}
+    <div><a href="/user/{{ logged_in_user[0] }}">{{ logged_in_user[1] }}</a></div>
+    <div><a href="/fetch/logout">Logout</a></div>
+    {% else %}
+    <div id="login-trigger"><a>Login</a></div>
+    {% endif %}
+</section>
+
+<section class="overlay" >
+    <div class="overlay-detail">
+        <form id="login-form">
+            <div>
+                <h3>Welcome Back</h3>
+                <button type="button" id="cancel-btn">&times</button>
+            </div>
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="password" required>    
+            </div>
+
+            <div>
+                <!-- <label class="remember" for="remember">Remember me</label>
+                <input class="remember" type="checkbox" name="remember"> -->
+                <p id="login-fail">Login failed. Please try again.</p>
+                <p><a>Forget password?</a></p>
+                <p><a>Register account</a></p>
+            </div>
+          
+            <div>
+                <button type="submit" id="login-btn">Login</button>
+            </div>
+          </form>
+    </div>
+</section>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

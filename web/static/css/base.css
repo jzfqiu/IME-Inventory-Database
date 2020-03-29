@@ -1,0 +1,46 @@
+/* CSS Reset */
+
+
+.reset {
+    border-width: 1px;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
+body {
+    font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* font-size: 100%; */
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: 1px solid gray;
+    border-radius: 7px;
+    font-size: 0.8em;
+    background-color: whitesmoke;
+}

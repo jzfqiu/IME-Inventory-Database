@@ -1,0 +1,9 @@
+.user-equipment li {
+    list-style-type: none;
+    display: flex;
+    margin: 20px
+}
+
+.user-equipment div {
+    margin: 0 0 0 auto;
+}

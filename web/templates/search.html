@@ -1,47 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Demo - IME Inventory DB</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
-    {% block script %}{% endblock %}
-</head>
-<body>
+{% extends 'base.html' %}
 
-<section class="navbar">
-    <div class="navbar-link__wrapper"><a href="#">About</a></div>
-    <div class="navbar-link__wrapper"><a href="#">Contact</a></div>
-</section>
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dropdown.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/top.css') }}">
+{% endblock %}
 
-<section class="overlay">
-    <div class="overlay-detail">
-        <p class="overlay-detail-title">Equipment Name</p>
-        <ul>
-            <li>Division:</li>
-            <li>Campus:</li>
-            <li>Material:</li>
-            <li>Characterization:</li>
-            <li>Overview:</li>
-            <li>Contact: </li>
-            <li>Link to Manual: </li>
-        </ul>
-    </div>
-</section>
+{% block script %}
+<script defer src="{{ url_for('static', filename='js/search.js') }}"></script></script>
+{% endblock %}
+
+
+
+{% block header %}Search{% endblock %}
+
+{% block content %}
 
 <section class="top">
     <div class=" top top-logo__wrapper">
-        <p class="top-logo__placeholder">Logo</p>
+        <img class="top-logo" src="{{ url_for('static', filename='assets/logo_full.png') }}" alt="Logo">
     </div>
 
     <div class="top top-search__wrapper">
         <label for="top-searchBox" hidden>Search Box</label>
-    <input type="text" class="reset top-searchBox" id="top-searchBox" />
-    <button class="reset top-searchButton">Search</button>
-    </div>
-
-    <div class="top top-login_wrapper">
-        <button class="top-loginButton">Login</button>
+    <input type="text" class="top-searchBox" id="top-searchBox" />
+    <button class="top-searchButton top-button" id="top-searchButton">Search</button>
     </div>
 
 </section>
@@ -71,9 +55,9 @@
 
 <section class="sidebar">
 
-    <div class="catNav sidebar-catNav__wrapper">
+    <div class="sidebar-catNav__wrapper">
         {% for cat in cats %}
-        <div class="catNav sidebar-catNav__cat" id="cat{{loop.index}}">
+        <div class="sidebar-catNav__cat" id="cat{{loop.index}}">
             <p class="sidebar-catNav__text">{{ cat.name }}</p>
         </div>
         {% endfor %}
@@ -86,35 +70,10 @@
 </section>
 
 <section class="result">
-    <div class="result-description__wrapper">
-        <p class="result-description__text">9 results found.</p>
-    </div>
-
-    {% for equipment in demos %}
-    <div class="result-block">
-        <div class="result-block-thumbnail__wrapper">
-            {% if 'link_image' in equipment %}
-            <img src="{{ equipment.link_image }}"
-                 alt="{{ equipment.name }}"
-                 class="result-block-thumbnail__img">
-            {% else %}
-            <img src="{{ url_for('static', filename='assets/image_placeholder.jpg') }}"
-                 alt="Placeholder Image"
-                 class="result-block-thumbnail__img">
-            {% endif %}
-        </div>
-        <div class="result-block-name__wrapper">
-            <a href="#" class="result-block-name__link">{{ equipment.name }}</a>
-        </div>
-    </div>
-    {% endfor %}
-
 </section>
 
 <section class="footer">
     <div class="footer-placeholder">Footer</div>
 </section>
-<script src="{{ url_for('static', filename='search.js') }}"></script>
 
-</body>
-</html>
+{% endblock %}
