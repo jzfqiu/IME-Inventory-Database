@@ -74,3 +74,19 @@ def build_query(raw_json):
     else: query = {}
 
     return query
+
+
+def get_equipments(list_of_ids):
+    inventory_collection = get_db()['inventory']
+    return list(inventory_collection.find({'_id': {'$in': list_of_ids}}))
+     
+
+def get_one_equipment(_id):
+    inventory_collection = get_db()['inventory']
+    return inventory_collection.find_one({'_id': _id})
+
+
+def get_user_by_username(username):
+    user_collection = get_db()['user']
+    user_list = list(user_collection.find({'username': username}))
+    return user_list[0] if user_list != [] else None

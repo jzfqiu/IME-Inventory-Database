@@ -48,8 +48,7 @@ def fetch_page(page_number):
 
 @search_bp.route('/fetch/login', methods=['POST'])
 def fetch_login():
-    collection = db.get_db()['user']
-    user = list(collection.find({'email': request.form['email']}))[0]
+    user = list(db.get_db()['user'].find({'email': request.form['email']}))[0]
     hashed_pwd = blake2b(str.encode(request.form['password']), digest_size=10)
     if user is not None and user['password']==hashed_pwd.hexdigest():
         session['username'] = [user['username'], user['name']]
@@ -66,14 +65,11 @@ def fetch_logout():
 
 @search_bp.route('/user/<username>')
 def user(username):
-    user_collection = db.get_db()['user']
-    user = list(user_collection.find({'username': username}))
-    if user != []:
-        user = user[0]
+    user = db.get_user_by_username(username)
+    if user is not None:
         for k in ['_id', 'password']:
             user.pop(k)
-        inventory_collection = db.get_db()['inventory']
-        user_equipments = list(inventory_collection.find({'_id': {'$in': user['equipments']}}))
+        user_equipments = db.get_equipments(user['equipments'])
         user_equipments = [{'name': e['name'], 'id': str(e['_id'])} for e in user_equipments]
         is_manager = get_logged_in_user() and user['username']==get_logged_in_user()[0]
         return render_template('user.html', 
@@ -87,15 +83,24 @@ def user(username):
 
 @search_bp.route('/equipment/<_id>')
 def equipment(_id):
-    collection = db.get_db()['inventory']
-    res = collection.find_one({'_id': ObjectId(_id)})
-    _, cat, _ = db.unroll_cat(res['category'], True)
+    equipment = db.get_one_equipment(ObjectId(_id))
+    _, cat, _ = db.unroll_cat(equipment['category'], True)
     return render_template('equipment.html',
-                           result=res,
+                           equipment=equipment,
                            cat=cat,
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                            logged_in_user=get_logged_in_user())
 
+
+@search_bp.route('/equipment/edit/<_id>')
+def edit_equipment(_id):
+    equipment = db.get_one_equipment(ObjectId(_id))
+    is_manager = get_logged_in_user()==equipment['user']
+    return render_template('edit.html',
+                            equipment=equipment,
+                            is_manager=is_manager,
+                            logged_in_user=get_logged_in_user())
+    
 
 @search_bp.route('/about')
 def about():

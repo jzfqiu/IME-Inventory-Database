@@ -5,15 +5,13 @@
 
 {% for equipment in data %}
 <div class="result-block">
-    <div class="result-block-thumbnail__wrapper">
+    <div class="result-block-thumbnail">
         {% if 'images' in equipment %}
         <img src="{{ equipment.images[0].link }}"
-             alt="{{ equipment.name }}"
-             class="result-block-thumbnail__img">
+             alt="{{ equipment.name }}">
         {% else %}
         <img src="{{ url_for('static', filename='assets/image_placeholder.jpg') }}"
-             alt="Placeholder Image"
-             class="result-block-thumbnail__img">
+             alt="Placeholder Image">
         {% endif %}
     </div>
     <div class="result-block-name__wrapper">

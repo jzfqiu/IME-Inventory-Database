@@ -1,0 +1,47 @@
+input, textarea {
+    border: 0;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    margin: 9px 5px 1px 5px;
+    font-size: 100%;
+}
+
+input:focus, textarea:focus {
+    border-bottom: 2px solid black;
+    outline-width: 0;
+    margin-bottom: 0 !important; 
+}
+
+.details-full {
+    margin: 10px 0;
+}
+
+.details-full input, .details-full textarea {
+    width: 100%;
+}
+
+.details-container div {
+    margin-top: 40px;
+}
+
+#edit-overview textarea {
+    width: 100%;
+    height: 60px;
+    resize: vertical;
+}
+
+#edit-contact li {
+    display: flex;
+}
+
+#edit-contact p {
+    width: 60px;
+    margin: 9px 5px 1px 5px;
+}
+
+#edit-contact input {
+    width: calc(100% - 61px);
+}
+
+
+

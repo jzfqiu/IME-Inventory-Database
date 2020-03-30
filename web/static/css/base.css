@@ -31,7 +31,7 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    /* font-size: 100%; */
+    font-size: 105%;
 }
 
 p {
@@ -40,7 +40,8 @@ p {
 
 button {
     border: 1px solid gray;
-    border-radius: 7px;
+    border-radius: 10px;
     font-size: 0.8em;
+    height: 30px;
     background-color: whitesmoke;
 }

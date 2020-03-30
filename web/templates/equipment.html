@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block header %}
-    {% block title %}{{ result['name'] }}{% endblock %}
+    {% block title %}{{ equipment['name'] }}{% endblock %}
 {% endblock %}
 
 {% block content %}
@@ -20,38 +20,38 @@
         </a>
     </div>
 
-    <h1 class="details-full">{{ result['name'] }}</h1>
+    <h1 class="details-full">{{ equipment['name'] }}</h1>
 
-    <div class="details-full">{{ result['overview'] }}</div>
+    <div class="details-full">{{ equipment['overview'] }}</div>
 
     <div class="details-lrow details-container">
-        {% if result['features'] %}
+        {% if equipment['features'] %}
         <div>
             <strong>Key Features:</strong>
             <ul>
-                {% for feature in result['features'] %}
+                {% for feature in equipment['features'] %}
                     <li>{{ feature }}</li>
                 {% endfor %}
             </ul>
         </div>
         {% endif %}
 
-        {% if result['applications'] %}
+        {% if equipment['applications'] %}
         <div>
             <strong>Key Applications:</strong>
             <ul>
-                {% for application in result['applications'] %}
+                {% for application in equipment['applications'] %}
                     <li>{{ application }}</li>
                 {% endfor %}
             </ul>
         </div>
         {% endif %}
 
-        {% if result['documentation'] %}
+        {% if equipment['documentation'] %}
         <div>
         <strong>Documentation:</strong>
-            <a href="{{ result['documentation'] }}">
-                {{ result['name'] }}
+            <a href="{{ equipment['documentation'] }}">
+                {{ equipment['name'] }}
             </a>
         </div>
         {% endif %}
@@ -59,10 +59,10 @@
         <div>
             <strong>Contact:</strong>
             <ul style="list-style-type: none;">
-                <li><a href="{{ result['contact']['email_link'] }}">{{ result['contact']['name'] }}</a></li>
-                <li>{{ result['contact']['title'] }}</li>
-                {% if result['contact']['tel'] %}
-                    <li>{{ result['contact']['tel']}}</li>
+                <li><a href="{{ equipment['contact']['email_link'] }}">{{ equipment['contact']['name'] }}</a></li>
+                <li>{{ equipment['contact']['title'] }}</li>
+                {% if equipment['contact']['tel'] %}
+                    <li>{{ equipment['contact']['tel']}}</li>
                 {% endif %}
             </ul>
         </div>
@@ -72,8 +72,8 @@
             {{ cat }}
         </div>
 
-        {% if result['fee'] %}
-            <div>Fee: {{ result['fee'] }}</div>
+        {% if equipment['fee'] %}
+            <div>Fee: {{ equipment['fee'] }}</div>
         {% endif %}
 
 
@@ -83,10 +83,10 @@
 
     <div class="details-rrow details-container">
 
-        {% if result['images'] %}
+        {% if equipment['images'] %}
         <div class="details-img">
-            <img src="{{ result['images'][0]['link'] }}"
-                 alt="{{ result['images'][0]['description'] }}">
+            <img src="{{ equipment['images'][0]['link'] }}"
+                 alt="{{ equipment['images'][0]['description'] }}">
         </div>
         {% endif %}
 

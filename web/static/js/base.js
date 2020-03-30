@@ -2,12 +2,16 @@
 
 
 var overlayWrapper = document.querySelector('.overlay');
+var loginButton = document.querySelector('#login-trigger');
 
 // Toggle login overlay
-document.querySelector('#login-trigger').addEventListener('click', ()=>{
-    console.log('login');
-    overlayWrapper.style.display = 'block';
-})
+if (loginForm != null) {
+    loginButton.addEventListener('click', ()=>{
+        console.log('login');
+        overlayWrapper.style.display = 'block';
+    })
+}
+
 document.querySelector('.overlay').addEventListener('click', (e)=>{
     if (e.target.id=="overlay-background")
         overlayWrapper.style.display = 'none';

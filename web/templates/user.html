@@ -41,15 +41,15 @@
                 <a href="/equipment/{{ equipment['id'] }}">{{ equipment['name'] }}</a>
                 {% if is_manager %}
                 <div>
-                    <button onclick="location.href='/edit/{{ equipment.id }}';">Edit</button>
-                    <button onclick="location.href='/edit/delete/{{ equipment.id }}';">Delete</button>
+                    <button onclick="location.href='/equipment/edit/{{ equipment.id }}';">Edit</button>
+                    <button onclick="location.href='/equipment/delete/{{ equipment.id }}';">Delete</button>
                 </div>
                 {% endif %}
             </li>
             {% endfor %}
             
             {% if is_manager %}
-            <li><button onclick="location.href='/edit/new';">New</button></li>
+            <li><button onclick="location.href='/equipment/edit/new';">New</button></li>
             {% endif %}
         </ul>
     </div>
