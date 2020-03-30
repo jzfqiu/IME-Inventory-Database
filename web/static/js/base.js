@@ -1,17 +1,17 @@
 // script for navbar, loaded in every page
 
 
-var overlayWrapper = document.querySelector('.overlay');
-var loginButton = document.querySelector('#login-trigger');
-
 // Toggle login overlay
-if (loginForm != null) {
+var loginButton = document.querySelector('#login-trigger');
+if (loginButton != null) {
     loginButton.addEventListener('click', ()=>{
         console.log('login');
         overlayWrapper.style.display = 'block';
     })
 }
 
+// Toggle display of overlay
+var overlayWrapper = document.querySelector('.overlay');
 document.querySelector('.overlay').addEventListener('click', (e)=>{
     if (e.target.id=="overlay-background")
         overlayWrapper.style.display = 'none';

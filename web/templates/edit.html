@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
 {% endblock %}
 
+{% block script %}
+<script defer src="{{ url_for('static', filename='js/edit.js') }}"></script></script>
+{% endblock %}
 
 {% block header %}Edit{% endblock %}
 
@@ -23,64 +26,65 @@
     <h1>Edit</h1>
 
 
-    <div class="details-full" id="edit-name">
+    <div class="edit-block" id="edit-name">
         <strong>Name:</strong>
         <input type="text" name="name" value="{{ equipment['name'] }}"/>
     </div>
 
-    <div class="details-full" id="edit-overview">
+    <div class="edit-block" id="edit-overview">
         <label for="edit-overview"><strong>Overview:</strong></label>
         <textarea type="text" name="overview">{{ equipment['overview'] }}</textarea>
     </div>
 
-
-    <div class="details-full details-container">
-
-        <div id="edit-feature">
-            <strong>Key Features:</strong>
-            <ul>
-                {% for feature in equipment['features'] %}
-                    <li>
-                        <input type="text" name="features" value="{{ feature }}"/>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div id="edit-application">
-            <strong>Key Applications:</strong>
-            <ul>
-                {% for application in equipment['applications'] %}
-                    <li>
-                        <input type="text" name="applications" value="{{ application }}"/>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div id="edit-documentation">
-            <strong>Link to Product Documentation:</strong>
-            <input type="text" name="documentation" value="{{ equipment['documentation'] }}"/>
-        </div>
-
-        <div id="edit-contact">
-            <strong>Contact:</strong>
-            <ul style="list-style-type: none;">
-                <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] }}"/></li>
-                <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email_link'] }}"/></li>
-                <li><p>Title: </p><input type="text" name="contact-title" value="{{ equipment['contact']['title'] }}"/></li>
-                <li><p>Tel: </p><input type="text" name="contact-tel" value="{{ equipment['contact']['tel'] }}"/></li>
-            </ul>
-        </div>
-
-        <div>
-            <strong>Category: </strong>{{ cat }}
-        </div>
-
-        <div>Fee: {{ equipment['fee'] }}</div>
-
-
+    <div class="edit-block">
+        <strong>Key Features:</strong>
+        <ul class="edit-dynamic-ul" id="edit-feature">
+            {% for feature in equipment['features'] %}
+                <li>
+                    <button class="edit-remove-li">&times;</button>
+                    <input type="text" name="features" value="{{ feature }}"/>
+                </li>
+            {% endfor %}
+            <li><button class="edit-add-li">+</button></li>
+        </ul>
     </div>
+
+    <div class="edit-block">
+        <strong>Key Applications:</strong>
+        <ul class="edit-dynamic-ul" id="edit-feature">
+            {% for application in equipment['applications'] %}
+                <li>
+                    <button class="edit-remove-li">&times;</button>
+                    <input type="text" name="applications" value="{{ application }}"/>
+                </li>
+            {% endfor %}
+            <li><button class="edit-add-li">+</button></li>
+        </ul>
+        
+    </div>
+
+    <div class="edit-block" id="edit-documentation">
+        <strong>Link to Product Documentation:</strong>
+        <input type="text" name="documentation" value="{{ equipment['documentation'] }}"/>
+    </div>
+
+    <div class="edit-block" id="edit-contact">
+        <strong>Contact:</strong>
+        <ul>
+            <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] }}"/></li>
+            <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email_link'] }}"/></li>
+            <li><p>Title: </p><input type="text" name="contact-title" value="{{ equipment['contact']['title'] }}"/></li>
+            <li><p>Tel: </p><input type="text" name="contact-tel" value="{{ equipment['contact']['tel'] }}"/></li>
+        </ul>
+    </div>
+
+    <div class="edit-block">
+        <strong>Category: </strong>{{ cat }}
+    </div>
+
+    <div class="edit-block">Fee: {{ equipment['fee'] }}</div>
+
+
 
 
 

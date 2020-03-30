@@ -45,3 +45,7 @@ button {
     height: 30px;
     background-color: whitesmoke;
 }
+
+button:focus {outline-width: 0;}
+
+button:active {background-color: lightgray;}
