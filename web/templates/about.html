@@ -1,9 +1,54 @@
 {% extends 'base.html' %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+{% endblock %}
+
 {% block header %}About{% endblock %}
 
 {% block content %}
 
-    About
+<div class="details">
+    <div id="backButton">
+        <a href="javascript:history.back()">
+            <img src="{{ url_for('static', filename='assets/back_icon.png') }}"
+             style="width: 40px"
+             alt="Back Button">
+        </a>
+    </div>
+
+
+    <h1>About</h1>
+
+    <div class="details-full details-container">
+        <div>
+            <strong>Finished: </strong>
+            <ul>
+                <li>Search by category</li>
+                <li>Search by keywords</li>
+                <li>Equipment details (spec, locations, images...)</li>
+                <li>Equipment manager (aka User) details</li>
+                <li>Edit existing equipments</li>
+                <li>Add new equipments</li>
+                <li>...</li>
+            </ul>            
+        </div>
+
+        <div>
+            <strong>Todo: </strong>
+            <ul>
+                <li>User registration (~5 hrs)</li>
+                <li>Finish editing function (map and image) (~10 hrs)</li>
+                <li>Adds custom support for category (~10 hrs)</li>
+                <li>Add feedback options (? hrs)</li>
+                <li>Refractor code, write documentations (~20 hrs)</li>
+                <li>...</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</div>
 
 {% endblock %}
