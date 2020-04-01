@@ -97,7 +97,6 @@ def user(username):
                                 equipments=user_equipments,
                                 is_manager=is_manager)
     return redirect(url_for('search.search'))
-        
 
 
 @search_bp.route('/equipment/<_id>')
@@ -113,6 +112,16 @@ def equipment(_id):
                            logged_in_user=get_logged_in_user())
 
 
+@search_bp.route('/equipment/edit/new')
+def new_equipment():
+    return render_template('edit.html',
+                            equipment={},
+                            existing_cat=None,
+                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
+                            logged_in_user=get_logged_in_user())
+
+
+
 @search_bp.route('/equipment/edit/<_id>')
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(ObjectId(_id))
@@ -126,11 +135,6 @@ def edit_equipment(_id):
                             logged_in_user=get_logged_in_user())
 
 
-@search_bp.route('/about')
-def about():
-    return render_template('about.html', logged_in_user=get_logged_in_user())
-
-
 @search_bp.route('/fetch/edit/cat', methods=['POST'])
 def fetch_cat():
     with open('test_data/test_cats_v2.json') as cats:
@@ -141,6 +145,12 @@ def fetch_cat():
     if bucket is None:
         return json.dumps(list(cats_data[cat].keys()))
     return json.dumps(cats_data[cat][bucket])
+
+
+@search_bp.route('/about')
+def about():
+    return render_template('about.html', logged_in_user=get_logged_in_user())
+
 
 
 # TODO: color coding by campus

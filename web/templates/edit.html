@@ -27,24 +27,27 @@
 
 
     <div class="edit-block" id="edit-name">
-        <strong>Name:</strong>
-        <input type="text" name="name" value="{{ equipment['name'] }}"/>
+        <strong>Name*:</strong>
+        <input type="text" name="name" 
+            value="{% if equipment['name'] %}{{ equipment['name'] }}{% endif %}"/>
     </div>
 
     <div class="edit-block" id="edit-overview">
-        <label for="edit-overview"><strong>Overview:</strong></label>
-        <textarea type="text" name="overview">{{ equipment['overview'] }}</textarea>
+        <label for="edit-overview"><strong>Overview*:</strong></label>
+        <textarea type="text" name="overview">{% if equipment['overview'] %}{{ equipment['overview'] }}{% endif %}</textarea>
     </div>
 
     <div class="edit-block">
         <strong>Key Features:</strong>
         <ul class="edit-dynamic-ul" id="edit-feature">
+            {% if equipment['features'] %}
             {% for feature in equipment['features'] %}
                 <li>
                     <button class="edit-remove-li">&times;</button>
                     <input type="text" name="features" value="{{ feature }}"/>
                 </li>
             {% endfor %}
+            {% endif %}
             <li><button class="edit-add-li">+</button></li>
         </ul>
     </div>
@@ -52,12 +55,14 @@
     <div class="edit-block">
         <strong>Key Applications:</strong>
         <ul class="edit-dynamic-ul" id="edit-feature">
+            {% if equipment['applications'] %}
             {% for application in equipment['applications'] %}
                 <li>
                     <button class="edit-remove-li">&times;</button>
                     <input type="text" name="applications" value="{{ application }}"/>
                 </li>
             {% endfor %}
+            {% endif %}
             <li><button class="edit-add-li">+</button></li>
         </ul>
         
@@ -65,39 +70,40 @@
 
     <div class="edit-block" id="edit-documentation">
         <strong>Link to Product Documentation:</strong>
-        <input type="text" name="documentation" value="{{ equipment['documentation'] }}"/>
+        <input type="text" name="documentation" 
+            value="{% if equipment['documentation'] %}{{ equipment['documentation'] }}{% endif %}"/>
     </div>
 
     <div class="edit-block" id="edit-contact">
-        <strong>Contact:</strong>
+        <strong>Contact*:</strong>
         <ul>
-            <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] }}"/></li>
-            <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email_link'] }}"/></li>
-            <li><p>Title: </p><input type="text" name="contact-title" value="{{ equipment['contact']['title'] }}"/></li>
-            <li><p>Tel: </p><input type="text" name="contact-tel" value="{{ equipment['contact']['tel'] }}"/></li>
+            <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] if equipment['contact'] }}"/></li>
+            <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email_link'] if equipment['contact'] }}"/></li>
+            <li><p>Title: </p><input type="text" name="contact-title" value="{{ equipment['contact']['title'] if equipment['contact'] }}"/></li>
+            <li><p>Tel: </p><input type="text" name="contact-tel" value="{{ equipment['contact']['tel'] if equipment['contact'] }}"/></li>
         </ul>
     </div>
 
     <div class="edit-block" id="edit-category">
-        <strong>Category: </strong>
-        <select name="cat" class="edit-cat-select" id="edit-cat" data-selected={{ existing_cat[0] }}>
+        <strong>Category*: </strong>
+        <select name="cat" class="edit-cat-select" id="edit-cat" data-selected={{ existing_cat[0] if existing_cat  }}>
             <option value="Material">Material</option>
             <option value="Characterization">Characterization</option>
             <option value="Manufacturing">Manufacturing</option>
         </select>
         -
-        <select name="bucket" class="edit-cat-select" id="edit-bucket" data-selected={{ existing_cat[1] }}></select>
+        <select name="bucket" class="edit-cat-select" id="edit-bucket" data-selected={{ existing_cat[1] if existing_cat }}></select>
         -
-        <select name="item" class="edit-cat-select" id="edit-item" data-selected={{ existing_cat[2] }}></select>
+        <select name="item" class="edit-cat-select" id="edit-item" data-selected={{ existing_cat[2] if existing_cat }}></select>
     </div>
 
-    <div class="edit-block"><strong>Fee: </strong><input type="text" name="fee" value="{{ equipment['fee'] }}"/></div>
+    <div class="edit-block"><strong>Fee: </strong><input type="text" name="fee" value="{{ equipment['fee'] if equipment['fee']  }}"/></div>
 
 
     <!-- <div class="edit-block"><strong>Link to Image: </strong><input type="text" name="img-link" value=""/></div> -->
     <div class="edit-block" id="edit-location">
         <strong>Location: </strong>
-        <input type="text" id="edit-location-input" name="location" value="{{ equipment['location'] }}"/>
+        <input type="text" id="edit-location-input" name="location" value="{{ equipment['location'] if equipment['location'] }}"/>
         <iframe
             id="edit-location-api"
             src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">

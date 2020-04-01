@@ -9,6 +9,7 @@
     padding: 20px;
     flex-wrap: wrap;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .details ul {
