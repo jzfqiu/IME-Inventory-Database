@@ -4,9 +4,11 @@
     display: flex;
     width: 100%;
     max-width: 900px;
+    min-height: 800px;
     margin: auto;
     padding: 20px;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .details ul {
