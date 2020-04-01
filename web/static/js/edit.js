@@ -10,6 +10,18 @@ function addEventListenerByClass(className, event, f){
 }
 
 
+function makeJsonHeader(fetchUrl, jsonData){
+    let hdr = new Headers();
+    hdr.append('Content-Type', 'application/json');
+    let req = new Request(fetchUrl, {
+        method: 'POST',
+        body: JSON.stringify(jsonData),
+        headers: hdr
+    });
+    return req;
+}
+
+
 // preventDefault for existing buttons
 addEventListenerByClass('edit-remove-li', 'click', e=>e.preventDefault());
 addEventListenerByClass('edit-add-li', 'click', e=>e.preventDefault());
@@ -31,13 +43,7 @@ addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
 
 // fetch options from backend and insert them as children of <select>
 function fetchInsertOptions(selectDom, prevSelections, selectedOption=null) {
-    let hdr = new Headers();
-    hdr.append('Content-Type', 'application/json');
-    let req = new Request("/fetch/edit/cat", {
-        method: 'POST',
-        body: JSON.stringify(prevSelections),
-        headers: hdr
-    });
+    var req = makeJsonHeader("/fetch/edit/cat", prevSelections);
     fetch(req)
     .then(response => response.json())
     .then(listOfOptions => {
@@ -51,9 +57,6 @@ function fetchInsertOptions(selectDom, prevSelections, selectedOption=null) {
         });
     })
 }
-
-
-
 
 // initialize options, run once each refresh
 var editCat = document.getElementById('edit-cat');
@@ -97,3 +100,39 @@ addEventListenerByClass('edit-cat-select', 'change', e=>{
 //     }, 1000);
 // });
 
+
+function formToJson( form ) {
+    var obj = {};
+    var elements = form.querySelectorAll( "input, select, textarea" );
+    for( var i = 0; i < elements.length; ++i ) {
+        var element = elements[i];
+        var name = element.name;
+        var value = element.value;
+        if( name ) {
+            if (name in obj) {
+                obj[name] = obj[name] instanceof Array ? [...obj[name], value] : [obj[name], value]
+            }
+            else obj[name] = value;
+        } 
+    }
+    return JSON.stringify( obj );
+}
+
+
+// submit form
+var editForm = document.getElementById('edit-form');
+editForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    var currentUrl = window.location.href;
+    var formData = formToJson(editForm);
+    var req = makeJsonHeader(currentUrl, formData);
+    console.log(formData);
+    fetch(req)
+    .then(response=>response.json())
+    .then(data => {
+        if (data['success'])
+            window.location.href = data['return_url'];
+    })
+})
+
+	

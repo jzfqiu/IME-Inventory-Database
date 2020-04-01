@@ -19,9 +19,11 @@ search_bp = Blueprint('search', __name__)
 # search.js: async receive html and insert into search.html
 
 
-def dprint(string):
+def dprint(content):
     """Print to docker-compose log"""
-    print(string, flush=True)
+    if not isinstance(content, str):
+        content = str(content)
+    print(content, flush=True)
 
 
 def get_logged_in_user():
@@ -55,7 +57,7 @@ def search():
 @search_bp.route('/fetch/page/<page_number>', methods=['POST'])
 def fetch_page(page_number):
     collection = db.get_db()['inventory']
-    query = db.build_query(request.get_json())
+    query = db.build_query(request.json)
     batch = collection.find(query).limit(
         RESULT_PER_PAGE).skip((int(page_number)-1)*RESULT_PER_PAGE)
     batch_cnt = collection.count_documents(query)
@@ -112,34 +114,58 @@ def equipment(_id):
                            logged_in_user=get_logged_in_user())
 
 
-@search_bp.route('/equipment/edit/new')
+@search_bp.route('/equipment/edit/new', methods=['POST', 'GET'])
 def new_equipment():
-    return render_template('edit.html',
-                            equipment={},
-                            existing_cat=None,
-                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
-                            logged_in_user=get_logged_in_user())
+    if request.method == 'GET':
+        return render_template('edit.html',
+                                equipment={},
+                                existing_cat=None,
+                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
+                                logged_in_user=get_logged_in_user())
 
 
 
-@search_bp.route('/equipment/edit/<_id>')
+def clean_update_data(data):
+    data['category'] = {
+        data.pop('cat'): {
+            data.pop('bucket'): data.pop('item')
+        }
+    }
+    data['contact'] = {
+        "name": data.pop('contact-name'),
+        "title": data.pop('contact-title'),
+        "email-link": data.pop('contact-email'),
+        "tel": data.pop('contact-tel')
+    }
+    return data
+    
+    
+
+
+@search_bp.route('/equipment/edit/<_id>', methods=['POST', 'GET'])
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(ObjectId(_id))
     is_manager = get_logged_in_user() == equipment_requested['user']
     existing_cat = flatten_dict(equipment_requested['category'])
-    return render_template('edit.html',
-                            equipment=equipment_requested,
-                            existing_cat=existing_cat,
-                            is_manager=is_manager,
-                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
-                            logged_in_user=get_logged_in_user())
+    if request.method == 'GET':
+        return render_template('edit.html',
+                                equipment=equipment_requested,
+                                existing_cat=existing_cat,
+                                is_manager=is_manager,
+                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
+                                logged_in_user=get_logged_in_user())
+    else:
+        updated_data = clean_update_data(json.loads(request.json))
+        db.update_one_equipment(_id, updated_data)
+        return json.dumps({"success": True})
+        
 
 
 @search_bp.route('/fetch/edit/cat', methods=['POST'])
 def fetch_cat():
     with open('test_data/test_cats_v2.json') as cats:
         cats_data = json.load(cats)
-    data = request.get_json()
+    data = request.json
     cat = data.get('cat', None)
     bucket = data.get('bucket', None)
     if bucket is None:

@@ -6,6 +6,14 @@ from flask import current_app, g
 import pymongo
 
 
+
+def dprint(content):
+    """Print to docker-compose log"""
+    if not isinstance(content, str):
+        content = str(content)
+    print(content, flush=True)
+
+
 def get_db(db_name='db'):
     """
     Initialize MongoDB database into request's global instance
@@ -86,7 +94,22 @@ def get_one_equipment(_id):
     return inventory_collection.find_one({'_id': _id})
 
 
+def update_one_equipment(_id, updates):
+    inventory_collection = get_db()['inventory']
+    dprint(inventory_collection.update({'_id': _id}, {'$set': updates})) 
+
+
+def insert_one_equipment(insert):
+    inventory_collection = get_db()['inventory']
+    inserted_result = inventory_collection.insert_one(insert)
+    dprint(inserted_result.inserted_id)
+    return inserted_result.inserted_id
+    
+
+
 def get_user_by_username(username):
     user_collection = get_db()['user']
     user_list = list(user_collection.find({'username': username}))
     return user_list[0] if user_list != [] else None
+
+
