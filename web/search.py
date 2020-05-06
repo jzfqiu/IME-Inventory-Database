@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 
 from flask import Blueprint, render_template, request, session, current_app, redirect, url_for
 from web import db
+from web.utils import *
 
 
 RESULT_PER_PAGE = 15
@@ -19,27 +20,6 @@ search_bp = Blueprint('search', __name__)
 # search.js: async receive html and insert into search.html
 
 
-def dprint(content):
-    """Print to docker-compose log"""
-    if not isinstance(content, str):
-        content = str(content)
-    print(content, flush=True)
-
-
-def get_logged_in_user():
-    """Get logged in user from session"""
-    return session.get('username', None)
-
-
-def flatten_dict(d):
-    """Given nested, single-key dict, return a list of all keys and value"""
-    res = []
-    while isinstance(d, dict):
-        k = list(d.keys())[0]
-        res.append(k)
-        d = d[k]
-    res.append(d)
-    return res
 
 
 @search_bp.route('/', methods=('GET', 'POST'))
@@ -122,55 +102,10 @@ def new_equipment():
                                 existing_cat=None,
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                                 logged_in_user=get_logged_in_user())
-
-
-
-def clean_update_data(data):
-    data['category'] = {
-        data.pop('cat'): {
-            data.pop('bucket'): data.pop('item')
-        }
-    }
-    data['contact'] = {
-        "name": data.pop('contact-name'),
-        "title": data.pop('contact-title'),
-        "email-link": data.pop('contact-email'),
-        "tel": data.pop('contact-tel')
-    }
-    return data
-    
-    
-
-
-@search_bp.route('/equipment/edit/<_id>', methods=['POST', 'GET'])
-def edit_equipment(_id):
-    equipment_requested = db.get_one_equipment(ObjectId(_id))
-    is_manager = get_logged_in_user() == equipment_requested['user']
-    existing_cat = flatten_dict(equipment_requested['category'])
-    if request.method == 'GET':
-        return render_template('edit.html',
-                                equipment=equipment_requested,
-                                existing_cat=existing_cat,
-                                is_manager=is_manager,
-                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
-                                logged_in_user=get_logged_in_user())
     else:
-        updated_data = clean_update_data(json.loads(request.json))
-        db.update_one_equipment(_id, updated_data)
+        print(request.get_json())
         return json.dumps({"success": True})
-        
 
-
-@search_bp.route('/fetch/edit/cat', methods=['POST'])
-def fetch_cat():
-    with open('test_data/test_cats_v2.json') as cats:
-        cats_data = json.load(cats)
-    data = request.json
-    cat = data.get('cat', None)
-    bucket = data.get('bucket', None)
-    if bucket is None:
-        return json.dumps(list(cats_data[cat].keys()))
-    return json.dumps(cats_data[cat][bucket])
 
 
 @search_bp.route('/about')
