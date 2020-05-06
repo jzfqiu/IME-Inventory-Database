@@ -4,14 +4,8 @@ All pymongo operations are LAZY
 
 from flask import current_app, g
 import pymongo
+from web.utils import *
 
-
-
-def dprint(content):
-    """Print to docker-compose log"""
-    if not isinstance(content, str):
-        content = str(content)
-    print(content, flush=True)
 
 
 def get_db(db_name='db'):
@@ -19,7 +13,7 @@ def get_db(db_name='db'):
     Initialize MongoDB database into request's global instance
 
     :param db_name: string, name of database
-    
+
     :return: pymongo Database object
     """
     if 'db' not in g:
@@ -94,7 +88,8 @@ def get_equipments(list_of_ids):
     Gets a list of documents (as cursor objects) given a list of ObjectID
     """
     inventory_collection = get_db()['inventory']
-    return list(inventory_collection.find({'_id': {'$in': list_of_ids}}))
+    equipments = list(inventory_collection.find({'_id': {'$in': list_of_ids}}))
+    return equipments
      
 
 def get_one_equipment(_id):
@@ -113,7 +108,7 @@ def update_one_equipment(_id, updates):
         updates {dict} -- update to be committed
     """
     inventory_collection = get_db()['inventory']
-    dprint(inventory_collection.update({'_id': _id}, {'$set': updates})) 
+    update_result = inventory_collection.replace_one({'_id': _id},  updates)
 
 
 def insert_one_equipment(insert):

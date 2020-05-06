@@ -70,6 +70,7 @@ def user(username):
     if user_requested is not None:
         for k in ['_id', 'password']:
             user_requested.pop(k)
+        dprint(user_requested)
         user_equipments = db.get_equipments(user_requested['equipments'])
         user_equipments = [{'name': e['name'], 'id': str(e['_id'])} for e in user_equipments]
         is_manager = get_logged_in_user() and user_requested['username'] == get_logged_in_user()[0]
@@ -93,18 +94,6 @@ def equipment(_id):
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                            logged_in_user=get_logged_in_user())
 
-
-@search_bp.route('/equipment/edit/new', methods=['POST', 'GET'])
-def new_equipment():
-    if request.method == 'GET':
-        return render_template('edit.html',
-                                equipment={},
-                                existing_cat=None,
-                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
-                                logged_in_user=get_logged_in_user())
-    else:
-        print(request.get_json())
-        return json.dumps({"success": True})
 
 
 

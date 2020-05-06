@@ -32,8 +32,11 @@ def edit_equipment(_id):
                                 logged_in_user=get_logged_in_user())
     else:
         updated_data = clean_update_data(json.loads(request.json))
-        db.update_one_equipment(_id, updated_data)
-        return json.dumps({"success": True})
+        db.update_one_equipment(ObjectId(_id), updated_data)
+        return json.dumps({
+            "success": True,
+            "return_url": "/equipment/edit/"+str(_id)
+            })
         
 
 
@@ -46,4 +49,19 @@ def fetch_cat():
     bucket = data.get('bucket', None)
     if bucket is None:
         return json.dumps(list(cats_data[cat].keys()))
+    dprint(data)
     return json.dumps(cats_data[cat][bucket])
+
+
+
+@edit_bp.route('/equipment/edit/new', methods=['POST', 'GET'])
+def new_equipment():
+    if request.method == 'GET':
+        return render_template('edit.html',
+                                equipment={},
+                                existing_cat=None,
+                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
+                                logged_in_user=get_logged_in_user())
+    else:
+        dprint(request.get_json())
+        return json.dumps({"success": True})

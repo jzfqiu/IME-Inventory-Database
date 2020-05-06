@@ -70,7 +70,7 @@ var editItem = document.getElementById('edit-item');
     for (child of editCat.children) {
         if (child.value == selectedCat) child.selected=true;
     };
-
+    console.log(selectedBucket);
     fetchInsertOptions(editBucket, {'cat':selectedCat}, selectedBucket);
     fetchInsertOptions(editItem, {'cat':selectedCat, 'bucket': selectedBucket}, selectedItem);
 })();
@@ -126,12 +126,12 @@ editForm.addEventListener('submit', e=>{
     var currentUrl = window.location.href;
     var formData = formToJson(editForm);
     var req = makeJsonHeader(currentUrl, formData);
-    console.log(formData);
     fetch(req)
     .then(response=>response.json())
     .then(data => {
         if (data['success'])
             window.location.href = data['return_url'];
+           
     })
 })
 

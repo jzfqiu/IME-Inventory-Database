@@ -86,15 +86,15 @@
 
     <div class="edit-block" id="edit-category">
         <strong>Category*: </strong>
-        <select name="cat" class="edit-cat-select" id="edit-cat" data-selected={{ existing_cat[0] if existing_cat  }}>
+        <select name="cat" class="edit-cat-select" id="edit-cat" data-selected="{{ existing_cat[0] if existing_cat  }}"">
             <option value="Material">Material</option>
             <option value="Characterization">Characterization</option>
             <option value="Manufacturing">Manufacturing</option>
         </select>
         -
-        <select name="bucket" class="edit-cat-select" id="edit-bucket" data-selected={{ existing_cat[1] if existing_cat }}></select>
+        <select name="bucket" class="edit-cat-select" id="edit-bucket" data-selected="{{ existing_cat[1] if existing_cat }}"></select>
         -
-        <select name="item" class="edit-cat-select" id="edit-item" data-selected={{ existing_cat[2] if existing_cat }}></select>
+        <select name="item" class="edit-cat-select" id="edit-item" data-selected="{{ existing_cat[2] if existing_cat }}"></select>
     </div>
 
     <div class="edit-block"><strong>Fee: </strong><input type="text" name="fee" value="{{ equipment['fee'] if equipment['fee']  }}"/></div>
