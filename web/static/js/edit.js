@@ -10,15 +10,14 @@ function addEventListenerByClass(className, event, f){
 }
 
 
-function makeJsonHeader(fetchUrl, jsonData=null, method='GET'){
+function makeJsonHeader(fetchUrl, jsonData){
     let hdr = new Headers();
     hdr.append('Content-Type', 'application/json');
     let req = new Request(fetchUrl, {
-        method: method,
+        method: 'POST',
+        body: JSON.stringify(jsonData),
         headers: hdr
     });
-    if (jsonData)
-        req['body'] = JSON.stringify(jsonData)
     return req;
 }
 
@@ -46,7 +45,7 @@ addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
 function getInsertOptions(selectDom, prevSelections, selectedOption=null) {
     let listOfOptions;
     // get category dictionary
-    fetch(makeJsonHeader("/fetch/edit/cat"))
+    fetch("/fetch/edit/cat")
     .then(response => response.json())
     .then(cats_dict => {
         if (prevSelections.length == 1){ // if only cat has been selected
@@ -118,31 +117,28 @@ addEventListenerByClass('edit-cat-select', 'change', e=>{
 // });
 
 
-function formToJson( form ) {
-    var obj = {};
-    var elements = form.querySelectorAll( "input, select, textarea" );
-    for( var i = 0; i < elements.length; ++i ) {
-        var element = elements[i];
-        var name = element.name;
-        var value = element.value;
-        if( name ) {
-            if (name in obj) {
-                obj[name] = obj[name] instanceof Array ? [...obj[name], value] : [obj[name], value]
-            }
-            else obj[name] = value;
-        } 
-    }
-    return JSON.stringify( obj );
-}
 
+function getFormData(form){
+    var formData = new FormData(form);
+    var dynamicUl = document.getElementsByClassName('edit-dynamic-ul');
+    var formObj = {}
+    for (var key of formData.keys()) {
+        if (!formObj.hasOwnProperty(key)) { // if key has not been visited
+            formObj[key] = formData.get(key);
+        } else { // else the key points to a list
+            formObj[key] = formData.getAll(key);
+        }
+    }
+    return JSON.stringify(formObj);
+}
 
 // submit form
 var editForm = document.getElementById('edit-form');
 editForm.addEventListener('submit', e=>{
     e.preventDefault();
     var currentUrl = window.location.href;
-    var formData = formToJson(editForm);
-    var req = makeJsonHeader(currentUrl, formData, 'POST');
+    var formJSON = getFormData(editForm);
+    var req = makeJsonHeader(currentUrl, formJSON, 'POST');
     fetch(req)
     .then(response=>response.json())
     .then(data => {

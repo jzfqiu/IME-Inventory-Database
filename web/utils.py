@@ -45,18 +45,19 @@ def clean_update_data(data):
     Specifically, convert flattened category list to dict 
     and encapsulate contact information
     """
-    data['category'] = {
-        data.pop('cat'): {
-            data.pop('bucket'): data.pop('item')
-        }
-    }
+    data['category'] = [
+        data.pop('cat'), 
+        data.pop('bucket'), 
+        data.pop('item')
+    ]
+    data['campus'] = [data.pop('campus'), data.pop('department')]
     data['contact'] = {
         "name": data.pop('contact-name'),
         "title": data.pop('contact-title'),
         "email-link": data.pop('contact-email'),
         "tel": data.pop('contact-tel')
     }
-    data['user'] = get_logged_in_user()
+    data['user'] = get_logged_in_user()[0]
     return data
 
 
