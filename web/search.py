@@ -70,7 +70,6 @@ def user(username):
     if user_requested is not None:
         for k in ['_id', 'password']:
             user_requested.pop(k)
-        dprint(user_requested)
         user_equipments = db.get_equipments(user_requested['equipments'])
         user_equipments = [{'name': e['name'], 'id': str(e['_id'])} for e in user_equipments]
         is_manager = get_logged_in_user() and user_requested['username'] == get_logged_in_user()[0]
@@ -85,14 +84,16 @@ def user(username):
 @search_bp.route('/equipment/<_id>')
 def equipment(_id):
     equipment = db.get_one_equipment(ObjectId(_id))
-    _, cat, _ = db.unroll_cat(equipment['category'], True)
-    campus_str = " - ".join([[key, value] for (key, value) in equipment['campus'].items()][0])
+    cat = " - ".join(equipment['category'])
+    campus_str = " - ".join(equipment['campus'])
+    campus_query = "+".join(equipment['campus'])
     return render_template('equipment.html',
                            equipment=equipment,
                            cat=cat,
                            campus=campus_str,
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
-                           logged_in_user=get_logged_in_user())
+                           logged_in_user=get_logged_in_user(),
+                           gmap_query=campus_query)
 
 
 

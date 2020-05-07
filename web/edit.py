@@ -22,11 +22,9 @@ edit_bp = Blueprint('edit', __name__)
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(ObjectId(_id))
     is_manager = get_logged_in_user() == equipment_requested['user']
-    existing_cat = flatten_dict(equipment_requested['category'])
     if request.method == 'GET':
         return render_template('edit.html',
                                 equipment=equipment_requested,
-                                existing_cat=existing_cat,
                                 is_manager=is_manager,
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                                 logged_in_user=get_logged_in_user())
@@ -35,22 +33,16 @@ def edit_equipment(_id):
         db.update_one_equipment(ObjectId(_id), updated_data)
         return json.dumps({
             "success": True,
-            "return_url": "/equipment/edit/"+str(_id)
-            })
+            "return_url": "/equipment/"+str(_id)
+        })
         
 
 
-@edit_bp.route('/fetch/edit/cat', methods=['POST'])
+@edit_bp.route('/fetch/edit/cat', methods=['GET'])
 def fetch_cat():
     with open('test_data/test_cats_v2.json') as cats:
-        cats_data = json.load(cats)
-    data = request.json
-    cat = data.get('cat', None)
-    bucket = data.get('bucket', None)
-    if bucket is None:
-        return json.dumps(list(cats_data[cat].keys()))
-    dprint(data)
-    return json.dumps(cats_data[cat][bucket])
+        cats_dict = json.load(cats)
+    return json.dumps(cats_dict)
 
 
 
@@ -63,5 +55,4 @@ def new_equipment():
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                                 logged_in_user=get_logged_in_user())
     else:
-        dprint(request.get_json())
         return json.dumps({"success": True})

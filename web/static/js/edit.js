@@ -10,14 +10,15 @@ function addEventListenerByClass(className, event, f){
 }
 
 
-function makeJsonHeader(fetchUrl, jsonData){
+function makeJsonHeader(fetchUrl, jsonData=null, method='GET'){
     let hdr = new Headers();
     hdr.append('Content-Type', 'application/json');
     let req = new Request(fetchUrl, {
-        method: 'POST',
-        body: JSON.stringify(jsonData),
+        method: method,
         headers: hdr
     });
+    if (jsonData)
+        req['body'] = JSON.stringify(jsonData)
     return req;
 }
 
@@ -41,12 +42,18 @@ addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
 });
 
 
-// fetch options from backend and insert them as children of <select>
-function fetchInsertOptions(selectDom, prevSelections, selectedOption=null) {
-    var req = makeJsonHeader("/fetch/edit/cat", prevSelections);
-    fetch(req)
+// get options from dictionary and insert them as children of <select>
+function getInsertOptions(selectDom, prevSelections, selectedOption=null) {
+    let listOfOptions;
+    // get category dictionary
+    fetch(makeJsonHeader("/fetch/edit/cat"))
     .then(response => response.json())
-    .then(listOfOptions => {
+    .then(cats_dict => {
+        if (prevSelections.length == 1){ // if only cat has been selected
+            listOfOptions = Object.keys(cats_dict[prevSelections[0]]);
+        } else { // if both cat and bucket are selected
+            listOfOptions = cats_dict[prevSelections[0]][prevSelections[1]];
+        };
         selectDom.innerHTML = "";
         listOfOptions.map(option => {
             var optionDom = document.createElement('option');
@@ -55,24 +62,31 @@ function fetchInsertOptions(selectDom, prevSelections, selectedOption=null) {
             if (option==selectedOption) optionDom.selected = true;
             selectDom.appendChild(optionDom);
         });
-    })
+    });
 }
 
 // initialize options, run once each refresh
 var editCat = document.getElementById('edit-cat');
 var editBucket = document.getElementById('edit-bucket');
 var editItem = document.getElementById('edit-item');
+var editCampus = document.getElementById('edit-camp');
+var editSubCampus = document.getElementById('edit-subCamp');
 (function (){
     var selectedCat = editCat.getAttribute('data-selected');
     var selectedBucket = editBucket.getAttribute('data-selected');
     var selectedItem = editItem.getAttribute('data-selected');
+    var selectedCampus = editCampus.getAttribute('data-selected');
+    var selectedSubCampus = editSubCampus.getAttribute('data-selected');
     
-    for (child of editCat.children) {
+    for (child of editCat.children) 
         if (child.value == selectedCat) child.selected=true;
-    };
-    console.log(selectedBucket);
-    fetchInsertOptions(editBucket, {'cat':selectedCat}, selectedBucket);
-    fetchInsertOptions(editItem, {'cat':selectedCat, 'bucket': selectedBucket}, selectedItem);
+
+    for (child of editCampus.children) 
+        if (child.value == selectedCampus) child.selected=true;
+ 
+    getInsertOptions(editBucket, [selectedCat], selectedBucket);
+    getInsertOptions(editItem, [selectedCat, selectedBucket], selectedItem);
+    getInsertOptions(editSubCampus, ["Campus", selectedCampus], selectedSubCampus);
 })();
 
 
@@ -80,11 +94,14 @@ var editItem = document.getElementById('edit-item');
 addEventListenerByClass('edit-cat-select', 'change', e=>{
     var curCat = editCat.options[editCat.selectedIndex].value;
     if (e.target.id == "edit-cat") {
-        fetchInsertOptions(editBucket, {'cat':curCat});
+        getInsertOptions(editBucket, [curCat]);
         editItem.innerHTML = "";
     } else if (e.target.id == "edit-bucket") {
         var curBucket = editBucket.options[editBucket.selectedIndex].value;
-        fetchInsertOptions(editItem, {'cat':curCat, 'bucket': curBucket});
+        getInsertOptions(editItem, [curCat, curBucket]);
+    } else if (e.target.id == "edit-camp") {
+        var curCamp = editCampus.options[editCampus.selectedIndex].value;
+        getInsertOptions(editSubCampus, ["Campus", curCamp]);
     }
 })
 
@@ -125,13 +142,12 @@ editForm.addEventListener('submit', e=>{
     e.preventDefault();
     var currentUrl = window.location.href;
     var formData = formToJson(editForm);
-    var req = makeJsonHeader(currentUrl, formData);
+    var req = makeJsonHeader(currentUrl, formData, 'POST');
     fetch(req)
     .then(response=>response.json())
     .then(data => {
         if (data['success'])
             window.location.href = data['return_url'];
-           
     })
 })
 

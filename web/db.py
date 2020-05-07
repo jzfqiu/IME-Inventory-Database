@@ -64,7 +64,6 @@ def unroll_cat(d, output_str=False):
 def build_query(raw_json):
     keywords = raw_json.pop('keywords', None)
     criteria, _, campus = unroll_cat(raw_json)
-
     query_list = []
     if keywords:
         query_list.append({"$text": {"$search": keywords}})

@@ -53,7 +53,7 @@ input:focus, textarea:focus, select:focus {
     width: calc(100% - 61px);
 }
 
-#edit-category select {
+#edit-category select, #edit-campus select {
     width: 25%;
     background-color: transparent;
     border-radius: 0;
