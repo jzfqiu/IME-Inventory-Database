@@ -5,12 +5,14 @@ Functions related to editing and creating new equipments
 
 import json
 import math
+import re
 from hashlib import blake2b
 from bson.objectid import ObjectId
 
 from flask import Blueprint, render_template, request, session, current_app, redirect, url_for
 from web import db
 from web.utils import *
+
 
 
 
@@ -23,10 +25,12 @@ def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(ObjectId(_id))
     is_manager = get_logged_in_user() == equipment_requested['user']
     if request.method == 'GET':
+        cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
         return render_template('edit.html',
                                 equipment=equipment_requested,
                                 is_manager=is_manager,
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
+                                cleaned_location=cleaned_location,
                                 logged_in_user=get_logged_in_user())
     else:
         updated_data = clean_update_data(json.loads(request.json))

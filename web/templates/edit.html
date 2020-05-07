@@ -118,7 +118,7 @@
         <input type="text" id="edit-location-input" name="location" value="{{ equipment['location'] if equipment['location'] }}"/>
         <iframe
             id="edit-location-api"
-            src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q=pnf+uchicago">
+            src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q={{ cleaned_location }}">
         </iframe>
     </div>
 

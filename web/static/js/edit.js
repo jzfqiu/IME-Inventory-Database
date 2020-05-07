@@ -105,16 +105,27 @@ addEventListenerByClass('edit-cat-select', 'change', e=>{
 })
 
 
+
+
 // auto update google map
-// var timeout = null;
-// var editLocation = document.getElementById('edit-location');
-// var mapApi = document.getElementById('edit-location-api');
-// editLocation.addEventListener('keyup', e => {
-//     clearTimeout(timeout);
-//     timeout = setTimeout(function () {
-//         mapApi.src;
-//     }, 1000);
-// });
+let timeout = null;
+let editLocation = document.getElementById('edit-location');
+let mapApi = document.getElementById('edit-location-api');
+let editLocationInput = document.getElementById("edit-location-input");
+editLocation.addEventListener('keyup', e => {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+        // replace one or more characters that is not letter/number to '+'
+        const regex = /[^A-Za-z0-9]+/g 
+        let cleaned_input = editLocationInput.value.replace(regex, '+')
+        let prevSrc = mapApi.src;
+        if (cleaned_input)
+            mapApi.src = prevSrc.substring(0, prevSrc.indexOf("&q=")+3)+cleaned_input;
+    }, 1000);
+});
+
+
+
 
 
 
