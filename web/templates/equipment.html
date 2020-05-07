@@ -60,6 +60,10 @@
         </div>
 
         <div>
+            <strong>Location: </strong>{{ equipment['location'] }}
+        </div>
+
+        <div>
             <strong>Contact:</strong>
             <ul style="list-style-type: none;">
                 <li><a href="{{ equipment['contact']['email_link'] }}">{{ equipment['contact']['name'] }}</a></li>
@@ -80,6 +84,8 @@
         {% endif %}
 
 
+
+
     </div>
 
 
@@ -98,7 +104,7 @@
                 width="400"
                 height="300"
                 style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q={{ gmap_query }}">
+                src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q={{ cleaned_location }}">
             </iframe>
         </div>
 
