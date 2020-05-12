@@ -7,7 +7,7 @@
 <div class="result-block">
     <div class="result-block-thumbnail">
         {% if 'images' in equipment %}
-        <img src="{{ equipment.images[0] }}"
+        <img src="{{ equipment['images'][0] }}"
              alt="{{ equipment.name }}">
         {% else %}
         <img src="{{ url_for('static', filename='assets/image_placeholder.jpg') }}"

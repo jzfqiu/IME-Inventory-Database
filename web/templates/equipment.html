@@ -82,10 +82,6 @@
         {% if equipment['fee'] %}
             <div>Fee: {{ equipment['fee'] }}</div>
         {% endif %}
-
-
-
-
     </div>
 
 
@@ -94,8 +90,8 @@
 
         {% if equipment['images'] %}
         <div class="details-img">
-            <img src="{{ equipment['images'][0]['link'] }}"
-                 alt="{{ equipment['images'][0]['description'] }}">
+            <img src="{{ equipment['images'][0] }}"
+                 alt="{{ equipment['name'] }}">
         </div>
         {% endif %}
 

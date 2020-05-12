@@ -6,7 +6,8 @@
 {% endblock %}
 
 {% block script %}
-<script defer src="{{ url_for('static', filename='js/edit.js') }}"></script></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+<script defer src="{{ url_for('static', filename='js/edit.js') }}"></script>
 {% endblock %}
 
 {% block header %}Edit{% endblock %}
@@ -37,18 +38,34 @@
         <textarea type="text" name="overview">{% if equipment['overview'] %}{{ equipment['overview'] }}{% endif %}</textarea>
     </div>
 
+    <div class="edit-block" id="edit-images">
+        <label for="edit-overview"><strong>Images:</strong></label>
+        <button id="upload_widget" type="button">Upload Images</button>
+        <div class="edit-images-list">
+            {% if equipment['images'] %}
+            {% for img_src in equipment['images'] %}
+            <div class="edit-images-item">
+                <div><img src="{{ url_for('static', filename='assets/trash.webp') }}"></div>
+                <img src="{{ img_src }}" alt="{{ equipment.name }}">
+                <input type="hidden" name="images" value="{{ img_src }}">
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
     <div class="edit-block">
         <strong>Key Features:</strong>
         <ul class="edit-dynamic-ul" id="edit-feature">
             {% if equipment['features'] %}
             {% for feature in equipment['features'] %}
                 <li>
-                    <button class="edit-remove-li">&times;</button>
+                    <button class="edit-remove-li" type="button">&times;</button>
                     <input type="text" name="features" value="{{ feature }}"/>
                 </li>
             {% endfor %}
             {% endif %}
-            <li><button class="edit-add-li">+</button></li>
+            <li><button class="edit-add-li" type="button">+</button></li>
         </ul>
     </div>
 
@@ -58,12 +75,12 @@
             {% if equipment['applications'] %}
             {% for application in equipment['applications'] %}
                 <li>
-                    <button class="edit-remove-li">&times;</button>
+                    <button class="edit-remove-li" type="button">&times;</button>
                     <input type="text" name="applications" value="{{ application }}"/>
                 </li>
             {% endfor %}
             {% endif %}
-            <li><button class="edit-add-li">+</button></li>
+            <li><button class="edit-add-li" type="button">+</button></li>
         </ul>
         
     </div>

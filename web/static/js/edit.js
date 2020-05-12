@@ -1,6 +1,32 @@
 // edit form behavior
 
 
+
+// cloudinary widget behavior
+var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'ime-inventory-db', 
+    uploadPreset: 'unsigned_preset'}, (error, result) => { 
+        if (!error && result && result.event === "success") { 
+        console.log(result.info); 
+        }
+    }
+);
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+}, false);
+
+
+
+// delete image 
+document.querySelector('.edit-images-list').addEventListener('click', (e)=>{
+    let child = e.target.parentNode;
+    if (e.target.tagName=='IMG')
+        child = child.parentNode;
+    e.currentTarget.removeChild(child);
+})
+
+
+
 // helper function to add event listener to each element in the class
 function addEventListenerByClass(className, event, f){
     var arr = Array.from(document.getElementsByClassName(className));
@@ -22,6 +48,8 @@ function makeJsonHeader(fetchUrl, jsonData){
 }
 
 
+
+
 // preventDefault for existing buttons
 addEventListenerByClass('edit-remove-li', 'click', e=>e.preventDefault());
 addEventListenerByClass('edit-add-li', 'click', e=>e.preventDefault());
@@ -34,7 +62,7 @@ addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
         ul.removeChild(button.parentNode)
     } else if (button.className=="edit-add-li") {
         var newLi = document.createElement("li");
-        newLi.innerHTML = '<button class="edit-remove-li">&times;</button>'+
+        newLi.innerHTML = '<button class="edit-remove-li" type="button">&times;</button>'+
                             '<input type="text" name="features" value=""/>'
         ul.insertBefore(newLi, button.parentNode);
     }
@@ -126,18 +154,16 @@ editLocation.addEventListener('keyup', e => {
 
 
 
-
-
-
+// cleanup data from form using FormData class
 function getFormData(form){
     var formData = new FormData(form);
     var dynamicUl = document.getElementsByClassName('edit-dynamic-ul');
     var formObj = {}
     for (var key of formData.keys()) {
-        if (!formObj.hasOwnProperty(key)) { // if key has not been visited
-            formObj[key] = formData.get(key);
-        } else { // else the key points to a list
+        if (key=='features' || key=='images' || key=='applications') { // if key has not been visited
             formObj[key] = formData.getAll(key);
+        } else { // else the key points to a list
+            formObj[key] = formData.get(key);
         }
     }
     return JSON.stringify(formObj);

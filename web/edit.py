@@ -34,7 +34,6 @@ def edit_equipment(_id):
                                 logged_in_user=get_logged_in_user())
     else:
         updated_data = clean_update_data(json.loads(request.json))
-        dprint(updated_data)
         db.update_one_equipment(ObjectId(_id), updated_data)
         return json.dumps({
             "success": True,
