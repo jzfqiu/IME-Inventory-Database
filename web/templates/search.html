@@ -55,7 +55,8 @@
 
 <section class="sidebar">
 
-    <div class="sidebar-catNav__wrapper">
+    <div class="sidebar-catNav">
+        <h2>Search by category</h2>
         {% for cat in cats %}
         <div class="sidebar-catNav__cat" id="cat{{loop.index}}">
             <p class="sidebar-catNav__text">{{ cat.name }}</p>

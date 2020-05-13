@@ -28,18 +28,18 @@
 
 
     <div class="edit-block" id="edit-name">
-        <strong>Name*:</strong>
+        <strong>Name*</strong>
         <input type="text" name="name" 
             value="{% if equipment['name'] %}{{ equipment['name'] }}{% endif %}"/>
     </div>
 
     <div class="edit-block" id="edit-overview">
-        <label for="edit-overview"><strong>Overview*:</strong></label>
+        <label for="edit-overview"><strong>Overview*</strong></label>
         <textarea type="text" name="overview">{% if equipment['overview'] %}{{ equipment['overview'] }}{% endif %}</textarea>
     </div>
 
     <div class="edit-block" id="edit-images">
-        <label for="edit-overview"><strong>Images:</strong></label>
+        <label for="edit-overview"><strong>Images</strong></label>
         <button id="upload_widget" type="button">Upload Images</button>
         <div class="edit-images-list">
             {% if equipment['images'] %}
@@ -55,7 +55,7 @@
     </div>
 
     <div class="edit-block">
-        <strong>Key Features:</strong>
+        <strong>Key Features</strong>
         <ul class="edit-dynamic-ul" id="edit-feature">
             {% if equipment['features'] %}
             {% for feature in equipment['features'] %}
@@ -70,7 +70,7 @@
     </div>
 
     <div class="edit-block">
-        <strong>Key Applications:</strong>
+        <strong>Key Applications</strong>
         <ul class="edit-dynamic-ul" id="edit-feature">
             {% if equipment['applications'] %}
             {% for application in equipment['applications'] %}
@@ -86,13 +86,13 @@
     </div>
 
     <div class="edit-block" id="edit-documentation">
-        <strong>Link to Product Documentation:</strong>
+        <strong>Link to Product Documentation</strong>
         <input type="text" name="documentation" 
             value="{% if equipment['documentation'] %}{{ equipment['documentation'] }}{% endif %}"/>
     </div>
 
     <div class="edit-block" id="edit-contact">
-        <strong>Contact*:</strong>
+        <strong>Contact*</strong>
         <ul>
             <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] if equipment['contact'] }}"/></li>
             <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email_link'] if equipment['contact'] }}"/></li>
@@ -102,7 +102,7 @@
     </div>
 
     <div class="edit-block" id="edit-category">
-        <strong>Category*: </strong>
+        <strong>Category*</strong>
         <select name="cat" class="edit-cat-select" id="edit-cat" 
         data-selected="{{ equipment['category'][0] if equipment['category'] }}">
             <option value="Material">Material</option>
@@ -118,7 +118,7 @@
     </div>
 
     <div class="edit-block" id="edit-campus">
-        <strong>Campus*: </strong>
+        <strong>Campus*</strong>
         <select name="campus" class="edit-cat-select" id="edit-camp" 
         data-selected="{{ equipment['campus'][0] if equipment['campus'] }}">
             <option value="UChicago">UChicago</option>
@@ -131,12 +131,12 @@
         data-selected="{{ equipment['campus'][1] if equipment['campus'] }}"></select>
     </div>
 
-    <div class="edit-block"><strong>Fee: </strong><input type="text" name="fee" value="{{ equipment['fee'] if equipment['fee']  }}"/></div>
+    <div class="edit-block"><strong>Fee</strong><input type="text" name="fee" value="{{ equipment['fee'] if equipment['fee']  }}"/></div>
 
 
     <!-- <div class="edit-block"><strong>Link to Image: </strong><input type="text" name="img-link" value=""/></div> -->
     <div class="edit-block" id="edit-location">
-        <strong>Location: </strong>
+        <strong>Location</strong>
         <input type="text" id="edit-location-input" name="location" value="{{ equipment['location'] if equipment['location'] }}"/>
         <iframe
             id="edit-location-api"
