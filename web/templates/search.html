@@ -18,8 +18,8 @@
 {% block content %}
 
 <section class="top">
-    <div class=" top top-logo__wrapper">
-        <img class="top-logo" src="{{ url_for('static', filename='assets/logo_full.png') }}" alt="Logo">
+    <div class=" top top-logo">
+        <a href="\"><img src="{{ url_for('static', filename='assets/logo_full.png') }}" alt="Logo"></a>
     </div>
 
     <div class="top top-search__wrapper">
@@ -38,10 +38,10 @@
     {% if cat.description %}
     <p class="catDropdown__description">{{ cat.description }}</p>
     {% endif %}
-    <div class="catDropdown__bwrapper">
+    <div class="catDropdown__buckets">
         {% for k, bucket in cat.buckets.items() %}
-        <div class="catDropdown__bucket">
-            <p class="catDropdown__text">{{ bucket.name }}</p>
+        <div>
+            <p>{{ bucket.name }}</p>
             {% for choice in bucket.choices %}
             <input type="radio" class="catDropdown__item js__catSelectionItem"
                    id="{{ cat.name }}:{{ bucket.name }}-{{ choice }}">{{ choice }}<br>

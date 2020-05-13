@@ -1,36 +1,41 @@
 /* ============== dropdown ============== */
 .catDropdown {
     position: absolute;
-    top: 120px;
+    top: 140px;
     left: 250px;
-    max-width: 800px;
+    height: 450px;
     display: none;
     border: 1px solid var(--border-color);
     border-left: 0;
-    /* background: var(--main-bg-color); */
     background: white;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    
+    line-height: 1.5em;
 }
 
-.catDropdown__bwrapper{
+.catDropdown__buckets{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    width: 75%;
+    width: 80%;
 }
 
 .catDropdown__description {
-    width: 25%;
+    width: 20%;
     height: 100%;
     margin: 20px;
 }
 
-.catDropdown__bucket {
+.catDropdown__buckets div {
     margin: 20px;
-    min-width: 25%;
+    width: 250px;
 }
 
-.catDropdown__text {
-    margin-bottom: 20px;
+.catDropdown__buckets p {
+    margin: 10px 20px 10px 0;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.catDropdown__buckets input {
+    margin-right: 10px;
 }

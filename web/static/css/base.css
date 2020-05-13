@@ -8,6 +8,7 @@
 
 /* Define color variables */
 :root {
+    --text-color: #505050;
     --main-bg-color: whitesmoke;
     --hover-accent-color: #d8e5f2;
     --link-color: #1083ae;
@@ -28,7 +29,7 @@ a {
 }
 
 a:link, a:visited {
-    color: black;
+    color: var(--text-color);
 }
 
 a:hover {
@@ -42,6 +43,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     font-size: 110%;
+    color: var(--text-color);
 }
 
 p {
@@ -53,7 +55,8 @@ button {
     border-radius: 10px;
     font-size: 0.8em;
     height: 30px;
-    background-color: whitesmoke;
+    background-color: white;
+    color: var(--text-color);
 }
 
 button:focus {outline-width: 0;}

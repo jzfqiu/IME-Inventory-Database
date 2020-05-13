@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     background: rgb(120, 120, 120);
+    font-size: 1.1em;
 }
 
 .navbar span {

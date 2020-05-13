@@ -9,6 +9,7 @@
     align-content: flex-start;
     background: var(--main-bg-color);
     border-right: 1px solid var(--border-color);
+    font-size: 1.1em;
 }
 
 .sidebar-catNav__wrapper {

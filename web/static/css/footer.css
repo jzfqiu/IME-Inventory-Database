@@ -1,15 +1,25 @@
 /* =============== Footer =============== */
 
 .footer {
-    height: 80px;
     width: 100%;
-    /* border-top: 1px solid gray;
-    border-bottom: 1px solid gray; */
     background-color: rgb(120, 120, 120);
-
+    display: flex;
+    height: 140px;
+    font-size: 0.8em;
 }
 
-.footer-placeholder {
-    margin: 20px;
+.footer div {
+    margin: auto auto auto 100px;
+    height: 80px;
+}
+
+.footer div p {
+    margin: 10px 20px;
     color: white;
+}
+.footer div a {color: white}
+
+.footer img {
+    margin: auto 100px auto auto;
+    height: 70px;
 }

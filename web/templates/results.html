@@ -21,11 +21,12 @@
 {% endfor %}
 
 <ul class="result-pages__list">
+    <li class="result-pages__item">Page</li>
     {% for n in pages %}
     <li class="result-pages__item">
         <a class="result-pages__link" id="{{ loop.index }}">
             {% if loop.index == cur_page %}
-            <strong>{{ loop.index }}</strong>
+            <u>{{ loop.index }}</u>
             {% else %}
             {{ loop.index }}
             {% endif %}
