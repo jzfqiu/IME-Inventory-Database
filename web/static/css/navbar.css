@@ -1,11 +1,22 @@
 /* ============== NavBar ============== */
 .navbar {
-    height: 30px;
-    width: 100%;
+    position: absolute;
+    height: 40px;
+    width: 30%;
+    margin-left: 70%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    background: gray;
+    background: rgb(120, 120, 120);
+}
+
+.navbar span {
+    position: absolute;
+    right: 95%;
+    width: 80px;
+    height: 40px;
+    transform: skew(40deg);
+    background-color: rgb(120, 120, 120);
 }
 
 .navbar div {

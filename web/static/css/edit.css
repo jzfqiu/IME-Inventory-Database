@@ -1,6 +1,6 @@
 input, textarea, select{
     border: 0;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid var(--border-color);
     width: 90%;
     margin: 9px 5px 1px 5px;
     font-size: 100%;

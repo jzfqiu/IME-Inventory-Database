@@ -22,7 +22,7 @@
     min-width: 200px;
     height: 245px;
     margin: 20px;
-    border: 1px solid gray;
+    border: 1px solid var(--border-color);
     border-radius: 7px;
 }
 

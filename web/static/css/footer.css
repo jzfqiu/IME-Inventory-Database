@@ -1,13 +1,15 @@
 /* =============== Footer =============== */
 
 .footer {
-    height: 100px;
+    height: 80px;
     width: 100%;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    background-color: #E8E8E8;
+    /* border-top: 1px solid gray;
+    border-bottom: 1px solid gray; */
+    background-color: rgb(120, 120, 120);
+
 }
 
 .footer-placeholder {
     margin: 20px;
+    color: white;
 }
