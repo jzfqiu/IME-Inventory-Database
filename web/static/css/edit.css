@@ -55,6 +55,11 @@ input:focus, textarea:focus, select:focus {
     font-size: 20px;
     opacity: 0;
 }
+.edit-images-item img {
+    height: 300px;
+    width: 300px;
+    object-fit: scale-down;
+}
 .edit-images-item div img{
     height: 80px;
     width: 80px;

@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
 {% endblock %}
 
+{% block script %}
+<script defer src="{{ url_for('static', filename='js/equipment.js') }}"></script>
+{% endblock %}
+
 {% block header %}
     {% block title %}{{ equipment['name'] }}{% endblock %}
 {% endblock %}
@@ -21,12 +25,17 @@
 
     <h1 class="details-full">{{ equipment['name'] }}</h1>
 
-    <div class="details-full">{{ equipment['overview'] }}</div>
+    <div class="details-full">
+        <strong>Overview</strong>
+        {{ equipment['overview'] }}
+    </div>
+
+    <div class="details-full divider"> </div>
 
     <div class="details-lrow details-container">
         {% if equipment['features'] %}
         <div>
-            <strong>Key Features:</strong>
+            <strong>Key Features</strong>
             <ul>
                 {% for feature in equipment['features'] %}
                     <li>{{ feature }}</li>
@@ -37,7 +46,7 @@
 
         {% if equipment['applications'] %}
         <div>
-            <strong>Key Applications:</strong>
+            <strong>Key Applications</strong>
             <ul>
                 {% for application in equipment['applications'] %}
                     <li>{{ application }}</li>
@@ -48,7 +57,7 @@
 
         {% if equipment['documentation'] %}
         <div>
-        <strong>Documentation:</strong>
+        <strong>Documentation</strong>
             <a href="{{ equipment['documentation'] }}">
                 {{ equipment['name'] }}
             </a>
@@ -56,15 +65,15 @@
         {% endif %}
 
         <div>
-            <strong>Campus: </strong>{{ campus }}
+            <strong>Campus</strong>{{ campus }}
         </div>
 
         <div>
-            <strong>Location: </strong>{{ equipment['location'] }}
+            <strong>Location</strong>{{ equipment['location'] }}
         </div>
 
         <div>
-            <strong>Contact:</strong>
+            <strong>Contact</strong>
             <ul style="list-style-type: none;">
                 <li><a href="{{ equipment['contact']['email_link'] }}">{{ equipment['contact']['name'] }}</a></li>
                 <li>{{ equipment['contact']['title'] }}</li>
@@ -75,12 +84,12 @@
         </div>
 
         <div>
-            <strong>Category: </strong>
+            <strong>Category</strong>
             {{ cat }}
         </div>
 
         {% if equipment['fee'] %}
-            <div>Fee: {{ equipment['fee'] }}</div>
+            <div><strong>Fee</strong>{{ equipment['fee'] }}</div>
         {% endif %}
     </div>
 
@@ -90,15 +99,22 @@
 
         {% if equipment['images'] %}
         <div class="details-img">
-            <img src="{{ equipment['images'][0] }}"
+            <div id="details-img-controls">
+                <button class="details-img-control details-img-control-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="details-img-control details-img-control-right" onclick="plusDivs(+1)">&#10095;</button>
+            </div>
+            {% for image in equipment['images'] %}
+            <img src="{{ image }}"
+                 class="details-img-slide"
                  alt="{{ equipment['name'] }}">
+            {% endfor %}
         </div>
         {% endif %}
 
-        <div>
+        <div class="details-map">
             <iframe
                 width="400"
-                height="300"
+                height="400"
                 style="border:0"
                 src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q={{ cleaned_location }}">
             </iframe>

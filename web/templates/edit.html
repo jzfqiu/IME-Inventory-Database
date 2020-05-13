@@ -46,7 +46,7 @@
             {% for img_src in equipment['images'] %}
             <div class="edit-images-item">
                 <div><img src="{{ url_for('static', filename='assets/trash.webp') }}"></div>
-                <img src="{{ img_src }}" alt="{{ equipment.name }}">
+                <img src="{{ img_src }}" alt="Image Not Found">
                 <input type="hidden" name="images" value="{{ img_src }}">
             </div>
             {% endfor %}
@@ -103,27 +103,32 @@
 
     <div class="edit-block" id="edit-category">
         <strong>Category*: </strong>
-        <select name="cat" class="edit-cat-select" id="edit-cat" data-selected="{{ equipment['category'][0] }}"">
+        <select name="cat" class="edit-cat-select" id="edit-cat" 
+        data-selected="{{ equipment['category'][0] if equipment['category'] }}">
             <option value="Material">Material</option>
             <option value="Characterization">Characterization</option>
             <option value="Manufacturing">Manufacturing</option>
         </select>
         -
-        <select name="bucket" class="edit-cat-select" id="edit-bucket" data-selected="{{ equipment['category'][1] }}"></select>
+        <select name="bucket" class="edit-cat-select" id="edit-bucket" 
+        data-selected="{{ equipment['category'][1] if equipment['category'] }}"></select>
         -
-        <select name="item" id="edit-item" data-selected="{{ equipment['category'][2] }}"></select>
+        <select name="item" id="edit-item" 
+            data-selected="{{ equipment['category'][2] if equipment['category'] }}"></select>
     </div>
 
     <div class="edit-block" id="edit-campus">
         <strong>Campus*: </strong>
-        <select name="campus" class="edit-cat-select" id="edit-camp" data-selected="{{ equipment['campus'][0]  }}"">
+        <select name="campus" class="edit-cat-select" id="edit-camp" 
+        data-selected="{{ equipment['campus'][0] if equipment['campus'] }}">
             <option value="UChicago">UChicago</option>
             <option value="UIC">UIC</option>
             <option value="UIUC">UIUC</option>
             <option value="Northwestern">Northwestern</option>
         </select>
         -
-        <select name="department" id="edit-subCamp" data-selected="{{ equipment['campus'][1] }}"></select>
+        <select name="department" id="edit-subCamp" 
+        data-selected="{{ equipment['campus'][1] if equipment['campus'] }}"></select>
     </div>
 
     <div class="edit-block"><strong>Fee: </strong><input type="text" name="fee" value="{{ equipment['fee'] if equipment['fee']  }}"/></div>

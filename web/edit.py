@@ -28,7 +28,6 @@ def edit_equipment(_id):
         cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
         return render_template('edit.html',
                                 equipment=equipment_requested,
-                                is_manager=is_manager,
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                                 cleaned_location=cleaned_location,
                                 logged_in_user=get_logged_in_user())
@@ -55,7 +54,7 @@ def new_equipment():
     if request.method == 'GET':
         return render_template('edit.html',
                                 equipment={},
-                                existing_cat=None,
+                                cleaned_location="united+states",
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                                 logged_in_user=get_logged_in_user())
     else:

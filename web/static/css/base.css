@@ -31,7 +31,7 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    font-size: 105%;
+    font-size: 110%;
 }
 
 p {
@@ -49,3 +49,9 @@ button {
 button:focus {outline-width: 0;}
 
 button:active {background-color: lightgray;}
+
+.divider {
+    height: 30px;
+    border-bottom: 1px solid gray;
+}
+ 

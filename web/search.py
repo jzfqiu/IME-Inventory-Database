@@ -87,7 +87,6 @@ def equipment(_id):
     equipment = db.get_one_equipment(ObjectId(_id))
     cat = " - ".join(equipment['category'])
     campus_str = " - ".join(equipment['campus'])
-    campus_query = "+".join(equipment['campus'])
     cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment['location'])
     return render_template('equipment.html',
                            equipment=equipment,
@@ -95,7 +94,8 @@ def equipment(_id):
                            campus=campus_str,
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                            logged_in_user=get_logged_in_user(),
-                           cleaned_location=cleaned_location)
+                           cleaned_location=cleaned_location 
+                            if cleaned_location else "+".join(equipment['campus']))
 
 
 

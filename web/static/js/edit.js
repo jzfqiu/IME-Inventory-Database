@@ -2,12 +2,28 @@
 
 
 
+let imageList = document.querySelector('.edit-images-list');
+// delete image 
+imageList.addEventListener('click', (e)=>{
+    let child = e.target.parentNode;
+    if (e.target.tagName=='IMG')
+        child = child.parentNode;
+    e.currentTarget.removeChild(child);
+})
+
 // cloudinary widget behavior
 var myWidget = cloudinary.createUploadWidget({
     cloudName: 'ime-inventory-db', 
     uploadPreset: 'unsigned_preset'}, (error, result) => { 
         if (!error && result && result.event === "success") { 
-        console.log(result.info); 
+            let newItem = document.createElement('div');
+            newItem.innerHTML = `
+                <div><img src="/static/assets/trash.webp"></div>
+                <img src="${result.info.url}">
+                <input type="hidden" name="images" value="${result.info.url}">`;
+            newItem.className = "edit-images-item";
+            console.log(newItem);
+            imageList.appendChild(newItem);
         }
     }
 );
@@ -16,14 +32,6 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 }, false);
 
 
-
-// delete image 
-document.querySelector('.edit-images-list').addEventListener('click', (e)=>{
-    let child = e.target.parentNode;
-    if (e.target.tagName=='IMG')
-        child = child.parentNode;
-    e.currentTarget.removeChild(child);
-})
 
 
 
