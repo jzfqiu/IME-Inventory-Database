@@ -17,6 +17,59 @@
         </a>
     </div>
 
+    <h1>Help</h1>
+
+    <div class="details-full details-container">
+
+        <div id="help-about">
+            <h2>About the PME Equipment Database</h2>
+            <p>The PME Equipment Database is a inventory list maintained by PME 
+            lab managers to provide business partner with the latest information
+            of scientific equipments available at the Pritzker School of Molecular 
+            Engineering.</p>
+
+        </div>
+
+        <div id="help-search">
+            <h2>Search Equipments</h2>
+            
+            <h3>Search by keywords</h3>
+            <p>In the search box at the top of the search page, type in keywords and 
+            press search. The database will present equipments that have name or 
+            overview containing the keyword</p>
+
+            <h3>Search by categories</h3>
+            <img src="{{ url_for('static', filename='assets/help/search_category.png') }}"
+                style="width: 600px"
+                alt="Search Category">
+            <ol>
+                <li>Hover over the list of categories at the left of the search page;</li>
+                <li>Select one or more categories. Selecting multiple categories will show 
+                    the equipments belonging to either of the selected categories;</li>
+                <li>Refine your selection by clicking on the selected categories under the 
+                    list of categories;</li>
+                <li>Press "Submit" to search or "Clear" to clear your selections.</li>
+            </ol>
+
+            <h3>Clearing selections</h3>
+            <p>To reset selections and search results, click the "Clear" button under categories
+                or click the logo at top left.</p>            
+        </div>
+    
+        <div id="help-equipment">
+            <h2>Equipment Details</h2>
+            Help content
+        </div>
+    
+        <div id="help-edit">
+            <h2>Edit/Create Equipment</h2>
+            Help content        
+        </div>
+    </div>
+
+    
+
+
 </div>
 
 {% endblock %}

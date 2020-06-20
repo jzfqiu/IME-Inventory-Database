@@ -4,6 +4,7 @@ input, textarea, select{
     width: 90%;
     margin: 9px 5px 1px 5px;
     font-size: 100%;
+    font-family: 'ProximaNova-Regular','HelveticaNeue','Helvetica Neue','HelveticaNeueRoman','HelveticaNeue-Roman','Helvetica Neue Roman','TeXGyreHerosRegular','Helvetica','Tahoma','Geneva','Arial',sans-serif;
 }
 
 input:focus, textarea:focus, select:focus {

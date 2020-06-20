@@ -67,4 +67,67 @@ button:active {background-color: lightgray;}
     height: 30px;
     border-bottom: 1px solid var(--border-color);
 }
+
+
+/* =============== Help-Feedback =============== */
+
+.help-feedback {
+    position: sticky;
+    bottom: 0;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    margin-left: 80%;
+}
+
+
+.help-feedback a { 
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.help-feedback a:hover { 
+    color: gray;
+}
+
+#help {
+    color: white;
+    background-color: rgb(110,110,110);
+}
+
+#feedback {
+    color: white;
+    background-color: #800000;
+}
+
+
+
  
+
+/* =============== Footer =============== */
+
+.footer {
+    width: 100%;
+    background-color: rgb(120, 120, 120);
+    display: flex;
+    height: 140px;
+    font-size: 0.8em;
+}
+
+.footer div {
+    margin: auto auto auto 100px;
+    height: 80px;
+}
+
+.footer div p {
+    margin: 10px 20px;
+    color: white;
+}
+.footer div a {color: white}
+
+.footer img {
+    margin: auto 100px auto auto;
+    height: 70px;
+}

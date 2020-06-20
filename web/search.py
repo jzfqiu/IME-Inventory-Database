@@ -100,14 +100,14 @@ def equipment(_id):
 
 
 
-@search_bp.route('/about')
-def about():
-    return render_template('about.html', logged_in_user=get_logged_in_user())
-
-
 @search_bp.route('/help')
 def help():
     return render_template('help.html', logged_in_user=get_logged_in_user())
+
+
+@search_bp.route('/developer')
+def developer():
+    return render_template('developer.html', logged_in_user=get_logged_in_user())
 
 
 

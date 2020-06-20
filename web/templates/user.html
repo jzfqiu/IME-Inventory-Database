@@ -23,9 +23,9 @@
 
     <div class="details-lrow details-container">
         <div><h1>{{ user['name'] }}</h1></div>
-        <div><strong>Email: </strong> <a href="mailto: {{ user['email']}}">{{ user['email']}}</a></div>
-        <div><strong>Title: </strong> {{ user['title']}}</div>
-        <div><strong>Affiliation: </strong> {{ user['affiliation']}}</div>
+        <div><h2>Email: </h2> <a href="mailto: {{ user['email']}}">{{ user['email']}}</a></div>
+        <div><h2>Title: </h2> {{ user['title']}}</div>
+        <div><h2>Affiliation: </h2> {{ user['affiliation']}}</div>
     </div>
 
     <div class="details-rrow details-container">
@@ -34,7 +34,7 @@
 
 
     <div class="details-full details-container">
-        <p><strong>Managed Equipments: </strong></p>
+        <p><h2>Managed Equipments: </h2></p>
         <ul class="user-equipment">
             {% for equipment in equipments %}
             <li>

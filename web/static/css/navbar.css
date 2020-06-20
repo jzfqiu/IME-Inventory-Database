@@ -2,8 +2,8 @@
 .navbar {
     position: absolute;
     height: 40px;
-    width: 30%;
-    margin-left: 70%;
+    width: 25%;
+    margin-left: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,17 +13,19 @@
 
 .navbar span {
     position: absolute;
-    right: 95%;
-    width: 80px;
+    right: 80%;
+    width: 120px;
     height: 40px;
     transform: skew(40deg);
     background-color: rgb(120, 120, 120);
+    z-index: 1;
 }
 
 .navbar div {
     width: fit-content;
     margin: 0 20px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .navbar a {

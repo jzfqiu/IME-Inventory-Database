@@ -39,3 +39,10 @@ loginForm.addEventListener('submit', (e)=>{
         }
     })
 })
+
+
+// let documentHeight = document.body.scrollHeight;
+// let feedbackButton = document.getElementById('feedback');
+// window.addEventListener('scroll', () => {
+//     console.log(documentHeight - document.documentElement.scrollTop)
+// })

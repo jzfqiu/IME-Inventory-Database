@@ -26,7 +26,7 @@
     <h1 class="details-full">{{ equipment['name'] }}</h1>
 
     <div class="details-full">
-        <strong>Overview</strong>
+        <h2>Overview</h2>
         {{ equipment['overview'] }}
     </div>
 
@@ -35,7 +35,7 @@
     <div class="details-lrow details-container">
         {% if equipment['features'] %}
         <div>
-            <strong>Key Features</strong>
+            <h2>Key Features</h2>
             <ul>
                 {% for feature in equipment['features'] %}
                     <li>{{ feature }}</li>
@@ -46,7 +46,7 @@
 
         {% if equipment['applications'] %}
         <div>
-            <strong>Key Applications</strong>
+            <h2>Key Applications</h2>
             <ul>
                 {% for application in equipment['applications'] %}
                     <li>{{ application }}</li>
@@ -57,7 +57,7 @@
 
         {% if equipment['documentation'] %}
         <div>
-        <strong>Documentation</strong>
+        <h2>Documentation</h2>
             <a href="{{ equipment['documentation'] }}">
                 {{ equipment['name'] }}
             </a>
@@ -65,15 +65,15 @@
         {% endif %}
 
         <div>
-            <strong>Campus</strong>{{ campus }}
+            <h2>Campus</h2>{{ campus }}
         </div>
 
         <div>
-            <strong>Location</strong>{{ equipment['location'] }}
+            <h2>Location</h2>{{ equipment['location'] }}
         </div>
 
         <div>
-            <strong>Contact</strong>
+            <h2>Contact</h2>
             <ul style="list-style-type: none;">
                 <li><a href="{{ equipment['contact']['email_link'] }}">{{ equipment['contact']['name'] }}</a></li>
                 <li>{{ equipment['contact']['title'] }}</li>
@@ -84,12 +84,12 @@
         </div>
 
         <div>
-            <strong>Category</strong>
+            <h2>Category</h2>
             {{ cat }}
         </div>
 
         {% if equipment['fee'] %}
-            <div><strong>Fee</strong>{{ equipment['fee'] }}</div>
+            <div><h2>Fee</h2>{{ equipment['fee'] }}</div>
         {% endif %}
     </div>
 
@@ -123,7 +123,12 @@
     </div>
 
 
-
+    <div class="help-feedback">
+        <!-- <div><a href='mailto:zqiu@uchicago.edu'>Feedback</a></div>
+        <div><a href='/help'>Help</a></div> -->
+        <a id="help" href='mailto:zqiu@uchicago.edu'>Feedback</a>
+        <a id="feedback" href='/help#help-equipments'>Help</a>
+    </div>
 
 
 

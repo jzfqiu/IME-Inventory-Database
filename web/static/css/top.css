@@ -44,3 +44,7 @@
 }
 
 .top-button:focus {outline: 0;}
+
+span.top {
+    min-width: 200px;
+}
