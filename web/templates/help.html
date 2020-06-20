@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+{% endblock %}
+
+{% block header %}Help{% endblock %}
+
+{% block content %}
+
+<div class="details">
+    <div id="backButton">
+        <a href="javascript:history.back()">
+            <img src="{{ url_for('static', filename='assets/back_icon.png') }}"
+             style="width: 40px"
+             alt="Back Button">
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

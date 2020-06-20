@@ -105,5 +105,10 @@ def about():
     return render_template('about.html', logged_in_user=get_logged_in_user())
 
 
+@search_bp.route('/help')
+def help():
+    return render_template('help.html', logged_in_user=get_logged_in_user())
+
+
 
 # TODO: color coding by campus

@@ -19,6 +19,8 @@ let helpers = {
     }
 };
 
+
+// allow user to search from textbox by pressing enter key
 var input = document.getElementById("top-searchBox");
 input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
@@ -180,7 +182,8 @@ class CatSelection {
                     // check if Bucket and cat is empty, if so execute nested delete
                     if (curBucket.length === 0) {
                         delete curCat[Bucket];
-                        if (Object.entries(curCat).length === 0) delete this.selected[cat];
+                        if (Object.entries(curCat).length === 0) 
+                            delete this.selected[cat];
                     }
                 } else {
                     // add item to selected
@@ -195,6 +198,9 @@ class CatSelection {
         }
         sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
         this.refreshSelectionDOM();
+        console.log(this.selected);
+        if (Object.entries(this.selected).length == 0)
+            this.clearSelection();
     }
 
     clearSelection() {
@@ -202,6 +208,8 @@ class CatSelection {
         sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
         this.refreshSelectionDOM();
         this.submitSelection('1');
+        this.DOMs.choiceArr.forEach(radio => radio.checked = false)
+        
     }
 
     submitSelection(page = '1') {

@@ -40,35 +40,36 @@ def unroll_cat(d, output_str=False):
         output_str {bool} -- [description] (default: {False})
     
     Returns:
-        res {list of dict} -- list of flattened category information 
+        categories {list of list} -- list of flattened category information 
             to be fed into query builder
         s {str} -- string of last flattened category, used for 
             the detail page
         campus {list of dict} -- list of flattened campus information 
             to be fed into query builder
     """
-    res, s, campus = [], '', []
+    categories, s, campus = [], '', []
     for cat in d.keys():
         for bucket in d[cat].keys():
             for choice in d[cat][bucket]:
                 if cat != 'Campus':
-                    res.append({cat: {bucket: choice}})
+                    categories.append([cat, bucket, choice])
                 else:
-                    campus.append({bucket: choice})
+                    campus.append([bucket, choice])
                 if output_str:
                     s = cat + ' - ' + bucket + ' - ' + d[cat][bucket]
-    return res, s, campus
+    return categories, s, campus
 
 
 # build search query from json sent by front end
 def build_query(raw_json):
     keywords = raw_json.pop('keywords', None)
-    criteria, _, campus = unroll_cat(raw_json)
+    categories, _, campus = unroll_cat(raw_json)
+    dprint(campus)
     query_list = []
     if keywords:
         query_list.append({"$text": {"$search": keywords}})
-    if criteria: 
-        query_list.append({"category": {'$in': criteria}})
+    if categories: 
+        query_list.append({"category": {'$in': categories}})
     if campus: 
         query_list.append({'campus': {'$in': campus}})
 
