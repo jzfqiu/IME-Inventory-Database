@@ -57,7 +57,7 @@ def clean_update_data(data):
         "email-link": data.pop('contact-email'),
         "tel": data.pop('contact-tel')
     }
-    data['user'] = get_logged_in_user()[0]
+    data['user'] = get_logged_in_user()['username']
     return data
 
 

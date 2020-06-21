@@ -78,7 +78,7 @@ addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
 
 
 // get options from dictionary and insert them as children of <select>
-function getInsertOptions(selectDom, prevSelections, selectedOption=null) {
+function getInsertOptions(inputDom, prevSelections, selectedOption=null) {
     let listOfOptions;
     // get category dictionary
     fetch("/fetch/edit/cat")
@@ -89,13 +89,13 @@ function getInsertOptions(selectDom, prevSelections, selectedOption=null) {
         } else { // if both cat and bucket are selected
             listOfOptions = cats_dict[prevSelections[0]][prevSelections[1]];
         };
-        selectDom.innerHTML = "";
+        inputDom.innerHTML = "";
         listOfOptions.map(option => {
             var optionDom = document.createElement('option');
             optionDom.setAttribute('value', option);
             optionDom.innerHTML = option;
             if (option==selectedOption) optionDom.selected = true;
-            selectDom.appendChild(optionDom);
+            inputDom.appendChild(optionDom);
         });
     });
 }
@@ -106,36 +106,32 @@ var editBucket = document.getElementById('edit-bucket');
 var editItem = document.getElementById('edit-item');
 var editCampus = document.getElementById('edit-camp');
 var editSubCampus = document.getElementById('edit-subCamp');
-(function (){
-    var selectedCat = editCat.getAttribute('data-selected');
-    var selectedBucket = editBucket.getAttribute('data-selected');
-    var selectedItem = editItem.getAttribute('data-selected');
-    var selectedCampus = editCampus.getAttribute('data-selected');
-    var selectedSubCampus = editSubCampus.getAttribute('data-selected');
-    
-    for (child of editCat.children) 
-        if (child.value == selectedCat) child.selected=true;
 
-    for (child of editCampus.children) 
-        if (child.value == selectedCampus) child.selected=true;
- 
-    getInsertOptions(editBucket, [selectedCat], selectedBucket);
-    getInsertOptions(editItem, [selectedCat, selectedBucket], selectedItem);
-    getInsertOptions(editSubCampus, ["Campus", selectedCampus], selectedSubCampus);
-})();
 
+
+// show dropdown when mouse focus on input
+addEventListenerByClass('edit-cat-input', 'focusin', e=>{
+    var curCat = editCat.value;
+    if (e.target.id == "edit-cat") {
+        document.getElementById('edit-cat-options').style.display = 'block'
+    } else if (e.target.id == "edit-bucket") {
+        document.getElementById('edit-item-options').style.display = 'block'
+    } else if (e.target.id == "edit-camp") {
+        document.getElementById('edit-camp-options').style.display = 'block'
+    }
+})
 
 // detect change in selections
 addEventListenerByClass('edit-cat-input', 'focusout', e=>{
-    var curCat = editCat.options[editCat.selectedIndex].value;
+    var curCat = editCat.value;
     if (e.target.id == "edit-cat") {
         getInsertOptions(editBucket, [curCat]);
         editItem.innerHTML = "";
     } else if (e.target.id == "edit-bucket") {
-        var curBucket = editBucket.options[editBucket.selectedIndex].value;
+        var curBucket = editBucket.value;
         getInsertOptions(editItem, [curCat, curBucket]);
     } else if (e.target.id == "edit-camp") {
-        var curCamp = editCampus.options[editCampus.selectedIndex].value;
+        var curCamp = editCampus.value;
         getInsertOptions(editSubCampus, ["Campus", curCamp]);
     }
 })

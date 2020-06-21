@@ -104,14 +104,23 @@
     <div class="edit-block" id="edit-category">
         <h2>Category*</h2>
         <input name="cat" class="edit-cat-input" id="edit-cat" 
-        value="{{ equipment['category'][0] if equipment['category'] }}">
-            <!-- <option value="Material">Material</option>
-            <option value="Characterization">Characterization</option>
-            <option value="Manufacturing">Manufacturing</option> -->
-        </input>
+        value="{{ equipment['category'][0] if equipment['category'] }}"></input>
+        <!-- <ul id="edit-cat-options">
+            <li>Characterization</li>
+            <li>Manufacturing</li>
+            <li>Material</li>
+        </ul> -->
         -
         <input name="bucket" class="edit-cat-input" id="edit-bucket" 
         value="{{ equipment['category'][1] if equipment['category'] }}"></input>
+        <!-- <ul id="edit-bucket-options">
+            <li>Characterization</li>
+            <li>Manufacturing</li>
+            <li>Material</li>
+            <li>Characterization</li>
+            <li>Manufacturing</li>
+            <li>Material</li>
+        </ul> -->
         -
         <input name="item" class="edit-cat-input" id="edit-item" 
         value="{{ equipment['category'][2] if equipment['category'] }}"></input>
@@ -119,16 +128,16 @@
 
     <div class="edit-block" id="edit-campus">
         <h2>Campus*</h2>
-        <select name="campus" class="edit-cat-select" id="edit-camp" 
-        data-selected="{{ equipment['campus'][0] if equipment['campus'] }}">
-            <option value="UChicago">UChicago</option>
+        <input name="campus" class="edit-cat-select" id="edit-camp" 
+        value="{{ equipment['campus'][0] if equipment['campus'] }}">
+            <!-- <option value="UChicago">UChicago</option>
             <option value="UIC">UIC</option>
             <option value="UIUC">UIUC</option>
-            <option value="Northwestern">Northwestern</option>
-        </select>
+            <option value="Northwestern">Northwestern</option> -->
+        </input>
         -
-        <select name="department" id="edit-subCamp" 
-        data-selected="{{ equipment['campus'][1] if equipment['campus'] }}"></select>
+        <input name="department" id="edit-subCamp" 
+        value="{{ equipment['campus'][1] if equipment['campus'] }}"></input>
     </div>
 
     <div class="edit-block"><h2>Fee</h2><input type="text" name="fee" value="{{ equipment['fee'] if equipment['fee']  }}"/></div>

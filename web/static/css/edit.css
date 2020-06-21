@@ -85,7 +85,7 @@ input:focus, textarea:focus, select:focus {
     width: calc(100% - 61px);
 }
 
-#edit-category input, #edit-campus select {
+#edit-category input, #edit-campus input {
     width: 25%;
     background-color: transparent;
     border-radius: 0;
@@ -93,6 +93,23 @@ input:focus, textarea:focus, select:focus {
     appearance: none;
     -webkit-border-radius: 0px;
 }
+
+#edit-category ul { /* dropdown suggestion*/
+    /* display: none; */
+    border: 2px solid var(--border-color);
+    margin-top: -2px;
+    width: 25%;
+    max-height: 400px;
+    padding-left: 0;
+    background-color: white;
+}
+
+#edit-category li {
+    height: 2em;
+    padding-left: 20px;
+    line-height: 2em;
+}
+#edit-category li:hover {background-color: var(--border-color);}
 
 #edit-location {
     display: flex;
