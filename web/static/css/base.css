@@ -78,6 +78,7 @@ button:active {background-color: lightgray;}
     height: 40px;
     display: flex;
     margin-left: 80%;
+    margin-top: -40px;
 }
 
 
