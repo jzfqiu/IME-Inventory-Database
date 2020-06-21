@@ -126,7 +126,7 @@ var editSubCampus = document.getElementById('edit-subCamp');
 
 
 // detect change in selections
-addEventListenerByClass('edit-cat-select', 'change', e=>{
+addEventListenerByClass('edit-cat-input', 'focusout', e=>{
     var curCat = editCat.options[editCat.selectedIndex].value;
     if (e.target.id == "edit-cat") {
         getInsertOptions(editBucket, [curCat]);

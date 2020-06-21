@@ -54,7 +54,11 @@ def fetch_login():
     user_requested = list(db.get_db()['user'].find({'email': request.form['email']}))[0]
     hashed_pwd = blake2b(str.encode(request.form['password']), digest_size=10)
     if user_requested is not None and user_requested['password']==hashed_pwd.hexdigest():
-        session['username'] = [user_requested['username'], user_requested['name']]
+        session['username'] = {
+            'username': user_requested['username'], 
+            'name': user_requested['name'], 
+            'email': user_requested['email']
+        }
         return json.dumps({'success': True})
     return json.dumps({'success': False})
 
@@ -73,7 +77,7 @@ def user(username):
             user_requested.pop(k)
         user_equipments = db.get_equipments(user_requested['equipments'])
         user_equipments = [{'name': e['name'], 'id': str(e['_id'])} for e in user_equipments]
-        is_manager = get_logged_in_user() and user_requested['username'] == get_logged_in_user()[0]
+        is_manager = get_logged_in_user() and user_requested['username'] == get_logged_in_user()['username']
         return render_template('user.html',
                                 user=user_requested,
                                 logged_in_user=get_logged_in_user(),

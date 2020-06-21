@@ -89,12 +89,12 @@ button:active {background-color: lightgray;}
 }
 
 .help-feedback a:hover { 
-    color: gray;
+    color: grey
 }
 
 #help {
     color: white;
-    background-color: rgb(110,110,110);
+    background-color: var(--link-color);
 }
 
 #feedback {

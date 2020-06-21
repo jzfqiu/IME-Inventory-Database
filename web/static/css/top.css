@@ -17,7 +17,7 @@
 
 .top-searchBox {
     height: 28px;
-    max-width: 500px;
+    max-width: 600px;
     min-width: 290px;
     margin: auto 0 auto 50px;
     border: 1px solid var(--border-color);
@@ -47,4 +47,5 @@
 
 span.top {
     min-width: 200px;
+    max-width: 500px;
 }

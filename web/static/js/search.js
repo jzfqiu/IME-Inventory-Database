@@ -127,6 +127,9 @@ class CatSelection {
         document.getElementById("top-searchButton").addEventListener('click', ()=>{
             this.submitSelection(1);
         })
+        document.getElementById('top-logo').addEventListener('click', ()=>{
+            this.clearSelection();
+        })
     }
 
     objToDOM(obj) {
@@ -205,6 +208,7 @@ class CatSelection {
 
     clearSelection() {
         this.selected = {};
+        document.getElementById('top-searchBox').value = "";
         sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
         this.refreshSelectionDOM();
         this.submitSelection('1');
@@ -241,4 +245,6 @@ class CatSelection {
 let cat = new CatSelection();
 cat.monitor();
 cat.submitSelection();
+
+
 

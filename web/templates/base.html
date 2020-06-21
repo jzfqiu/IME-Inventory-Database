@@ -22,7 +22,7 @@
     <div><a href="/">Search</a></div>
     <div><a href="/help">Help</a></div>
     {% if logged_in_user %}
-    <div><a href="/user/{{ logged_in_user[0] }}">{{ logged_in_user[1] }}</a></div>
+    <div><a href="/user/{{ logged_in_user['username'] }}">{{ logged_in_user['name'] }}</a></div>
     <div><a href="/fetch/logout">Logout</a></div>
     {% else %}
     <div id="login-trigger"><a>Login</a></div>

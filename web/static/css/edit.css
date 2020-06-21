@@ -1,4 +1,4 @@
-input, textarea, select{
+input, textarea{
     border: 0;
     border-bottom: 1px solid var(--border-color);
     width: 90%;
@@ -85,14 +85,13 @@ input:focus, textarea:focus, select:focus {
     width: calc(100% - 61px);
 }
 
-#edit-category select, #edit-campus select {
+#edit-category input, #edit-campus select {
     width: 25%;
     background-color: transparent;
     border-radius: 0;
     -webkit-appearance: none;
     appearance: none;
     -webkit-border-radius: 0px;
-
 }
 
 #edit-location {

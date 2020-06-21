@@ -75,7 +75,7 @@
         <div>
             <h2>Contact</h2>
             <ul style="list-style-type: none;">
-                <li><a href="{{ equipment['contact']['email_link'] }}">{{ equipment['contact']['name'] }}</a></li>
+                <li>{{ equipment['contact']['name'] }}</li>
                 <li>{{ equipment['contact']['title'] }}</li>
                 {% if equipment['contact']['tel'] %}
                     <li>{{ equipment['contact']['tel']}}</li>
@@ -91,6 +91,12 @@
         {% if equipment['fee'] %}
             <div><h2>Fee</h2>{{ equipment['fee'] }}</div>
         {% endif %}
+
+        <div>
+            <h3>Question or suggestion about this equipment?</h3>
+            <a href="{{ equipment['contact']['email_link'] }}">Click here to email the equipment's manager</a>
+        </div>
+        
     </div>
 
 
@@ -120,13 +126,12 @@
             </iframe>
         </div>
 
+
     </div>
 
 
     <div class="help-feedback">
-        <!-- <div><a href='mailto:zqiu@uchicago.edu'>Feedback</a></div>
-        <div><a href='/help'>Help</a></div> -->
-        <a id="help" href='mailto:zqiu@uchicago.edu'>Feedback</a>
+        <a id="help" href='mailto:zqiu@uchicago.edu?subject=PME Equipment Database Feedback'>Feedback</a>
         <a id="feedback" href='/help#help-equipments'>Help</a>
     </div>
 

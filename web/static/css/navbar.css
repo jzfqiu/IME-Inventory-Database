@@ -3,6 +3,7 @@
     position: absolute;
     height: 40px;
     width: 25%;
+    min-width: 350px;
     margin-left: 75%;
     display: flex;
     justify-content: center;

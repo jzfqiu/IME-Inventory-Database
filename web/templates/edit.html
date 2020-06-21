@@ -103,18 +103,18 @@
 
     <div class="edit-block" id="edit-category">
         <h2>Category*</h2>
-        <select name="cat" class="edit-cat-select" id="edit-cat" 
-        data-selected="{{ equipment['category'][0] if equipment['category'] }}">
-            <option value="Material">Material</option>
+        <input name="cat" class="edit-cat-input" id="edit-cat" 
+        value="{{ equipment['category'][0] if equipment['category'] }}">
+            <!-- <option value="Material">Material</option>
             <option value="Characterization">Characterization</option>
-            <option value="Manufacturing">Manufacturing</option>
-        </select>
+            <option value="Manufacturing">Manufacturing</option> -->
+        </input>
         -
-        <select name="bucket" class="edit-cat-select" id="edit-bucket" 
-        data-selected="{{ equipment['category'][1] if equipment['category'] }}"></select>
+        <input name="bucket" class="edit-cat-input" id="edit-bucket" 
+        value="{{ equipment['category'][1] if equipment['category'] }}"></input>
         -
-        <select name="item" id="edit-item" 
-            data-selected="{{ equipment['category'][2] if equipment['category'] }}"></select>
+        <input name="item" class="edit-cat-input" id="edit-item" 
+        value="{{ equipment['category'][2] if equipment['category'] }}"></input>
     </div>
 
     <div class="edit-block" id="edit-campus">
@@ -150,7 +150,7 @@
     <div class="help-feedback">
         <!-- <div><a href='mailto:zqiu@uchicago.edu'>Feedback</a></div>
         <div><a href='/help'>Help</a></div> -->
-        <a id="help" href='mailto:zqiu@uchicago.edu'>Feedback</a>
+        <a id="help" href='mailto:zqiu@uchicago.edu?subject=PME Equipment Database Feedback'>Feedback</a>
         <a id="feedback" href='/help#help-edit'>Help</a>
     </div>
 </form>
