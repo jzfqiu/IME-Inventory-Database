@@ -1,7 +1,7 @@
 /* ============== dropdown ============== */
 .catDropdown {
     position: absolute;
-    top: 140px;
+    top: 150px;
     left: 250px;
     min-height: 450px;
     display: none;

@@ -7,7 +7,7 @@
     width: 100%;
     max-width: 1100px;
     min-height: 800px;
-    margin: auto;
+    margin: 20px auto 0 auto;
     padding: 20px;
     flex-wrap: wrap;
     align-items: flex-start;

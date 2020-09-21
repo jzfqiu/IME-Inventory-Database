@@ -1,33 +1,64 @@
 /* ============== NavBar ============== */
 .navbar {
     position: absolute;
+    width: 100%;
     height: 40px;
-    width: 25%;
-    min-width: 350px;
-    margin-left: 75%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(120, 120, 120);
     font-size: 1.1em;
+    justify-content: space-between;
 }
 
-.navbar span {
-    position: absolute;
-    right: 80%;
-    width: 120px;
+.nav-left {
+    /* display: flex;
+    align-items: center; */
+    width: 66%;
+    border-top: #800000 solid 15px;
+}
+
+.nav-mid {
+    width: 33%;
+    border-top: #1083AE solid 25px;
+    transform: skew(40deg);
+}
+/* 
+.nav-left span {
+    width: 100px;
+}
+
+.nav-left img {
     height: 40px;
+    width: 40px;
+    margin: 0 10px;
+} */
+
+.nav-right {
+    background-color: rgb(120, 120, 120);
+    display: flex; 
+    align-items: center;
+    width: 400px;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+/* the first span - slanted shape */
+/* the second span is just a padding for the flexbox */
+.nav-right :first-child {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    right: 20px;
     transform: skew(40deg);
     background-color: rgb(120, 120, 120);
-    z-index: 1;
+    flex-shrink: 0;
 }
 
-.navbar div {
+.nav-right div {
     width: fit-content;
-    margin: 0 20px;
+    margin: 0 15px;
     cursor: pointer;
-    z-index: 2;
 }
+
+
 
 .navbar a {
     color: white;

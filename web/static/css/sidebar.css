@@ -2,7 +2,6 @@
 
 .sidebar {
     width: 249px;
-    /* min-height: 650px; */
     overflow: scroll;
     display: flex;
     flex-wrap: wrap;

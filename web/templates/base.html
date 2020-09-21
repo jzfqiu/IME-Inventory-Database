@@ -16,15 +16,21 @@
 
 
 <section class="navbar">
-    <span></span>    
-    <div><a href="/">Search</a></div>
-    <div><a href="/help">Help</a></div>
-    {% if logged_in_user %}
-    <div><a href="/user/{{ logged_in_user['_id'] }}">Manager</a></div>
-    <div><a href="/fetch/logout">Logout</a></div>
-    {% else %}
-    <div id="login-trigger"><a>Login</a></div>
-    {% endif %}
+    <div class="nav-left">
+    </div>
+    <div class="nav-mid"></div>
+    <div class="nav-right">
+        <span></span>  
+        <div><a href="/">Search</a></div>
+        <div><a href="/help">Help</a></div>
+        {% if logged_in_user %}
+        <div><a href="/user/{{ logged_in_user['_id'] }}">Manager</a></div>
+        <div><a href="/fetch/logout">Logout</a></div>
+        {% else %}
+        <div id="login-trigger"><a>Login</a></div>
+        {% endif %}
+        <span></span>  
+    </div> 
 </section>
 
 <section class="overlay" >
