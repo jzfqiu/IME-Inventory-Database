@@ -36,6 +36,7 @@
     <div class="details-full details-container">
         <p><h2>Managed Equipments: </h2></p>
         <ul class="user-equipment">
+            {% if equipments %}
             {% for equipment in equipments %}
             <li>
                 <a href="/equipment/{{ equipment['id'] }}">{{ equipment['name'] }}</a>
@@ -47,6 +48,9 @@
                 {% endif %}
             </li>
             {% endfor %}
+            {% else %}
+            No equipment currently under management.
+            {% endif %}
             
             {% if is_manager %}
             <li><button onclick="location.href='/equipment/edit/new';">New</button></li>

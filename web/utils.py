@@ -18,7 +18,7 @@ def get_logged_in_user():
     """
     Get logged in user from session
     """
-    return session.get('username', None)
+    return session.get('logged_in_user', None)
 
 
 def flatten_dict(d):

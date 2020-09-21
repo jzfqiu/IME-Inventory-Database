@@ -5,6 +5,7 @@ All pymongo operations are LAZY
 from flask import current_app, g
 import pymongo
 from web.utils import *
+from bson.objectid import ObjectId
 
 
 
@@ -104,11 +105,11 @@ def update_one_equipment(_id, updates):
     """Update a document
 
     Arguments:
-        _id {ObjectId} -- id of document to be updated
+        _id {str} -- string id of document to be updated
         updates {dict} -- update to be committed
     """
     inventory_collection = get_db()['inventory']
-    update_result = inventory_collection.replace_one({'_id': _id},  updates)
+    update_result = inventory_collection.replace_one({'_id': ObjectId(_id)},  updates)
 
 
 def insert_one_equipment(insert):
@@ -126,17 +127,39 @@ def insert_one_equipment(insert):
     
 
 
-def get_user_by_username(username):
-    """Get a user by username
+def get_user_by_id(_id):
+    """Get a user by id
 
     Arguments:
-        username {str} -- user's username
+        _id {ObjectId} -- user's id
 
     Returns:
-        {dict or None} -- return None if username not found
+        {dict or None} -- return None if id not found
     """
     user_collection = get_db()['user']
-    user_list = list(user_collection.find({'username': username}))
+    user_list = list(user_collection.find({'_id': _id}))
     return user_list[0] if user_list != [] else None
+
+
+def insert_new_user(user_info):
+    """add a new user to the database (no validation done here)
+
+    Args: 
+        user info containing following fields:
+            name (str): full name of the user
+            email (str): unique identifier for the user, used for login
+            affiliation (str): 
+            title (str):
+            password (str): hashed hex password
+    Returns:
+        ObjectId of user entry in database
+
+    """
+    # TODO: add database insertion error handling
+    user_collection = get_db()['user']
+    user_id = user_collection.insert(user_info)
+    return user_id
+    
+
 
 

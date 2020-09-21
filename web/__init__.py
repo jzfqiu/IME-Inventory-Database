@@ -7,9 +7,10 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(config.Config)
 
-    from . import search, edit
+    from . import search, edit, user
     app.register_blueprint(search.search_bp)
     app.register_blueprint(edit.edit_bp)
+    app.register_blueprint(user.user_bp)
 
     # a simple page that says hello
     @app.route('/hello')

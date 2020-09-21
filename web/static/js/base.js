@@ -26,32 +26,6 @@ document.getElementById('cancel-btn').addEventListener('click', (e)=>{
 })
 
 
-// global state for login/register mode
-var loginMode = 'login';
-// toggle register mode 
-// (add access code, password check, and register mode identifier)
-var registerSwitch = document.getElementById('register-switch');
-registerSwitch.addEventListener('click', ()=>{
-    document.getElementById('login-welcome').innerHTML = 'Register Account';
-    document.getElementById('login-block').style.display = 'none';
-    document.getElementById('return-btn').style.display = 'block';
-    var registerBlocks = document.getElementsByClassName('register-block');
-    for (var i = 0; i < registerBlocks.length; i++) 
-        registerBlocks[i].style.display = 'block';
-    loginMode = 'register';
-})
-// back to login mode
-var loginSwitch = document.getElementById('return-btn');
-loginSwitch.addEventListener('click', ()=>{
-    document.getElementById('login-welcome').innerHTML = 'Welcome Back';
-    document.getElementById('login-block').style.display = 'block';
-    document.getElementById('return-btn').style.display = 'none';
-    var registerBlocks = document.getElementsByClassName('register-block');
-    for (var i = 0; i < registerBlocks.length; i++) 
-        registerBlocks[i].style.display = 'none';
-    loginMode = 'login';
-    document.getElementById('confirmation-fail').style.display = 'none';
-})
 
 
 // login form submit
@@ -59,14 +33,7 @@ var loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', (e)=>{    
     e.preventDefault();
     var formData = new FormData(loginForm);
-    // confirm-password validation
-    if (formData.get('password') !== formData.get('confirm-password')){
-        document.getElementById('confirmation-fail').style.display = 'block';
-        return;
-    } else {
-        document.getElementById('confirmation-fail').style.display = 'none';
-    }
-    fetch('/fetch/'+loginMode, {
+    fetch('/fetch/login', {
         method: 'POST',
         body: formData,
     })

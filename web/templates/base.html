@@ -11,8 +11,6 @@
     <script defer src="{{ url_for('static', filename='js/base.js') }}"></script>
     {% block stylesheet %}{% endblock %}
     {% block script %}{% endblock %}
-    
-
 </head>
 <body>
 
@@ -22,7 +20,7 @@
     <div><a href="/">Search</a></div>
     <div><a href="/help">Help</a></div>
     {% if logged_in_user %}
-    <div><a href="/user/{{ logged_in_user['username'] }}">{{ logged_in_user['name'] }}</a></div>
+    <div><a href="/user/{{ logged_in_user['_id'] }}">Manager</a></div>
     <div><a href="/fetch/logout">Logout</a></div>
     {% else %}
     <div id="login-trigger"><a>Login</a></div>
@@ -32,7 +30,6 @@
 <section class="overlay" >
     <div class="overlay-detail">
         <form id="login-form">
-            <button type="button" id="return-btn">&#8249</button>
             <button type="button" id="cancel-btn">&times</button>
             <div>
                 <h3 id="login-welcome">Welcome Back</h3>
@@ -48,22 +45,11 @@
                 <input id="password" type="password" placeholder="Password" name="password" required>    
             </div>
 
-            <div class="register-block">
-                <label for="confirm-password">Confirm Password</label>
-                <input id="confirm-password" type="password" placeholder="Password" name="confirm-password" required>
-            </div> 
-
-            <div class="register-block">
-                <label for="access-code">Access Code</label>
-                <input type="text" placeholder="Access Code" name="access-code" required>
-            </div> 
-
             <p id="login-fail">Login failed. Please try again.</p>
-            <p id="confirmation-fail">Passwords do not match. Please try again.</p>
-            
-            <div id="login-block">
+
+            <div>
                 <p><a>Forget password?</a></p>
-                <p id="register-switch"><a>Register account</a></p>
+                <p><a href="/register">Register manager account</a></p>
             </div>
           
             <div>
