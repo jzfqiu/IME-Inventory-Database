@@ -18,21 +18,44 @@ from web.utils import *
 
 edit_bp = Blueprint('edit', __name__)
 
+@edit_bp.route('/equipment/edit/new', methods=['POST', 'GET'])
+def new_equipment():
+    if request.method == 'GET':
+        return render_template('edit.html',
+                                equipment={},
+                                cleaned_location="united+states",
+                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
+                                logged_in_user=get_logged_in_user())
+    else:
+        new_equipment = clean_equipment_data(json.loads(request.json))
+        _id = db.insert_one_equipment(new_equipment)
+        # add new equipment to its manager's equipment list
+        manager_id = ObjectId(get_logged_in_user()['_id'])
+        manager_data = db.get_user_by_id(manager_id)
+        if manager_data['equipments'] is None:
+            manager_data['equipments'] = [_id]
+        else:
+            manager_data['equipments'] = manager_data['equipments'].append(_id)
+        db.update_user(manager_id, manager_data)
+        return json.dumps({
+            "success": True,
+            "return_url": "/equipment/"+str(_id)
+        })
 
 
 @edit_bp.route('/equipment/edit/<_id>', methods=['POST', 'GET'])
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(ObjectId(_id))
     is_manager = get_logged_in_user() == equipment_requested['user']
+    cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
     if request.method == 'GET':
-        cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
         return render_template('edit.html',
                                 equipment=equipment_requested,
                                 GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                                 cleaned_location=cleaned_location,
                                 logged_in_user=get_logged_in_user())
     else:
-        updated_data = clean_update_data(json.loads(request.json))
+        updated_data = clean_equipment_data(json.loads(request.json))
         db.update_one_equipment(ObjectId(_id), updated_data)
         return json.dumps({
             "success": True,
@@ -49,13 +72,3 @@ def fetch_cat():
 
 
 
-@edit_bp.route('/equipment/edit/new', methods=['POST', 'GET'])
-def new_equipment():
-    if request.method == 'GET':
-        return render_template('edit.html',
-                                equipment={},
-                                cleaned_location="united+states",
-                                GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
-                                logged_in_user=get_logged_in_user())
-    else:
-        return json.dumps({"success": True})

@@ -89,7 +89,10 @@ def get_equipments(list_of_ids):
     Gets a list of documents (as cursor objects) given a list of ObjectID
     """
     inventory_collection = get_db()['inventory']
-    equipments = list(inventory_collection.find({'_id': {'$in': list_of_ids}}))
+    if list_of_ids:
+        equipments = list(inventory_collection.find({'_id': {'$in': list_of_ids}}))
+    else:
+        equipments = []
     return equipments
      
 
@@ -159,6 +162,16 @@ def insert_new_user(user_info):
     user_collection = get_db()['user']
     user_id = user_collection.insert(user_info)
     return user_id
+
+def update_user(_id, updates):
+    """Update a manager's information
+
+    Arguments:
+        _id {str} -- string id of document to be updated
+        updates {dict} -- update to be committed
+    """
+    user_collection = get_db()['user']
+    update_result = user_collection.replace_one({'_id': ObjectId(_id)},  updates)
     
 
 

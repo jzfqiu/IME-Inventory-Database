@@ -38,7 +38,7 @@ def flatten_dict(d):
     return res
 
 
-def clean_update_data(data):
+def clean_equipment_data(data):
     """
     Clean data sent from edit form into database object
 
@@ -57,7 +57,7 @@ def clean_update_data(data):
         "email-link": data.pop('contact-email'),
         "tel": data.pop('contact-tel')
     }
-    data['user'] = get_logged_in_user()['username']
+    # data['manager_id'] = get_logged_in_user()['_id']
     return data
 
 
