@@ -11,7 +11,9 @@ def dprint(content):
     """
     if not isinstance(content, str):
         content = str(content)
+    print("==============================================\n\n", flush=True)
     print(content, flush=True)
+    print("\n\n==============================================", flush=True)
 
 
 def get_logged_in_user():

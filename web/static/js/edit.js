@@ -179,6 +179,7 @@ editForm.addEventListener('submit', e=>{
     e.preventDefault();
     var currentUrl = window.location.href;
     var formJSON = getFormData(editForm);
+    console.log(formJSON)
     var req = makeJsonHeader(currentUrl, formJSON, 'POST');
     fetch(req)
     .then(response=>response.json())

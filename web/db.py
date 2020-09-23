@@ -115,6 +115,16 @@ def update_one_equipment(_id, updates):
     update_result = inventory_collection.replace_one({'_id': ObjectId(_id)},  updates)
 
 
+def delete_one_equipment(_id):
+    """delete 1 equipment
+
+    Args:
+        _id (str): id of object to be deleted
+    """
+    inventory_collection = get_db()['inventory']
+    deleted_object = inventory_collection.remove({'_id': ObjectId(_id)})
+
+
 def insert_one_equipment(insert):
     """Insert a document
 
@@ -122,11 +132,11 @@ def insert_one_equipment(insert):
         insert {dict} -- document to be inserted   
 
     Returns:
-        {ObjectId} -- id of inserted object
+        {str} -- id of inserted object
     """
     inventory_collection = get_db()['inventory']
     inserted_result = inventory_collection.insert_one(insert)
-    return inserted_result.inserted_id
+    return str(inserted_result.inserted_id)
     
 
 
@@ -134,13 +144,13 @@ def get_user_by_id(_id):
     """Get a user by id
 
     Arguments:
-        _id {ObjectId} -- user's id
+        _id {str} -- user's id
 
     Returns:
         {dict or None} -- return None if id not found
     """
     user_collection = get_db()['user']
-    user_list = list(user_collection.find({'_id': _id}))
+    user_list = list(user_collection.find({'_id': ObjectId(_id)}))
     return user_list[0] if user_list != [] else None
 
 
@@ -155,13 +165,13 @@ def insert_new_user(user_info):
             title (str):
             password (str): hashed hex password
     Returns:
-        ObjectId of user entry in database
+        string ObjectId of user entry in database
 
     """
     # TODO: add database insertion error handling
     user_collection = get_db()['user']
     user_id = user_collection.insert(user_info)
-    return user_id
+    return str(user_id)
 
 def update_user(_id, updates):
     """Update a manager's information
