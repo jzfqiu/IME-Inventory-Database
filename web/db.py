@@ -65,7 +65,6 @@ def unroll_cat(d, output_str=False):
 def build_query(raw_json):
     keywords = raw_json.pop('keywords', None)
     categories, _, campus = unroll_cat(raw_json)
-    dprint(campus)
     query_list = []
     if keywords:
         query_list.append({"$text": {"$search": keywords}})
@@ -84,11 +83,21 @@ def build_query(raw_json):
     return query
 
 
+def get_categories():
+    """ 
+    get category information from database
+    """
+    categories_collection = get_db()['categories']
+    categories = categories_collection.find({})[0]
+    return categories
+
+
 def get_equipments(list_of_ids):
     """
-    Gets a list of documents (as cursor objects) given a list of ObjectID
+    Gets a list of documents (as cursor objects) given a list of str_id
     """
     inventory_collection = get_db()['inventory']
+    list_of_ids = [ObjectId(_id) for _id in list_of_ids]
     if list_of_ids:
         equipments = list(inventory_collection.find({'_id': {'$in': list_of_ids}}))
     else:

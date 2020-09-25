@@ -35,18 +35,18 @@
 
 <!--------------- dropdown --------------->
 
-{% for cat in cats %}
-<section class="catDropdown" id="cat{{loop.index}}Dropdown">
-    {% if cat.description %}
-    <p class="catDropdown__description">{{ cat.description }}</p>
+{% for c1_name, c1 in categories.items() %}
+<section class="dropdown" id="cat{{loop.index}}Dropdown">
+    {% if c1.description %}
+    <p class="dropdown__description">{{ c1.description }}</p>
     {% endif %}
-    <div class="catDropdown__buckets">
-        {% for k, bucket in cat.buckets.items() %}
+    <div class="dropdown__l2">
+        {% for c2_name, c2 in c1.children.items() %}
         <div>
-            <p>{{ bucket.name }}</p>
-            {% for choice in bucket.choices %}
-            <input type="radio" class="catDropdown__item js__catSelectionItem"
-                   id="{{ cat.name }}:{{ bucket.name }}-{{ choice }}">{{ choice }}<br>
+            <p>{{ c2_name }}</p>
+            {% for c3_name in c2.children %}
+            <input type="radio" class="dropdown__item"
+                   id="{{ c1_name }}:{{ c2_name }}-{{ c3_name }}">{{ c3_name }}<br>
             {% endfor %}
         </div>
         {% endfor %}
@@ -59,9 +59,9 @@
 
     <div class="sidebar-catNav">
         <h2>Search by category</h2>
-        {% for cat in cats %}
+        {% for c1_name in categories.keys() %}
         <div class="sidebar-catNav__cat" id="cat{{loop.index}}">
-            <p class="sidebar-catNav__text">{{ cat.name }}</p>
+            <p class="sidebar-catNav__text">{{ c1_name }}</p>
         </div>
         {% endfor %}
     </div>

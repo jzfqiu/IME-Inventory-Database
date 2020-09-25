@@ -1,5 +1,5 @@
 /* ============== dropdown ============== */
-.catDropdown {
+.dropdown {
     position: absolute;
     top: 150px;
     left: 250px;
@@ -11,31 +11,31 @@
     line-height: 1.5em;
 }
 
-.catDropdown__buckets{
+.dropdown__l2 {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     width: 80%;
 }
 
-.catDropdown__description {
+.dropdown__description {
     width: 20%;
     height: 100%;
     margin: 20px;
 }
 
-.catDropdown__buckets div {
+.dropdown__l2 div {
     margin: 20px;
     width: 250px;
 }
 
-.catDropdown__buckets p {
+.dropdown__l2 p {
     margin: 10px 20px 10px 0;
     font-size: 1.2em;
     border-bottom: 1px solid var(--border-color);
 }
 
 
-.catDropdown__buckets input {
+.dropdown__l2 input {
     margin-right: 10px;
 }

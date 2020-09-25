@@ -91,11 +91,13 @@
         {% if equipment['fee'] %}
             <div><h2>Fee</h2>{{ equipment['fee'] }}</div>
         {% endif %}
-
+        
+        {% if equipment['contact'] %}
         <div>
             <h3>Question or suggestion about this equipment?</h3>
             <a href="{{ equipment['contact']['email_link'] }}">Click here to email the equipment's manager</a>
         </div>
+        {% endif %}
         
     </div>
 

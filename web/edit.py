@@ -77,7 +77,7 @@ def delete_equipment(_id):
     # also update manager's equipment data
     manager_id = get_logged_in_user()['_id']
     manager_data = db.get_user_by_id(manager_id)
-    manager_data['equipments'].remove(ObjectId(_id))
+    manager_data['equipments'].remove(_id)
     db.update_user(manager_id, manager_data)
     return redirect(url_for('user.user', _id=manager_id))
 

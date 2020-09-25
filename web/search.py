@@ -27,10 +27,10 @@ def search():
     """
     Front page: render sidebar and top
     """
-    with open('test_data/test_cats.json') as cats:
-        cats_data = list(json.load(cats).values())
+    categories = db.get_categories() 
+    categories.pop("_id")
     return render_template('search.html',
-                           cats=cats_data,
+                           categories=categories,
                            logged_in_user=get_logged_in_user())
 
 

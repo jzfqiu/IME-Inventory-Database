@@ -3,8 +3,8 @@
 // dropdown DOMs
 let DOMs = {
     navArr: Array.from(document.getElementsByClassName('sidebar-catNav__cat')),
-    dpArr: Array.from(document.getElementsByClassName('catDropdown')),
-    choiceArr: Array.from(document.getElementsByClassName('catDropdown__item')),
+    dpArr: Array.from(document.getElementsByClassName('dropdown')),
+    choiceArr: Array.from(document.getElementsByClassName('dropdown__item')),
     catRefineWrapper: document.getElementsByClassName('sidebar-refine__wrapper').item(0),
     linkArr: Array.from(document.getElementsByClassName('result-block-name__link')),
     resultWrapper: document.querySelector('.result'),
