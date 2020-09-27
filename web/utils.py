@@ -17,8 +17,10 @@ def dprint(content):
 
 
 def get_logged_in_user():
-    """
-    Get logged in user from session
+    """get logged in user
+
+    Returns:
+        dictionary of user's _id, email and fullname
     """
     return session.get('logged_in_user', None)
 

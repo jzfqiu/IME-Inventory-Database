@@ -28,7 +28,12 @@ def new_equipment():
                                 logged_in_user=get_logged_in_user())
     else:
         new_equipment = clean_equipment_data(json.loads(request.json))
+        dprint(new_equipment)
+        # attach manager id to the equipment
+        dprint(get_logged_in_user())
+        new_equipment['user'] = ObjectId(get_logged_in_user()['_id'])
         _id = db.insert_one_equipment(new_equipment)
+
         # add new equipment to its manager's equipment list
         manager_id = get_logged_in_user()['_id']
         manager_data = db.get_user_by_id(manager_id)
@@ -36,7 +41,13 @@ def new_equipment():
             manager_data['equipments'] = [_id]
         else:
             manager_data['equipments'].append(_id)
+
+        # insert new category if not present in the database
+        db.update_categories(new_equipment['category'])
+
+        # also update the manager's list of managed equipments
         db.update_user(manager_id, manager_data)
+
         return json.dumps({
             "success": True,
             "return_url": "/equipment/"+str(_id)
@@ -46,7 +57,7 @@ def new_equipment():
 @edit_bp.route('/equipment/edit/<_id>', methods=['POST', 'GET'])
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(_id)
-    is_manager = get_logged_in_user() == equipment_requested['user']
+    is_manager = get_logged_in_user() == str(equipment_requested['user'])
     cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
     if request.method == 'GET':
         return render_template('edit.html',

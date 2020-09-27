@@ -92,6 +92,42 @@ def get_categories():
     categories.pop("_id")
     return categories
 
+        
+
+def update_categories(new_category):
+    """check if new equipment's category is included in the database, insert if not
+
+    Args:
+        new_category (list): category of new equipment in the form of [cat, bucket, item]
+    """
+    categories_collection = get_db()['categories']
+    categories = categories_collection.find({})[0]
+    category_id = categories.pop("_id")
+    dprint(new_category)
+    cat, bucket, item = new_category[0], new_category[1], new_category[2]
+    if new_category[0] not in categories:
+        # new category
+        categories[cat] = {
+            "description": "", 
+            "children": {
+                bucket: {"children": [item]}
+            }
+        } 
+    elif bucket not in categories[cat]:
+        # new bucket and item
+        categories[cat]['children'][bucket] = {"children": [item]}
+    elif item not in categories[cat][bucket]['children']:
+        # new item
+        categories[cat]['children'][bucket]['children'].append(item)
+    else:
+        # new_category already exist, no need to do anything
+        return
+    categories_collection.replace_one({'_id': category_id},  categories)
+    
+
+
+
+
 
 def get_equipments(list_of_ids):
     """
