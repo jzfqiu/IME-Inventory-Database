@@ -86,7 +86,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 #edit-category input, #edit-campus input {
-    width: 25%;
+    width: 250px;
     background-color: transparent;
     border-radius: 0;
     -webkit-appearance: none;
@@ -94,20 +94,30 @@ input:focus, textarea:focus, select:focus {
     -webkit-border-radius: 0px;
 }
 
+
 #edit-category ul { /* dropdown suggestion*/
-    /* display: none; */
+    display: none;
+    position: relative; 
+    height: 150px;
+    top: 165px;
+    margin-right: -264px; /* push dropdown box to the right */
+    margin-left: 5px; /* micro-adjust box position */
+    margin-top: -150px; /* make the box appear shorter than actual height so that...
+                         ...the elements above and below don't have to make space */
+    width: 250px;
+    padding-left: 0; /* get rid of inherit padding */
     border: 2px solid var(--border-color);
-    margin-top: -2px;
-    width: 25%;
-    max-height: 400px;
-    padding-left: 0;
     background-color: white;
+    overflow: scroll;
 }
+
+
 
 #edit-category li {
     height: 2em;
     padding-left: 20px;
     line-height: 2em;
+    overflow: scroll;
 }
 #edit-category li:hover {background-color: var(--border-color);}
 

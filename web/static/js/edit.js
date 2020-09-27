@@ -36,8 +36,8 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 
 // helper function to add event listener to each element in the class
-function addEventListenerByClass(className, event, f){
-    var arr = Array.from(document.getElementsByClassName(className));
+function addEventListenerBySelector(selector, event, f){
+    var arr = Array.from(document.querySelectorAll(selector));
     arr.forEach(element=>{
         element.addEventListener(event, e=>f(e))
     })
@@ -59,11 +59,11 @@ function makeJsonHeader(fetchUrl, jsonData){
 
 
 // preventDefault for existing buttons
-addEventListenerByClass('edit-remove-li', 'click', e=>e.preventDefault());
-addEventListenerByClass('edit-add-li', 'click', e=>e.preventDefault());
+addEventListenerBySelector('.edit-remove-li', 'click', e=>e.preventDefault());
+addEventListenerBySelector('.edit-add-li', 'click', e=>e.preventDefault());
 
 // attach handler to parent node
-addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
+addEventListenerBySelector('.edit-dynamic-ul', 'click', e=>{
     var ul = e.currentTarget;
     var button = e.target
     if (button.className=="edit-remove-li" && button.parentNode.nodeName=="LI"){
@@ -78,24 +78,37 @@ addEventListenerByClass('edit-dynamic-ul', 'click', e=>{
 
 
 // get options from dictionary and insert them as children of <select>
-function getInsertOptions(inputDom, prevSelections, selectedOption=null) {
-    let listOfOptions;
+// ulDom: the ul DOM container
+// prevSelections: list of selections in previous level of inputs
+// selectedOption: if editing existing entries, checkmark currently selected option
+function getInsertOptions(ulDom, prevSelections, selectedOption=null) {
+    let listOfOptions, cat, bucket;
+    ulDom.innerHTML = "";
     // get category dictionary
-    fetch("/fetch/edit/cat")
+    fetch("/fetch/edit/categories")
     .then(response => response.json())
     .then(cats_dict => {
-        if (prevSelections.length == 1){ // if only cat has been selected
-            listOfOptions = Object.keys(cats_dict[prevSelections[0]]);
-        } else { // if both cat and bucket are selected
-            listOfOptions = cats_dict[prevSelections[0]][prevSelections[1]];
+        if (prevSelections.length == 1){ 
+            // if only cat has been selected
+            cat = cats_dict[prevSelections[0]]
+            if (cat != null)
+                listOfOptions = Object.keys(cat['children']);
+        } else { 
+            // if both cat and bucket are selected
+            cat = cats_dict[prevSelections[0]]
+            if (cat != null)
+                bucket = cat["children"][prevSelections[1]]
+            if (cat!=null && bucket!=null)
+                listOfOptions = bucket["children"];
         };
-        inputDom.innerHTML = "";
+        if (listOfOptions == null) return;
         listOfOptions.map(option => {
-            var optionDom = document.createElement('option');
+            var optionDom = document.createElement('li');
             optionDom.setAttribute('value', option);
             optionDom.innerHTML = option;
             if (option==selectedOption) optionDom.selected = true;
-            inputDom.appendChild(optionDom);
+            optionDom.addEventListener( 'click', e=>fillInput(e.target))
+            ulDom.appendChild(optionDom);
         });
     });
 }
@@ -109,32 +122,64 @@ var editSubCampus = document.getElementById('edit-subCamp');
 
 
 
+// fill input when dropdown item is clicked
+// navigates to target's (li) parent's (ul) sibling (input)
+function fillInput(target) {
+    var choice = target.innerHTML;
+    var inputDom = target.parentNode.nextElementSibling;
+    inputDom.value = choice;
+}
+addEventListenerBySelector('#edit-category li', 'click', e=>fillInput(e.target))
+
+
 // show dropdown when mouse focus on input
-addEventListenerByClass('edit-cat-input', 'focusin', e=>{
+addEventListenerBySelector('.edit-cat-input', 'focusin', e=>{
     var curCat = editCat.value;
     if (e.target.id == "edit-cat") {
-        document.getElementById('edit-cat-options').style.display = 'block'
+        document.getElementById('edit-cat-options').style.display = 'inline-block'
     } else if (e.target.id == "edit-bucket") {
-        document.getElementById('edit-item-options').style.display = 'block'
+        document.getElementById('edit-bucket-options').style.display = 'inline-block'
+    } else if (e.target.id == "edit-item") {
+        document.getElementById('edit-item-options').style.display = 'inline-block'
     } else if (e.target.id == "edit-camp") {
-        document.getElementById('edit-camp-options').style.display = 'block'
+        document.getElementById('edit-camp-options').style.display = 'inline-block'
     }
 })
 
+
 // detect change in selections
-addEventListenerByClass('edit-cat-input', 'focusout', e=>{
-    var curCat = editCat.value;
+function getNextOptions(e) {
+    var bucketOptions = document.getElementById("edit-bucket-options")
+    var itemOptions = document.getElementById("edit-item-options")
     if (e.target.id == "edit-cat") {
-        getInsertOptions(editBucket, [curCat]);
-        editItem.innerHTML = "";
+        // empty children categories inputs
+        editBucket.value = ""
+        editItem.value = ""
+        // empty children categories option list
+        bucketOptions.innerHTML = ""
+        itemOptions.innerHTML = ""
+        // insert new options
+        getInsertOptions(editBucket.previousElementSibling, [editCat.value]);
+        document.getElementById('edit-cat-options').style.display = 'none'
     } else if (e.target.id == "edit-bucket") {
-        var curBucket = editBucket.value;
-        getInsertOptions(editItem, [curCat, curBucket]);
+        editItem.value = ""
+        itemOptions.innerHTML = ""
+        getInsertOptions(editItem.previousElementSibling, [editCat.value, editBucket.value]);
+        document.getElementById('edit-bucket-options').style.display = 'none'
+    } else if (e.target.id == "edit-item") {
+        document.getElementById('edit-item-options').style.display = 'none'
     } else if (e.target.id == "edit-camp") {
         var curCamp = editCampus.value;
-        getInsertOptions(editSubCampus, ["Campus", curCamp]);
+        // getInsertOptions(editSubCampus, ["Campus", curCamp]);
+        // TODO: fix campus
+        document.getElementById('edit-camp-options').style.display = 'none'
     }
-})
+}
+/* use setTimeout to queue the focusout event after 100 ms because focusout event seems  
+   to take precedence before click event which causes dom to un-display and click event
+   never captured. This order seems to be enforced by browsers and may not be the same 
+   everywhere. */
+addEventListenerBySelector('.edit-cat-input', 'focusout', e=>{setTimeout(()=>getNextOptions(e), 200)})
 
 
 
@@ -164,7 +209,8 @@ function getFormData(form){
     var dynamicUl = document.getElementsByClassName('edit-dynamic-ul');
     var formObj = {}
     for (var key of formData.keys()) {
-        if (key=='features' || key=='images' || key=='applications') { // if key has not been visited
+        if (key=='features' || key=='images' || key=='applications') { 
+            // if key has not been visited
             formObj[key] = formData.getAll(key);
         } else { // else the key points to a list
             formObj[key] = formData.get(key);

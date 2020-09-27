@@ -107,25 +107,20 @@
 
     <div class="edit-block" id="edit-category">
         <h2>Category*</h2>
+        <ul id="edit-cat-options">
+            <li>Characterization</li>
+            <li>Manufacturing</li>
+            <li >Material</li>
+        </ul>
         <input name="cat" class="edit-cat-input" id="edit-cat" 
         value="{{ equipment['category'][0] if equipment['category'] }}" required></input>
-        <!-- <ul id="edit-cat-options">
-            <li>Characterization</li>
-            <li>Manufacturing</li>
-            <li>Material</li>
-        </ul> -->
         -
+        <ul id="edit-bucket-options">
+        </ul>
         <input name="bucket" class="edit-cat-input" id="edit-bucket" 
         value="{{ equipment['category'][1] if equipment['category'] }}" required></input>
-        <!-- <ul id="edit-bucket-options">
-            <li>Characterization</li>
-            <li>Manufacturing</li>
-            <li>Material</li>
-            <li>Characterization</li>
-            <li>Manufacturing</li>
-            <li>Material</li>
-        </ul> -->
         -
+        <ul id="edit-item-options"></ul>
         <input name="item" class="edit-cat-input" id="edit-item" 
         value="{{ equipment['category'][2] if equipment['category'] }}" required></input>
     </div>

@@ -28,7 +28,6 @@ def search():
     Front page: render sidebar and top
     """
     categories = db.get_categories() 
-    categories.pop("_id")
     return render_template('search.html',
                            categories=categories,
                            logged_in_user=get_logged_in_user())
@@ -52,12 +51,12 @@ def fetch_page(page_number):
 @search_bp.route('/equipment/<_id>')
 def equipment(_id):
     equipment = db.get_one_equipment(ObjectId(_id))
-    cat = " - ".join(equipment['category'])
+    category = " - ".join(equipment['category'])
     campus_str = " - ".join(equipment['campus'])
     cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment['location'])
     return render_template('equipment.html',
                            equipment=equipment,
-                           cat=cat,
+                           category=category,
                            campus=campus_str,
                            GOOGLE_MAP_API_KEY=current_app.config['GOOGLE_MAP_API_KEY'],
                            logged_in_user=get_logged_in_user(),

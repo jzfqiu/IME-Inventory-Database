@@ -64,11 +64,10 @@ def edit_equipment(_id):
         
 
 
-@edit_bp.route('/fetch/edit/cat', methods=['GET'])
+@edit_bp.route('/fetch/edit/categories', methods=['GET'])
 def fetch_cat():
-    with open('test_data/test_cats_v2.json') as cats:
-        cats_dict = json.load(cats)
-    return json.dumps(cats_dict)
+    categories = db.get_categories()
+    return json.dumps(categories)
 
 
 @edit_bp.route('/equipment/delete/<_id>', methods=['GET'])

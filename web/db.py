@@ -89,6 +89,7 @@ def get_categories():
     """
     categories_collection = get_db()['categories']
     categories = categories_collection.find({})[0]
+    categories.pop("_id")
     return categories
 
 
