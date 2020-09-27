@@ -144,10 +144,10 @@ def get_equipments(list_of_ids):
 
 def get_one_equipment(_id):
     """
-    Gets 1 document (as cursor object) given an ObjectID
+    Gets 1 document (as cursor object) given an str id
     """
     inventory_collection = get_db()['inventory']
-    return inventory_collection.find_one({'_id': _id})
+    return inventory_collection.find_one({'_id': ObjectId(_id)})
 
 
 def update_one_equipment(_id, updates):

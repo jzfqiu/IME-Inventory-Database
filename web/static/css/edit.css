@@ -95,7 +95,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-#edit-category ul { /* dropdown suggestion*/
+#edit-category ul, #edit-campus ul { /* dropdown suggestion*/
     display: none;
     position: relative; 
     height: 150px;
@@ -113,13 +113,13 @@ input:focus, textarea:focus, select:focus {
 
 
 
-#edit-category li {
+#edit-category li, #edit-campus li {
     height: 2em;
     padding-left: 20px;
     line-height: 2em;
     overflow: scroll;
 }
-#edit-category li:hover {background-color: var(--border-color);}
+#edit-category li:hover, #edit-campus li:hover {background-color: var(--border-color);}
 
 #edit-location {
     display: flex;

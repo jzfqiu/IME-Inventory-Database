@@ -37,9 +37,7 @@
 
     <div class="edit-block" id="edit-overview">
         <label for="edit-overview"><h2>Overview*</h2></label>
-        <textarea type="text" name="overview" required>
-            {% if equipment['overview'] %}{{ equipment['overview'] }}{% endif %}
-        </textarea>
+        <textarea type="text" name="overview" required>{% if equipment['overview'] %}{{ equipment['overview'] }}{% endif %}</textarea>
     </div>
 
     <div class="edit-block" id="edit-images">
@@ -60,7 +58,7 @@
 
     <div class="edit-block">
         <h2>Key Features</h2>
-        <ul class="edit-dynamic-ul" id="edit-feature">
+        <ul class="edit-dynamic-ul" id="edit-features">
             {% if equipment['features'] %}
             {% for feature in equipment['features'] %}
                 <li>
@@ -75,7 +73,7 @@
 
     <div class="edit-block">
         <h2>Key Applications</h2>
-        <ul class="edit-dynamic-ul" id="edit-feature">
+        <ul class="edit-dynamic-ul" id="edit-applications">
             {% if equipment['applications'] %}
             {% for application in equipment['applications'] %}
                 <li>
@@ -99,7 +97,7 @@
         <h2>Contact*</h2>
         <ul>
             <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] if equipment['contact'] }}" required/></li>
-            <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email_link'] if equipment['contact'] }}" required/></li>
+            <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email'] if equipment['contact'] }}" required/></li>
             <li><p>Title: </p><input type="text" name="contact-title" value="{{ equipment['contact']['title'] if equipment['contact'] }}" required/></li>
             <li><p>Tel: </p><input type="text" name="contact-tel" value="{{ equipment['contact']['tel'] if equipment['contact'] }}" required/></li>
         </ul>
@@ -127,15 +125,18 @@
 
     <div class="edit-block" id="edit-campus">
         <h2>Campus*</h2>
-        <input name="campus" class="edit-cat-select" id="edit-camp" 
+        <ul id="edit-camp-options">
+            <li>UChicago</li>
+            <li>UIC</li>
+            <li>UIUC</li>
+            <li>Northwestern</li>
+        </ul>
+        <input name="campus" class="edit-cat-input" id="edit-camp" 
         value="{{ equipment['campus'][0] if equipment['campus'] }}" required>
-            <!-- <option value="UChicago">UChicago</option>
-            <option value="UIC">UIC</option>
-            <option value="UIUC">UIUC</option>
-            <option value="Northwestern">Northwestern</option> -->
         </input>
         -
-        <input name="department" id="edit-subCamp" 
+        <ul id="edit-subCamp-options"></ul>
+        <input name="department" id="edit-subCamp" class="edit-cat-input"
         value="{{ equipment['campus'][1] if equipment['campus'] }}" required></input>
     </div>
 

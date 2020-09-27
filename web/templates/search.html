@@ -35,18 +35,18 @@
 
 <!--------------- dropdown --------------->
 
-{% for c1_name, c1 in categories.items() %}
+{% for cat_name, cat in categories.items() %}
 <section class="dropdown" id="cat{{loop.index}}Dropdown">
-    {% if c1.description %}
-    <p class="dropdown__description">{{ c1.description }}</p>
+    {% if cat.description %}
+    <p class="dropdown__description">{{ cat.description }}</p>
     {% endif %}
     <div class="dropdown__l2">
-        {% for c2_name, c2 in c1.children.items() %}
+        {% for bucket_name, bucket in cat.children.items() %}
         <div>
-            <p>{{ c2_name }}</p>
-            {% for c3_name in c2.children %}
+            <p>{{ bucket_name }}</p>
+            {% for item_name in bucket.children %}
             <input type="radio" class="dropdown__item"
-                   id="{{ c1_name }}:{{ c2_name }}-{{ c3_name }}">{{ c3_name }}<br>
+                   id="{{ cat_name }}:{{ bucket_name }}-{{ item_name }}">{{ item_name }}<br>
             {% endfor %}
         </div>
         {% endfor %}
@@ -59,9 +59,9 @@
 
     <div class="sidebar-catNav">
         <h2>Search by category</h2>
-        {% for c1_name in categories.keys() %}
+        {% for cat_name in categories.keys() %}
         <div class="sidebar-catNav__cat" id="cat{{loop.index}}">
-            <p class="sidebar-catNav__text">{{ c1_name }}</p>
+            <p class="sidebar-catNav__text">{{ cat_name }}</p>
         </div>
         {% endfor %}
     </div>

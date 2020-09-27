@@ -42,26 +42,5 @@ def flatten_dict(d):
     return res
 
 
-def clean_equipment_data(data):
-    """
-    Clean data sent from edit form into database object
-
-    Specifically, convert flattened category list to dict 
-    and encapsulate contact information
-    """
-    data['category'] = [
-        data.pop('cat'), 
-        data.pop('bucket'), 
-        data.pop('item')
-    ]
-    data['campus'] = [data.pop('campus'), data.pop('department')]
-    data['contact'] = {
-        "name": data.pop('contact-name'),
-        "title": data.pop('contact-title'),
-        "email-link": data.pop('contact-email'),
-        "tel": data.pop('contact-tel')
-    }
-    # data['manager_id'] = get_logged_in_user()['_id']
-    return data
 
 

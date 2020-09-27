@@ -65,13 +65,17 @@ addEventListenerBySelector('.edit-add-li', 'click', e=>e.preventDefault());
 // attach handler to parent node
 addEventListenerBySelector('.edit-dynamic-ul', 'click', e=>{
     var ul = e.currentTarget;
-    var button = e.target
+    var button = e.target;
+    // find parent node's id to check if feature or application
+    var liName = button.parentNode.parentNode.id.slice(5);
+    console.log(button.parentNode.parentNode.id)
     if (button.className=="edit-remove-li" && button.parentNode.nodeName=="LI"){
         ul.removeChild(button.parentNode)
     } else if (button.className=="edit-add-li") {
         var newLi = document.createElement("li");
-        newLi.innerHTML = '<button class="edit-remove-li" type="button">&times;</button>'+
-                            '<input type="text" name="features" value=""/>'
+        newLi.innerHTML = `
+            <button class="edit-remove-li" type="button">&times;</button>
+            <input type="text" name="${liName}" value=""/>`
         ul.insertBefore(newLi, button.parentNode);
     }
 });
@@ -130,20 +134,13 @@ function fillInput(target) {
     inputDom.value = choice;
 }
 addEventListenerBySelector('#edit-category li', 'click', e=>fillInput(e.target))
+addEventListenerBySelector('#edit-campus li', 'click', e=>fillInput(e.target))
 
 
 // show dropdown when mouse focus on input
 addEventListenerBySelector('.edit-cat-input', 'focusin', e=>{
-    var curCat = editCat.value;
-    if (e.target.id == "edit-cat") {
-        document.getElementById('edit-cat-options').style.display = 'inline-block'
-    } else if (e.target.id == "edit-bucket") {
-        document.getElementById('edit-bucket-options').style.display = 'inline-block'
-    } else if (e.target.id == "edit-item") {
-        document.getElementById('edit-item-options').style.display = 'inline-block'
-    } else if (e.target.id == "edit-camp") {
-        document.getElementById('edit-camp-options').style.display = 'inline-block'
-    }
+    target_id = e.target.id
+    document.getElementById(target_id+"-options").style.display = 'inline-block'
 })
 
 
@@ -160,20 +157,15 @@ function getNextOptions(e) {
         itemOptions.innerHTML = ""
         // insert new options
         getInsertOptions(editBucket.previousElementSibling, [editCat.value]);
-        document.getElementById('edit-cat-options').style.display = 'none'
     } else if (e.target.id == "edit-bucket") {
         editItem.value = ""
         itemOptions.innerHTML = ""
         getInsertOptions(editItem.previousElementSibling, [editCat.value, editBucket.value]);
-        document.getElementById('edit-bucket-options').style.display = 'none'
-    } else if (e.target.id == "edit-item") {
-        document.getElementById('edit-item-options').style.display = 'none'
     } else if (e.target.id == "edit-camp") {
         var curCamp = editCampus.value;
-        // getInsertOptions(editSubCampus, ["Campus", curCamp]);
-        // TODO: fix campus
-        document.getElementById('edit-camp-options').style.display = 'none'
+        getInsertOptions(editSubCampus.previousElementSibling, ["Campus", curCamp]);
     }
+    document.getElementById(target_id+"-options").style.display = 'none'
 }
 /* use setTimeout to queue the focusout event after 100 ms because focusout event seems  
    to take precedence before click event which causes dom to un-display and click event
@@ -206,13 +198,13 @@ editLocation.addEventListener('keyup', e => {
 // cleanup data from form using FormData class
 function getFormData(form){
     var formData = new FormData(form);
-    var dynamicUl = document.getElementsByClassName('edit-dynamic-ul');
     var formObj = {}
     for (var key of formData.keys()) {
         if (key=='features' || key=='images' || key=='applications') { 
-            // if key has not been visited
+            // key points to a list
             formObj[key] = formData.getAll(key);
-        } else { // else the key points to a list
+            console.log(key, formObj[key])
+        } else { 
             formObj[key] = formData.get(key);
         }
     }
@@ -225,7 +217,6 @@ editForm.addEventListener('submit', e=>{
     e.preventDefault();
     var currentUrl = window.location.href;
     var formJSON = getFormData(editForm);
-    console.log(formJSON)
     var req = makeJsonHeader(currentUrl, formJSON, 'POST');
     fetch(req)
     .then(response=>response.json())

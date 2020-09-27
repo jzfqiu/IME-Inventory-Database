@@ -18,6 +18,33 @@ from bson.objectid import ObjectId
 
 edit_bp = Blueprint('edit', __name__)
 
+
+def clean_equipment_data(data):
+    """
+    Clean data sent from edit form into database object
+
+    Specifically, convert flattened category list to dict 
+    and encapsulate contact information
+    """
+    data['features'] = [f for f in data['features'] if f != ""]
+    data['applications'] = [a for a in data['applications'] if a != ""]
+    data['category'] = [
+        data.pop('cat'), 
+        data.pop('bucket'), 
+        data.pop('item')
+    ]
+    data['campus'] = [data.pop('campus'), data.pop('department')]
+    data['contact'] = {
+        "name": data.pop('contact-name'),
+        "title": data.pop('contact-title'),
+        "email": data.pop('contact-email'),
+        "tel": data.pop('contact-tel')
+    }
+    if data['location'] == "":
+        data['location'] = ",".join(data['campus'])
+    
+    return data
+
 @edit_bp.route('/equipment/edit/new', methods=['POST', 'GET'])
 def new_equipment():
     if request.method == 'GET':
@@ -28,10 +55,10 @@ def new_equipment():
                                 logged_in_user=get_logged_in_user())
     else:
         new_equipment = clean_equipment_data(json.loads(request.json))
-        dprint(new_equipment)
+        
         # attach manager id to the equipment
-        dprint(get_logged_in_user())
         new_equipment['user'] = ObjectId(get_logged_in_user()['_id'])
+        dprint(new_equipment)
         _id = db.insert_one_equipment(new_equipment)
 
         # add new equipment to its manager's equipment list
@@ -57,7 +84,7 @@ def new_equipment():
 @edit_bp.route('/equipment/edit/<_id>', methods=['POST', 'GET'])
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(_id)
-    is_manager = get_logged_in_user() == str(equipment_requested['user'])
+    is_manager = get_logged_in_user()['_id'] == str(equipment_requested['user'])
     cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
     if request.method == 'GET':
         return render_template('edit.html',
@@ -67,6 +94,8 @@ def edit_equipment(_id):
                                 logged_in_user=get_logged_in_user())
     else:
         updated_data = clean_equipment_data(json.loads(request.json))
+        # attach manager id to the equipment
+        updated_data['user'] = ObjectId(get_logged_in_user()['_id'])
         db.update_one_equipment(_id, updated_data)
         return json.dumps({
             "success": True,
