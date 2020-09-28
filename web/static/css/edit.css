@@ -144,5 +144,24 @@ input:focus, textarea:focus, select:focus {
     margin-left: calc(50% - 55px);
 }
 
+.edit-help {
+    display: flex;
+    align-items: center;
+}
 
+.edit-help img {
+    height: 20px;
+    margin: 20px;
+}
+
+.edit-help p {
+    width: 600px !important;
+    padding: 10px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
 

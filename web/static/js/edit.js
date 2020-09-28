@@ -36,8 +36,13 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 
 // helper function to add event listener to each element in the class
-function addEventListenerBySelector(selector, event, f){
-    var arr = Array.from(document.querySelectorAll(selector));
+// use class selector by default to improve performance 
+function addEventListenerInBatch(selector, event, f, useQuerySelector=false){
+    if (useQuerySelector) {
+        var arr = Array.from(document.querySelectorAll(selector));
+    } else {
+        var arr = Array.from(document.getElementsByClassName(selector.slice(1)));
+    }
     arr.forEach(element=>{
         element.addEventListener(event, e=>f(e))
     })
@@ -59,11 +64,11 @@ function makeJsonHeader(fetchUrl, jsonData){
 
 
 // preventDefault for existing buttons
-addEventListenerBySelector('.edit-remove-li', 'click', e=>e.preventDefault());
-addEventListenerBySelector('.edit-add-li', 'click', e=>e.preventDefault());
+addEventListenerInBatch('.edit-remove-li', 'click', e=>e.preventDefault());
+addEventListenerInBatch('.edit-add-li', 'click', e=>e.preventDefault());
 
 // attach handler to parent node
-addEventListenerBySelector('.edit-dynamic-ul', 'click', e=>{
+addEventListenerInBatch('.edit-dynamic-ul', 'click', e=>{
     var ul = e.currentTarget;
     var button = e.target;
     // find parent node's id to check if feature or application
@@ -133,12 +138,12 @@ function fillInput(target) {
     var inputDom = target.parentNode.nextElementSibling;
     inputDom.value = choice;
 }
-addEventListenerBySelector('#edit-category li', 'click', e=>fillInput(e.target))
-addEventListenerBySelector('#edit-campus li', 'click', e=>fillInput(e.target))
+addEventListenerInBatch('#edit-category li', 'click', e=>fillInput(e.target), true)
+addEventListenerInBatch('#edit-campus li', 'click', e=>fillInput(e.target), true)
 
 
 // show dropdown when mouse focus on input
-addEventListenerBySelector('.edit-cat-input', 'focusin', e=>{
+addEventListenerInBatch('.edit-cat-input', 'focusin', e=>{
     target_id = e.target.id
     document.getElementById(target_id+"-options").style.display = 'inline-block'
 })
@@ -171,7 +176,7 @@ function getNextOptions(e) {
    to take precedence before click event which causes dom to un-display and click event
    never captured. This order seems to be enforced by browsers and may not be the same 
    everywhere. */
-addEventListenerBySelector('.edit-cat-input', 'focusout', e=>{setTimeout(()=>getNextOptions(e), 200)})
+addEventListenerInBatch('.edit-cat-input', 'focusout', e=>{setTimeout(()=>getNextOptions(e), 200)})
 
 
 
@@ -226,4 +231,12 @@ editForm.addEventListener('submit', e=>{
     })
 })
 
+
+// toggle help tooltip
+addEventListenerInBatch('.edit-help-toggle', 'mouseover', e=>{
+    e.target.nextElementSibling.style.opacity = "1";
+})
+addEventListenerInBatch('.edit-help-toggle', 'mouseleave', e=>{
+    e.target.nextElementSibling.style.opacity = "0";
+})
 	

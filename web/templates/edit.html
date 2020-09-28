@@ -94,7 +94,13 @@
     </div>
 
     <div class="edit-block" id="edit-contact">
-        <h2>Contact*</h2>
+        <div class="edit-help">
+            <h2>Contact*</h2>
+            <img class="edit-help-toggle" src="{{ url_for('static', filename='assets/question_mark.png') }}">
+            <p>Contact information of the person who can answer questions about the equipment. 
+                Can be yourself or other researchers directly responsible for the equipment.</p>
+            
+        </div>
         <ul>
             <li><p>Name: </p><input type="text" name="contact-name" value="{{ equipment['contact']['name'] if equipment['contact'] }}" required/></li>
             <li><p>Email: </p><input type="text" name="contact-email" value="{{ equipment['contact']['email'] if equipment['contact'] }}" required/></li>
@@ -104,7 +110,11 @@
     </div>
 
     <div class="edit-block" id="edit-category">
-        <h2>Category*</h2>
+        <div class="edit-help">
+            <h2>Category*</h2>
+            <img class="edit-help-toggle" src="{{ url_for('static', filename='assets/question_mark.png') }}">
+            <p>Categorize this equipment using existing categories or enter a new category.</p>
+        </div>
         <ul id="edit-cat-options">
             <li>Characterization</li>
             <li>Manufacturing</li>

@@ -74,12 +74,9 @@
 
         <div>
             <h2>Contact</h2>
-            <ul style="list-style-type: none;">
+            <ul style="list-style-type: none; padding:0;">
                 <li>{{ equipment['contact']['name'] }}</li>
                 <li>{{ equipment['contact']['title'] }}</li>
-                {% if equipment['contact']['email'] %}
-                    <li>{{ equipment['contact']['email']}}</li>
-                {% endif %}
                 {% if equipment['contact']['tel'] %}
                     <li>{{ equipment['contact']['tel']}}</li>
                 {% endif %}
@@ -98,7 +95,7 @@
         {% if equipment['contact'] %}
         <div>
             <h3>Question or suggestion about this equipment?</h3>
-            <a href="{{ equipment['contact']['email_link'] }}">Click here to email the equipment's manager</a>
+            <a href="{{ equipment['contact']['email'] }}">Click here to email the equipment's manager</a>
         </div>
         {% endif %}
         

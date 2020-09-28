@@ -26,8 +26,10 @@ def clean_equipment_data(data):
     Specifically, convert flattened category list to dict 
     and encapsulate contact information
     """
-    data['features'] = [f for f in data['features'] if f != ""]
-    data['applications'] = [a for a in data['applications'] if a != ""]
+    if 'features' in data:
+        data['features'] = [f for f in data['features'] if f != ""]
+    if 'applications' in data:
+        data['applications'] = [a for a in data['applications'] if a != ""]
     data['category'] = [
         data.pop('cat'), 
         data.pop('bucket'), 
