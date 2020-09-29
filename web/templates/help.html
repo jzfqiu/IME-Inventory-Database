@@ -24,9 +24,9 @@
         <div id="help-about">
             <h2>About the PME Equipment Database</h2>
             <p>The PME Equipment Database is a inventory list maintained by PME 
-            lab managers to provide business partner with the latest information
+            lab managers to provide our business partners with the latest information
             of scientific equipments available at the Pritzker School of Molecular 
-            Engineering.</p>
+            Engineering and other partner institutions.</p>
 
         </div>
 
@@ -58,12 +58,55 @@
     
         <div id="help-equipment">
             <h2>Equipment Details</h2>
-            Help content
+            The equipment detail page contains various information about the equipment.
+            <ul style="padding-left: 40px;">
+                <li>Name</li>
+                <li>Overview</li>
+                <li>Key Features (Optional)</li>
+                <li>Key Applications (Optional)</li>
+                <li>Link to official documentation of the equipment (Optional)</li>
+                <li>Institution/Campus in which the equipment belongs</li>
+                <li>Exact location of the equipment</li>
+                <li>Contact information of the equipment's manager</li>
+            </ul>
+        </div>
+
+        <div id="help-user">
+            <h2>User System</h2>
+            
+            <h3>User Registration</h3>
+            <img src="{{ url_for('static', filename='assets/help/login.png') }}"
+            style="width: 300px"
+            alt="Login Interface">
+            <br>
+            If you are a equipment manager, you can email <a href="mailto:zqiu@uchicago">site 
+            developer</a> with your institution email to obtain an access code. If you already
+            have an access code, head to the registration page to create a new account. 
+            
+            <h3>User Page</h3>
+            <img src="{{ url_for('static', filename='assets/help/user.png') }}"
+            style="width: 500px"
+            alt="User Page">
+            <br>
+            If you are a registered user, you can go to the Manager tab at the navigation bar
+            to view your information. You can also add new equipment or edit existing 
+            equipment information through the user page. 
+
+            <h3>Forget Password or Need to Modify User Information</h3>
+            Please contact <a href="mailto:zqiu@uchicago">site developer</a> with the same email 
+            you used to register the account.
+            
+
         </div>
     
         <div id="help-edit">
             <h2>Edit/Create Equipment</h2>
-            Help content        
+            <img src="{{ url_for('static', filename='assets/help/edit_tooltip.png') }}"
+            style="width: 650px"
+            alt="Edit Tooltip">
+            <br>
+            Hover cursor above the question mark icon next to a section's title to learn
+            about each section's explanation.
         </div>
     </div>
 

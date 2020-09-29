@@ -66,7 +66,7 @@ def new_equipment():
         # add new equipment to its manager's equipment list
         manager_id = get_logged_in_user()['_id']
         manager_data = db.get_user_by_id(manager_id)
-        if manager_data['equipments'] is None:
+        if "equipments" not in manager_data or manager_data['equipments'] is None:
             manager_data['equipments'] = [_id]
         else:
             manager_data['equipments'].append(_id)
