@@ -83,21 +83,11 @@
             </ul>
         </div>
 
-        <div>
-            <h2>Category</h2>
-            {{ category }}
-        </div>
-
         {% if equipment['fee'] %}
             <div><h2>Fee</h2>{{ equipment['fee'] }}</div>
         {% endif %}
         
-        {% if equipment['contact'] %}
-        <div>
-            <h3>Question or suggestion about this equipment?</h3>
-            <a href="{{ equipment['contact']['email'] }}">Click here to email the equipment's manager</a>
-        </div>
-        {% endif %}
+
         
     </div>
 
@@ -127,6 +117,18 @@
                 src="https://www.google.com/maps/embed/v1/place?key={{GOOGLE_MAP_API_KEY}}&q={{ cleaned_location }}">
             </iframe>
         </div>
+
+        <div>
+            <h2>Category</h2>
+            {{ category }}
+        </div>
+
+        {% if equipment['contact'] %}
+        <div>
+            <h3>Question or suggestion about this equipment?</h3>
+            <a href="{{ equipment['contact']['email'] }}">Click here to email the equipment's manager</a>
+        </div>
+        {% endif %}
 
 
     </div>

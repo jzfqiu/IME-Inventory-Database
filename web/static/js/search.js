@@ -201,7 +201,6 @@ class CatSelection {
         }
         sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
         this.refreshSelectionDOM();
-        console.log(this.selected);
         if (Object.entries(this.selected).length == 0)
             this.clearSelection();
     }
@@ -212,7 +211,8 @@ class CatSelection {
         sessionStorage.setItem('selectedCats', JSON.stringify(this.selected));
         this.refreshSelectionDOM();
         this.submitSelection('1');
-        this.DOMs.choiceArr.forEach(radio => radio.checked = false)
+        if (DOMs.choiceArr) 
+            DOMs.choiceArr.forEach(radio => radio.checked = false)
         
     }
 

@@ -23,13 +23,11 @@
 <ul class="result-pages__list">
     <li class="result-pages__item">Page</li>
     {% for n in pages %}
-    <li class="result-pages__item">
+    <li class="result-pages__item" 
+    {% if loop.index == cur_page %}style="background-color: rgb(220 220 220);"{% endif %}
+    >
         <a class="result-pages__link" id="{{ loop.index }}">
-            {% if loop.index == cur_page %}
-            <u>{{ loop.index }}</u>
-            {% else %}
             {{ loop.index }}
-            {% endif %}
         </a>
     </li>
     {% endfor %}

@@ -87,6 +87,7 @@ button:active {background-color: lightgray;}
     display: inline-block;
     text-align: center;
     padding-top: 10px;
+    line-height: 1.5em;
 }
 
 .help-feedback a:hover { 

@@ -57,7 +57,24 @@
     font-size: 1.1em;
 }
 
-.result-pages__item {    
-    margin: 0 20px;
+.result-pages__item {  
+    border: 2px solid rgb(200, 200, 200);
+    border-right: 0px;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    padding: auto;
+    padding-top: 6px;
     cursor: pointer;
+}
+
+.result-pages__item:first-of-type {
+    width: 70px;
+    border-radius: 5px 0 0 5px;
+    cursor: default;
+}
+
+.result-pages__item:last-of-type {
+    border-right: 2px solid rgb(200, 200, 200);  
+    border-radius: 0 5px 5px 0;
 }
