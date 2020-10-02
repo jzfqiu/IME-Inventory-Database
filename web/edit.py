@@ -8,7 +8,7 @@ import math
 import re
 from hashlib import blake2b
 
-from flask import Blueprint, render_template, request, session, current_app, redirect, url_for
+from flask import Blueprint, render_template, request, session, current_app, redirect, url_for, abort
 from web import db
 from web.utils import *
 from bson.objectid import ObjectId
@@ -60,7 +60,6 @@ def new_equipment():
         
         # attach manager id to the equipment
         new_equipment['user'] = ObjectId(get_logged_in_user()['_id'])
-        dprint(new_equipment)
         _id = db.insert_one_equipment(new_equipment)
 
         # add new equipment to its manager's equipment list
@@ -86,7 +85,9 @@ def new_equipment():
 @edit_bp.route('/equipment/edit/<_id>', methods=['POST', 'GET'])
 def edit_equipment(_id):
     equipment_requested = db.get_one_equipment(_id)
-    is_manager = get_logged_in_user()['_id'] == str(equipment_requested['user'])
+    if not get_logged_in_user() or get_logged_in_user()['_id'] != str(equipment_requested['user']):
+        # no user logged in or user not managing the equipment
+        abort(403, description="You are not logged in as the manager of this equipment")
     cleaned_location = re.sub(r'[^A-Za-z0-9]+', '+', equipment_requested['location'])
     if request.method == 'GET':
         return render_template('edit.html',

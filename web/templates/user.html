@@ -56,6 +56,9 @@
             <li><button onclick="location.href='/equipment/edit/new';">New</button></li>
             {% endif %}
         </ul>
+        {% if is_manager %}
+        <div>Importing from local files? Contact <a href="mailto:zqiu@uchicago.edu">site developer</a> for available options.</div>
+        {% endif %}
     </div>
 
 
