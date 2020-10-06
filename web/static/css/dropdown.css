@@ -2,11 +2,10 @@
 .dropdown {
     position: absolute;
     top: 150px;
-    left: 250px;
+    left: 249px;
     min-height: 450px;
     display: none;
     border: 1px solid var(--border-color);
-    border-left: 0;
     background: white;
     line-height: 1.5em;
 }
