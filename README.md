@@ -8,6 +8,37 @@
 - Backend: Flask, pymongo
 - Database: MongoDB
 
+### Files
+```
+IME-Inventory-Database  
+├── Dockerfile          [Docker config file]
+├── README.md
+├── development.env     [Development environment, modify this in production]
+├── docker-compose.yml  [Docker compose config file]
+├── requirements.txt
+├── test_data
+│   ├── README
+│   ├── categories.json     [Categories used to sort test equipments]
+│   ├── load_json           [Shell script to purge the database and repopulate with pristine test data]
+│   ├── mongo_postprocessing.js
+│   ├── pnf_scraper.ipynb   [Python script to scrape test data from PNF website]
+│   └── test_data_v3.json   [Test data scrapedfrom PNF website]
+└── web
+    ├── __init__.py   [Application factory where everthing starts]
+    ├── config.py     [Load the env file and put them in the Flask application]
+    ├── db.py         [Database operations]
+    ├── edit.py       [Process input and output for the equipment editing page]
+    ├── search.py     [Search and front page logic]
+    ├── static
+    │   ├── assets    [Images and icons]
+    │   ├── css       [All the style sheets]
+    │   ├── js        [All the frontend logics]
+    │   └── user_uploads [Obsolete]
+    ├── templates     [Jinja HTML templates]
+    ├── user.py       [Serves user page]
+    └── utils.py      [Helper functions]
+```
+
 ### Deploy on AWS
 
 - Account: `pme.developer@gmail.com`
