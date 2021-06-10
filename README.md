@@ -2,11 +2,11 @@
 
 ## Technical Instructions
 
-### Tech Stack:
+### Tech Stack
 
-Frontend: Javascript ES6, CSS, HTML (Jinja template language, mainly to work with Flask)
-Backend: Flask, pymongo
-Database: MongoDB
+- Frontend: Javascript ES6, CSS, HTML (Jinja template language, mainly to work with Flask)
+- Backend: Flask, pymongo
+- Database: MongoDB
 
 ### Deploy on AWS
 
@@ -22,14 +22,11 @@ Email me.
 ## Todos
 
 As of Jun 10, 2021:
-- **Responsive Mobile UI**: Currently the UI breaks down on smaller screens. Add some `@media` conditions in the css files to mix it.
+- **Responsive Mobile UI**: Currently the UI breaks down on smaller screens. Add some `@media` conditions in the css files to fix it.
 - **User information editing page**: Allow users to edit their information on their user page.
 - **Email confirmation system**: Setup an email for the site so that users can get email confirmation when registaring accounts. I would imagine this involves getting a domain name first, although if there might be a way to make do with Gmail API?
-- **Password retrieval**: Allow user to change password. It will probably involve working with the site email system.
-- **Institution sign in**: Integrate UChicago's shibboleth sign in system so users can sign in using their UChicago account. This likely involves a lot of dicussion with the IT staff and a lot of system design choices. I would start with understanding the current database scheme and see if we can use some kind of common identifier to link UChicago account with our current user scheme, but if you feel like scraping the whole thing thats fine too.
+- **Password retrieval**: Allow user to change password. It will probably involve working with the site email system as well.
 - **Hosting options/hostname**: Follow the hosting option above to set up a new server environment, then contact the school IT staff to discuss hostname options. (Regarding AWS: From my discussion with them, hosting on AWS seems to make integration into the school's system easier. But docker-compose is pretty versatile and we are already using a complete virtual environemnt, so integration should be possible whereever you host your development server.)
+- **Institution sign in**: Integrate UChicago's shibboleth sign in system so users can sign in using their UChicago account. This likely involves a lot of dicussion with the IT staff and a lot of system design choices. I would start with understanding the current database scheme and see if we can use some kind of common identifier to link UChicago account with our current user scheme, but if you feel like scraping the whole thing thats fine too.
 - **Bulk Upload**: This is a requested feature from the early feedbacks we gathered. This will probably lead to big changes from database to the frontend template. Again, a lot of work but certainly possible.
-
-
-
-
+- **Refactor frontend in React (Optional)**: Now that I look back, React seems to be a fairly reasonable choice for our frontend interface. The downside is you can no longer use Jinja with Flask and frontend can only pass JSON data to and from backend, so you will need a lot of async calls. However, using React will simplify a lot of the interactive logics that have became messier as features began to pile. If you are considering refactoring (and practice your framework skill), maybe start with the equipment editing page since there are relatively less data exchanges.
