@@ -41,14 +41,14 @@ IME-Inventory-Database
 
 ### Deploy on AWS
 
-- Account: `pme.developer@gmail.com`
+- AWS Account: `pme.developer@gmail.com`
 - Password: See email
 - Recommended hosting environment: AWS Lightsail - Amazon Linux 2 ($3.5/month)
 - Deployment: git pull, luanch through `docker-compose up --build` (be sure to update development configuration in `development.env` if used for production)
 
 ### Questions about Code/Repo Maintainance
 
-Email me.
+Email me at `zhenfengqiu[at]gmail.com`.
 
 ## Todos
 
